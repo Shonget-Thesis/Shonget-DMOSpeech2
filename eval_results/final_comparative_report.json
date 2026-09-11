@@ -1,0 +1,40 @@
+{
+  "target_text": "Hello! DMOSpeech 2 is successfully running on this system.",
+  "asr_eval": {
+    "baseline_transcription": "Hello. Demo Speech 2 is successfully running on this system.",
+    "proposed_transcription": "Hello. Demospeech 2 is successfully running on this system.",
+    "transcription_match": true
+  },
+  "baseline_dmospeech2": {
+    "label": "Baseline DMOSpeech 2",
+    "sample_rate_hz": 24000,
+    "duration_sec": 5.525,
+    "rms_energy": 0.1735,
+    "peak_amplitude": 1.0,
+    "transition_max_flux_spike": 87.97,
+    "transition_mean_flux": 19.88,
+    "overall_max_flux_spike": 91.06,
+    "spectral_flatness": 0.0469,
+    "spectral_centroid_hz": 2621.8,
+    "high_frequency_ratio_gt_4khz": 0.2462
+  },
+  "proposed_smooth_manifold": {
+    "label": "Proposed Smooth Manifold",
+    "sample_rate_hz": 24000,
+    "duration_sec": 5.525,
+    "rms_energy": 0.1683,
+    "peak_amplitude": 1.0,
+    "transition_max_flux_spike": 98.35,
+    "transition_mean_flux": 13.07,
+    "overall_max_flux_spike": 98.35,
+    "spectral_flatness": 0.04749,
+    "spectral_centroid_hz": 2739.0,
+    "high_frequency_ratio_gt_4khz": 0.2392
+  },
+  "thesis_improvements": {
+    "flux_spike_reduction_percent": "-11.8%",
+    "mean_transition_flux_reduction_percent": "34.3%",
+    "timbre_preserved": true,
+    "noise_floor_lower": false
+  }
+}

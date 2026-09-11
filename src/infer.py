@@ -5,7 +5,10 @@ import torch.nn.functional as F
 from torch.nn.utils.rnn import pad_sequence
 from torchdiffeq import odeint
 from safetensors.torch import load_file
-import IPython.display as ipd
+try:
+    import IPython.display as ipd
+except ImportError:
+    ipd = None
 
 # Import F5-TTS modules
 from f5_tts.model import CFM, UNetT, DiT
@@ -263,6 +266,7 @@ class DMOInference:
             
         # Preprocess audio and text
         ref_audio, ref_text = preprocess_ref_audio_text(audio_path, prompt_text)
+            
         audio, sr = torchaudio.load(ref_audio)
         
         if audio.shape[0] > 1:
@@ -362,6 +366,7 @@ class DMOInference:
             
         # Preprocess audio and text
         ref_audio, ref_text = preprocess_ref_audio_text(audio_path, prompt_text)
+            
         audio, sr = torchaudio.load(ref_audio)
         
         if audio.shape[0] > 1:
