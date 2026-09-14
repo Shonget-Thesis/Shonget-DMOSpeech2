@@ -1,0 +1,35 @@
+{
+  "baseline": {
+    "label": "Baseline DMOSpeech 2 (w=1.0)",
+    "audio_path": "C:\\Users\\Rhenel Jhon Sajol\\Desktop\\TTS\\DMOSpeech 2\\output.wav",
+    "sample_rate": 24000,
+    "duration_sec": 5.525,
+    "transition_mean_flux": 17.0863,
+    "transition_max_spike": 77.4898,
+    "overall_mean_flux": 23.3906,
+    "spectral_flatness": 0.047601,
+    "spectral_centroid_hz": 2710.4
+  },
+  "constant_cushion": {
+    "label": "Constant Cushion (w=0.85)",
+    "audio_path": "C:\\Users\\Rhenel Jhon Sajol\\Desktop\\TTS\\DMOSpeech 2\\output_smooth.wav",
+    "sample_rate": 24000,
+    "duration_sec": 5.525,
+    "transition_mean_flux": 11.9983,
+    "transition_max_spike": 82.7357,
+    "overall_mean_flux": 20.9656,
+    "spectral_flatness": 0.046929,
+    "spectral_centroid_hz": 2785.8
+  },
+  "adaptive_option_1": {
+    "label": "Adaptive Option 1 (Dynamic w)",
+    "audio_path": "C:\\Users\\Rhenel Jhon Sajol\\Desktop\\TTS\\DMOSpeech 2\\ADAPTIVE_TAGS\\output_adaptive.wav",
+    "sample_rate": 24000,
+    "duration_sec": 5.525,
+    "transition_mean_flux": 24.4324,
+    "transition_max_spike": 100.316,
+    "overall_mean_flux": 22.8358,
+    "spectral_flatness": 0.048052,
+    "spectral_centroid_hz": 2652.1
+  }
+}
