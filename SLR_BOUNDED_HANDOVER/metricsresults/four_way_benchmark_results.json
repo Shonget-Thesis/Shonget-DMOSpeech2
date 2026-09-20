@@ -1,0 +1,267 @@
+[
+  {
+    "id": 1,
+    "name": "Female Nature",
+    "tone": "Soft, calm, serene feminine British/American English",
+    "target_text": "Hello! This is a test of the adaptive smooth speech synthesis system.",
+    "duration_frames": 660,
+    "evaluations": {
+      "baseline": {
+        "method_name": "Baseline (Hard)",
+        "output_file": "sample_1_baseline.wav",
+        "effective_lambda": 1.0,
+        "rms_displacement": 1.0381,
+        "accepted_rms": 1.0381,
+        "withheld_rms": 0.0,
+        "peak_flux": 79.08,
+        "mean_flux": 26.51,
+        "whisper_transcript": "Mother Nature. Hello. This is a test of the adaptive smooth speech synthesis system."
+      },
+      "cosine": {
+        "method_name": "Cosine Ablation",
+        "output_file": "sample_1_cosine.wav",
+        "effective_lambda": 0.0142,
+        "rms_displacement": 1.0549,
+        "accepted_rms": 0.015,
+        "withheld_rms": 1.0398,
+        "peak_flux": 102.5,
+        "mean_flux": 32.4,
+        "whisper_transcript": "Mother Nature. Hello. This is a test of the adaptive smooth speech synthesis system."
+      },
+      "tanh": {
+        "method_name": "Adaptive tanh",
+        "output_file": "sample_1_tanh.wav",
+        "effective_lambda": 0.8451,
+        "rms_displacement": 1.061,
+        "accepted_rms": 0.8966,
+        "withheld_rms": 0.1644,
+        "peak_flux": 83.76,
+        "mean_flux": 25.57,
+        "whisper_transcript": "Mother Nature. Hello. This is a test of the adaptive smooth speech synthesis system."
+      },
+      "slr_cap": {
+        "method_name": "SLR Cap (rho=1.5)",
+        "output_file": "sample_1_slr_cap.wav",
+        "effective_lambda": 1.0,
+        "rms_displacement": 1.0769,
+        "accepted_rms": 1.0769,
+        "withheld_rms": 0.0,
+        "peak_flux": 93.64,
+        "mean_flux": 27.55,
+        "whisper_transcript": "Mother Nature. Hello. This is a test of the adaptive smooth speech synthesis system."
+      }
+    }
+  },
+  {
+    "id": 2,
+    "name": "Male Country",
+    "tone": "Rustic, folksy, gritty Southern male storytelling dialect",
+    "target_text": "Well howdy there! The quick brown fox jumps right over that lazy dog.",
+    "duration_frames": 270,
+    "evaluations": {
+      "baseline": {
+        "method_name": "Baseline (Hard)",
+        "output_file": "sample_2_baseline.wav",
+        "effective_lambda": 1.0,
+        "rms_displacement": 1.2361,
+        "accepted_rms": 1.2361,
+        "withheld_rms": 0.0,
+        "peak_flux": 42.82,
+        "mean_flux": 7.35,
+        "whisper_transcript": "And maybe Snacker by the brother, well, how do they have the quick refox jumps right over that lazy dog?"
+      },
+      "cosine": {
+        "method_name": "Cosine Ablation",
+        "output_file": "sample_2_cosine.wav",
+        "effective_lambda": 0.0142,
+        "rms_displacement": 1.2005,
+        "accepted_rms": 0.0171,
+        "withheld_rms": 1.1835,
+        "peak_flux": 17.23,
+        "mean_flux": 4.08,
+        "whisper_transcript": "To move you snack for a little while, we'll have you there. The quick breakfast, I'm straight over that lazy dog."
+      },
+      "tanh": {
+        "method_name": "Adaptive tanh",
+        "output_file": "sample_2_tanh.wav",
+        "effective_lambda": 0.837,
+        "rms_displacement": 1.2212,
+        "accepted_rms": 1.0221,
+        "withheld_rms": 0.1991,
+        "peak_flux": 43.17,
+        "mean_flux": 9.73,
+        "whisper_transcript": "And maybe snack for a brother. Well, how do they do? The quick brand fucks jumps for every that lazy dog."
+      },
+      "slr_cap": {
+        "method_name": "SLR Cap (rho=1.5)",
+        "output_file": "sample_2_slr_cap.wav",
+        "effective_lambda": 1.0,
+        "rms_displacement": 1.2534,
+        "accepted_rms": 1.2534,
+        "withheld_rms": 0.0,
+        "peak_flux": 44.39,
+        "mean_flux": 10.13,
+        "whisper_transcript": "And maybe snack or the bottle, how do they? The quick brand-fox jump for you, but that lazy dog."
+      }
+    }
+  },
+  {
+    "id": 3,
+    "name": "Male Broadcast Narrator",
+    "tone": "Authoritative, crisp, professional documentary narration",
+    "target_text": "Artificial intelligence and speech technologies are transforming human communication worldwide.",
+    "duration_frames": 270,
+    "evaluations": {
+      "baseline": {
+        "method_name": "Baseline (Hard)",
+        "output_file": "sample_3_baseline.wav",
+        "effective_lambda": 1.0,
+        "rms_displacement": 1.1797,
+        "accepted_rms": 1.1797,
+        "withheld_rms": 0.0,
+        "peak_flux": 69.27,
+        "mean_flux": 13.74,
+        "whisper_transcript": "Artificial intelligence and speech check knowledge of transforming communication worldwide."
+      },
+      "cosine": {
+        "method_name": "Cosine Ablation",
+        "output_file": "sample_3_cosine.wav",
+        "effective_lambda": 0.0142,
+        "rms_displacement": 1.1943,
+        "accepted_rms": 0.017,
+        "withheld_rms": 1.1773,
+        "peak_flux": 52.56,
+        "mean_flux": 9.02,
+        "whisper_transcript": "But I'm not doing much as a risk technology to transform foreign human communication worldwide."
+      },
+      "tanh": {
+        "method_name": "Adaptive tanh",
+        "output_file": "sample_3_tanh.wav",
+        "effective_lambda": 0.8442,
+        "rms_displacement": 1.1794,
+        "accepted_rms": 0.9957,
+        "withheld_rms": 0.1837,
+        "peak_flux": 43.62,
+        "mean_flux": 3.0,
+        "whisper_transcript": "Artificial intelligence-based technologies are transforming him communication worldwide."
+      },
+      "slr_cap": {
+        "method_name": "SLR Cap (rho=1.5)",
+        "output_file": "sample_3_slr_cap.wav",
+        "effective_lambda": 1.0,
+        "rms_displacement": 1.2117,
+        "accepted_rms": 1.2117,
+        "withheld_rms": 0.0,
+        "peak_flux": 76.78,
+        "mean_flux": 15.2,
+        "whisper_transcript": "Artificial intelligence speech technology transforming human communication."
+      }
+    }
+  },
+  {
+    "id": 4,
+    "name": "Male Academic Lecture",
+    "tone": "Fast-paced, intellectual, analytical scientific lecture",
+    "target_text": "Spectral analysis demonstrates a significant reduction in boundary transition turbulence.",
+    "duration_frames": 280,
+    "evaluations": {
+      "baseline": {
+        "method_name": "Baseline (Hard)",
+        "output_file": "sample_4_baseline.wav",
+        "effective_lambda": 1.0,
+        "rms_displacement": 1.3051,
+        "accepted_rms": 1.3051,
+        "withheld_rms": 0.0,
+        "peak_flux": 34.46,
+        "mean_flux": 6.58,
+        "whisper_transcript": "Treatises as a drop-syngress inspection, as it states, a significant reduction in boundaries."
+      },
+      "cosine": {
+        "method_name": "Cosine Ablation",
+        "output_file": "sample_4_cosine.wav",
+        "effective_lambda": 0.0142,
+        "rms_displacement": 1.2899,
+        "accepted_rms": 0.0184,
+        "withheld_rms": 1.2715,
+        "peak_flux": 54.36,
+        "mean_flux": 12.81,
+        "whisper_transcript": "Column exercise on which you have to be specific, as if you were actually nearby, as a judge."
+      },
+      "tanh": {
+        "method_name": "Adaptive tanh",
+        "output_file": "sample_4_tanh.wav",
+        "effective_lambda": 0.8324,
+        "rms_displacement": 1.3084,
+        "accepted_rms": 1.0892,
+        "withheld_rms": 0.2192,
+        "peak_flux": 26.19,
+        "mean_flux": 4.53,
+        "whisper_transcript": "In realises, does other the doffs increase spectrum so it's a significant benefit."
+      },
+      "slr_cap": {
+        "method_name": "SLR Cap (rho=1.5)",
+        "output_file": "sample_4_slr_cap.wav",
+        "effective_lambda": 1.0,
+        "rms_displacement": 1.2827,
+        "accepted_rms": 1.2827,
+        "withheld_rms": 0.0,
+        "peak_flux": 24.31,
+        "mean_flux": 4.54,
+        "whisper_transcript": "increases the size of the dropped increases spectrum, now such a significant reduction in band transitions."
+      }
+    }
+  },
+  {
+    "id": 5,
+    "name": "Deep Dramatic Cinematic",
+    "tone": "Dark, gravelly, intense theatrical male voice",
+    "target_text": "Why so serious? We have eliminated the boundary collision completely.",
+    "duration_frames": 520,
+    "evaluations": {
+      "baseline": {
+        "method_name": "Baseline (Hard)",
+        "output_file": "sample_5_baseline.wav",
+        "effective_lambda": 1.0,
+        "rms_displacement": 0.9748,
+        "accepted_rms": 0.9748,
+        "withheld_rms": 0.0,
+        "peak_flux": 44.6,
+        "mean_flux": 7.1,
+        "whisper_transcript": "Why so serious? We have eliminated the boundary collision completely."
+      },
+      "cosine": {
+        "method_name": "Cosine Ablation",
+        "output_file": "sample_5_cosine.wav",
+        "effective_lambda": 0.0142,
+        "rms_displacement": 0.9635,
+        "accepted_rms": 0.0137,
+        "withheld_rms": 0.9498,
+        "peak_flux": 120.45,
+        "mean_flux": 9.44,
+        "whisper_transcript": "Why so serious? We have eliminated the boundary collision completely."
+      },
+      "tanh": {
+        "method_name": "Adaptive tanh",
+        "output_file": "sample_5_tanh.wav",
+        "effective_lambda": 0.8777,
+        "rms_displacement": 0.9782,
+        "accepted_rms": 0.8585,
+        "withheld_rms": 0.1197,
+        "peak_flux": 0.04,
+        "mean_flux": 0.0,
+        "whisper_transcript": "Why so serious? We have eliminated the boundary collision completely."
+      },
+      "slr_cap": {
+        "method_name": "SLR Cap (rho=1.5)",
+        "output_file": "sample_5_slr_cap.wav",
+        "effective_lambda": 1.0,
+        "rms_displacement": 0.9735,
+        "accepted_rms": 0.9735,
+        "withheld_rms": 0.0,
+        "peak_flux": 61.15,
+        "mean_flux": 4.28,
+        "whisper_transcript": "Why so serious? We have eliminated the boundary collision completely."
+      }
+    }
+  }
+]
