@@ -38,6 +38,8 @@ OUTPUTS_DIR   = os.path.join(CURRENT_DIR, "outputs")
 RESULTS_DIR   = os.path.join(CURRENT_DIR, "results")
 METRICS_JSON  = os.path.join(RESULTS_DIR, "novel_approaches_metrics.json")
 REPORT_MD     = os.path.join(RESULTS_DIR, "NOVEL_APPROACHES_REPORT.md")
+ROOT_METRICS_JSON = os.path.join(CURRENT_DIR, "novel_approaches_metrics.json")
+ROOT_REPORT_MD    = os.path.join(CURRENT_DIR, "NOVEL_APPROACHES_REPORT.md")
 
 
 class NovelHandoverInference(DMOInference):
@@ -316,7 +318,9 @@ def write_novel_report(results):
 
     with open(REPORT_MD, "w", encoding="utf-8") as f:
         f.write(md)
-    print(f"[REPORT] Written to {REPORT_MD}")
+    with open(ROOT_REPORT_MD, "w", encoding="utf-8") as f:
+        f.write(md)
+    print(f"[REPORT] Written to {REPORT_MD} and {ROOT_REPORT_MD}")
 
 
 def main():
@@ -457,6 +461,8 @@ def main():
         print(f"    Done {elapsed:.1f}s | Base={b_p:.1f} | Orig={o_p:.1f} | Ortho={a1_p:.1f} | Bound={a2_p:.1f} | Calib={a3_p:.1f}")
 
         with open(METRICS_JSON, "w", encoding="utf-8") as f:
+            json.dump(all_results, f, indent=2)
+        with open(ROOT_METRICS_JSON, "w", encoding="utf-8") as f:
             json.dump(all_results, f, indent=2)
 
         write_novel_report(all_results)
