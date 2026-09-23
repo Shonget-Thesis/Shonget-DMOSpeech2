@@ -1,0 +1,55 @@
+[
+  {
+    "sample_id": 1,
+    "speaker_id": "4992",
+    "ref_text": "exclaimed Bill Harmon to his wife as they went through the lighted hall.",
+    "gen_text": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke.",
+    "norm_teacher": 571.6779,
+    "norm_delta": 373.5809,
+    "rms_displacement": 1.2217,
+    "ratio_shock": 0.6535,
+    "boundary_frame": 336,
+    "evaluations": {
+      "baseline": {
+        "name": "Baseline (Hard)",
+        "effective_w": 1.0,
+        "peak_flux": 76.64,
+        "mean_flux": 15.25,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke.",
+        "wer": 0.0
+      },
+      "orig_tags": {
+        "name": "Original TAGS",
+        "effective_w": 0.8508,
+        "peak_flux": 75.56,
+        "mean_flux": 15.11,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke.",
+        "wer": 0.0
+      },
+      "app1_ortho": {
+        "name": "Approach 1 (Orthogonal)",
+        "effective_w": 0.6,
+        "peak_flux": 70.46,
+        "mean_flux": 15.07,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke.",
+        "wer": 0.0
+      },
+      "app2_boundary": {
+        "name": "Approach 2 (Boundary-Window)",
+        "effective_w": 0.6,
+        "peak_flux": 76.5,
+        "mean_flux": 15.22,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke.",
+        "wer": 0.0
+      },
+      "app3_calibrated": {
+        "name": "Approach 3 (Calibrated-Z)",
+        "effective_w": 0.7518,
+        "peak_flux": 75.4,
+        "mean_flux": 15.11,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke.",
+        "wer": 0.0
+      }
+    }
+  }
+]

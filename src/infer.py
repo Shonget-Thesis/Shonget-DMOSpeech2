@@ -115,6 +115,9 @@ class DMOInference:
         # Setup generator and teacher
         self.generator = self.model.feedforward_model.to(self.device)
         self.teacher = self.model.guidance_model.real_unet.to(self.device)
+        self.generator.eval()
+        self.teacher.eval()
+        self.model.eval()
         
         self.scale = checkpoint['scale']
         

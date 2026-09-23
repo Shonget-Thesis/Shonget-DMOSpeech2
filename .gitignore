@@ -7,3 +7,29 @@ ckpts/
 *.safetensors
 *.bin
 IMPLEMENTATION_PLAN/LITERATURE_REVIEW/
+
+# Archives and large datasets
+*.tar.gz
+*.tar
+*.zip
+BENCHMARK_100_SAMPLES/data/*.tar.gz
+BENCHMARK_100_SAMPLES/data/*.zip
+
+# Audio Files (Exclude to prevent repository bloat)
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.ogg
+
+# Benchmark and Output Audio Folders
+BENCHMARK_100_SAMPLES/outputs/
+BENCHMARK_100_SAMPLES/data/LibriSpeech/
+BENCHMARK_100_SAMPLES/data/temp_ref_*.wav
+BENCHMARK_NOVEL_APPROACHES/outputs/
+SLR_BOUNDED_HANDOVER/output*/
+SLR_BOUNDED_HANDOVER/input/*.wav
+SLR_BOUNDED_HANDOVER/input/*.flac
+SLR_BOUNDED_HANDOVER/*.wav
+eval_results/*.wav
+output*.wav
