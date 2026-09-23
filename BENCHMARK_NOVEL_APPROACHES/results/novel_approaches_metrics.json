@@ -49,6 +49,14 @@
         "mean_flux": 15.11,
         "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 70.27,
+        "mean_flux": 20.39,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance she awoke.",
+        "wer": 0.0556
       }
     }
   },
@@ -102,6 +110,14 @@
         "mean_flux": 11.68,
         "transcript": "So there is to me added sand forward with a sarcastic sneer.",
         "wer": 0.2727
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 76.12,
+        "mean_flux": 18.14,
+        "transcript": "So there is to me added Sanford with a sarcastic hot near",
+        "wer": 0.3636
       }
     }
   },
@@ -155,6 +171,14 @@
         "mean_flux": 18.46,
         "transcript": "And yet you must own her behavior has warranted them has it not been in this particular incoherent and unaccountable.",
         "wer": 0.1
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 84.13,
+        "mean_flux": 22.09,
+        "transcript": "And yet you must own her behavior, has warranted them as it not been in this particular incroherent and unaccountable.",
+        "wer": 0.2
       }
     }
   },
@@ -206,6 +230,14 @@
         "effective_w": 0.8542,
         "peak_flux": 37.77,
         "mean_flux": 4.56,
+        "transcript": "To ask any more questions of you, I believe, would be unfair.",
+        "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 26.02,
+        "mean_flux": 3.25,
         "transcript": "To ask any more questions of you, I believe, would be unfair.",
         "wer": 0.0
       }
@@ -261,6 +293,14 @@
         "mean_flux": 6.93,
         "transcript": "He seemed to wait for her reply, but as she made none, he proceeded.",
         "wer": 0.1429
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 38.86,
+        "mean_flux": 7.19,
+        "transcript": "He seemed to wait for her reply, but as she made none, he proceeded.",
+        "wer": 0.1429
       }
     }
   },
@@ -314,6 +354,14 @@
         "mean_flux": 17.53,
         "transcript": "Oh, my Lord, cried Miss Woodley, with a most forcible accent. You are the last person on earth she would pardon me for entrusting.",
         "wer": 0.2
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 94.91,
+        "mean_flux": 19.85,
+        "transcript": "Oh, my Lord, cried Miss Woodley, with the most forcible accent. You are the last person on earth she would pardon me for entrusting.",
+        "wer": 0.24
       }
     }
   },
@@ -367,6 +415,14 @@
         "mean_flux": 12.54,
         "transcript": "But in such a case, Ms. Milner's election of a husband shall not direct mine.",
         "wer": 0.0667
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 53.06,
+        "mean_flux": 9.22,
+        "transcript": "But in such a case, Miss Milner's election of a husbanden shall not direct mine.",
+        "wer": 0.0667
       }
     }
   },
@@ -418,6 +474,14 @@
         "effective_w": 0.8354,
         "peak_flux": 44.87,
         "mean_flux": 4.7,
+        "transcript": "If she does not know how to estimate her own value I do.",
+        "wer": 0.0769
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 60.58,
+        "mean_flux": 5.32,
         "transcript": "If she does not know how to estimate her own value I do.",
         "wer": 0.0769
       }
@@ -473,6 +537,14 @@
         "mean_flux": 0.03,
         "transcript": "My Lord, Miss Milner's taste is not a depraved one. It is but too refined.",
         "wer": 0.1333
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 2.62,
+        "mean_flux": 0.27,
+        "transcript": "My Lord, Miss Milner's taste is not at the Prave One. It is but too refined.",
+        "wer": 0.3333
       }
     }
   },
@@ -524,6 +596,14 @@
         "effective_w": 0.9673,
         "peak_flux": 105.19,
         "mean_flux": 9.95,
+        "transcript": "What can you mean by that, Miss Woodley? You talk mysteriously.",
+        "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 78.29,
+        "mean_flux": 10.46,
         "transcript": "What can you mean by that, Miss Woodley? You talk mysteriously.",
         "wer": 0.0
       }
@@ -579,6 +659,14 @@
         "mean_flux": 8.63,
         "transcript": "Again, he searched his own thoughts, nor ineffectually as before.",
         "wer": 0.2
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 74.68,
+        "mean_flux": 10.91,
+        "transcript": "Again, he searched his own thoughts, nor ineffectually as before.",
+        "wer": 0.2
       }
     }
   },
@@ -632,6 +720,14 @@
         "mean_flux": 11.55,
         "transcript": "To relieve her from both, he laid his hand with force upon his heart and said, Do you believe me?",
         "wer": 0.15
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 66.35,
+        "mean_flux": 14.41,
+        "transcript": "To relieve her from both, he laid his hand with force upon his heart, and said, Do you believe me?",
+        "wer": 0.1
       }
     }
   },
@@ -683,6 +779,14 @@
         "effective_w": 0.9161,
         "peak_flux": 59.83,
         "mean_flux": 11.54,
+        "transcript": "I will make no unjust use of what I know. He replied with firmness. I believe you, my Lord.\"",
+        "wer": 0.1579
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 69.19,
+        "mean_flux": 14.56,
         "transcript": "I will make no unjust use of what I know. He replied with firmness. I believe you, my Lord.\"",
         "wer": 0.1579
       }
@@ -738,6 +842,14 @@
         "mean_flux": 0.0,
         "transcript": "Out in the wood stood a nice little fir tree.",
         "wer": 0.1
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "transcript": "Out in the woods stood a nice little fir tree.",
+        "wer": 0.0
       }
     }
   },
@@ -789,6 +901,14 @@
         "effective_w": 0.7187,
         "peak_flux": 5.36,
         "mean_flux": 0.57,
+        "transcript": "But this was what the tree could not bear to hear.",
+        "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 5.09,
+        "mean_flux": 0.75,
         "transcript": "But this was what the tree could not bear to hear.",
         "wer": 0.0
       }
@@ -844,6 +964,14 @@
         "mean_flux": 2.99,
         "transcript": "In autumn the woodcutters always came and felt some of the largest trees.",
         "wer": 0.2143
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 55.77,
+        "mean_flux": 4.54,
+        "transcript": "In autumn the woodcutters always came and felt some of the largest trees.",
+        "wer": 0.2143
       }
     }
   },
@@ -896,6 +1024,14 @@
         "peak_flux": 51.59,
         "mean_flux": 6.22,
         "transcript": "I would feign no if I am destined for so glorious a career. Cry the tree, rejoicing.",
+        "wer": 0.2353
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 79.01,
+        "mean_flux": 10.02,
+        "transcript": "I would feign though if I am destined for so glorious a career. Cry the tree, rejoicing.",
         "wer": 0.2353
       }
     }
@@ -950,6 +1086,14 @@
         "mean_flux": 22.27,
         "transcript": "I am now tall, and my branches spread like the others that were carried off last year. Oh!",
         "wer": 0.0556
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 96.03,
+        "mean_flux": 27.12,
+        "transcript": "I am now tall and my branches spread like the others that were carried off last year. Oh!",
+        "wer": 0.1111
       }
     }
   },
@@ -1003,6 +1147,14 @@
         "mean_flux": 16.57,
         "transcript": "where I in the warm room with all the splendor and magnificence.",
         "wer": 0.1667
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 159.12,
+        "mean_flux": 32.96,
+        "transcript": "Were I in the warm room with all the splendor and magnificence?",
+        "wer": 0.0833
       }
     }
   },
@@ -1054,6 +1206,14 @@
         "effective_w": 0.9479,
         "peak_flux": 88.94,
         "mean_flux": 14.05,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?",
+        "wer": 0.0588
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 91.39,
+        "mean_flux": 17.2,
         "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?",
         "wer": 0.0588
       }
@@ -1109,6 +1269,14 @@
         "mean_flux": 13.21,
         "transcript": "Something better, something still grander must follow. But what?",
         "wer": 0.2
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 64.04,
+        "mean_flux": 9.29,
+        "transcript": "Something better, something still grander must follow. But what?",
+        "wer": 0.2
       }
     }
   },
@@ -1162,6 +1330,14 @@
         "mean_flux": 0.0,
         "transcript": "Rejoice in our presence, said the air and the sunlight.",
         "wer": 0.1
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "transcript": "Rejoice in our presence, sub the air and the sunlight.",
+        "wer": 0.2
       }
     }
   },
@@ -1213,6 +1389,14 @@
         "effective_w": 0.7221,
         "peak_flux": 15.61,
         "mean_flux": 2.16,
+        "transcript": "Rejoice in thy own fresh youth.",
+        "wer": 0.1667
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 14.26,
+        "mean_flux": 3.05,
         "transcript": "Rejoice in thy own fresh youth.",
         "wer": 0.1667
       }
@@ -1268,6 +1452,14 @@
         "mean_flux": 19.43,
         "transcript": "But the tree did not rejoice at all, he grew and grew, and was green both winter and summer.",
         "wer": 0.0526
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 143.2,
+        "mean_flux": 36.31,
+        "transcript": "But the tree did not rejoice at all. He grew and grew and was green both winter and summer.",
+        "wer": 0.1053
       }
     }
   },
@@ -1319,6 +1511,14 @@
         "effective_w": 0.7286,
         "peak_flux": 60.54,
         "mean_flux": 10.15,
+        "transcript": "And towards Christmas, he was one of the first that was cut down.",
+        "wer": 0.0769
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 74.54,
+        "mean_flux": 12.59,
         "transcript": "And towards Christmas, he was one of the first that was cut down.",
         "wer": 0.0769
       }
@@ -1374,6 +1574,14 @@
         "mean_flux": 20.57,
         "transcript": "He well knew that he should never see his dear old comrades, the little bushes and flowers around him. Anymore, perhaps not even the birds!",
         "wer": 0.08
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 158.09,
+        "mean_flux": 29.96,
+        "transcript": "He well knew that he should never see his dear old comrades. The little bushes and flowers around him. Anymore? Perhaps not even the birds!",
+        "wer": 0.12
       }
     }
   },
@@ -1423,6 +1631,14 @@
       "app3_calibrated": {
         "name": "Approach 3 (Calibrated-Z)",
         "effective_w": 0.8507,
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "transcript": "The departure was not at all agreeable.",
+        "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
         "peak_flux": 0.0,
         "mean_flux": 0.0,
         "transcript": "The departure was not at all agreeable.",
@@ -1480,6 +1696,14 @@
         "mean_flux": 14.81,
         "transcript": "The servants, as well as the young ladies, decorated it.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 122.62,
+        "mean_flux": 29.13,
+        "transcript": "The servants, as well as the young ladies, decorated it.",
+        "wer": 0.0
       }
     }
   },
@@ -1531,6 +1755,14 @@
         "effective_w": 0.7382,
         "peak_flux": 71.83,
         "mean_flux": 18.93,
+        "transcript": "Perhaps the other trees from the forest will come to look at me.",
+        "wer": 0.0769
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 103.87,
+        "mean_flux": 30.56,
         "transcript": "Perhaps the other trees from the forest will come to look at me.",
         "wer": 0.0769
       }
@@ -1586,6 +1818,14 @@
         "mean_flux": 12.56,
         "transcript": "Doc cried the young ladies and they quickly put out the fire.",
         "wer": 0.1818
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 73.83,
+        "mean_flux": 15.19,
+        "transcript": "Doc cried the young ladies and they quickly put out the fire",
+        "wer": 0.2727
       }
     }
   },
@@ -1637,6 +1877,14 @@
         "effective_w": 0.7478,
         "peak_flux": 80.7,
         "mean_flux": 18.91,
+        "transcript": "A story cried the children, drawing a little fat man towards the tree.",
+        "wer": 0.0769
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 93.62,
+        "mean_flux": 22.52,
         "transcript": "A story cried the children, drawing a little fat man towards the tree.",
         "wer": 0.0769
       }
@@ -1692,6 +1940,14 @@
         "mean_flux": 17.49,
         "transcript": "Humpty Dumpy fell downstairs and yet he married the princess.",
         "wer": 0.3
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 96.72,
+        "mean_flux": 22.84,
+        "transcript": "Humpy Dumpy fell downstairs and yet he married the princess!",
+        "wer": 0.1
       }
     }
   },
@@ -1745,6 +2001,14 @@
         "mean_flux": 10.97,
         "transcript": "Thought the fir tree, and believed it all, because the man who told the story was so good looking. Well, well!",
         "wer": 0.0476
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 85.14,
+        "mean_flux": 10.32,
+        "transcript": "Thought the fir tree, and believed it all, because the man who told the story was so good looking. Well, well.",
+        "wer": 0.0952
       }
     }
   },
@@ -1798,6 +2062,14 @@
         "mean_flux": 6.59,
         "transcript": "I won't tremble tomorrow, thought the fir tree.",
         "wer": 0.125
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 80.64,
+        "mean_flux": 9.72,
+        "transcript": "I won't tremble tomorrow! Thought the furtry.",
+        "wer": 0.375
       }
     }
   },
@@ -1851,6 +2123,14 @@
         "mean_flux": 0.0,
         "transcript": "And the whole night the tree stood still, and in deep thought.",
         "wer": 0.0833
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "transcript": "And the whole night the tree stood still, and the tooth fell.",
+        "wer": 0.3333
       }
     }
   },
@@ -1903,6 +2183,14 @@
         "peak_flux": 49.39,
         "mean_flux": 4.59,
         "transcript": "Tis now winter out of doors, thought the tree.",
+        "wer": 0.1111
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 72.16,
+        "mean_flux": 6.07,
+        "transcript": "Tis now winter out of doors. Thought the tree.",
         "wer": 0.1111
       }
     }
@@ -1957,6 +2245,14 @@
         "mean_flux": 8.84,
         "transcript": "If it only were not so dark here, and so terribly lonely,",
         "wer": 0.0833
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 72.35,
+        "mean_flux": 12.28,
+        "transcript": "If it only were not so dark here, and so terribly lonely...",
+        "wer": 0.0833
       }
     }
   },
@@ -2008,6 +2304,14 @@
         "effective_w": 0.7664,
         "peak_flux": 116.28,
         "mean_flux": 25.01,
+        "transcript": "They snuffed about the fur tree and rustled among the branches.",
+        "wer": 0.1818
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 155.41,
+        "mean_flux": 34.83,
         "transcript": "They snuffed about the fur tree and rustled among the branches.",
         "wer": 0.1818
       }
@@ -2063,6 +2367,14 @@
         "mean_flux": 0.01,
         "transcript": "I am by no means old,\" said the fir tree.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 3.08,
+        "mean_flux": 0.17,
+        "transcript": "I am by no means old, who said the fir tree.",
+        "wer": 0.2
       }
     }
   },
@@ -2115,6 +2427,14 @@
         "peak_flux": 26.65,
         "mean_flux": 2.3,
         "transcript": "There's many a one considerably older than I am.",
+        "wer": 0.1111
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 13.86,
+        "mean_flux": 1.82,
+        "transcript": "There's many a one considerably older than I am!",
         "wer": 0.1111
       }
     }
@@ -2169,6 +2489,14 @@
         "mean_flux": 1.22,
         "transcript": "\"'I know no such place,' said the tree.\"",
         "wer": 0.375
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 27.16,
+        "mean_flux": 1.84,
+        "transcript": "I know no such place holds at the tree.",
+        "wer": 0.375
       }
     }
   },
@@ -2222,6 +2550,14 @@
         "mean_flux": 11.84,
         "transcript": "And then he told all about his youth, and the little mice had never heard the like before, and they listened and said,",
         "wer": 0.087
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 67.22,
+        "mean_flux": 10.58,
+        "transcript": "And then he told all about his youth, and the little mice had never heard the light before, and they listened and said,",
+        "wer": 0.1304
       }
     }
   },
@@ -2275,6 +2611,14 @@
         "mean_flux": 6.47,
         "transcript": "said the fir tree, thinking over what he had himself related.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 76.24,
+        "mean_flux": 5.09,
+        "transcript": "said the fir tree, thinking over what he had himself related.",
+        "wer": 0.0
       }
     }
   },
@@ -2325,6 +2669,14 @@
         "name": "Approach 3 (Calibrated-Z)",
         "effective_w": 0.8834,
         "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "transcript": "Yes, in reality those were happy times.",
+        "wer": 0.1429
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 0.01,
         "mean_flux": 0.0,
         "transcript": "Yes, in reality those were happy times.",
         "wer": 0.1429
@@ -2381,6 +2733,14 @@
         "mean_flux": 0.0,
         "transcript": "Who is Humpty Dumpy? Ask the mice.",
         "wer": 0.4286
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "transcript": "Who is Humpty Dumpty? Ask the mice.",
+        "wer": 0.4286
       }
     }
   },
@@ -2433,6 +2793,14 @@
         "peak_flux": 67.39,
         "mean_flux": 11.75,
         "transcript": "Don't you know one about bacon and tallow candles? Can't you tell any larger stories?",
+        "wer": 0.1333
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 99.23,
+        "mean_flux": 16.71,
+        "transcript": "Don't you know one about bacon and tallow candles? Can't you tell any louder stories?",
         "wer": 0.1333
       }
     }
@@ -2487,6 +2855,14 @@
         "mean_flux": 19.25,
         "transcript": "Why one morning there came a quantity of people and set to work in the loft?",
         "wer": 0.125
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 107.54,
+        "mean_flux": 27.25,
+        "transcript": "Why, one morning there came a quantity of people and set to work in the law.",
+        "wer": 0.0625
       }
     }
   },
@@ -2540,6 +2916,14 @@
         "mean_flux": 0.0,
         "transcript": "Dot, but it was not the fair tree that they meant.",
         "wer": 0.2
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "transcript": "But it was not the fair tree that they meant.",
+        "wer": 0.1
       }
     }
   },
@@ -2591,6 +2975,14 @@
         "effective_w": 0.7991,
         "peak_flux": 63.32,
         "mean_flux": 8.63,
+        "transcript": "It was in a corner that he lay among weeds and nettles.",
+        "wer": 0.0833
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 55.17,
+        "mean_flux": 5.89,
         "transcript": "It was in a corner that he lay among weeds and nettles.",
         "wer": 0.0833
       }
@@ -2646,6 +3038,14 @@
         "mean_flux": 15.24,
         "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine.",
         "wer": 0.0556
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 99.47,
+        "mean_flux": 18.43,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine.",
+        "wer": 0.0556
       }
     }
   },
@@ -2697,6 +3097,14 @@
         "effective_w": 0.8525,
         "peak_flux": 71.06,
         "mean_flux": 12.55,
+        "transcript": "In the courtyard some of the merry children were playing who had danced at Christmas round the fir tree and were so glad at the sight of him.",
+        "wer": 0.1034
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 100.18,
+        "mean_flux": 16.32,
         "transcript": "In the courtyard some of the merry children were playing who had danced at Christmas round the fir tree and were so glad at the sight of him.",
         "wer": 0.1034
       }
@@ -2752,6 +3160,14 @@
         "mean_flux": 5.34,
         "transcript": "And the gardener's boy chopped the tree into small pieces. There was a whole heap lying there.",
         "wer": 0.0588
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 91.66,
+        "mean_flux": 6.8,
+        "transcript": "And the gardener's boy chopped the tree into small pieces. There was a whole heap lying there.",
+        "wer": 0.0588
       }
     }
   },
@@ -2803,6 +3219,14 @@
         "effective_w": 0.7556,
         "peak_flux": 59.05,
         "mean_flux": 15.45,
+        "transcript": "The wood flamed up splendidly under the large brewing copper, and its sides so deeply!",
+        "wer": 0.1333
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 79.23,
+        "mean_flux": 23.53,
         "transcript": "The wood flamed up splendidly under the large brewing copper, and its sides so deeply!",
         "wer": 0.1333
       }
@@ -2858,6 +3282,14 @@
         "mean_flux": 0.01,
         "transcript": "However, that was over now, e. the tree gone, the story at an end.",
         "wer": 0.1429
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 6.08,
+        "mean_flux": 0.22,
+        "transcript": "However, that was over now, you the tree gone, the story at an end!",
+        "wer": 0.2143
       }
     }
   },
@@ -2909,6 +3341,14 @@
         "effective_w": 0.8375,
         "peak_flux": 71.95,
         "mean_flux": 12.04,
+        "transcript": "The influence with the Timeos has exercised upon posterity is due partly to a misunderstanding.",
+        "wer": 0.0667
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 80.36,
+        "mean_flux": 16.63,
         "transcript": "The influence with the Timeos has exercised upon posterity is due partly to a misunderstanding.",
         "wer": 0.0667
       }
@@ -2964,6 +3404,14 @@
         "mean_flux": 15.54,
         "transcript": "There is no danger of the modern commentators on the timayas falling into the absurdities of the neoplatinists.",
         "wer": 0.1579
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 89.76,
+        "mean_flux": 23.32,
+        "transcript": "There is no danger of the modern commentators on the timios falling into the absurdities of the neoplateness.",
+        "wer": 0.1579
       }
     }
   },
@@ -3017,6 +3465,14 @@
         "mean_flux": 14.22,
         "transcript": "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 74.91,
+        "mean_flux": 14.97,
+        "transcript": "But they have nothing to do with the interpretation of Plato and in spirit they are posed to him.",
+        "wer": 0.1053
       }
     }
   },
@@ -3070,6 +3526,14 @@
         "mean_flux": 10.36,
         "transcript": "Many, if not all the elements of the pre-socratic philosophy are included in the Temaias.",
         "wer": 0.1875
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 63.51,
+        "mean_flux": 15.28,
+        "transcript": "Many, if not all the elements of the presocratic philosophy are included in the Temaias.",
+        "wer": 0.1875
       }
     }
   },
@@ -3121,6 +3585,14 @@
         "effective_w": 0.9147,
         "peak_flux": 77.41,
         "mean_flux": 20.18,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes.",
+        "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 107.9,
+        "mean_flux": 21.31,
         "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes.",
         "wer": 0.0
       }
@@ -3176,6 +3648,14 @@
         "mean_flux": 16.99,
         "transcript": "The style and plan of the Temeos differ greatly from that of any other of the platonic dialogues.",
         "wer": 0.0556
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 101.82,
+        "mean_flux": 24.96,
+        "transcript": "The style and plan of the Timeos, deserve greatly from that of any other of the Platonic dialogue.",
+        "wer": 0.1667
       }
     }
   },
@@ -3229,6 +3709,14 @@
         "mean_flux": 14.28,
         "transcript": "But Plato has not the same mastery over his instrument, which he exhibits in the Fadras or Symposium.",
         "wer": 0.1111
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 106.09,
+        "mean_flux": 20.96,
+        "transcript": "But Plato has not the same mastery over his instrument, which he exhibits in the fadres or symposium.",
+        "wer": 0.1111
       }
     }
   },
@@ -3280,6 +3768,14 @@
         "effective_w": 0.8733,
         "peak_flux": 71.54,
         "mean_flux": 13.03,
+        "transcript": "Nothing can exceed the beauty or art of the introduction, in which he is using words after his accustomed manner.",
+        "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 87.53,
+        "mean_flux": 16.28,
         "transcript": "Nothing can exceed the beauty or art of the introduction, in which he is using words after his accustomed manner.",
         "wer": 0.0
       }
@@ -3335,6 +3831,14 @@
         "mean_flux": 19.0,
         "transcript": "But in the rest of the work the power of language seems to fail him, and the dramatic form is wholly given up.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 135.15,
+        "mean_flux": 25.46,
+        "transcript": "But in the rest of the work the power of language seems to fail him and the dramatic form is wholly given up.",
+        "wer": 0.0435
       }
     }
   },
@@ -3388,6 +3892,14 @@
         "mean_flux": 18.35,
         "transcript": "And hence we find the same sort of clumsiness in the T-Mayus of Plato, which characterizes the philosophical poem of Lucretius.",
         "wer": 0.0952
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 103.85,
+        "mean_flux": 20.97,
+        "transcript": "And hence we find the same sort of clumsiness in the Timaeus of Plato, which characterizes the philosophical poem of Lucretius.",
+        "wer": 0.0476
       }
     }
   },
@@ -3441,6 +3953,14 @@
         "mean_flux": 14.88,
         "transcript": "Plato had not the command of his materials which would have enabled him to produce a perfect work of art.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 74.83,
+        "mean_flux": 20.18,
+        "transcript": "Plato had not the command of his materials, which would have enabled him to produce a perfect work of art.",
+        "wer": 0.05
       }
     }
   },
@@ -3492,6 +4012,14 @@
         "effective_w": 0.9062,
         "peak_flux": 40.73,
         "mean_flux": 2.56,
+        "transcript": "His conduct and presence of mind in this emergence appeared conspicuous.",
+        "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 69.93,
+        "mean_flux": 5.4,
         "transcript": "His conduct and presence of mind in this emergence appeared conspicuous.",
         "wer": 0.0
       }
@@ -3547,6 +4075,14 @@
         "mean_flux": 11.8,
         "transcript": "In short, he becomes a prominent figure in London society. You end, if he is not careful, somebody will say so.",
         "wer": 0.2381
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 52.62,
+        "mean_flux": 11.28,
+        "transcript": "In short, he becomes a prominent figure in London society. He and, if he is not careful, somebody will say so.",
+        "wer": 0.1905
       }
     }
   },
@@ -3598,6 +4134,14 @@
         "effective_w": 0.8233,
         "peak_flux": 51.22,
         "mean_flux": 14.92,
+        "transcript": "But suppose you said, I'm fond of writing, my people always say my letters home are good enough for punch.",
+        "wer": 0.1
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 55.15,
+        "mean_flux": 15.25,
         "transcript": "But suppose you said, I'm fond of writing, my people always say my letters home are good enough for punch.",
         "wer": 0.1
       }
@@ -3653,6 +4197,14 @@
         "mean_flux": 21.78,
         "transcript": "I've got a little idea for a play about a man and a woman and another woman, and you but perhaps I'd better keep the plot a secret for the moment.",
         "wer": 0.0323
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 61.43,
+        "mean_flux": 22.16,
+        "transcript": "I've got a little idea for a play about a man and a woman and another woman, and but perhaps I'd better keep the plot a secret for the moment.",
+        "wer": 0.0323
       }
     }
   },
@@ -3704,6 +4256,14 @@
         "effective_w": 0.8299,
         "peak_flux": 57.27,
         "mean_flux": 8.56,
+        "transcript": "Lend me your ear for 10 minutes and you shall learn just what stagecraft is.",
+        "wer": 0.2
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 85.95,
+        "mean_flux": 13.97,
         "transcript": "Lend me your ear for 10 minutes and you shall learn just what stagecraft is.",
         "wer": 0.2
       }
@@ -3759,6 +4319,14 @@
         "mean_flux": 3.41,
         "transcript": "And I should begin with a short homily on soleloque.",
         "wer": 0.1
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 27.43,
+        "mean_flux": 2.87,
+        "transcript": "and I should begin with a short homily on soliloquy.",
+        "wer": 0.0
       }
     }
   },
@@ -3812,6 +4380,14 @@
         "mean_flux": 17.73,
         "transcript": "And so on, till you get to the end when a filia might say, ah yes, or something non-committal of that sort.",
         "wer": 0.3182
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 94.69,
+        "mean_flux": 23.51,
+        "transcript": "And so on, till you get to the end when a filia might say, Ah yes, or something non-committal of that sort.",
+        "wer": 0.3182
       }
     }
   },
@@ -3863,6 +4439,14 @@
         "effective_w": 0.7975,
         "peak_flux": 69.53,
         "mean_flux": 13.15,
+        "transcript": "This would be an easy way of doing it, but it would not be the best way for the reason that it is too easy to call attention to itself.",
+        "wer": 0.0333
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 75.34,
+        "mean_flux": 13.42,
         "transcript": "This would be an easy way of doing it, but it would not be the best way for the reason that it is too easy to call attention to itself.",
         "wer": 0.0333
       }
@@ -3918,6 +4502,14 @@
         "mean_flux": 8.8,
         "transcript": "In the old badly made play, it was frequently necessary for one of the characters to take the audience into his confidence.",
         "wer": 0.0455
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 55.86,
+        "mean_flux": 8.97,
+        "transcript": "In the old badly made play was frequently necessary for one of the characters to take the audience into his confidence.",
+        "wer": 0.0455
       }
     }
   },
@@ -3971,6 +4563,14 @@
         "mean_flux": 14.07,
         "transcript": "In the modern well-constructed, play he simply rings up an imaginary Confederate and tells him what he is going to do. Could anything be more natural?",
         "wer": 0.0741
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 115.28,
+        "mean_flux": 14.91,
+        "transcript": "In the modern well constructed play he simply rings up an imaginary confederate and tells him what he is going to do. Could anything be more natural?",
+        "wer": 0.0
       }
     }
   },
@@ -4024,6 +4624,14 @@
         "mean_flux": 11.32,
         "transcript": "Double nine two three Elsinore. Double nine yes. Hello is that you Horatio. Hamlet speaking.",
         "wer": 0.5333
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 50.64,
+        "mean_flux": 12.11,
+        "transcript": "Double nine, two, three, Elsinore. Double nine, yes. Hello, is that you, Horatio? Hamlet speaking.",
+        "wer": 0.4
       }
     }
   },
@@ -4077,6 +4685,14 @@
         "mean_flux": 11.49,
         "transcript": "To be or not to be, that is the question whether Tisnobler in the mind to suffer the slings and arrows. What? No. Hamlet speaking.",
         "wer": 0.2222
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 57.51,
+        "mean_flux": 12.04,
+        "transcript": "To be or not to be, that is the question, whether Tisnobler in the mind to suffer the slings and arrows, what no hamlet speaking.",
+        "wer": 0.2593
       }
     }
   },
@@ -4130,6 +4746,14 @@
         "mean_flux": 15.4,
         "transcript": "You gave me double five, I want double nine. Hello, is that you, Horatio? Hamlet speaking.",
         "wer": 0.25
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 52.44,
+        "mean_flux": 13.04,
+        "transcript": "You gave me double five. I want double nine. Hello is that you heard each of you Hamlet speaking",
+        "wer": 0.6875
       }
     }
   },
@@ -4183,6 +4807,14 @@
         "mean_flux": 4.07,
         "transcript": "To be or not to be, that is the question whether tis nobler",
         "wer": 0.1538
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 35.87,
+        "mean_flux": 3.06,
+        "transcript": "To be or not to be, that is the question whether Tis Snowblur",
+        "wer": 0.2308
       }
     }
   },
@@ -4234,6 +4866,14 @@
         "effective_w": 0.9482,
         "peak_flux": 70.59,
         "mean_flux": 11.73,
+        "transcript": "In novels the hero has often pushed his meals away untasted. But no stage hero would do anything so unnatural as this.",
+        "wer": 0.0909
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 64.54,
+        "mean_flux": 9.7,
         "transcript": "In novels the hero has often pushed his meals away untasted. But no stage hero would do anything so unnatural as this.",
         "wer": 0.0909
       }
@@ -4289,6 +4929,14 @@
         "mean_flux": 15.7,
         "transcript": "But it is the cigarette which chiefly has brought the modern drama to its present state of perfection.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 72.15,
+        "mean_flux": 16.94,
+        "transcript": "But it is the cigarette which chiefly has brought the modern drama to its present state of perfection.",
+        "wer": 0.0
       }
     }
   },
@@ -4342,6 +4990,14 @@
         "mean_flux": 20.69,
         "transcript": "Its origin was small a germ, an insignificant seed, hardly to be thought of as likely to arouse opposition.",
         "wer": 0.05
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 129.09,
+        "mean_flux": 27.44,
+        "transcript": "Its origin was small, a germ, an insignificant seed, hardly to be thought of as likely to arouse opposition.",
+        "wer": 0.1
       }
     }
   },
@@ -4395,6 +5051,14 @@
         "mean_flux": 16.08,
         "transcript": "Instead of but six regularly affiliated members and at most two score of adherents, the organization numbers today many hundred thousand souls.",
         "wer": 0.0455
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 81.08,
+        "mean_flux": 13.31,
+        "transcript": "Instead of but six regularly affiliated members, and at most two score of adherence, the organization numbers today, many hundred thousand souls.",
+        "wer": 0.0909
       }
     }
   },
@@ -4448,6 +5112,14 @@
         "mean_flux": 4.72,
         "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly.",
         "wer": 0.1053
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 40.52,
+        "mean_flux": 5.05,
+        "transcript": "To the fervent latter-day saint, a temple is not simply a church building, a house for religious assembly.",
+        "wer": 0.1053
       }
     }
   },
@@ -4499,6 +5171,14 @@
         "effective_w": 0.734,
         "peak_flux": 83.73,
         "mean_flux": 24.38,
+        "transcript": "Their sufferings have never yet been fitly chronicled by human scribe.",
+        "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 96.66,
+        "mean_flux": 29.07,
         "transcript": "Their sufferings have never yet been fitly chronicled by human scribe.",
         "wer": 0.0
       }
@@ -4554,6 +5234,14 @@
         "mean_flux": 16.11,
         "transcript": "Oh, what a record to read, what a picture to gaze upon, how awful the fact.",
         "wer": 0.1875
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 120.64,
+        "mean_flux": 17.22,
+        "transcript": "Oh, what a record to read. What a picture to gaze upon. How awful the fact!",
+        "wer": 0.125
       }
     }
   },
@@ -4607,6 +5295,14 @@
         "mean_flux": 12.54,
         "transcript": "The poor little things, cried Cynthia, think of them having been turned to the wall all these years.",
         "wer": 0.2222
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 39.17,
+        "mean_flux": 13.46,
+        "transcript": "The poor little things, cried Cynthia. Think of them having been turned to the wall all these years.",
+        "wer": 0.1667
       }
     }
   },
@@ -4660,6 +5356,14 @@
         "mean_flux": 31.67,
         "transcript": "But Joyce had not been listening. All at once she put down her candle on the table and faced her companion.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 89.98,
+        "mean_flux": 34.71,
+        "transcript": "But Joyce had not been listening, all at once she put down her candle on the table and faced her companion.",
+        "wer": 0.0476
       }
     }
   },
@@ -4711,6 +5415,14 @@
         "effective_w": 0.7198,
         "peak_flux": 67.79,
         "mean_flux": 16.62,
+        "transcript": "The twin brother did something she didn't like, and she turned his picture to the wall.",
+        "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 76.62,
+        "mean_flux": 21.1,
         "transcript": "The twin brother did something she didn't like, and she turned his picture to the wall.",
         "wer": 0.0
       }
@@ -4766,6 +5478,14 @@
         "mean_flux": 17.42,
         "transcript": "Hers happened to be in the same frame too, but she evidently didn't care about that.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 87.96,
+        "mean_flux": 18.07,
+        "transcript": "Hers happened to be in the same frame too, but she evidently didn't care about that.",
+        "wer": 0.0
       }
     }
   },
@@ -4819,6 +5539,14 @@
         "mean_flux": 18.14,
         "transcript": "About that, I thought we were stumped again when I first saw that picture, but it's been of some use after all.",
         "wer": 0.2
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 194.46,
+        "mean_flux": 42.15,
+        "transcript": "I thought we were stumped again when I first saw that picture, but it's been a some use after all.",
+        "wer": 0.15
       }
     }
   },
@@ -4872,6 +5600,14 @@
         "mean_flux": 21.86,
         "transcript": "They worry me terribly, and besides I'd like to see what this lovely furniture looks like without such quantities of dust all over it. Good scheme, see why in!",
         "wer": 0.2963
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 84.22,
+        "mean_flux": 16.84,
+        "transcript": "They worry me terribly. And besides, I'd like to see what this lovely furniture looks like without such quantities of dust all over it. Good scheme, see you again!",
+        "wer": 0.2222
       }
     }
   },
@@ -4923,6 +5659,14 @@
         "effective_w": 0.7188,
         "peak_flux": 60.22,
         "mean_flux": 18.75,
+        "transcript": "About that. We'll come in here this afternoon with old clothes on and have a regular house cleaning.",
+        "wer": 0.25
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 72.99,
+        "mean_flux": 21.44,
         "transcript": "About that. We'll come in here this afternoon with old clothes on and have a regular house cleaning.",
         "wer": 0.25
       }
@@ -4978,6 +5722,14 @@
         "mean_flux": 10.04,
         "transcript": "It can't hurt anything, I'm sure, for we won't disturb things at all.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 64.86,
+        "mean_flux": 10.17,
+        "transcript": "It can't hurt anything. I'm sure for we won't disturb things at all.",
+        "wer": 0.1538
       }
     }
   },
@@ -5031,6 +5783,14 @@
         "mean_flux": 8.98,
         "transcript": "This thought, however, did not enter the heads of the enthusiastic pair.",
         "wer": 0.0
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 64.17,
+        "mean_flux": 15.95,
+        "transcript": "This thought however did not enter the heads of the enthusiastic pair.",
+        "wer": 0.1667
       }
     }
   },
@@ -5084,6 +5844,14 @@
         "mean_flux": 20.02,
         "transcript": "The lore proved too much for him, and he came sporting after it, as friskily as a young kitten, much to Cynthia's delight when she caught sight of him.",
         "wer": 0.0345
+      },
+      "app4_pure_tangent": {
+        "name": "Approach 4 (Pure Tangent)",
+        "effective_w": 1.0,
+        "peak_flux": 97.75,
+        "mean_flux": 27.24,
+        "transcript": "The lore proved too much for him, and he came sporting after it, as Friscoly is a young kitten much to Cynthia's delight when she caught sight of him.",
+        "wer": 0.1379
       }
     }
   }
