@@ -148,10 +148,11 @@ PILLAR 5: Retrospective Oracle Superiority
 
 | Condition ($N=12$ each) | Fixed $t=0.05$ Fail (%) | Fixed $t=0.10$ Fail (%) | Fixed $t=0.15$ Fail (%) | Fixed $t=0.25$ Fail (%) | Fixed $t=0.40$ Fail (%) | Condition Diagnosis |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **`Clean Control`** | 50.0% (6/12) | 8.3% (1/12) | 0.0% (0/12) | 0.0% (0/12) | 41.7% (5/12) | $t=0.15$ earliest tested with 0% fail; $t=0.40$ overburns |
-| **`Duration Minus15`** | 58.3% (7/12) | 16.7% (2/12) | 0.0% (0/12) | 0.0% (0/12) | 25.0% (3/12) | $t=0.15$ earliest tested fixed schedule with 0% fail |
-| **`Duration Plus15`** | 33.3% (4/12) | 33.3% (4/12) | 8.3% (1/12) | 0.0% (0/12) | 25.0% (3/12) | $t=0.25$ most reliable; $t=0.15$ acceptable risk |
-| **`Noisy Prompt 15dB`** | 100.0% (12/12) | 83.3% (10/12) | 58.3% (7/12) | 0.0% (0/12) | 25.0% (3/12) | $t=0.25$ most reliable tested schedule; $t=0.40$ not universally safe |
+| **`Clean Control`** | 41.7% (5/12) | 8.3% (1/12) | 0.0% (0/12) | 0.0% (0/12) | 25.0% (3/12) | $t=0.15$ earliest tested with 0% fail; $t=0.40$ overburns |
+| **`Duration Minus15`** | 58.3% (7/12) | 16.7% (2/12) | 0.0% (0/12) | 0.0% (0/12) | 16.7% (2/12) | $t=0.15$ earliest tested fixed schedule with 0% fail |
+| **`Duration Plus15`** | 25.0% (3/12) | 16.7% (2/12) | 0.0% (0/12) | 0.0% (0/12) | 8.3% (1/12) | $t=0.15$ earliest tested fixed schedule with 0% fail |
+| **`Noisy Prompt 15dB`** | 91.7% (11/12) | 66.7% (8/12) | 41.7% (5/12) | 0.0% (0/12) | 33.3% (4/12) | $t=0.25$ most reliable tested schedule; $t=0.40$ not universally safe |
+| **TOTAL (Table 1)** | **54.2% (26/48)** | **27.1% (13/48)** | **10.4% (5/48)** | **0.0% (0/48)** | **20.8% (10/48)** | **Exact Column Sum Alignment with Table 1** |
 
 ---
 
