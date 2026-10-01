@@ -13,19 +13,17 @@ To avoid any confusion between the **earlier exploratory experiments** and the *
 ```
 DMOSpeech 2 Workspace
 │
-├── 📁 PROVEN_PROBLEM/                ◄─── 🏆 [PHASE 2: CURRENT OFFICIAL THESIS WORK]
-│   │                                      The 240-run Handover Timing Problem &
-│   │                                      The Calibrated Hybrid Scheduler (π*) Solution
+├── 📁 FINAL_THESIS_DELIVERABLES/     ◄─── 🏆 [CURRENT OFFICIAL THESIS PACKAGE]
+│   │                                      • The 240-run Handover Timing Problem
+│   │                                      • The Calibrated Hybrid Scheduler (π*) Solution
+│   │                                      • Master Consolidated Report, Raw Telemetry & 240 Audio Files
 │   │
-│   ├── 📁 REPORTS/
-│   │   ├── 📁 FINAL/                 ◄─── THE SINGLE MASTER REPORT FOR DEFENSE / CONSULTATION
-│   │   │   └── THESIS_PROBLEM_AND_SOLUTION_CONSOLIDATED_MASTER_REPORT.md
-│   │   ├── 📁 Problem/               ◄─── The 240-run diagnostic proof report
-│   │   │   └── FIXED_HANDOVER_TIMING_EMPIRICAL_PROOF.md
-│   │   └── 📁 Solution/              ◄─── The adaptive scheduler benchmark report
-│   │       └── ADAPTIVE_SCHEDULER_EVALUATION_REPORT.md
-│   ├── 📁 results/                   ◄─── Raw verified telemetry JSONs (240 runs + 48 hybrid)
-│   └── 📁 audio_problem_proof/       ◄─── The 240 synthesized .wav audio files
+│   ├── 🏆 THESIS_PROBLEM_AND_SOLUTION_CONSOLIDATED_MASTER_REPORT.md  (The single master report)
+│   ├── 📄 README.md                                                  (Executive guide & scorecard)
+│   ├── 📁 reports/                                                   (Problem & solution reports)
+│   ├── 📁 metrics_and_telemetry/                                     (JSONs: 240 runs + 48 hybrid)
+│   ├── 📁 code/                                                      (Clean python scripts)
+│   └── 📁 audio_problem_proof/                                       (240 synthesized .wav audio files)
 │
 │ ═════════════════════════════════════════════════════════════════════════════════════════
 │
@@ -38,27 +36,24 @@ DMOSpeech 2 Workspace
 
 ## 🟢 PHASE 2: Current Official Thesis Work (USE THIS FOLDER)
 
-**Folder Location:** [`PROVEN_PROBLEM/`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/PROVEN_PROBLEM/)
+**Folder Location:** [`FINAL_THESIS_DELIVERABLES/`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/FINAL_THESIS_DELIVERABLES/)
 
 This folder contains **all the active, proven, and defendable research** for your thesis proposal and defense:
 
 ### 1. The Master Combined Report (Problem + Solution)
-* 📄 **[`PROVEN_PROBLEM/REPORTS/FINAL/THESIS_PROBLEM_AND_SOLUTION_CONSOLIDATED_MASTER_REPORT.md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/PROVEN_PROBLEM/REPORTS/FINAL/THESIS_PROBLEM_AND_SOLUTION_CONSOLIDATED_MASTER_REPORT.md)**  
+* 📄 **[`FINAL_THESIS_DELIVERABLES/THESIS_PROBLEM_AND_SOLUTION_CONSOLIDATED_MASTER_REPORT.md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/FINAL_THESIS_DELIVERABLES/THESIS_PROBLEM_AND_SOLUTION_CONSOLIDATED_MASTER_REPORT.md)**  
   * **What it contains:** Combines the empirical problem proof (240 generation runs across 12 speakers and 4 conditions) with the methodological solution (Calibrated Hybrid Scheduler $\pi^*$), full comparative evaluation tables, paired Wilcoxon statistical tests ($W=0.0, p=0.000244$), and thesis defense statements.
-  * **Status:** Fully audited, 100% matched to raw data, pushed to GitHub commit `a244f2a`.
 
-### 2. Standalone Problem Proof Report
-* 📄 **[`PROVEN_PROBLEM/REPORTS/Problem/FIXED_HANDOVER_TIMING_EMPIRICAL_PROOF.md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/PROVEN_PROBLEM/REPORTS/Problem/FIXED_HANDOVER_TIMING_EMPIRICAL_PROOF.md)**  
+### 2. Standalone Reports
+* 📄 **[`FINAL_THESIS_DELIVERABLES/reports/FIXED_HANDOVER_TIMING_EMPIRICAL_PROOF.md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/FINAL_THESIS_DELIVERABLES/reports/FIXED_HANDOVER_TIMING_EMPIRICAL_PROOF.md)**  
   * Focuses purely on proving that a fixed switching point ($t=0.25$) is inefficient on clean speech (wasting 37.2% compute) and dangerous on noisy speech if switched too early.
-
-### 3. Standalone Solution Evaluation Report
-* 📄 **[`PROVEN_PROBLEM/REPORTS/Solution/ADAPTIVE_SCHEDULER_EVALUATION_REPORT.md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/PROVEN_PROBLEM/REPORTS/Solution/ADAPTIVE_SCHEDULER_EVALUATION_REPORT.md)**  
+* 📄 **[`FINAL_THESIS_DELIVERABLES/reports/ADAPTIVE_SCHEDULER_EVALUATION_REPORT.md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/FINAL_THESIS_DELIVERABLES/reports/ADAPTIVE_SCHEDULER_EVALUATION_REPORT.md)**  
   * Focuses on the formulation, algorithms, and 48-instance evaluation of the Pre-Diffusion Input-Feature Scheduler and the Calibrated Safety-Guarded Hybrid Scheduler ($\pi^*$).
 
-### 4. Raw Underlying Telemetry Data
-* 📊 **[`PROVEN_PROBLEM/results/fixed_handover_timing_proof.json`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/PROVEN_PROBLEM/results/fixed_handover_timing_proof.json)** (186 KB) — All 240 diagnostic runs.
-* 📊 **[`PROVEN_PROBLEM/results/calibrated_hybrid_scheduler_telemetry.json`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/PROVEN_PROBLEM/results/calibrated_hybrid_scheduler_telemetry.json)** (47 KB) — All 48 hybrid scheduler evaluations.
-* 🎵 **[`PROVEN_PROBLEM/audio_problem_proof/`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/PROVEN_PROBLEM/audio_problem_proof/)** — The 240 actual generated `.wav` audio files.
+### 3. Raw Underlying Telemetry Data
+* 📊 **[`FINAL_THESIS_DELIVERABLES/metrics_and_telemetry/fixed_handover_timing_proof.json`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/FINAL_THESIS_DELIVERABLES/metrics_and_telemetry/fixed_handover_timing_proof.json)** (186 KB) — All 240 diagnostic runs.
+* 📊 **[`FINAL_THESIS_DELIVERABLES/metrics_and_telemetry/calibrated_hybrid_scheduler_telemetry.json`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/FINAL_THESIS_DELIVERABLES/metrics_and_telemetry/calibrated_hybrid_scheduler_telemetry.json)** (47 KB) — All 48 hybrid scheduler evaluations.
+* 🎵 **[`FINAL_THESIS_DELIVERABLES/audio_problem_proof/`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/FINAL_THESIS_DELIVERABLES/audio_problem_proof/)** — The 240 actual generated `.wav` audio files.
 
 ---
 
