@@ -1,0 +1,257 @@
+[
+  {
+    "sample_id": 1,
+    "speaker_id": "4992",
+    "gen_text": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke.",
+    "diag": {
+      "norm_teacher": 571.6779,
+      "norm_delta": 373.5809,
+      "norm_student": 397.42,
+      "ratio_shock": 0.6535,
+      "boundary_frame": 336,
+      "alpha_proj": -0.0002
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 76.64,
+        "mean_flux": 15.25,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      },
+      "orig_tags": {
+        "peak_flux": 75.56,
+        "mean_flux": 15.11,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      },
+      "app1_ortho": {
+        "peak_flux": 70.46,
+        "mean_flux": 15.07,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      },
+      "app1_normed": {
+        "peak_flux": 75.5,
+        "mean_flux": 15.01,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      },
+      "ba_ortho_raw": {
+        "peak_flux": 76.5,
+        "mean_flux": 15.25,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      },
+      "ba_ortho_normed": {
+        "peak_flux": 76.41,
+        "mean_flux": 15.2,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      }
+    }
+  },
+  {
+    "sample_id": 20,
+    "speaker_id": "672",
+    "gen_text": "Yes; then something better, something still grander, will surely follow, or wherefore should they thus ornament me?",
+    "diag": {
+      "norm_teacher": 651.2197,
+      "norm_delta": 322.5623,
+      "norm_student": 554.4153,
+      "ratio_shock": 0.4953,
+      "boundary_frame": 254,
+      "alpha_proj": -0.0
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 91.17,
+        "mean_flux": 14.0,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      },
+      "orig_tags": {
+        "peak_flux": 83.62,
+        "mean_flux": 14.1,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      },
+      "app1_ortho": {
+        "peak_flux": 77.5,
+        "mean_flux": 13.65,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      },
+      "app1_normed": {
+        "peak_flux": 77.66,
+        "mean_flux": 13.53,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      },
+      "ba_ortho_raw": {
+        "peak_flux": 91.32,
+        "mean_flux": 14.05,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      },
+      "ba_ortho_normed": {
+        "peak_flux": 91.4,
+        "mean_flux": 14.05,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      }
+    }
+  },
+  {
+    "sample_id": 50,
+    "speaker_id": "672",
+    "gen_text": "The golden star of tinsel was still on the top of the Tree, and glittered in the sunshine.",
+    "diag": {
+      "norm_teacher": 567.0289,
+      "norm_delta": 354.3285,
+      "norm_student": 408.4091,
+      "ratio_shock": 0.6249,
+      "boundary_frame": 380,
+      "alpha_proj": -0.0002
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 76.21,
+        "mean_flux": 13.8,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      },
+      "orig_tags": {
+        "peak_flux": 84.69,
+        "mean_flux": 14.49,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      },
+      "app1_ortho": {
+        "peak_flux": 96.86,
+        "mean_flux": 16.35,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      },
+      "app1_normed": {
+        "peak_flux": 94.73,
+        "mean_flux": 16.58,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      },
+      "ba_ortho_raw": {
+        "peak_flux": 76.6,
+        "mean_flux": 13.84,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      },
+      "ba_ortho_normed": {
+        "peak_flux": 77.13,
+        "mean_flux": 13.89,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      }
+    }
+  },
+  {
+    "sample_id": 59,
+    "speaker_id": "2961",
+    "gen_text": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes.",
+    "diag": {
+      "norm_teacher": 625.7292,
+      "norm_delta": 332.9181,
+      "norm_student": 497.5179,
+      "ratio_shock": 0.532,
+      "boundary_frame": 277,
+      "alpha_proj": -0.0001
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 85.29,
+        "mean_flux": 20.24,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      },
+      "orig_tags": {
+        "peak_flux": 83.6,
+        "mean_flux": 20.12,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      },
+      "app1_ortho": {
+        "peak_flux": 106.05,
+        "mean_flux": 20.29,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      },
+      "app1_normed": {
+        "peak_flux": 110.88,
+        "mean_flux": 20.57,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      },
+      "ba_ortho_raw": {
+        "peak_flux": 85.04,
+        "mean_flux": 20.26,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      },
+      "ba_ortho_normed": {
+        "peak_flux": 85.33,
+        "mean_flux": 20.26,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      }
+    }
+  },
+  {
+    "sample_id": 88,
+    "speaker_id": "4077",
+    "gen_text": "To the fervent Latter day Saint, a temple is not simply a church building, a house for religious assembly.",
+    "diag": {
+      "norm_teacher": 612.4961,
+      "norm_delta": 368.4348,
+      "norm_student": 459.761,
+      "ratio_shock": 0.6015,
+      "boundary_frame": 368,
+      "alpha_proj": -0.0001
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 59.01,
+        "mean_flux": 5.27,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      },
+      "orig_tags": {
+        "peak_flux": 55.37,
+        "mean_flux": 4.78,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      },
+      "app1_ortho": {
+        "peak_flux": 39.46,
+        "mean_flux": 4.35,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      },
+      "app1_normed": {
+        "peak_flux": 39.99,
+        "mean_flux": 4.41,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      },
+      "ba_ortho_raw": {
+        "peak_flux": 59.06,
+        "mean_flux": 5.27,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      },
+      "ba_ortho_normed": {
+        "peak_flux": 59.05,
+        "mean_flux": 5.27,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      }
+    }
+  }
+]

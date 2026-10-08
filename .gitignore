@@ -12,6 +12,7 @@ IMPLEMENTATION_PLAN/LITERATURE_REVIEW/
 *.tar.gz
 *.tar
 *.zip
+data/
 BENCHMARK_100_SAMPLES/data/*.tar.gz
 BENCHMARK_100_SAMPLES/data/*.zip
 

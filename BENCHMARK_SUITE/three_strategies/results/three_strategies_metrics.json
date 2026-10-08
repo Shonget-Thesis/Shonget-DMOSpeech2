@@ -1,0 +1,5402 @@
+[
+  {
+    "sample_id": 10,
+    "speaker_id": "4992",
+    "ref_text": "She is wild to know how to do things.",
+    "gen_text": "What can you mean by that, Miss Woodley? You talk mysteriously.",
+    "diag": {
+      "ratio_shock": 0.4637,
+      "tanh_shock": 0.4331,
+      "w_tags": 0.8874,
+      "w_par_aor": 0.9567,
+      "w_perp_aor": 0.5134,
+      "gate_sgsi": 0.4331,
+      "w_par_sgsi_onset": 0.8874,
+      "w_perp_sgsi_onset": 0.355
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 104.48,
+        "mean_flux": 9.91,
+        "wer": 0.0,
+        "transcript": "What can you mean by that, Miss Woodley? You talk mysteriously."
+      },
+      "orig_tags": {
+        "peak_flux": 99.49,
+        "mean_flux": 9.79,
+        "wer": 0.0,
+        "transcript": "What can you mean by that, Miss Woodley? You talk mysteriously."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 92.85,
+        "mean_flux": 9.28,
+        "wer": 0.0,
+        "transcript": "What can you mean by that, Miss Woodley? You talk mysteriously."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 92.4,
+        "mean_flux": 9.29,
+        "wer": 0.0,
+        "transcript": "What can you mean by that, Miss Woodley? You talk mysteriously."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 96.04,
+        "mean_flux": 9.37,
+        "wer": 0.0,
+        "transcript": "What can you mean by that, Miss Woodley? You talk mysteriously."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 100.19,
+        "mean_flux": 9.54,
+        "wer": 0.0,
+        "transcript": "What can you mean by that, Miss Woodley? You talk mysteriously."
+      }
+    }
+  },
+  {
+    "sample_id": 19,
+    "speaker_id": "672",
+    "ref_text": "cried the young ladies, and they quickly put out the fire.",
+    "gen_text": "Were I in the warm room with all the splendor and magnificence!",
+    "diag": {
+      "ratio_shock": 0.66,
+      "tanh_shock": 0.5784,
+      "w_tags": 0.8496,
+      "w_par_aor": 0.9422,
+      "w_perp_aor": 0.4843,
+      "gate_sgsi": 0.5784,
+      "w_par_sgsi_onset": 0.8496,
+      "w_perp_sgsi_onset": 0.2974
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 72.48,
+        "mean_flux": 15.22,
+        "wer": 0.1667,
+        "transcript": "where I in the warm room with all the splendor and magnificence."
+      },
+      "orig_tags": {
+        "peak_flux": 67.06,
+        "mean_flux": 15.91,
+        "wer": 0.1667,
+        "transcript": "where I in the warm room with all the splendor and magnificence."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 102.47,
+        "mean_flux": 18.64,
+        "wer": 0.1667,
+        "transcript": "where I in the warm room with all the splendor and magnificence."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 94.38,
+        "mean_flux": 18.12,
+        "wer": 0.1667,
+        "transcript": "where I in the warm room with all the splendor and magnificence."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 68.7,
+        "mean_flux": 16.62,
+        "wer": 0.1667,
+        "transcript": "where I in the warm room with all the splendor and magnificence."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 65.23,
+        "mean_flux": 14.84,
+        "wer": 0.1667,
+        "transcript": "where I in the warm room with all the splendor and magnificence."
+      }
+    }
+  },
+  {
+    "sample_id": 20,
+    "speaker_id": "672",
+    "ref_text": "And he leaned against the wall lost in reverie.",
+    "gen_text": "Yes; then something better, something still grander, will surely follow, or wherefore should they thus ornament me?",
+    "diag": {
+      "ratio_shock": 0.4953,
+      "tanh_shock": 0.4584,
+      "w_tags": 0.8808,
+      "w_par_aor": 0.9542,
+      "w_perp_aor": 0.5083,
+      "gate_sgsi": 0.4584,
+      "w_par_sgsi_onset": 0.8808,
+      "w_perp_sgsi_onset": 0.3083
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 91.17,
+        "mean_flux": 14.0,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      },
+      "orig_tags": {
+        "peak_flux": 83.62,
+        "mean_flux": 14.1,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 73.15,
+        "mean_flux": 13.71,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 72.84,
+        "mean_flux": 13.71,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 75.03,
+        "mean_flux": 13.83,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 89.23,
+        "mean_flux": 13.98,
+        "wer": 0.0588,
+        "transcript": "Yes, then something better, something still grander, will surely follow, or wherefore should they thus ornament me?"
+      }
+    }
+  },
+  {
+    "sample_id": 33,
+    "speaker_id": "672",
+    "ref_text": "And he leaned against the wall lost in reverie.",
+    "gen_text": "thought the Fir Tree, and believed it all, because the man who told the story was so good looking. \"Well, well!",
+    "diag": {
+      "ratio_shock": 0.4476,
+      "tanh_shock": 0.4199,
+      "w_tags": 0.8908,
+      "w_par_aor": 0.958,
+      "w_perp_aor": 0.516,
+      "gate_sgsi": 0.4199,
+      "w_par_sgsi_onset": 0.8908,
+      "w_perp_sgsi_onset": 0.3563
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 76.75,
+        "mean_flux": 11.24,
+        "wer": 0.0476,
+        "transcript": "Thought the fir tree, and believed it all, because the man who told the story was so good looking. Well, well!"
+      },
+      "orig_tags": {
+        "peak_flux": 76.81,
+        "mean_flux": 11.02,
+        "wer": 0.0476,
+        "transcript": "Thought the fir tree, and believed it all, because the man who told the story was so good looking. Well, well!"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 94.62,
+        "mean_flux": 11.9,
+        "wer": 0.0952,
+        "transcript": "Thought the fir tree, and believed it all, because the man who told the story was so good looking. Well, well."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 92.52,
+        "mean_flux": 11.71,
+        "wer": 0.0952,
+        "transcript": "Thought the fir tree, and believed it all, because the man who told the story was so good looking. Well, well."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 98.09,
+        "mean_flux": 11.49,
+        "wer": 0.0476,
+        "transcript": "Thought the fir tree, and believed it all, because the man who told the story was so good looking. Well, well!"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 84.27,
+        "mean_flux": 11.33,
+        "wer": 0.0476,
+        "transcript": "Thought the fir tree, and believed it all, because the man who told the story was so good looking. Well, well!"
+      }
+    }
+  },
+  {
+    "sample_id": 37,
+    "speaker_id": "672",
+    "ref_text": "I know no such place,\" said the Tree.",
+    "gen_text": "If it only were not so dark here, and so terribly lonely!",
+    "diag": {
+      "ratio_shock": 0.645,
+      "tanh_shock": 0.5683,
+      "w_tags": 0.8523,
+      "w_par_aor": 0.9432,
+      "w_perp_aor": 0.4863,
+      "gate_sgsi": 0.5683,
+      "w_par_sgsi_onset": 0.8523,
+      "w_perp_sgsi_onset": 0.3409
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 44.27,
+        "mean_flux": 8.5,
+        "wer": 0.0833,
+        "transcript": "If it only were not so dark here, and so terribly lonely,"
+      },
+      "orig_tags": {
+        "peak_flux": 40.74,
+        "mean_flux": 8.04,
+        "wer": 0.0833,
+        "transcript": "If it only were not so dark here, and so terribly lonely,"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 62.46,
+        "mean_flux": 9.55,
+        "wer": 0.1667,
+        "transcript": "If it only were not so dark here and so terribly lonely."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 61.8,
+        "mean_flux": 9.51,
+        "wer": 0.1667,
+        "transcript": "If it only were not so dark here and so terribly lonely."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 54.4,
+        "mean_flux": 9.01,
+        "wer": 0.0833,
+        "transcript": "If it only were not so dark here, and so terribly lonely,"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 47.88,
+        "mean_flux": 8.05,
+        "wer": 0.1667,
+        "transcript": "If it only were not so dark here and so terribly lonely."
+      }
+    }
+  },
+  {
+    "sample_id": 51,
+    "speaker_id": "672",
+    "ref_text": "and towards Christmas he was one of the first that was cut down.",
+    "gen_text": "In the court yard some of the merry children were playing who had danced at Christmas round the Fir Tree, and were so glad at the sight of him.",
+    "diag": {
+      "ratio_shock": 0.581,
+      "tanh_shock": 0.5234,
+      "w_tags": 0.8639,
+      "w_par_aor": 0.9477,
+      "w_perp_aor": 0.4953,
+      "gate_sgsi": 0.5234,
+      "w_par_sgsi_onset": 0.8639,
+      "w_perp_sgsi_onset": 0.3024
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 71.11,
+        "mean_flux": 12.15,
+        "wer": 0.1034,
+        "transcript": "In the courtyard some of the merry children were playing who had danced at Christmas round the fir tree and were so glad at the sight of him."
+      },
+      "orig_tags": {
+        "peak_flux": 70.3,
+        "mean_flux": 12.5,
+        "wer": 0.1034,
+        "transcript": "In the courtyard some of the merry children were playing who had danced at Christmas round the fir tree and were so glad at the sight of him."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 88.49,
+        "mean_flux": 14.02,
+        "wer": 0.1034,
+        "transcript": "In the courtyard some of the merry children were playing who had danced at Christmas round the fir tree and were so glad at the sight of him."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 88.24,
+        "mean_flux": 14.03,
+        "wer": 0.1034,
+        "transcript": "In the courtyard some of the merry children were playing who had danced at Christmas round the fir tree and were so glad at the sight of him."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 86.81,
+        "mean_flux": 13.39,
+        "wer": 0.1034,
+        "transcript": "In the courtyard some of the merry children were playing who had danced at Christmas round the fir tree and were so glad at the sight of him."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 70.45,
+        "mean_flux": 11.91,
+        "wer": 0.1034,
+        "transcript": "In the courtyard some of the merry children were playing who had danced at Christmas round the fir tree and were so glad at the sight of him."
+      }
+    }
+  },
+  {
+    "sample_id": 59,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes.",
+    "diag": {
+      "ratio_shock": 0.532,
+      "tanh_shock": 0.4869,
+      "w_tags": 0.8734,
+      "w_par_aor": 0.9513,
+      "w_perp_aor": 0.5026,
+      "gate_sgsi": 0.4869,
+      "w_par_sgsi_onset": 0.8734,
+      "w_perp_sgsi_onset": 0.3057
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 85.29,
+        "mean_flux": 20.24,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      },
+      "orig_tags": {
+        "peak_flux": 83.6,
+        "mean_flux": 20.12,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 110.9,
+        "mean_flux": 20.46,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 110.98,
+        "mean_flux": 20.35,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 111.33,
+        "mean_flux": 20.07,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 94.09,
+        "mean_flux": 20.08,
+        "wer": 0.0,
+        "transcript": "The ideas also remain, but they have become types in nature, forms of men, animals, birds, fishes."
+      }
+    }
+  },
+  {
+    "sample_id": 79,
+    "speaker_id": "7176",
+    "ref_text": "Straightway the hawk glided from his perch and darted after him.",
+    "gen_text": "In the modern well constructed play he simply rings up an imaginary confederate and tells him what he is going to do. Could anything be more natural?",
+    "diag": {
+      "ratio_shock": 0.5076,
+      "tanh_shock": 0.4681,
+      "w_tags": 0.8783,
+      "w_par_aor": 0.9532,
+      "w_perp_aor": 0.5064,
+      "gate_sgsi": 0.4681,
+      "w_par_sgsi_onset": 0.8783,
+      "w_perp_sgsi_onset": 0.3074
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 84.66,
+        "mean_flux": 14.33,
+        "wer": 0.0741,
+        "transcript": "In the modern well-constructed, play he simply rings up an imaginary Confederate and tells him what he is going to do. Could anything be more natural?"
+      },
+      "orig_tags": {
+        "peak_flux": 81.0,
+        "mean_flux": 13.71,
+        "wer": 0.0741,
+        "transcript": "In the modern well-constructed, play he simply rings up an imaginary Confederate and tells him what he is going to do. Could anything be more natural?"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 104.32,
+        "mean_flux": 15.04,
+        "wer": 0.037,
+        "transcript": "In the modern well constructed, play he simply rings up an imaginary Confederate and tells him what he is going to do. Could anything be more natural?"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 101.83,
+        "mean_flux": 14.91,
+        "wer": 0.037,
+        "transcript": "In the modern well constructed, play he simply rings up an imaginary Confederate and tells him what he is going to do. Could anything be more natural?"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 93.04,
+        "mean_flux": 14.6,
+        "wer": 0.0741,
+        "transcript": "In the modern well-constructed, play he simply rings up an imaginary confederate and tells him what he is going to do. Could anything be more natural?"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 83.33,
+        "mean_flux": 14.19,
+        "wer": 0.0741,
+        "transcript": "In the modern well-constructed, play he simply rings up an imaginary Confederate and tells him what he is going to do. Could anything be more natural?"
+      }
+    }
+  },
+  {
+    "sample_id": 88,
+    "speaker_id": "4077",
+    "ref_text": "Their sufferings have never yet been fitly chronicled by human scribe.",
+    "gen_text": "To the fervent Latter day Saint, a temple is not simply a church building, a house for religious assembly.",
+    "diag": {
+      "ratio_shock": 0.6015,
+      "tanh_shock": 0.5381,
+      "w_tags": 0.8601,
+      "w_par_aor": 0.9462,
+      "w_perp_aor": 0.4924,
+      "gate_sgsi": 0.5381,
+      "w_par_sgsi_onset": 0.8601,
+      "w_perp_sgsi_onset": 0.301
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 59.01,
+        "mean_flux": 5.27,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      },
+      "orig_tags": {
+        "peak_flux": 55.37,
+        "mean_flux": 4.78,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 35.76,
+        "mean_flux": 3.63,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 36.37,
+        "mean_flux": 3.64,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 40.32,
+        "mean_flux": 3.64,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 57.31,
+        "mean_flux": 5.16,
+        "wer": 0.1053,
+        "transcript": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly."
+      }
+    }
+  },
+  {
+    "sample_id": 98,
+    "speaker_id": "6930",
+    "ref_text": "What in the world is that\"? queried Joyce.",
+    "gen_text": "It can't hurt anything, I'm sure, for we won't disturb things at all.",
+    "diag": {
+      "ratio_shock": 0.6447,
+      "tanh_shock": 0.5681,
+      "w_tags": 0.8523,
+      "w_par_aor": 0.9432,
+      "w_perp_aor": 0.4864,
+      "gate_sgsi": 0.5681,
+      "w_par_sgsi_onset": 0.8523,
+      "w_perp_sgsi_onset": 0.2983
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 70.44,
+        "mean_flux": 11.05,
+        "wer": 0.0,
+        "transcript": "It can't hurt anything, I'm sure, for we won't disturb things at all."
+      },
+      "orig_tags": {
+        "peak_flux": 68.63,
+        "mean_flux": 10.39,
+        "wer": 0.0,
+        "transcript": "It can't hurt anything, I'm sure, for we won't disturb things at all."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 57.76,
+        "mean_flux": 9.08,
+        "wer": 0.0769,
+        "transcript": "It can't hurt anything, I'm sure, but we won't disturb things at all."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 57.13,
+        "mean_flux": 9.0,
+        "wer": 0.0769,
+        "transcript": "It can't hurt anything, I'm sure, but we won't disturb things at all."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 60.32,
+        "mean_flux": 9.53,
+        "wer": 0.0,
+        "transcript": "It can't hurt anything, I'm sure, for we won't disturb things at all."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 70.33,
+        "mean_flux": 11.15,
+        "wer": 0.0,
+        "transcript": "It can't hurt anything, I'm sure, for we won't disturb things at all."
+      }
+    }
+  },
+  {
+    "sample_id": 1,
+    "speaker_id": "4992",
+    "ref_text": "exclaimed Bill Harmon to his wife as they went through the lighted hall.",
+    "gen_text": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke.",
+    "diag": {
+      "ratio_shock": 0.6535,
+      "tanh_shock": 0.574,
+      "w_tags": 0.8508,
+      "w_par_aor": 0.9426,
+      "w_perp_aor": 0.4852,
+      "gate_sgsi": 0.574,
+      "w_par_sgsi_onset": 0.8508,
+      "w_perp_sgsi_onset": 0.3403
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 76.64,
+        "mean_flux": 15.25,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      },
+      "orig_tags": {
+        "peak_flux": 75.56,
+        "mean_flux": 15.11,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 76.74,
+        "mean_flux": 14.74,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 76.34,
+        "mean_flux": 14.72,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 74.94,
+        "mean_flux": 14.62,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 73.8,
+        "mean_flux": 14.56,
+        "wer": 0.0,
+        "transcript": "But the more forgetfulness had then prevailed, the more powerful was the force of remembrance when she awoke."
+      }
+    }
+  },
+  {
+    "sample_id": 2,
+    "speaker_id": "4992",
+    "ref_text": "Miss Milner's health is not good\"!",
+    "gen_text": "So there is to me\"! added Sandford, with a sarcastic sneer.",
+    "diag": {
+      "ratio_shock": 0.5705,
+      "tanh_shock": 0.5158,
+      "w_tags": 0.8659,
+      "w_par_aor": 0.9484,
+      "w_perp_aor": 0.4968,
+      "gate_sgsi": 0.5158,
+      "w_par_sgsi_onset": 0.8659,
+      "w_perp_sgsi_onset": 0.3464
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 53.04,
+        "mean_flux": 11.18,
+        "wer": 0.2727,
+        "transcript": "So there is to me added sand forward with a sarcastic sneer."
+      },
+      "orig_tags": {
+        "peak_flux": 57.08,
+        "mean_flux": 11.69,
+        "wer": 0.2727,
+        "transcript": "So there is to me added sand forward with a sarcastic sneer."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 62.99,
+        "mean_flux": 12.74,
+        "wer": 0.1818,
+        "transcript": "So there is to me added sandford with a sarcastic sneer."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 63.0,
+        "mean_flux": 12.75,
+        "wer": 0.1818,
+        "transcript": "So there is to me added sandford with a sarcastic sneer."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 58.1,
+        "mean_flux": 12.22,
+        "wer": 0.3636,
+        "transcript": "So there is to me added sand for it with a sarcastic sneer."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 59.5,
+        "mean_flux": 11.63,
+        "wer": 0.2727,
+        "transcript": "So there is to me added sand ford with a sarcastic sneer."
+      }
+    }
+  },
+  {
+    "sample_id": 3,
+    "speaker_id": "4992",
+    "ref_text": "Is she not afraid that I will thwart her inclinations\"?",
+    "gen_text": "And yet you must own her behaviour has warranted them has it not been in this particular incoherent and unaccountable\"?",
+    "diag": {
+      "ratio_shock": 0.6785,
+      "tanh_shock": 0.5905,
+      "w_tags": 0.8465,
+      "w_par_aor": 0.9409,
+      "w_perp_aor": 0.4819,
+      "gate_sgsi": 0.5905,
+      "w_par_sgsi_onset": 0.8465,
+      "w_perp_sgsi_onset": 0.3386
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 64.34,
+        "mean_flux": 18.53,
+        "wer": 0.1,
+        "transcript": "And yet you must own her behavior has warranted them has it not been in this particular incoherent and unaccountable."
+      },
+      "orig_tags": {
+        "peak_flux": 63.14,
+        "mean_flux": 17.83,
+        "wer": 0.1,
+        "transcript": "And yet you must own her behavior has warranted them has it not been in this particular incoherent and unaccountable."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 67.54,
+        "mean_flux": 17.29,
+        "wer": 0.1,
+        "transcript": "And yet you must own her behavior has warranted them has it not been in this particular incoherent and unaccountable."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 66.2,
+        "mean_flux": 17.19,
+        "wer": 0.1,
+        "transcript": "And yet you must own her behavior has warranted them has it not been in this particular incoherent and unaccountable."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 63.35,
+        "mean_flux": 18.39,
+        "wer": 0.1,
+        "transcript": "And yet you must own her behavior has warranted them has it not been in this particular incoherent and unaccountable."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 61.62,
+        "mean_flux": 17.69,
+        "wer": 0.1,
+        "transcript": "And yet you must own her behavior has warranted them has it not been in this particular incoherent and unaccountable."
+      }
+    }
+  },
+  {
+    "sample_id": 4,
+    "speaker_id": "4992",
+    "ref_text": "Is she not afraid that I will thwart her inclinations\"?",
+    "gen_text": "To ask any more questions of you, I believe, would be unfair.",
+    "diag": {
+      "ratio_shock": 0.5798,
+      "tanh_shock": 0.5225,
+      "w_tags": 0.8641,
+      "w_par_aor": 0.9477,
+      "w_perp_aor": 0.4955,
+      "gate_sgsi": 0.5225,
+      "w_par_sgsi_onset": 0.8641,
+      "w_perp_sgsi_onset": 0.3457
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 38.27,
+        "mean_flux": 4.9,
+        "wer": 0.0,
+        "transcript": "To ask any more questions of you, I believe, would be unfair."
+      },
+      "orig_tags": {
+        "peak_flux": 37.63,
+        "mean_flux": 4.57,
+        "wer": 0.0,
+        "transcript": "To ask any more questions of you, I believe, would be unfair."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 38.59,
+        "mean_flux": 4.26,
+        "wer": 0.0,
+        "transcript": "To ask any more questions of you, I believe, would be unfair."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 38.71,
+        "mean_flux": 4.25,
+        "wer": 0.0,
+        "transcript": "To ask any more questions of you, I believe, would be unfair."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 39.47,
+        "mean_flux": 4.29,
+        "wer": 0.0,
+        "transcript": "To ask any more questions of you, I believe, would be unfair."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 38.28,
+        "mean_flux": 4.39,
+        "wer": 0.0,
+        "transcript": "To ask any more questions of you, I believe, would be unfair."
+      }
+    }
+  },
+  {
+    "sample_id": 5,
+    "speaker_id": "4992",
+    "ref_text": "She is wild to know how to do things.",
+    "gen_text": "He seemed to wait for her reply; but as she made none, he proceeded-",
+    "diag": {
+      "ratio_shock": 0.5462,
+      "tanh_shock": 0.4977,
+      "w_tags": 0.8706,
+      "w_par_aor": 0.9502,
+      "w_perp_aor": 0.5005,
+      "gate_sgsi": 0.4977,
+      "w_par_sgsi_onset": 0.8706,
+      "w_perp_sgsi_onset": 0.3482
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 40.95,
+        "mean_flux": 7.27,
+        "wer": 0.1429,
+        "transcript": "He seemed to wait for her reply, but as she made none, he proceeded."
+      },
+      "orig_tags": {
+        "peak_flux": 40.84,
+        "mean_flux": 6.93,
+        "wer": 0.1429,
+        "transcript": "He seemed to wait for her reply, but as she made none, he proceeded."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 39.64,
+        "mean_flux": 6.84,
+        "wer": 0.1429,
+        "transcript": "He seemed to wait for her reply, but as she made none, he proceeded."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 39.74,
+        "mean_flux": 6.84,
+        "wer": 0.1429,
+        "transcript": "He seemed to wait for her reply, but as she made none, he proceeded."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 38.43,
+        "mean_flux": 6.72,
+        "wer": 0.1429,
+        "transcript": "He seemed to wait for her reply, but as she made none, he proceeded."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 43.15,
+        "mean_flux": 6.63,
+        "wer": 0.1429,
+        "transcript": "He seemed to wait for her reply, but as she made none, he proceeded."
+      }
+    }
+  },
+  {
+    "sample_id": 6,
+    "speaker_id": "4992",
+    "ref_text": "They couldn't run nor move; they're just pasteboard\".",
+    "gen_text": "Oh! my Lord,\" cried Miss Woodley, with a most forcible accent, \" You are the last person on earth she would pardon me for entrusting\".",
+    "diag": {
+      "ratio_shock": 0.5377,
+      "tanh_shock": 0.4912,
+      "w_tags": 0.8723,
+      "w_par_aor": 0.9509,
+      "w_perp_aor": 0.5018,
+      "gate_sgsi": 0.4912,
+      "w_par_sgsi_onset": 0.8723,
+      "w_perp_sgsi_onset": 0.3489
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 102.09,
+        "mean_flux": 17.62,
+        "wer": 0.24,
+        "transcript": "Oh, my Lord, cried Miss Woodley, with the most forcible accent. You are the last person on earth she would pardon me for entrusting."
+      },
+      "orig_tags": {
+        "peak_flux": 93.64,
+        "mean_flux": 17.41,
+        "wer": 0.2,
+        "transcript": "Oh, my Lord, cried Miss Woodley, with a most forcible accent. You are the last person on earth she would pardon me for entrusting."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 96.12,
+        "mean_flux": 17.34,
+        "wer": 0.24,
+        "transcript": "Oh, my Lord, cried Miss Woodley with a most forcible accent. You are the last person on earth she would pardon me for entrusting."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 96.11,
+        "mean_flux": 17.36,
+        "wer": 0.24,
+        "transcript": "Oh, my Lord, cried Miss Woodley with a most forcible accent. You are the last person on earth she would pardon me for entrusting."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 94.5,
+        "mean_flux": 17.11,
+        "wer": 0.24,
+        "transcript": "Oh, my Lord, cried Miss Woodley with a most forcible accent. You are the last person on earth she would pardon me for entrusting."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 92.17,
+        "mean_flux": 17.25,
+        "wer": 0.24,
+        "transcript": "Oh, my Lord, cried Miss Woodley with a most forcible accent. You are the last person on earth she would pardon me for entrusting."
+      }
+    }
+  },
+  {
+    "sample_id": 7,
+    "speaker_id": "4992",
+    "ref_text": "Done? He ain't done a thing he'd oughter sence he was born.",
+    "gen_text": "But in such a case, Miss Milner's election of a husband shall not direct mine.",
+    "diag": {
+      "ratio_shock": 0.6679,
+      "tanh_shock": 0.5836,
+      "w_tags": 0.8483,
+      "w_par_aor": 0.9416,
+      "w_perp_aor": 0.4833,
+      "gate_sgsi": 0.5836,
+      "w_par_sgsi_onset": 0.8483,
+      "w_perp_sgsi_onset": 0.3393
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 71.8,
+        "mean_flux": 13.4,
+        "wer": 0.0,
+        "transcript": "But in such a case, Miss Milner's election of a husband shall not direct mine."
+      },
+      "orig_tags": {
+        "peak_flux": 71.11,
+        "mean_flux": 12.98,
+        "wer": 0.0,
+        "transcript": "But in such a case, Miss Milner's election of a husband shall not direct mine."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 74.81,
+        "mean_flux": 11.53,
+        "wer": 0.0,
+        "transcript": "But in such a case, Miss Milner's election of a husband shall not direct mine."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 69.41,
+        "mean_flux": 11.3,
+        "wer": 0.0,
+        "transcript": "But in such a case, Miss Milner's election of a husband shall not direct mine."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 64.76,
+        "mean_flux": 11.35,
+        "wer": 0.0,
+        "transcript": "But in such a case, Miss Milner's election of a husband shall not direct mine."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 70.38,
+        "mean_flux": 11.89,
+        "wer": 0.0,
+        "transcript": "But in such a case, Miss Milner's election of a husband shall not direct mine."
+      }
+    }
+  },
+  {
+    "sample_id": 8,
+    "speaker_id": "4992",
+    "ref_text": "She is wild to know how to do things.",
+    "gen_text": "If she does not know how to estimate her own value, I do.",
+    "diag": {
+      "ratio_shock": 0.5929,
+      "tanh_shock": 0.5319,
+      "w_tags": 0.8617,
+      "w_par_aor": 0.9468,
+      "w_perp_aor": 0.4936,
+      "gate_sgsi": 0.5319,
+      "w_par_sgsi_onset": 0.8617,
+      "w_perp_sgsi_onset": 0.3447
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 44.79,
+        "mean_flux": 4.69,
+        "wer": 0.0769,
+        "transcript": "If she does not know how to estimate her own value I do."
+      },
+      "orig_tags": {
+        "peak_flux": 44.5,
+        "mean_flux": 4.7,
+        "wer": 0.0769,
+        "transcript": "If she does not know how to estimate her own value I do."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 42.08,
+        "mean_flux": 4.5,
+        "wer": 0.0769,
+        "transcript": "If she does not know how to estimate her own value I do."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 42.3,
+        "mean_flux": 4.51,
+        "wer": 0.0769,
+        "transcript": "If she does not know how to estimate her own value I do."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 43.58,
+        "mean_flux": 4.63,
+        "wer": 0.0769,
+        "transcript": "If she does not know how to estimate her own value I do."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 43.81,
+        "mean_flux": 4.55,
+        "wer": 0.0769,
+        "transcript": "If she does not know how to estimate her own value I do."
+      }
+    }
+  },
+  {
+    "sample_id": 9,
+    "speaker_id": "4992",
+    "ref_text": "Burn, fire, burn! Flicker, flicker, flame!",
+    "gen_text": "My Lord, Miss Milner's taste is not a depraved one; it is but too refined\".",
+    "diag": {
+      "ratio_shock": 0.5546,
+      "tanh_shock": 0.504,
+      "w_tags": 0.869,
+      "w_par_aor": 0.9496,
+      "w_perp_aor": 0.4992,
+      "gate_sgsi": 0.504,
+      "w_par_sgsi_onset": 0.869,
+      "w_perp_sgsi_onset": 0.3476
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 0.46,
+        "mean_flux": 0.03,
+        "wer": 0.2,
+        "transcript": "My Lord Miss Milner's taste is not a depraved one. It is but too refined."
+      },
+      "orig_tags": {
+        "peak_flux": 0.49,
+        "mean_flux": 0.03,
+        "wer": 0.1333,
+        "transcript": "My Lord, Miss Milner's taste is not a depraved one. It is but too refined."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 0.56,
+        "mean_flux": 0.03,
+        "wer": 0.1333,
+        "transcript": "My Lord, Miss Milner's taste is not a depraved one. It is but too refined."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 0.59,
+        "mean_flux": 0.03,
+        "wer": 0.1333,
+        "transcript": "My Lord, Miss Milner's taste is not a depraved one. It is but too refined."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 0.55,
+        "mean_flux": 0.03,
+        "wer": 0.1333,
+        "transcript": "My Lord, Miss Milner's taste is not a depraved one. It is but too refined."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 0.5,
+        "mean_flux": 0.03,
+        "wer": 0.1333,
+        "transcript": "My Lord, Miss Milner's taste is not a depraved one. It is but too refined."
+      }
+    }
+  },
+  {
+    "sample_id": 11,
+    "speaker_id": "4992",
+    "ref_text": "She is wild to know how to do things.",
+    "gen_text": "Again he searched his own thoughts; nor ineffectually as before.",
+    "diag": {
+      "ratio_shock": 0.5647,
+      "tanh_shock": 0.5115,
+      "w_tags": 0.867,
+      "w_par_aor": 0.9489,
+      "w_perp_aor": 0.4977,
+      "gate_sgsi": 0.5115,
+      "w_par_sgsi_onset": 0.867,
+      "w_perp_sgsi_onset": 0.3468
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 49.52,
+        "mean_flux": 8.52,
+        "wer": 0.2,
+        "transcript": "Again, he searched his own thoughts, nor ineffectually as before."
+      },
+      "orig_tags": {
+        "peak_flux": 50.47,
+        "mean_flux": 8.63,
+        "wer": 0.2,
+        "transcript": "Again, he searched his own thoughts, nor ineffectually as before."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 63.3,
+        "mean_flux": 8.68,
+        "wer": 0.2,
+        "transcript": "Again, he searched his own thoughts, nor ineffectually as before."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 58.07,
+        "mean_flux": 8.6,
+        "wer": 0.2,
+        "transcript": "Again, he searched his own thoughts, nor ineffectually as before."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 52.45,
+        "mean_flux": 9.04,
+        "wer": 0.2,
+        "transcript": "Again, he searched his own thoughts, nor ineffectually as before."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 57.36,
+        "mean_flux": 8.9,
+        "wer": 0.2,
+        "transcript": "Again, he searched his own thoughts, nor ineffectually as before."
+      }
+    }
+  },
+  {
+    "sample_id": 12,
+    "speaker_id": "4992",
+    "ref_text": "To ask any more questions of you, I believe, would be unfair.",
+    "gen_text": "To relieve her from both, he laid his hand with force upon his heart, and said, \"Do you believe me\"?",
+    "diag": {
+      "ratio_shock": 0.5245,
+      "tanh_shock": 0.4812,
+      "w_tags": 0.8749,
+      "w_par_aor": 0.9519,
+      "w_perp_aor": 0.5038,
+      "gate_sgsi": 0.4812,
+      "w_par_sgsi_onset": 0.8749,
+      "w_perp_sgsi_onset": 0.35
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 39.07,
+        "mean_flux": 11.56,
+        "wer": 0.15,
+        "transcript": "To relieve her from both, he laid his hand with force upon his heart and said, Do you believe me?"
+      },
+      "orig_tags": {
+        "peak_flux": 40.51,
+        "mean_flux": 11.46,
+        "wer": 0.15,
+        "transcript": "To relieve her from both, he laid his hand with force upon his heart and said, Do you believe me?"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 44.19,
+        "mean_flux": 11.66,
+        "wer": 0.15,
+        "transcript": "To relieve her from both, he laid his hand with force upon his heart and said, Do you believe me?"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 43.74,
+        "mean_flux": 11.65,
+        "wer": 0.15,
+        "transcript": "To relieve her from both, he laid his hand with force upon his heart and said, Do you believe me?"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 38.91,
+        "mean_flux": 11.35,
+        "wer": 0.15,
+        "transcript": "To relieve her from both, he laid his hand with force upon his heart and said, Do you believe me?"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 39.18,
+        "mean_flux": 11.24,
+        "wer": 0.15,
+        "transcript": "To relieve her from both, he laid his hand with force upon his heart and said, Do you believe me?"
+      }
+    }
+  },
+  {
+    "sample_id": 13,
+    "speaker_id": "4992",
+    "ref_text": "Again he searched his own thoughts; nor ineffectually as before.",
+    "gen_text": "I will make no unjust use of what I know,\" he replied with firmness. \"I believe you, my Lord\".",
+    "diag": {
+      "ratio_shock": 0.5308,
+      "tanh_shock": 0.486,
+      "w_tags": 0.8737,
+      "w_par_aor": 0.9514,
+      "w_perp_aor": 0.5028,
+      "gate_sgsi": 0.486,
+      "w_par_sgsi_onset": 0.8737,
+      "w_perp_sgsi_onset": 0.3495
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 61.13,
+        "mean_flux": 11.6,
+        "wer": 0.1579,
+        "transcript": "I will make no unjust use of what I know. He replied with firmness. I believe you, my Lord.\""
+      },
+      "orig_tags": {
+        "peak_flux": 60.28,
+        "mean_flux": 11.55,
+        "wer": 0.1579,
+        "transcript": "I will make no unjust use of what I know. He replied with firmness. I believe you, my Lord.\""
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 67.58,
+        "mean_flux": 11.2,
+        "wer": 0.1579,
+        "transcript": "I will make no unjust use of what I know. He replied with firmness. I believe you, my Lord.\""
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 67.57,
+        "mean_flux": 11.22,
+        "wer": 0.1579,
+        "transcript": "I will make no unjust use of what I know. He replied with firmness. I believe you, my Lord.\""
+      },
+      "strat3_seam_window": {
+        "peak_flux": 65.78,
+        "mean_flux": 10.88,
+        "wer": 0.1579,
+        "transcript": "I will make no unjust use of what I know. He replied with firmness. I believe you, my Lord.\""
+      },
+      "strat4_sgsi": {
+        "peak_flux": 62.28,
+        "mean_flux": 11.15,
+        "wer": 0.1579,
+        "transcript": "I will make no unjust use of what I know. He replied with firmness. I believe you, my Lord.\""
+      }
+    }
+  },
+  {
+    "sample_id": 14,
+    "speaker_id": "672",
+    "ref_text": "Oh, that made him so angry!",
+    "gen_text": "Out in the woods stood a nice little Fir Tree.",
+    "diag": {
+      "ratio_shock": 0.4861,
+      "tanh_shock": 0.4511,
+      "w_tags": 0.8827,
+      "w_par_aor": 0.9549,
+      "w_perp_aor": 0.5098,
+      "gate_sgsi": 0.4511,
+      "w_par_sgsi_onset": 0.8827,
+      "w_perp_sgsi_onset": 0.3531
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1,
+        "transcript": "Out in the wood stood a nice little fir tree."
+      },
+      "orig_tags": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1,
+        "transcript": "Out in the wood stood a nice little fir tree."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "Out in the woods stood a nice little fir tree."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "Out in the woods stood a nice little fir tree."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "Out in the woods stood a nice little fir tree."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "Out in the woods stood a nice little fir tree."
+      }
+    }
+  },
+  {
+    "sample_id": 15,
+    "speaker_id": "672",
+    "ref_text": "How it will shine this evening\"!",
+    "gen_text": "But this was what the Tree could not bear to hear.",
+    "diag": {
+      "ratio_shock": 0.6846,
+      "tanh_shock": 0.5945,
+      "w_tags": 0.8454,
+      "w_par_aor": 0.9406,
+      "w_perp_aor": 0.4811,
+      "gate_sgsi": 0.5945,
+      "w_par_sgsi_onset": 0.8454,
+      "w_perp_sgsi_onset": 0.3382
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 3.1,
+        "mean_flux": 0.43,
+        "wer": 0.0,
+        "transcript": "But this was what the tree could not bear to hear."
+      },
+      "orig_tags": {
+        "peak_flux": 4.73,
+        "mean_flux": 0.5,
+        "wer": 0.0,
+        "transcript": "But this was what the tree could not bear to hear."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 6.1,
+        "mean_flux": 0.62,
+        "wer": 0.0,
+        "transcript": "But this was what the tree could not bear to hear."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 6.06,
+        "mean_flux": 0.66,
+        "wer": 0.0,
+        "transcript": "But this was what the tree could not bear to hear."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 4.47,
+        "mean_flux": 0.52,
+        "wer": 0.0,
+        "transcript": "But this was what the tree could not bear to hear."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 3.89,
+        "mean_flux": 0.46,
+        "wer": 0.0,
+        "transcript": "But this was what the tree could not bear to hear."
+      }
+    }
+  },
+  {
+    "sample_id": 16,
+    "speaker_id": "672",
+    "ref_text": "Out in the woods stood a nice little Fir Tree.",
+    "gen_text": "In autumn the wood cutters always came and felled some of the largest trees.",
+    "diag": {
+      "ratio_shock": 0.5966,
+      "tanh_shock": 0.5346,
+      "w_tags": 0.861,
+      "w_par_aor": 0.9465,
+      "w_perp_aor": 0.4931,
+      "gate_sgsi": 0.5346,
+      "w_par_sgsi_onset": 0.861,
+      "w_perp_sgsi_onset": 0.3444
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 25.7,
+        "mean_flux": 2.97,
+        "wer": 0.2143,
+        "transcript": "In autumn the woodcutters always came and felt some of the largest trees."
+      },
+      "orig_tags": {
+        "peak_flux": 27.17,
+        "mean_flux": 2.98,
+        "wer": 0.2143,
+        "transcript": "In autumn the woodcutters always came and felt some of the largest trees."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 30.69,
+        "mean_flux": 3.15,
+        "wer": 0.1429,
+        "transcript": "In autumn the woodcutters always came and felled some of the largest trees."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 30.57,
+        "mean_flux": 3.14,
+        "wer": 0.1429,
+        "transcript": "In autumn the woodcutters always came and felled some of the largest trees."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 28.7,
+        "mean_flux": 3.05,
+        "wer": 0.1429,
+        "transcript": "In autumn the woodcutters always came and felled some of the largest trees."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 27.92,
+        "mean_flux": 2.97,
+        "wer": 0.1429,
+        "transcript": "In autumn the woodcutters always came and felled some of the largest trees."
+      }
+    }
+  },
+  {
+    "sample_id": 17,
+    "speaker_id": "672",
+    "ref_text": "Out in the woods stood a nice little Fir Tree.",
+    "gen_text": "I would fain know if I am destined for so glorious a career,\" cried the Tree, rejoicing.",
+    "diag": {
+      "ratio_shock": 0.5237,
+      "tanh_shock": 0.4805,
+      "w_tags": 0.8751,
+      "w_par_aor": 0.9519,
+      "w_perp_aor": 0.5039,
+      "gate_sgsi": 0.4805,
+      "w_par_sgsi_onset": 0.8751,
+      "w_perp_sgsi_onset": 0.35
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 51.32,
+        "mean_flux": 6.24,
+        "wer": 0.2353,
+        "transcript": "I would feign though if I am destined for so glorious a career. Cry the tree, rejoicing."
+      },
+      "orig_tags": {
+        "peak_flux": 51.6,
+        "mean_flux": 6.21,
+        "wer": 0.2353,
+        "transcript": "I would feign no if I am destined for so glorious a career. Cry the tree, rejoicing."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 52.22,
+        "mean_flux": 6.41,
+        "wer": 0.1765,
+        "transcript": "I would feign know if I am destined for so glorious a career. Cry the tree, rejoicing."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 52.12,
+        "mean_flux": 6.41,
+        "wer": 0.1765,
+        "transcript": "I would feign know if I am destined for so glorious a career. Cry the tree, rejoicing."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 51.96,
+        "mean_flux": 6.23,
+        "wer": 0.1765,
+        "transcript": "I would feign know if I am destined for so glorious a career. Cry the tree, rejoicing."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 50.88,
+        "mean_flux": 6.09,
+        "wer": 0.2353,
+        "transcript": "I would feign though if I am destined for so glorious a career. Cry the tree, rejoicing."
+      }
+    }
+  },
+  {
+    "sample_id": 18,
+    "speaker_id": "672",
+    "ref_text": "How it will shine this evening\"!",
+    "gen_text": "I am now tall, and my branches spread like the others that were carried off last year! Oh!",
+    "diag": {
+      "ratio_shock": 0.6388,
+      "tanh_shock": 0.5641,
+      "w_tags": 0.8533,
+      "w_par_aor": 0.9436,
+      "w_perp_aor": 0.4872,
+      "gate_sgsi": 0.5641,
+      "w_par_sgsi_onset": 0.8533,
+      "w_perp_sgsi_onset": 0.3413
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 87.81,
+        "mean_flux": 22.24,
+        "wer": 0.0556,
+        "transcript": "I am now tall, and my branches spread like the others that were carried off last year. Oh!"
+      },
+      "orig_tags": {
+        "peak_flux": 86.87,
+        "mean_flux": 21.79,
+        "wer": 0.0556,
+        "transcript": "I am now tall, and my branches spread like the others that were carried off last year. Oh!"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 84.58,
+        "mean_flux": 23.41,
+        "wer": 0.0556,
+        "transcript": "I am now tall, and my branches spread like the others that were carried off last year. Oh!"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 84.59,
+        "mean_flux": 23.14,
+        "wer": 0.0556,
+        "transcript": "I am now tall, and my branches spread like the others that were carried off last year. Oh!"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 83.18,
+        "mean_flux": 22.55,
+        "wer": 0.0556,
+        "transcript": "I am now tall, and my branches spread like the others that were carried off last year. Oh!"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 82.69,
+        "mean_flux": 22.41,
+        "wer": 0.0556,
+        "transcript": "I am now tall, and my branches spread like the others that were carried off last year. Oh!"
+      }
+    }
+  },
+  {
+    "sample_id": 21,
+    "speaker_id": "672",
+    "ref_text": "In the morning the servant and the housemaid came in.",
+    "gen_text": "Something better, something still grander must follow - but what?",
+    "diag": {
+      "ratio_shock": 0.5962,
+      "tanh_shock": 0.5344,
+      "w_tags": 0.8611,
+      "w_par_aor": 0.9466,
+      "w_perp_aor": 0.4931,
+      "gate_sgsi": 0.5344,
+      "w_par_sgsi_onset": 0.8611,
+      "w_perp_sgsi_onset": 0.3444
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 78.04,
+        "mean_flux": 14.1,
+        "wer": 0.2,
+        "transcript": "Something better, something still grander must follow. But what?"
+      },
+      "orig_tags": {
+        "peak_flux": 76.0,
+        "mean_flux": 13.34,
+        "wer": 0.2,
+        "transcript": "Something better, something still grander must follow. But what?"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 66.19,
+        "mean_flux": 10.98,
+        "wer": 0.2,
+        "transcript": "Something better, something still grander must follow. But what?"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 66.3,
+        "mean_flux": 11.03,
+        "wer": 0.2,
+        "transcript": "Something better, something still grander must follow. But what?"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 67.28,
+        "mean_flux": 11.77,
+        "wer": 0.2,
+        "transcript": "Something better, something still grander must follow. But what?"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 68.83,
+        "mean_flux": 12.25,
+        "wer": 0.2,
+        "transcript": "Something better, something still grander must follow. But what?"
+      }
+    }
+  },
+  {
+    "sample_id": 22,
+    "speaker_id": "672",
+    "ref_text": "Out in the woods stood a nice little Fir Tree.",
+    "gen_text": "Rejoice in our presence\"! said the Air and the Sunlight.",
+    "diag": {
+      "ratio_shock": 0.5553,
+      "tanh_shock": 0.5045,
+      "w_tags": 0.8688,
+      "w_par_aor": 0.9496,
+      "w_perp_aor": 0.4991,
+      "gate_sgsi": 0.5045,
+      "w_par_sgsi_onset": 0.8688,
+      "w_perp_sgsi_onset": 0.3475
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1,
+        "transcript": "Rejoice in our presence, said the air and the sunlight."
+      },
+      "orig_tags": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1,
+        "transcript": "Rejoice in our presence, said the air and the sunlight."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1,
+        "transcript": "Rejoice in our presence,\" said the air and the sunlight."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1,
+        "transcript": "Rejoice in our presence,\" said the air and the sunlight."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1,
+        "transcript": "Rejoice in our presence,\" said the air and the sunlight."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1,
+        "transcript": "Rejoice in our presence, said the air and the sunlight."
+      }
+    }
+  },
+  {
+    "sample_id": 23,
+    "speaker_id": "672",
+    "ref_text": "How kind man is, after all!",
+    "gen_text": "Rejoice in thy own fresh youth\"!",
+    "diag": {
+      "ratio_shock": 0.681,
+      "tanh_shock": 0.5922,
+      "w_tags": 0.846,
+      "w_par_aor": 0.9408,
+      "w_perp_aor": 0.4816,
+      "gate_sgsi": 0.5922,
+      "w_par_sgsi_onset": 0.846,
+      "w_perp_sgsi_onset": 0.3384
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 14.65,
+        "mean_flux": 2.12,
+        "wer": 0.1667,
+        "transcript": "Rejoice in thy own fresh youth."
+      },
+      "orig_tags": {
+        "peak_flux": 13.49,
+        "mean_flux": 2.12,
+        "wer": 0.1667,
+        "transcript": "Rejoice in thy own fresh youth."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 14.76,
+        "mean_flux": 1.89,
+        "wer": 0.1667,
+        "transcript": "Rejoice in thy own fresh youth."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 14.65,
+        "mean_flux": 1.9,
+        "wer": 0.1667,
+        "transcript": "Rejoice in thy own fresh youth."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 16.23,
+        "mean_flux": 2.05,
+        "wer": 0.1667,
+        "transcript": "Rejoice in thy own fresh youth."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 15.25,
+        "mean_flux": 2.11,
+        "wer": 0.1667,
+        "transcript": "Rejoice in thy own fresh youth."
+      }
+    }
+  },
+  {
+    "sample_id": 24,
+    "speaker_id": "672",
+    "ref_text": "They were so extremely curious.",
+    "gen_text": "But the Tree did not rejoice at all; he grew and grew, and was green both winter and summer.",
+    "diag": {
+      "ratio_shock": 0.6206,
+      "tanh_shock": 0.5516,
+      "w_tags": 0.8566,
+      "w_par_aor": 0.9448,
+      "w_perp_aor": 0.4897,
+      "gate_sgsi": 0.5516,
+      "w_par_sgsi_onset": 0.8566,
+      "w_perp_sgsi_onset": 0.3426
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 71.72,
+        "mean_flux": 18.49,
+        "wer": 0.0526,
+        "transcript": "But the tree did not rejoice at all. He grew and grew, and was green both winter and summer."
+      },
+      "orig_tags": {
+        "peak_flux": 74.09,
+        "mean_flux": 19.16,
+        "wer": 0.0526,
+        "transcript": "But the tree did not rejoice at all. He grew and grew, and was green both winter and summer."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 77.52,
+        "mean_flux": 22.71,
+        "wer": 0.0526,
+        "transcript": "But the tree did not rejoice at all, he grew and grew, and was green both winter and summer."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 77.35,
+        "mean_flux": 22.57,
+        "wer": 0.0526,
+        "transcript": "But the tree did not rejoice at all, he grew and grew, and was green both winter and summer."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 74.93,
+        "mean_flux": 21.17,
+        "wer": 0.0526,
+        "transcript": "But the tree did not rejoice at all, he grew and grew, and was green both winter and summer."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 75.12,
+        "mean_flux": 19.79,
+        "wer": 0.0526,
+        "transcript": "But the tree did not rejoice at all, he grew and grew, and was green both winter and summer."
+      }
+    }
+  },
+  {
+    "sample_id": 25,
+    "speaker_id": "672",
+    "ref_text": "cried the young ladies, and they quickly put out the fire.",
+    "gen_text": "and towards Christmas he was one of the first that was cut down.",
+    "diag": {
+      "ratio_shock": 0.6744,
+      "tanh_shock": 0.5879,
+      "w_tags": 0.8472,
+      "w_par_aor": 0.9412,
+      "w_perp_aor": 0.4824,
+      "gate_sgsi": 0.5879,
+      "w_par_sgsi_onset": 0.8472,
+      "w_perp_sgsi_onset": 0.3389
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 62.89,
+        "mean_flux": 10.8,
+        "wer": 0.0769,
+        "transcript": "And towards Christmas, he was one of the first that was cut down."
+      },
+      "orig_tags": {
+        "peak_flux": 60.8,
+        "mean_flux": 10.28,
+        "wer": 0.0769,
+        "transcript": "And towards Christmas, he was one of the first that was cut down."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 58.69,
+        "mean_flux": 9.77,
+        "wer": 0.0769,
+        "transcript": "And towards Christmas, he was one of the first that was cut down."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 57.63,
+        "mean_flux": 9.79,
+        "wer": 0.0769,
+        "transcript": "And towards Christmas, he was one of the first that was cut down."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 60.73,
+        "mean_flux": 9.88,
+        "wer": 0.0769,
+        "transcript": "And towards Christmas, he was one of the first that was cut down."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 61.68,
+        "mean_flux": 10.02,
+        "wer": 0.0769,
+        "transcript": "And towards Christmas, he was one of the first that was cut down."
+      }
+    }
+  },
+  {
+    "sample_id": 26,
+    "speaker_id": "672",
+    "ref_text": "cried the young ladies, and they quickly put out the fire.",
+    "gen_text": "He well knew that he should never see his dear old comrades, the little bushes and flowers around him, anymore; perhaps not even the birds!",
+    "diag": {
+      "ratio_shock": 0.6151,
+      "tanh_shock": 0.5477,
+      "w_tags": 0.8576,
+      "w_par_aor": 0.9452,
+      "w_perp_aor": 0.4905,
+      "gate_sgsi": 0.5477,
+      "w_par_sgsi_onset": 0.8576,
+      "w_perp_sgsi_onset": 0.343
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 86.81,
+        "mean_flux": 20.11,
+        "wer": 0.08,
+        "transcript": "He well knew that he should never see his dear old comrades, the little bushes and flowers around him. Anymore, perhaps not even the birds!"
+      },
+      "orig_tags": {
+        "peak_flux": 91.09,
+        "mean_flux": 20.49,
+        "wer": 0.08,
+        "transcript": "He well knew that he should never see his dear old comrades, the little bushes and flowers around him. Anymore, perhaps not even the birds!"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 107.39,
+        "mean_flux": 24.95,
+        "wer": 0.08,
+        "transcript": "He well knew that he should never see his dear old comrades, the little bushes and flowers around him. Anymore, perhaps not even the birds!"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 105.79,
+        "mean_flux": 24.57,
+        "wer": 0.08,
+        "transcript": "He well knew that he should never see his dear old comrades, the little bushes and flowers around him. Anymore, perhaps not even the birds!"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 92.93,
+        "mean_flux": 23.21,
+        "wer": 0.08,
+        "transcript": "He well knew that he should never see his dear old comrades, the little bushes and flowers around him. Anymore, perhaps not even the birds!"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 98.53,
+        "mean_flux": 22.15,
+        "wer": 0.08,
+        "transcript": "He well knew that he should never see his dear old comrades, the little bushes and flowers around him. Anymore, perhaps not even the birds!"
+      }
+    }
+  },
+  {
+    "sample_id": 27,
+    "speaker_id": "672",
+    "ref_text": "Only that one,\" answered the Tree.",
+    "gen_text": "The departure was not at all agreeable.",
+    "diag": {
+      "ratio_shock": 0.5823,
+      "tanh_shock": 0.5243,
+      "w_tags": 0.8637,
+      "w_par_aor": 0.9476,
+      "w_perp_aor": 0.4951,
+      "gate_sgsi": 0.5243,
+      "w_par_sgsi_onset": 0.8637,
+      "w_perp_sgsi_onset": 0.3455
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "The departure was not at all agreeable."
+      },
+      "orig_tags": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "The departure was not at all agreeable."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "The departure was not at all agreeable."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "The departure was not at all agreeable."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "The departure was not at all agreeable."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "The departure was not at all agreeable."
+      }
+    }
+  },
+  {
+    "sample_id": 28,
+    "speaker_id": "672",
+    "ref_text": "Out in the woods stood a nice little Fir Tree.",
+    "gen_text": "The servants, as well as the young ladies, decorated it.",
+    "diag": {
+      "ratio_shock": 0.5952,
+      "tanh_shock": 0.5336,
+      "w_tags": 0.8613,
+      "w_par_aor": 0.9466,
+      "w_perp_aor": 0.4933,
+      "gate_sgsi": 0.5336,
+      "w_par_sgsi_onset": 0.8613,
+      "w_perp_sgsi_onset": 0.3445
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 79.31,
+        "mean_flux": 14.6,
+        "wer": 0.0,
+        "transcript": "The servants, as well as the young ladies, decorated it."
+      },
+      "orig_tags": {
+        "peak_flux": 84.1,
+        "mean_flux": 14.87,
+        "wer": 0.0,
+        "transcript": "The servants, as well as the young ladies, decorated it."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 91.38,
+        "mean_flux": 15.98,
+        "wer": 0.0,
+        "transcript": "The servants, as well as the young ladies, decorated it."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 91.01,
+        "mean_flux": 16.47,
+        "wer": 0.0,
+        "transcript": "The servants, as well as the young ladies, decorated it."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 90.17,
+        "mean_flux": 15.48,
+        "wer": 0.0,
+        "transcript": "The servants, as well as the young ladies, decorated it."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 87.64,
+        "mean_flux": 15.19,
+        "wer": 0.0,
+        "transcript": "The servants, as well as the young ladies, decorated it."
+      }
+    }
+  },
+  {
+    "sample_id": 29,
+    "speaker_id": "672",
+    "ref_text": "Were I in the warm room with all the splendor and magnificence!",
+    "gen_text": "Perhaps the other trees from the forest will come to look at me!",
+    "diag": {
+      "ratio_shock": 0.6653,
+      "tanh_shock": 0.5819,
+      "w_tags": 0.8487,
+      "w_par_aor": 0.9418,
+      "w_perp_aor": 0.4836,
+      "gate_sgsi": 0.5819,
+      "w_par_sgsi_onset": 0.8487,
+      "w_perp_sgsi_onset": 0.3395
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 90.55,
+        "mean_flux": 17.66,
+        "wer": 0.0769,
+        "transcript": "Perhaps the other trees from the forest will come to look at me."
+      },
+      "orig_tags": {
+        "peak_flux": 74.26,
+        "mean_flux": 18.56,
+        "wer": 0.0769,
+        "transcript": "Perhaps the other trees from the forest will come to look at me."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 112.34,
+        "mean_flux": 23.15,
+        "wer": 0.0769,
+        "transcript": "Perhaps the other trees from the forest will come to look at me."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 106.26,
+        "mean_flux": 22.61,
+        "wer": 0.0769,
+        "transcript": "Perhaps the other trees from the forest will come to look at me."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 83.51,
+        "mean_flux": 20.66,
+        "wer": 0.0769,
+        "transcript": "Perhaps the other trees from the forest will come to look at me."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 81.35,
+        "mean_flux": 19.73,
+        "wer": 0.0769,
+        "transcript": "Perhaps the other trees from the forest will come to look at me."
+      }
+    }
+  },
+  {
+    "sample_id": 30,
+    "speaker_id": "672",
+    "ref_text": "Were I in the warm room with all the splendor and magnificence!",
+    "gen_text": "cried the young ladies, and they quickly put out the fire.",
+    "diag": {
+      "ratio_shock": 0.6855,
+      "tanh_shock": 0.5951,
+      "w_tags": 0.8453,
+      "w_par_aor": 0.9405,
+      "w_perp_aor": 0.481,
+      "gate_sgsi": 0.5951,
+      "w_par_sgsi_onset": 0.8453,
+      "w_perp_sgsi_onset": 0.2958
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 54.36,
+        "mean_flux": 11.14,
+        "wer": 0.1818,
+        "transcript": "Doc cried the young ladies and they quickly put out the fire."
+      },
+      "orig_tags": {
+        "peak_flux": 60.28,
+        "mean_flux": 11.95,
+        "wer": 0.1818,
+        "transcript": "Doc cried the young ladies and they quickly put out the fire."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 60.6,
+        "mean_flux": 12.74,
+        "wer": 0.1818,
+        "transcript": "Doc cried the young ladies and they quickly put out the fire."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 61.67,
+        "mean_flux": 12.69,
+        "wer": 0.1818,
+        "transcript": "Doc cried the young ladies and they quickly put out the fire."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 63.83,
+        "mean_flux": 12.58,
+        "wer": 0.1818,
+        "transcript": "Doc cried the young ladies and they quickly put out the fire."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 54.02,
+        "mean_flux": 11.18,
+        "wer": 0.1818,
+        "transcript": "Doc cried the young ladies and they quickly put out the fire."
+      }
+    }
+  },
+  {
+    "sample_id": 31,
+    "speaker_id": "672",
+    "ref_text": "Were I in the warm room with all the splendor and magnificence!",
+    "gen_text": "A story\"! cried the children, drawing a little fat man towards the Tree.",
+    "diag": {
+      "ratio_shock": 0.6568,
+      "tanh_shock": 0.5763,
+      "w_tags": 0.8502,
+      "w_par_aor": 0.9424,
+      "w_perp_aor": 0.4847,
+      "gate_sgsi": 0.5763,
+      "w_par_sgsi_onset": 0.8502,
+      "w_perp_sgsi_onset": 0.3401
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 74.28,
+        "mean_flux": 18.31,
+        "wer": 0.1538,
+        "transcript": "A story cried the children drawing a little fat man towards the tree."
+      },
+      "orig_tags": {
+        "peak_flux": 80.22,
+        "mean_flux": 18.75,
+        "wer": 0.0769,
+        "transcript": "A story cried the children, drawing a little fat man towards the tree."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 81.09,
+        "mean_flux": 18.78,
+        "wer": 0.0769,
+        "transcript": "A story cried the children, drawing a little fat man towards the tree."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 82.3,
+        "mean_flux": 18.76,
+        "wer": 0.0769,
+        "transcript": "A story cried the children, drawing a little fat man towards the tree."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 82.07,
+        "mean_flux": 18.45,
+        "wer": 0.0769,
+        "transcript": "A story cried the children, drawing a little fat man towards the tree."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 81.88,
+        "mean_flux": 18.31,
+        "wer": 0.0769,
+        "transcript": "A story cried the children, drawing a little fat man towards the tree."
+      }
+    }
+  },
+  {
+    "sample_id": 32,
+    "speaker_id": "672",
+    "ref_text": "And then? What happens then\"?",
+    "gen_text": "Humpy Dumpy fell downstairs, and yet he married the princess!",
+    "diag": {
+      "ratio_shock": 0.6889,
+      "tanh_shock": 0.5972,
+      "w_tags": 0.8447,
+      "w_par_aor": 0.9403,
+      "w_perp_aor": 0.4806,
+      "gate_sgsi": 0.5972,
+      "w_par_sgsi_onset": 0.8447,
+      "w_perp_sgsi_onset": 0.3379
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 67.04,
+        "mean_flux": 16.12,
+        "wer": 0.3,
+        "transcript": "Humpty dumpy fell downstairs and yet he married the princess."
+      },
+      "orig_tags": {
+        "peak_flux": 74.48,
+        "mean_flux": 16.68,
+        "wer": 0.3,
+        "transcript": "Humpty Dumpy fell downstairs and yet he married the princess."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 80.54,
+        "mean_flux": 16.75,
+        "wer": 0.3,
+        "transcript": "Humpty Dumpy fell downstairs and yet he married the princess."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 80.51,
+        "mean_flux": 16.5,
+        "wer": 0.3,
+        "transcript": "Humpty Dumpy fell downstairs and yet he married the princess."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 77.08,
+        "mean_flux": 16.5,
+        "wer": 0.3,
+        "transcript": "Humpty Dumpy fell downstairs and yet he married the princess."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 75.71,
+        "mean_flux": 16.32,
+        "wer": 0.2,
+        "transcript": "Humpy Dumpy fell downstairs and yet he married the princess."
+      }
+    }
+  },
+  {
+    "sample_id": 34,
+    "speaker_id": "672",
+    "ref_text": "What's the meaning of this\"? thought the Tree.",
+    "gen_text": "I won't tremble tomorrow\"! thought the Fir Tree.",
+    "diag": {
+      "ratio_shock": 0.6351,
+      "tanh_shock": 0.5616,
+      "w_tags": 0.854,
+      "w_par_aor": 0.9438,
+      "w_perp_aor": 0.4877,
+      "gate_sgsi": 0.5616,
+      "w_par_sgsi_onset": 0.854,
+      "w_perp_sgsi_onset": 0.3416
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 49.36,
+        "mean_flux": 6.52,
+        "wer": 0.125,
+        "transcript": "I won't tremble tomorrow, thought the fir tree."
+      },
+      "orig_tags": {
+        "peak_flux": 46.59,
+        "mean_flux": 6.63,
+        "wer": 0.125,
+        "transcript": "I won't tremble tomorrow, thought the fir tree."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 53.65,
+        "mean_flux": 6.61,
+        "wer": 0.125,
+        "transcript": "I won't tremble tomorrow. Thought the fir tree."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 53.06,
+        "mean_flux": 6.59,
+        "wer": 0.125,
+        "transcript": "I won't tremble tomorrow. Thought the fir tree."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 50.94,
+        "mean_flux": 6.3,
+        "wer": 0.125,
+        "transcript": "I won't tremble tomorrow. Thought the fir tree."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 48.07,
+        "mean_flux": 6.2,
+        "wer": 0.125,
+        "transcript": "I won't tremble tomorrow. Thought the fir tree."
+      }
+    }
+  },
+  {
+    "sample_id": 35,
+    "speaker_id": "672",
+    "ref_text": "Out in the woods stood a nice little Fir Tree.",
+    "gen_text": "And the whole night the Tree stood still and in deep thought.",
+    "diag": {
+      "ratio_shock": 0.5515,
+      "tanh_shock": 0.5016,
+      "w_tags": 0.8696,
+      "w_par_aor": 0.9498,
+      "w_perp_aor": 0.4997,
+      "gate_sgsi": 0.5016,
+      "w_par_sgsi_onset": 0.8696,
+      "w_perp_sgsi_onset": 0.3478
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0833,
+        "transcript": "And the whole night the tree stood still, and in deep thought."
+      },
+      "orig_tags": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0833,
+        "transcript": "And the whole night the tree stood still, and in deep thought."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0833,
+        "transcript": "And the whole night the tree stood still, and in deep thought."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0833,
+        "transcript": "And the whole night the tree stood still, and in deep thought."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0833,
+        "transcript": "And the whole night the tree stood still, and in deep thought."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.0833,
+        "transcript": "And the whole night the tree stood still, and in deep thought."
+      }
+    }
+  },
+  {
+    "sample_id": 36,
+    "speaker_id": "672",
+    "ref_text": "Only that one,\" answered the Tree.",
+    "gen_text": "Tis now winter out of doors\"! thought the Tree.",
+    "diag": {
+      "ratio_shock": 0.629,
+      "tanh_shock": 0.5574,
+      "w_tags": 0.8551,
+      "w_par_aor": 0.9443,
+      "w_perp_aor": 0.4885,
+      "gate_sgsi": 0.5574,
+      "w_par_sgsi_onset": 0.8551,
+      "w_perp_sgsi_onset": 0.342
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 46.46,
+        "mean_flux": 4.85,
+        "wer": 0.1111,
+        "transcript": "Tis now winter out of doors, thought the tree."
+      },
+      "orig_tags": {
+        "peak_flux": 49.52,
+        "mean_flux": 4.65,
+        "wer": 0.1111,
+        "transcript": "Tis now winter out of doors, thought the tree."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 50.92,
+        "mean_flux": 4.13,
+        "wer": 0.1111,
+        "transcript": "Tis now winter out of doors, thought the tree."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 51.6,
+        "mean_flux": 4.15,
+        "wer": 0.1111,
+        "transcript": "Tis now winter out of doors, thought the tree."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 42.95,
+        "mean_flux": 4.2,
+        "wer": 0.1111,
+        "transcript": "Tis now winter out of doors, thought the tree."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 47.35,
+        "mean_flux": 4.39,
+        "wer": 0.1111,
+        "transcript": "Tis now winter out of doors, thought the tree."
+      }
+    }
+  },
+  {
+    "sample_id": 38,
+    "speaker_id": "672",
+    "ref_text": "In the morning the servant and the housemaid came in.",
+    "gen_text": "They snuffed about the Fir Tree, and rustled among the branches.",
+    "diag": {
+      "ratio_shock": 0.6418,
+      "tanh_shock": 0.5661,
+      "w_tags": 0.8528,
+      "w_par_aor": 0.9434,
+      "w_perp_aor": 0.4868,
+      "gate_sgsi": 0.5661,
+      "w_par_sgsi_onset": 0.8528,
+      "w_perp_sgsi_onset": 0.3411
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 105.47,
+        "mean_flux": 24.04,
+        "wer": 0.1818,
+        "transcript": "They snuffed about the fur tree and rustled among the branches."
+      },
+      "orig_tags": {
+        "peak_flux": 113.34,
+        "mean_flux": 24.48,
+        "wer": 0.1818,
+        "transcript": "They snuffed about the fur tree and rustled among the branches."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 109.61,
+        "mean_flux": 23.99,
+        "wer": 0.1818,
+        "transcript": "They snuffed about the fur tree and rustled among the branches."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 109.64,
+        "mean_flux": 23.95,
+        "wer": 0.1818,
+        "transcript": "They snuffed about the fur tree and rustled among the branches."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 108.03,
+        "mean_flux": 23.58,
+        "wer": 0.1818,
+        "transcript": "They snuffed about the fur tree and rustled among the branches."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 105.57,
+        "mean_flux": 23.54,
+        "wer": 0.1818,
+        "transcript": "They snuffed about the fur tree and rustled among the branches."
+      }
+    }
+  },
+  {
+    "sample_id": 39,
+    "speaker_id": "672",
+    "ref_text": "I know no such place,\" said the Tree.",
+    "gen_text": "I am by no means old,\" said the Fir Tree.",
+    "diag": {
+      "ratio_shock": 0.6225,
+      "tanh_shock": 0.5529,
+      "w_tags": 0.8562,
+      "w_par_aor": 0.9447,
+      "w_perp_aor": 0.4894,
+      "gate_sgsi": 0.5529,
+      "w_par_sgsi_onset": 0.8562,
+      "w_perp_sgsi_onset": 0.3425
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 0.05,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "I am by no means old,\" said the fir tree."
+      },
+      "orig_tags": {
+        "peak_flux": 0.1,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "I am by no means old,\" said the fir tree."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 0.07,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "I am by no means old,\" said the fir tree."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 0.24,
+        "mean_flux": 0.01,
+        "wer": 0.0,
+        "transcript": "I am by no means old,\" said the fir tree."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 0.08,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "I am by no means old,\" said the fir tree."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 0.09,
+        "mean_flux": 0.0,
+        "wer": 0.0,
+        "transcript": "I am by no means old,\" said the fir tree."
+      }
+    }
+  },
+  {
+    "sample_id": 40,
+    "speaker_id": "672",
+    "ref_text": "And then? What happens then\"?",
+    "gen_text": "There's many a one considerably older than I am\".",
+    "diag": {
+      "ratio_shock": 0.6306,
+      "tanh_shock": 0.5585,
+      "w_tags": 0.8548,
+      "w_par_aor": 0.9442,
+      "w_perp_aor": 0.4883,
+      "gate_sgsi": 0.5585,
+      "w_par_sgsi_onset": 0.8548,
+      "w_perp_sgsi_onset": 0.3419
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 28.54,
+        "mean_flux": 2.43,
+        "wer": 0.1111,
+        "transcript": "There's many a one considerably older than I am."
+      },
+      "orig_tags": {
+        "peak_flux": 27.49,
+        "mean_flux": 2.35,
+        "wer": 0.1111,
+        "transcript": "There's many a one considerably older than I am."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 22.22,
+        "mean_flux": 2.1,
+        "wer": 0.1111,
+        "transcript": "There's many a one considerably older than I am."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 22.6,
+        "mean_flux": 2.12,
+        "wer": 0.1111,
+        "transcript": "There's many a one considerably older than I am."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 24.57,
+        "mean_flux": 2.17,
+        "wer": 0.1111,
+        "transcript": "There's many a one considerably older than I am."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 25.88,
+        "mean_flux": 2.23,
+        "wer": 0.1111,
+        "transcript": "There's many a one considerably older than I am."
+      }
+    }
+  },
+  {
+    "sample_id": 41,
+    "speaker_id": "672",
+    "ref_text": "It blazed up famously. \"Help! Help\"!",
+    "gen_text": "I know no such place,\" said the Tree.",
+    "diag": {
+      "ratio_shock": 0.6834,
+      "tanh_shock": 0.5937,
+      "w_tags": 0.8456,
+      "w_par_aor": 0.9406,
+      "w_perp_aor": 0.4813,
+      "gate_sgsi": 0.5937,
+      "w_par_sgsi_onset": 0.8456,
+      "w_perp_sgsi_onset": 0.3383
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 28.58,
+        "mean_flux": 1.13,
+        "wer": 0.375,
+        "transcript": "\"'I know no such place,' said the tree.\""
+      },
+      "orig_tags": {
+        "peak_flux": 29.51,
+        "mean_flux": 1.25,
+        "wer": 0.375,
+        "transcript": "\"'I know no such place,' said the tree.\""
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 19.67,
+        "mean_flux": 1.09,
+        "wer": 0.0,
+        "transcript": "I know no such place,\" said the tree."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 19.92,
+        "mean_flux": 1.08,
+        "wer": 0.0,
+        "transcript": "I know no such place,\" said the tree."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 27.9,
+        "mean_flux": 1.2,
+        "wer": 0.0,
+        "transcript": "I know no such place,\" said the tree."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 24.8,
+        "mean_flux": 1.1,
+        "wer": 0.375,
+        "transcript": "\"'I know no such place,' said the tree.\""
+      }
+    }
+  },
+  {
+    "sample_id": 42,
+    "speaker_id": "672",
+    "ref_text": "cried the young ladies, and they quickly put out the fire.",
+    "gen_text": "And then he told all about his youth; and the little Mice had never heard the like before; and they listened and said,",
+    "diag": {
+      "ratio_shock": 0.6084,
+      "tanh_shock": 0.543,
+      "w_tags": 0.8588,
+      "w_par_aor": 0.9457,
+      "w_perp_aor": 0.4914,
+      "gate_sgsi": 0.543,
+      "w_par_sgsi_onset": 0.8588,
+      "w_perp_sgsi_onset": 0.3435
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 96.6,
+        "mean_flux": 11.8,
+        "wer": 0.087,
+        "transcript": "And then he told all about his youth, and the little mice had never heard the like before, and they listened and said,"
+      },
+      "orig_tags": {
+        "peak_flux": 97.46,
+        "mean_flux": 11.83,
+        "wer": 0.087,
+        "transcript": "And then he told all about his youth, and the little mice had never heard the like before, and they listened and said,"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 88.73,
+        "mean_flux": 11.33,
+        "wer": 0.087,
+        "transcript": "And then he told all about his youth, and the little mice had never heard the like before, and they listened and said,"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 88.91,
+        "mean_flux": 11.32,
+        "wer": 0.087,
+        "transcript": "And then he told all about his youth, and the little mice had never heard the like before, and they listened and said,"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 93.66,
+        "mean_flux": 11.32,
+        "wer": 0.087,
+        "transcript": "And then he told all about his youth, and the little mice had never heard the like before, and they listened and said,"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 95.47,
+        "mean_flux": 11.13,
+        "wer": 0.087,
+        "transcript": "And then he told all about his youth, and the little mice had never heard the like before, and they listened and said,"
+      }
+    }
+  },
+  {
+    "sample_id": 43,
+    "speaker_id": "672",
+    "ref_text": "Out in the woods stood a nice little Fir Tree.",
+    "gen_text": "said the Fir Tree, thinking over what he had himself related.",
+    "diag": {
+      "ratio_shock": 0.5534,
+      "tanh_shock": 0.503,
+      "w_tags": 0.8692,
+      "w_par_aor": 0.9497,
+      "w_perp_aor": 0.4994,
+      "gate_sgsi": 0.503,
+      "w_par_sgsi_onset": 0.8692,
+      "w_perp_sgsi_onset": 0.3477
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 67.47,
+        "mean_flux": 6.63,
+        "wer": 0.0,
+        "transcript": "said the fir tree, thinking over what he had himself related."
+      },
+      "orig_tags": {
+        "peak_flux": 76.18,
+        "mean_flux": 6.61,
+        "wer": 0.0,
+        "transcript": "said the fir tree, thinking over what he had himself related."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 72.72,
+        "mean_flux": 5.73,
+        "wer": 0.0,
+        "transcript": "said the fir tree, thinking over what he had himself related."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 72.77,
+        "mean_flux": 5.73,
+        "wer": 0.0,
+        "transcript": "said the fir tree, thinking over what he had himself related."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 75.79,
+        "mean_flux": 6.11,
+        "wer": 0.0,
+        "transcript": "said the fir tree, thinking over what he had himself related."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 62.76,
+        "mean_flux": 5.82,
+        "wer": 0.0,
+        "transcript": "said the fir tree, thinking over what he had himself related."
+      }
+    }
+  },
+  {
+    "sample_id": 44,
+    "speaker_id": "672",
+    "ref_text": "Now that too is over.",
+    "gen_text": "Yes, in reality those were happy times\".",
+    "diag": {
+      "ratio_shock": 0.5583,
+      "tanh_shock": 0.5067,
+      "w_tags": 0.8682,
+      "w_par_aor": 0.9493,
+      "w_perp_aor": 0.4987,
+      "gate_sgsi": 0.5067,
+      "w_par_sgsi_onset": 0.8682,
+      "w_perp_sgsi_onset": 0.3473
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1429,
+        "transcript": "Yes, in reality those were happy times."
+      },
+      "orig_tags": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1429,
+        "transcript": "Yes, in reality those were happy times."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1429,
+        "transcript": "Yes, in reality those were happy times."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1429,
+        "transcript": "Yes, in reality those were happy times."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1429,
+        "transcript": "Yes, in reality those were happy times."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.1429,
+        "transcript": "Yes, in reality those were happy times."
+      }
+    }
+  },
+  {
+    "sample_id": 45,
+    "speaker_id": "672",
+    "ref_text": "Out in the woods stood a nice little Fir Tree.",
+    "gen_text": "Who is Humpy Dumpy\"? asked the Mice.",
+    "diag": {
+      "ratio_shock": 0.6012,
+      "tanh_shock": 0.5379,
+      "w_tags": 0.8601,
+      "w_par_aor": 0.9462,
+      "w_perp_aor": 0.4924,
+      "gate_sgsi": 0.5379,
+      "w_par_sgsi_onset": 0.8601,
+      "w_perp_sgsi_onset": 0.3441
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.4286,
+        "transcript": "Who is Humpey Dumpy? Ask the mice."
+      },
+      "orig_tags": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.4286,
+        "transcript": "Who is Humpey Dumpy? Ask the mice."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.4286,
+        "transcript": "Who is Humpty Dumpy? Ask the mice."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.4286,
+        "transcript": "Who is Humpty Dumpy? Ask the mice."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.4286,
+        "transcript": "Who is Humpty Dumpy? Ask the mice."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.4286,
+        "transcript": "Who is Humpty Dumpy? Ask the mice."
+      }
+    }
+  },
+  {
+    "sample_id": 46,
+    "speaker_id": "672",
+    "ref_text": "Oh, that made him so angry!",
+    "gen_text": "Don't you know one about bacon and tallow candles? Can't you tell any larder stories\"?",
+    "diag": {
+      "ratio_shock": 0.4696,
+      "tanh_shock": 0.4379,
+      "w_tags": 0.8861,
+      "w_par_aor": 0.9562,
+      "w_perp_aor": 0.5124,
+      "gate_sgsi": 0.4379,
+      "w_par_sgsi_onset": 0.8861,
+      "w_perp_sgsi_onset": 0.3545
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 68.36,
+        "mean_flux": 11.73,
+        "wer": 0.1333,
+        "transcript": "Don't you know one about bacon and tallow candles? Can't you tell any larger stories?"
+      },
+      "orig_tags": {
+        "peak_flux": 65.24,
+        "mean_flux": 11.82,
+        "wer": 0.1333,
+        "transcript": "Don't you know one about bacon and tallow candles? Can't you tell any larger stories?"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 68.4,
+        "mean_flux": 13.14,
+        "wer": 0.1333,
+        "transcript": "Don't you know one about bacon and tallow candles? Can't you tell any larger stories?"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 68.91,
+        "mean_flux": 13.22,
+        "wer": 0.1333,
+        "transcript": "Don't you know one about bacon and tallow candles? Can't you tell any larger stories?"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 60.71,
+        "mean_flux": 12.48,
+        "wer": 0.1333,
+        "transcript": "Don't you know one about bacon and tallow candles? Can't you tell any larger stories?"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 60.56,
+        "mean_flux": 12.12,
+        "wer": 0.1333,
+        "transcript": "Don't you know one about bacon and tallow candles? Can't you tell any larger stories?"
+      }
+    }
+  },
+  {
+    "sample_id": 47,
+    "speaker_id": "672",
+    "ref_text": "and towards Christmas he was one of the first that was cut down.",
+    "gen_text": "Why, one morning there came a quantity of people and set to work in the loft.",
+    "diag": {
+      "ratio_shock": 0.6609,
+      "tanh_shock": 0.579,
+      "w_tags": 0.8495,
+      "w_par_aor": 0.9421,
+      "w_perp_aor": 0.4842,
+      "gate_sgsi": 0.579,
+      "w_par_sgsi_onset": 0.8495,
+      "w_perp_sgsi_onset": 0.3398
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 87.25,
+        "mean_flux": 18.34,
+        "wer": 0.125,
+        "transcript": "Why one morning there came a quantity of people and set to work in the loft?"
+      },
+      "orig_tags": {
+        "peak_flux": 84.54,
+        "mean_flux": 18.36,
+        "wer": 0.125,
+        "transcript": "Why one morning there came a quantity of people and set to work in the loft?"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 82.75,
+        "mean_flux": 19.5,
+        "wer": 0.0,
+        "transcript": "Why, one morning there came a quantity of people and set to work in the loft."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 82.68,
+        "mean_flux": 19.44,
+        "wer": 0.0,
+        "transcript": "Why, one morning there came a quantity of people and set to work in the loft."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 85.66,
+        "mean_flux": 19.12,
+        "wer": 0.0,
+        "transcript": "Why, one morning there came a quantity of people and set to work in the loft."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 84.51,
+        "mean_flux": 18.99,
+        "wer": 0.125,
+        "transcript": "Why one morning there came a quantity of people and set to work in the loft?"
+      }
+    }
+  },
+  {
+    "sample_id": 48,
+    "speaker_id": "672",
+    "ref_text": "Rejoice in thy growth\"! said the Sunbeams.",
+    "gen_text": "but it was not the Fir Tree that they meant.",
+    "diag": {
+      "ratio_shock": 0.6264,
+      "tanh_shock": 0.5555,
+      "w_tags": 0.8556,
+      "w_par_aor": 0.9444,
+      "w_perp_aor": 0.4889,
+      "gate_sgsi": 0.5555,
+      "w_par_sgsi_onset": 0.8556,
+      "w_perp_sgsi_onset": 0.3422
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.3,
+        "transcript": "Stop it, it was not the fair tree that they meant."
+      },
+      "orig_tags": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.2,
+        "transcript": "Dot but it was not the fair tree that they meant."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.2,
+        "transcript": "Dot but it was not the fair tree that they meant."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.2,
+        "transcript": "Dot but it was not the fair tree that they meant."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.2,
+        "transcript": "Dot but it was not the fair tree that they meant."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 0.0,
+        "mean_flux": 0.0,
+        "wer": 0.2,
+        "transcript": "Dot but it was not the fair tree that they meant."
+      }
+    }
+  },
+  {
+    "sample_id": 49,
+    "speaker_id": "672",
+    "ref_text": "This evening\"! they all said.",
+    "gen_text": "It was in a corner that he lay, among weeds and nettles.",
+    "diag": {
+      "ratio_shock": 0.6179,
+      "tanh_shock": 0.5497,
+      "w_tags": 0.8571,
+      "w_par_aor": 0.945,
+      "w_perp_aor": 0.4901,
+      "gate_sgsi": 0.5497,
+      "w_par_sgsi_onset": 0.8571,
+      "w_perp_sgsi_onset": 0.3428
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 73.72,
+        "mean_flux": 9.45,
+        "wer": 0.0833,
+        "transcript": "It was in a corner that he lay among weeds and nettles."
+      },
+      "orig_tags": {
+        "peak_flux": 65.58,
+        "mean_flux": 8.98,
+        "wer": 0.0833,
+        "transcript": "It was in a corner that he lay among weeds and nettles."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 59.8,
+        "mean_flux": 8.44,
+        "wer": 0.0833,
+        "transcript": "It was in a corner that he lay among weeds and nettles."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 59.69,
+        "mean_flux": 8.48,
+        "wer": 0.0833,
+        "transcript": "It was in a corner that he lay among weeds and nettles."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 60.6,
+        "mean_flux": 8.61,
+        "wer": 0.0833,
+        "transcript": "It was in a corner that he lay among weeds and nettles."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 59.07,
+        "mean_flux": 7.95,
+        "wer": 0.0833,
+        "transcript": "It was in a corner that he lay among weeds and nettles."
+      }
+    }
+  },
+  {
+    "sample_id": 50,
+    "speaker_id": "672",
+    "ref_text": "cried the young ladies, and they quickly put out the fire.",
+    "gen_text": "The golden star of tinsel was still on the top of the Tree, and glittered in the sunshine.",
+    "diag": {
+      "ratio_shock": 0.6249,
+      "tanh_shock": 0.5545,
+      "w_tags": 0.8558,
+      "w_par_aor": 0.9445,
+      "w_perp_aor": 0.4891,
+      "gate_sgsi": 0.5545,
+      "w_par_sgsi_onset": 0.8558,
+      "w_perp_sgsi_onset": 0.3423
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 76.21,
+        "mean_flux": 13.8,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      },
+      "orig_tags": {
+        "peak_flux": 84.69,
+        "mean_flux": 14.49,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 96.78,
+        "mean_flux": 16.02,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 96.51,
+        "mean_flux": 15.99,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 94.21,
+        "mean_flux": 15.82,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 90.97,
+        "mean_flux": 16.89,
+        "wer": 0.0556,
+        "transcript": "The golden star of tinsel was still on the top of the tree and glittered in the sunshine."
+      }
+    }
+  },
+  {
+    "sample_id": 52,
+    "speaker_id": "672",
+    "ref_text": "Out in the woods stood a nice little Fir Tree.",
+    "gen_text": "And the gardener's boy chopped the Tree into small pieces; there was a whole heap lying there.",
+    "diag": {
+      "ratio_shock": 0.5385,
+      "tanh_shock": 0.4919,
+      "w_tags": 0.8721,
+      "w_par_aor": 0.9508,
+      "w_perp_aor": 0.5016,
+      "gate_sgsi": 0.4919,
+      "w_par_sgsi_onset": 0.8721,
+      "w_perp_sgsi_onset": 0.3052
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 55.69,
+        "mean_flux": 5.36,
+        "wer": 0.0588,
+        "transcript": "And the gardener's boy chopped the tree into small pieces. There was a whole heap lying there."
+      },
+      "orig_tags": {
+        "peak_flux": 59.49,
+        "mean_flux": 5.33,
+        "wer": 0.0588,
+        "transcript": "And the gardener's boy chopped the tree into small pieces. There was a whole heap lying there."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 62.8,
+        "mean_flux": 5.33,
+        "wer": 0.0588,
+        "transcript": "And the gardener's boy chopped the tree into small pieces. There was a whole heap lying there."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 62.85,
+        "mean_flux": 5.34,
+        "wer": 0.0588,
+        "transcript": "And the gardener's boy chopped the tree into small pieces. There was a whole heap lying there."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 58.06,
+        "mean_flux": 5.22,
+        "wer": 0.0588,
+        "transcript": "And the gardener's boy chopped the tree into small pieces. There was a whole heap lying there."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 54.87,
+        "mean_flux": 5.27,
+        "wer": 0.0588,
+        "transcript": "And the gardener's boy chopped the tree into small pieces. There was a whole heap lying there."
+      }
+    }
+  },
+  {
+    "sample_id": 53,
+    "speaker_id": "672",
+    "ref_text": "They were so extremely curious.",
+    "gen_text": "The wood flamed up splendidly under the large brewing copper, and it sighed so deeply!",
+    "diag": {
+      "ratio_shock": 0.6504,
+      "tanh_shock": 0.5719,
+      "w_tags": 0.8513,
+      "w_par_aor": 0.9428,
+      "w_perp_aor": 0.4856,
+      "gate_sgsi": 0.5719,
+      "w_par_sgsi_onset": 0.8513,
+      "w_perp_sgsi_onset": 0.298
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 62.67,
+        "mean_flux": 14.78,
+        "wer": 0.1333,
+        "transcript": "The wood flamed up splendidly under the large brewing copper, and its side so deeply!"
+      },
+      "orig_tags": {
+        "peak_flux": 61.02,
+        "mean_flux": 15.13,
+        "wer": 0.1333,
+        "transcript": "The wood flamed up splendidly under the large brewing copper, and its side so deeply!"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 58.5,
+        "mean_flux": 16.34,
+        "wer": 0.1333,
+        "transcript": "The wood flamed up splendidly under the large brewing copper, and its sides so deeply!"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 57.86,
+        "mean_flux": 16.33,
+        "wer": 0.1333,
+        "transcript": "The wood flamed up splendidly under the large brewing copper, and its sides so deeply!"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 51.71,
+        "mean_flux": 15.98,
+        "wer": 0.1333,
+        "transcript": "The wood flamed up splendidly under the large brewing copper, and its sides so deeply!"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 61.97,
+        "mean_flux": 14.75,
+        "wer": 0.1333,
+        "transcript": "The wood flamed up splendidly under the large brewing copper, and its side so deeply!"
+      }
+    }
+  },
+  {
+    "sample_id": 54,
+    "speaker_id": "672",
+    "ref_text": "No,\" said the Tree.",
+    "gen_text": "However, that was over now - the Tree gone, the story at an end.",
+    "diag": {
+      "ratio_shock": 0.5205,
+      "tanh_shock": 0.4781,
+      "w_tags": 0.8757,
+      "w_par_aor": 0.9522,
+      "w_perp_aor": 0.5044,
+      "gate_sgsi": 0.4781,
+      "w_par_sgsi_onset": 0.8757,
+      "w_perp_sgsi_onset": 0.3065
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 0.49,
+        "mean_flux": 0.01,
+        "wer": 0.2143,
+        "transcript": "However, that was over now, either tree gone, the story at an end."
+      },
+      "orig_tags": {
+        "peak_flux": 0.61,
+        "mean_flux": 0.01,
+        "wer": 0.1429,
+        "transcript": "However, that was over now, e. the tree gone, the story at an end."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 1.23,
+        "mean_flux": 0.02,
+        "wer": 0.2143,
+        "transcript": "However, that was over now, either tree gone, the story at an end."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 1.41,
+        "mean_flux": 0.02,
+        "wer": 0.2143,
+        "transcript": "However, that was over now, either tree gone, the story at an end."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 0.83,
+        "mean_flux": 0.01,
+        "wer": 0.2143,
+        "transcript": "However, that was over now, either tree gone, the story at an end."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 0.42,
+        "mean_flux": 0.01,
+        "wer": 0.2143,
+        "transcript": "However, that was over now, either tree gone, the story at an end."
+      }
+    }
+  },
+  {
+    "sample_id": 55,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "The influence with the Timaeus has exercised upon posterity is due partly to a misunderstanding.",
+    "diag": {
+      "ratio_shock": 0.5914,
+      "tanh_shock": 0.5309,
+      "w_tags": 0.862,
+      "w_par_aor": 0.9469,
+      "w_perp_aor": 0.4938,
+      "gate_sgsi": 0.5309,
+      "w_par_sgsi_onset": 0.862,
+      "w_perp_sgsi_onset": 0.3017
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 68.78,
+        "mean_flux": 11.78,
+        "wer": 0.0667,
+        "transcript": "The influence with the Timeos has exercised upon posterity is due partly to a misunderstanding."
+      },
+      "orig_tags": {
+        "peak_flux": 72.87,
+        "mean_flux": 12.01,
+        "wer": 0.0667,
+        "transcript": "The influence with the Timeos has exercised upon posterity is due partly to a misunderstanding."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 65.95,
+        "mean_flux": 12.45,
+        "wer": 0.0667,
+        "transcript": "The influence with the Timeos has exercised upon posterity is due partly to a misunderstanding."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 65.35,
+        "mean_flux": 12.5,
+        "wer": 0.0667,
+        "transcript": "The influence with the Timeos has exercised upon posterity is due partly to a misunderstanding."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 68.24,
+        "mean_flux": 12.31,
+        "wer": 0.0667,
+        "transcript": "The influence with the Timeos has exercised upon posterity is due partly to a misunderstanding."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 69.73,
+        "mean_flux": 11.79,
+        "wer": 0.0667,
+        "transcript": "The influence with the Timeos has exercised upon posterity is due partly to a misunderstanding."
+      }
+    }
+  },
+  {
+    "sample_id": 56,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "There is no danger of the modern commentators on the Timaeus falling into the absurdities of the Neo Platonists.",
+    "diag": {
+      "ratio_shock": 0.6085,
+      "tanh_shock": 0.5431,
+      "w_tags": 0.8588,
+      "w_par_aor": 0.9457,
+      "w_perp_aor": 0.4914,
+      "gate_sgsi": 0.5431,
+      "w_par_sgsi_onset": 0.8588,
+      "w_perp_sgsi_onset": 0.3006
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 68.76,
+        "mean_flux": 15.04,
+        "wer": 0.1579,
+        "transcript": "There is no danger of the modern commentators on the timayas falling into the absurdities of the neoplatinists."
+      },
+      "orig_tags": {
+        "peak_flux": 69.22,
+        "mean_flux": 15.52,
+        "wer": 0.1579,
+        "transcript": "There is no danger of the modern commentators on the timayas falling into the absurdities of the neoplatinists."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 67.08,
+        "mean_flux": 15.54,
+        "wer": 0.1579,
+        "transcript": "There is no danger of the modern commentators on the timayas falling into the absurdities of the neoplatinists."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 66.57,
+        "mean_flux": 15.67,
+        "wer": 0.1579,
+        "transcript": "There is no danger of the modern commentators on the timayas falling into the absurdities of the neoplatinists."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 63.97,
+        "mean_flux": 15.16,
+        "wer": 0.1579,
+        "transcript": "There is no danger of the modern commentators on the timayas falling into the absurdities of the neoplatinists."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 68.21,
+        "mean_flux": 15.48,
+        "wer": 0.1579,
+        "transcript": "There is no danger of the modern commentators on the timayas falling into the absurdities of the neoplatinists."
+      }
+    }
+  },
+  {
+    "sample_id": 57,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him.",
+    "diag": {
+      "ratio_shock": 0.5839,
+      "tanh_shock": 0.5255,
+      "w_tags": 0.8634,
+      "w_par_aor": 0.9475,
+      "w_perp_aor": 0.4949,
+      "gate_sgsi": 0.5255,
+      "w_par_sgsi_onset": 0.8634,
+      "w_perp_sgsi_onset": 0.3022
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 58.96,
+        "mean_flux": 14.19,
+        "wer": 0.0,
+        "transcript": "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him."
+      },
+      "orig_tags": {
+        "peak_flux": 58.91,
+        "mean_flux": 14.23,
+        "wer": 0.0,
+        "transcript": "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 60.42,
+        "mean_flux": 14.24,
+        "wer": 0.0,
+        "transcript": "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 60.38,
+        "mean_flux": 14.25,
+        "wer": 0.0,
+        "transcript": "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 58.8,
+        "mean_flux": 13.84,
+        "wer": 0.0,
+        "transcript": "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 57.27,
+        "mean_flux": 13.8,
+        "wer": 0.0,
+        "transcript": "But they have nothing to do with the interpretation of Plato, and in spirit they are opposed to him."
+      }
+    }
+  },
+  {
+    "sample_id": 58,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "Many, if not all the elements of the Pre Socratic philosophy are included in the Timaeus.",
+    "diag": {
+      "ratio_shock": 0.6008,
+      "tanh_shock": 0.5376,
+      "w_tags": 0.8602,
+      "w_par_aor": 0.9462,
+      "w_perp_aor": 0.4925,
+      "gate_sgsi": 0.5376,
+      "w_par_sgsi_onset": 0.8602,
+      "w_perp_sgsi_onset": 0.3011
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 66.92,
+        "mean_flux": 10.37,
+        "wer": 0.1875,
+        "transcript": "Many, if not all the elements of the pre-socratic philosophy are included in the Temaias."
+      },
+      "orig_tags": {
+        "peak_flux": 66.42,
+        "mean_flux": 10.37,
+        "wer": 0.1875,
+        "transcript": "Many, if not all the elements of the pre-socratic philosophy are included in the Temaias."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 62.09,
+        "mean_flux": 10.2,
+        "wer": 0.1875,
+        "transcript": "Many, if not all the elements of the pre-socratic philosophy are included in the Temaias."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 62.07,
+        "mean_flux": 10.18,
+        "wer": 0.1875,
+        "transcript": "Many, if not all the elements of the pre-socratic philosophy are included in the Temaias."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 61.98,
+        "mean_flux": 10.0,
+        "wer": 0.1875,
+        "transcript": "Many, if not all the elements of the pre-socratic philosophy are included in the Temaias."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 66.13,
+        "mean_flux": 10.42,
+        "wer": 0.1875,
+        "transcript": "Many, if not all the elements of the pre-socratic philosophy are included in the Temaias."
+      }
+    }
+  },
+  {
+    "sample_id": 60,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "The style and plan of the Timaeus differ greatly from that of any other of the Platonic dialogues.",
+    "diag": {
+      "ratio_shock": 0.6256,
+      "tanh_shock": 0.555,
+      "w_tags": 0.8557,
+      "w_par_aor": 0.9445,
+      "w_perp_aor": 0.489,
+      "gate_sgsi": 0.555,
+      "w_par_sgsi_onset": 0.8557,
+      "w_perp_sgsi_onset": 0.2995
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 80.36,
+        "mean_flux": 16.04,
+        "wer": 0.0556,
+        "transcript": "The style and plan of the Temeos differ greatly from that of any other of the platonic dialogues."
+      },
+      "orig_tags": {
+        "peak_flux": 83.59,
+        "mean_flux": 16.5,
+        "wer": 0.0556,
+        "transcript": "The style and plan of the Temeos differ greatly from that of any other of the platonic dialogues."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 85.57,
+        "mean_flux": 17.45,
+        "wer": 0.0556,
+        "transcript": "The style and plan of the Temeos differ greatly from that of any other of the platonic dialogues."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 86.07,
+        "mean_flux": 17.5,
+        "wer": 0.0556,
+        "transcript": "The style and plan of the Temeos differ greatly from that of any other of the platonic dialogues."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 81.41,
+        "mean_flux": 17.47,
+        "wer": 0.0556,
+        "transcript": "The style and plan of the Temeos differ greatly from that of any other of the platonic dialogues."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 78.43,
+        "mean_flux": 15.79,
+        "wer": 0.0556,
+        "transcript": "The style and plan of the Temeos differ greatly from that of any other of the platonic dialogues."
+      }
+    }
+  },
+  {
+    "sample_id": 61,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "But Plato has not the same mastery over his instrument which he exhibits in the Phaedrus or Symposium.",
+    "diag": {
+      "ratio_shock": 0.6353,
+      "tanh_shock": 0.5617,
+      "w_tags": 0.854,
+      "w_par_aor": 0.9438,
+      "w_perp_aor": 0.4877,
+      "gate_sgsi": 0.5617,
+      "w_par_sgsi_onset": 0.854,
+      "w_perp_sgsi_onset": 0.2989
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 78.48,
+        "mean_flux": 14.65,
+        "wer": 0.1111,
+        "transcript": "But Plato has not the same mastery over his instrument, which he exhibits in the Fadras or Symposium."
+      },
+      "orig_tags": {
+        "peak_flux": 73.25,
+        "mean_flux": 14.37,
+        "wer": 0.1111,
+        "transcript": "But Plato has not the same mastery over his instrument, which he exhibits in the Fadras or Symposium."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 90.7,
+        "mean_flux": 15.94,
+        "wer": 0.1111,
+        "transcript": "But Plato has not the same mastery over his instrument, which he exhibits in the Fadros or Symposium."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 88.88,
+        "mean_flux": 15.86,
+        "wer": 0.1111,
+        "transcript": "But Plato has not the same mastery over his instrument, which he exhibits in the Fadros or Symposium."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 75.81,
+        "mean_flux": 14.63,
+        "wer": 0.1111,
+        "transcript": "But Plato has not the same mastery over his instrument, which he exhibits in the fadrous or symposium."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 77.26,
+        "mean_flux": 14.42,
+        "wer": 0.1111,
+        "transcript": "But Plato has not the same mastery over his instrument, which he exhibits in the Fadras or Symposium."
+      }
+    }
+  },
+  {
+    "sample_id": 62,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "Nothing can exceed the beauty or art of the introduction, in which he is using words after his accustomed manner.",
+    "diag": {
+      "ratio_shock": 0.566,
+      "tanh_shock": 0.5124,
+      "w_tags": 0.8668,
+      "w_par_aor": 0.9488,
+      "w_perp_aor": 0.4975,
+      "gate_sgsi": 0.5124,
+      "w_par_sgsi_onset": 0.8668,
+      "w_perp_sgsi_onset": 0.3034
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 71.53,
+        "mean_flux": 13.33,
+        "wer": 0.0,
+        "transcript": "Nothing can exceed the beauty or art of the introduction, in which he is using words after his accustomed manner."
+      },
+      "orig_tags": {
+        "peak_flux": 71.46,
+        "mean_flux": 13.01,
+        "wer": 0.0,
+        "transcript": "Nothing can exceed the beauty or art of the introduction, in which he is using words after his accustomed manner."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 68.79,
+        "mean_flux": 13.61,
+        "wer": 0.0,
+        "transcript": "Nothing can exceed the beauty or art of the introduction, in which he is using words after his accustomed manner."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 68.73,
+        "mean_flux": 13.6,
+        "wer": 0.0,
+        "transcript": "Nothing can exceed the beauty or art of the introduction, in which he is using words after his accustomed manner."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 68.94,
+        "mean_flux": 13.32,
+        "wer": 0.0,
+        "transcript": "Nothing can exceed the beauty or art of the introduction, in which he is using words after his accustomed manner."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 70.14,
+        "mean_flux": 12.98,
+        "wer": 0.0,
+        "transcript": "Nothing can exceed the beauty or art of the introduction, in which he is using words after his accustomed manner."
+      }
+    }
+  },
+  {
+    "sample_id": 63,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "But in the rest of the work the power of language seems to fail him, and the dramatic form is wholly given up.",
+    "diag": {
+      "ratio_shock": 0.5902,
+      "tanh_shock": 0.53,
+      "w_tags": 0.8622,
+      "w_par_aor": 0.947,
+      "w_perp_aor": 0.494,
+      "gate_sgsi": 0.53,
+      "w_par_sgsi_onset": 0.8622,
+      "w_perp_sgsi_onset": 0.3018
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 90.97,
+        "mean_flux": 18.75,
+        "wer": 0.0,
+        "transcript": "But in the rest of the work the power of language seems to fail him, and the dramatic form is wholly given up."
+      },
+      "orig_tags": {
+        "peak_flux": 95.47,
+        "mean_flux": 18.94,
+        "wer": 0.0,
+        "transcript": "But in the rest of the work the power of language seems to fail him, and the dramatic form is wholly given up."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 96.08,
+        "mean_flux": 19.06,
+        "wer": 0.0,
+        "transcript": "But in the rest of the work the power of language seems to fail him, and the dramatic form is wholly given up."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 95.66,
+        "mean_flux": 19.04,
+        "wer": 0.0,
+        "transcript": "But in the rest of the work the power of language seems to fail him, and the dramatic form is wholly given up."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 89.12,
+        "mean_flux": 18.79,
+        "wer": 0.0,
+        "transcript": "But in the rest of the work the power of language seems to fail him, and the dramatic form is wholly given up."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 88.38,
+        "mean_flux": 18.64,
+        "wer": 0.0,
+        "transcript": "But in the rest of the work the power of language seems to fail him, and the dramatic form is wholly given up."
+      }
+    }
+  },
+  {
+    "sample_id": 64,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "And hence we find the same sort of clumsiness in the Timaeus of Plato which characterizes the philosophical poem of Lucretius.",
+    "diag": {
+      "ratio_shock": 0.5916,
+      "tanh_shock": 0.531,
+      "w_tags": 0.8619,
+      "w_par_aor": 0.9469,
+      "w_perp_aor": 0.4938,
+      "gate_sgsi": 0.531,
+      "w_par_sgsi_onset": 0.8619,
+      "w_perp_sgsi_onset": 0.3017
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 93.51,
+        "mean_flux": 17.89,
+        "wer": 0.0952,
+        "transcript": "And hence we find the same sort of clumsiness in the T-Mayus of Plato, which characterizes the philosophical poem of Lucretius."
+      },
+      "orig_tags": {
+        "peak_flux": 92.68,
+        "mean_flux": 18.27,
+        "wer": 0.0952,
+        "transcript": "And hence we find the same sort of clumsiness in the T-Mayus of Plato, which characterizes the philosophical poem of Lucretius."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 95.97,
+        "mean_flux": 19.18,
+        "wer": 0.0476,
+        "transcript": "And hence we find the same sort of clumsiness in the Timaeus of Plato, which characterizes the philosophical poem of Lucretius."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 95.86,
+        "mean_flux": 19.15,
+        "wer": 0.0476,
+        "transcript": "And hence we find the same sort of clumsiness in the Timaeus of Plato, which characterizes the philosophical poem of Lucretius."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 93.99,
+        "mean_flux": 18.96,
+        "wer": 0.0476,
+        "transcript": "And hence we find the same sort of clumsiness in the Timaeus of Plato, which characterizes the philosophical poem of Lucretius."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 91.17,
+        "mean_flux": 17.78,
+        "wer": 0.0952,
+        "transcript": "And hence we find the same sort of clumsiness in the T-Mayus of Plato, which characterizes the philosophical poem of Lucretius."
+      }
+    }
+  },
+  {
+    "sample_id": 65,
+    "speaker_id": "2961",
+    "ref_text": "Some poems of Solon were recited by the boys.",
+    "gen_text": "Plato had not the command of his materials which would have enabled him to produce a perfect work of art.",
+    "diag": {
+      "ratio_shock": 0.6164,
+      "tanh_shock": 0.5486,
+      "w_tags": 0.8574,
+      "w_par_aor": 0.9451,
+      "w_perp_aor": 0.4903,
+      "gate_sgsi": 0.5486,
+      "w_par_sgsi_onset": 0.8574,
+      "w_perp_sgsi_onset": 0.3001
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 75.19,
+        "mean_flux": 14.79,
+        "wer": 0.0,
+        "transcript": "Plato had not the command of his materials which would have enabled him to produce a perfect work of art."
+      },
+      "orig_tags": {
+        "peak_flux": 75.12,
+        "mean_flux": 14.89,
+        "wer": 0.0,
+        "transcript": "Plato had not the command of his materials which would have enabled him to produce a perfect work of art."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 80.26,
+        "mean_flux": 15.75,
+        "wer": 0.0,
+        "transcript": "Plato had not the command of his materials which would have enabled him to produce a perfect work of art."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 80.06,
+        "mean_flux": 15.69,
+        "wer": 0.0,
+        "transcript": "Plato had not the command of his materials which would have enabled him to produce a perfect work of art."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 79.54,
+        "mean_flux": 15.22,
+        "wer": 0.0,
+        "transcript": "Plato had not the command of his materials which would have enabled him to produce a perfect work of art."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 75.06,
+        "mean_flux": 14.61,
+        "wer": 0.0,
+        "transcript": "Plato had not the command of his materials which would have enabled him to produce a perfect work of art."
+      }
+    }
+  },
+  {
+    "sample_id": 66,
+    "speaker_id": "8224",
+    "ref_text": "or hath he given us any gift?",
+    "gen_text": "His conduct and presence of mind in this emergence appeared conspicuous.",
+    "diag": {
+      "ratio_shock": 0.5397,
+      "tanh_shock": 0.4928,
+      "w_tags": 0.8719,
+      "w_par_aor": 0.9507,
+      "w_perp_aor": 0.5014,
+      "gate_sgsi": 0.4928,
+      "w_par_sgsi_onset": 0.8719,
+      "w_perp_sgsi_onset": 0.3052
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 40.3,
+        "mean_flux": 2.42,
+        "wer": 0.0,
+        "transcript": "His conduct and presence of mind in this emergence appeared conspicuous."
+      },
+      "orig_tags": {
+        "peak_flux": 41.31,
+        "mean_flux": 2.6,
+        "wer": 0.0,
+        "transcript": "His conduct and presence of mind in this emergence appeared conspicuous."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 46.93,
+        "mean_flux": 2.89,
+        "wer": 0.0,
+        "transcript": "His conduct and presence of mind in this emergence appeared conspicuous."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 47.07,
+        "mean_flux": 2.9,
+        "wer": 0.0,
+        "transcript": "His conduct and presence of mind in this emergence appeared conspicuous."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 43.88,
+        "mean_flux": 2.64,
+        "wer": 0.0,
+        "transcript": "His conduct and presence of mind in this emergence appeared conspicuous."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 38.3,
+        "mean_flux": 2.32,
+        "wer": 0.0,
+        "transcript": "His conduct and presence of mind in this emergence appeared conspicuous."
+      }
+    }
+  },
+  {
+    "sample_id": 71,
+    "speaker_id": "7176",
+    "ref_text": "In despair he hurled himself downward too soon.",
+    "gen_text": "In short he becomes a \"prominent figure in London Society\" - and, if he is not careful, somebody will say so.",
+    "diag": {
+      "ratio_shock": 0.4993,
+      "tanh_shock": 0.4616,
+      "w_tags": 0.88,
+      "w_par_aor": 0.9538,
+      "w_perp_aor": 0.5077,
+      "gate_sgsi": 0.4616,
+      "w_par_sgsi_onset": 0.88,
+      "w_perp_sgsi_onset": 0.308
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 53.62,
+        "mean_flux": 12.13,
+        "wer": 0.2381,
+        "transcript": "In short, he becomes a prominent figure in London society. You end, if he is not careful, somebody will say so."
+      },
+      "orig_tags": {
+        "peak_flux": 51.86,
+        "mean_flux": 11.6,
+        "wer": 0.2381,
+        "transcript": "In short, he becomes a prominent figure in London society. You end, if he is not careful, somebody will say so."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 46.33,
+        "mean_flux": 10.93,
+        "wer": 0.1905,
+        "transcript": "In short, he becomes a prominent figure in London society. E. And, if he is not careful, somebody will say so."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 46.31,
+        "mean_flux": 11.02,
+        "wer": 0.1905,
+        "transcript": "In short, he becomes a prominent figure in London society. E. And, if he is not careful, somebody will say so."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 46.73,
+        "mean_flux": 11.04,
+        "wer": 0.1905,
+        "transcript": "In short, he becomes a prominent figure in London society. E. And, if he is not careful, somebody will say so."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 51.6,
+        "mean_flux": 11.68,
+        "wer": 0.2381,
+        "transcript": "In short, he becomes a prominent figure in London society. You end, if he is not careful, somebody will say so."
+      }
+    }
+  },
+  {
+    "sample_id": 72,
+    "speaker_id": "7176",
+    "ref_text": "Anyhow it's jolly exciting, and I can do the dialogue all right.",
+    "gen_text": "But suppose you said, \"I'm fond of writing; my people always say my letters home are good enough for Punch.",
+    "diag": {
+      "ratio_shock": 0.6012,
+      "tanh_shock": 0.5379,
+      "w_tags": 0.8602,
+      "w_par_aor": 0.9462,
+      "w_perp_aor": 0.4924,
+      "gate_sgsi": 0.5379,
+      "w_par_sgsi_onset": 0.8602,
+      "w_perp_sgsi_onset": 0.3011
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 53.45,
+        "mean_flux": 15.4,
+        "wer": 0.1,
+        "transcript": "But suppose you said, I'm fond of writing, my people always say my letters home are good enough for punch."
+      },
+      "orig_tags": {
+        "peak_flux": 51.68,
+        "mean_flux": 15.09,
+        "wer": 0.1,
+        "transcript": "But suppose you said, I'm fond of writing, my people always say my letters home are good enough for punch."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 48.09,
+        "mean_flux": 14.74,
+        "wer": 0.1,
+        "transcript": "But suppose you said, I'm fond of writing, my people always say my letters home are good enough for punch."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 48.26,
+        "mean_flux": 14.76,
+        "wer": 0.1,
+        "transcript": "But suppose you said, I'm fond of writing, my people always say my letters home are good enough for punch."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 48.23,
+        "mean_flux": 14.56,
+        "wer": 0.1,
+        "transcript": "But suppose you said, I'm fond of writing, my people always say my letters home are good enough for punch."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 52.85,
+        "mean_flux": 15.35,
+        "wer": 0.1,
+        "transcript": "But suppose you said, I'm fond of writing, my people always say my letters home are good enough for punch."
+      }
+    }
+  },
+  {
+    "sample_id": 73,
+    "speaker_id": "7176",
+    "ref_text": "Lady Larkspur starts suddenly and turns towards him.",
+    "gen_text": "I've got a little idea for a play about a man and a woman and another woman, and - but perhaps I'd better keep the plot a secret for the moment.",
+    "diag": {
+      "ratio_shock": 0.59,
+      "tanh_shock": 0.5299,
+      "w_tags": 0.8622,
+      "w_par_aor": 0.947,
+      "w_perp_aor": 0.494,
+      "gate_sgsi": 0.5299,
+      "w_par_sgsi_onset": 0.8622,
+      "w_perp_sgsi_onset": 0.3018
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 67.8,
+        "mean_flux": 22.08,
+        "wer": 0.0323,
+        "transcript": "I've got a little idea for a play about a man and a woman and another woman, and you but perhaps I'd better keep the plot a secret for the moment."
+      },
+      "orig_tags": {
+        "peak_flux": 65.13,
+        "mean_flux": 21.96,
+        "wer": 0.0323,
+        "transcript": "I've got a little idea for a play about a man and a woman and another woman, and you but perhaps I'd better keep the plot a secret for the moment."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 56.67,
+        "mean_flux": 19.89,
+        "wer": 0.0645,
+        "transcript": "I've got a little idea for a play about a man and a woman and another woman, and Gilbert perhaps I'd better keep the plot a secret for the moment."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 56.67,
+        "mean_flux": 19.83,
+        "wer": 0.0645,
+        "transcript": "I've got a little idea for a play about a man and a woman and another woman, and Gilbert perhaps I'd better keep the plot a secret for the moment."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 59.46,
+        "mean_flux": 20.76,
+        "wer": 0.0323,
+        "transcript": "I've got a little idea for a play about a man and a woman and another woman, and due but perhaps I'd better keep the plot a secret for the moment."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 63.91,
+        "mean_flux": 21.5,
+        "wer": 0.0323,
+        "transcript": "I've got a little idea for a play about a man and a woman and another woman, and you but perhaps I'd better keep the plot a secret for the moment."
+      }
+    }
+  },
+  {
+    "sample_id": 74,
+    "speaker_id": "7176",
+    "ref_text": "The great hawk followed hurriedly, to retrieve his prey from the ground.",
+    "gen_text": "Lend me your ear for ten minutes, and you shall learn just what stagecraft is\".",
+    "diag": {
+      "ratio_shock": 0.5966,
+      "tanh_shock": 0.5346,
+      "w_tags": 0.861,
+      "w_par_aor": 0.9465,
+      "w_perp_aor": 0.4931,
+      "gate_sgsi": 0.5346,
+      "w_par_sgsi_onset": 0.861,
+      "w_perp_sgsi_onset": 0.3013
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 64.94,
+        "mean_flux": 8.39,
+        "wer": 0.1333,
+        "transcript": "Lend me your ear for 10 minutes, and you shall learn just what stagecraft is."
+      },
+      "orig_tags": {
+        "peak_flux": 60.53,
+        "mean_flux": 8.48,
+        "wer": 0.2,
+        "transcript": "Lend me your ear for 10 minutes and you shall learn just what stagecraft is."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 60.62,
+        "mean_flux": 9.19,
+        "wer": 0.1333,
+        "transcript": "Lend me your ear for 10 minutes, and you shall learn just what stagecraft is."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 60.76,
+        "mean_flux": 9.19,
+        "wer": 0.1333,
+        "transcript": "Lend me your ear for 10 minutes, and you shall learn just what stagecraft is."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 62.5,
+        "mean_flux": 9.06,
+        "wer": 0.2,
+        "transcript": "Lend me your ear for 10 minutes and you shall learn just what stagecraft is."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 62.77,
+        "mean_flux": 8.18,
+        "wer": 0.1333,
+        "transcript": "Lend me your ear for 10 minutes, and you shall learn just what stagecraft is."
+      }
+    }
+  },
+  {
+    "sample_id": 75,
+    "speaker_id": "7176",
+    "ref_text": "Frankly I cannot always say.",
+    "gen_text": "And I should begin with a short homily on Soliloquy.",
+    "diag": {
+      "ratio_shock": 0.5608,
+      "tanh_shock": 0.5086,
+      "w_tags": 0.8678,
+      "w_par_aor": 0.9491,
+      "w_perp_aor": 0.4983,
+      "gate_sgsi": 0.5086,
+      "w_par_sgsi_onset": 0.8678,
+      "w_perp_sgsi_onset": 0.3037
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 27.39,
+        "mean_flux": 3.62,
+        "wer": 0.1,
+        "transcript": "And I should begin with a short homily on soleloque."
+      },
+      "orig_tags": {
+        "peak_flux": 23.83,
+        "mean_flux": 3.38,
+        "wer": 0.1,
+        "transcript": "And I should begin with a short homily on soleloque."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 22.46,
+        "mean_flux": 2.96,
+        "wer": 0.0,
+        "transcript": "and I should begin with a short homily on soliloquy."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 22.55,
+        "mean_flux": 2.96,
+        "wer": 0.0,
+        "transcript": "and I should begin with a short homily on soliloquy."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 24.59,
+        "mean_flux": 2.99,
+        "wer": 0.0,
+        "transcript": "And I should begin with a short homily on soliloquy."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 28.33,
+        "mean_flux": 3.66,
+        "wer": 0.1,
+        "transcript": "And I should begin with a short homily on soliloquate."
+      }
+    }
+  },
+  {
+    "sample_id": 76,
+    "speaker_id": "7176",
+    "ref_text": "Straightway the hawk glided from his perch and darted after him.",
+    "gen_text": "And so on, till you get to the end, when Ophelia might say, \"Ah, yes,\" or something non committal of that sort.",
+    "diag": {
+      "ratio_shock": 0.6082,
+      "tanh_shock": 0.5429,
+      "w_tags": 0.8589,
+      "w_par_aor": 0.9457,
+      "w_perp_aor": 0.4914,
+      "gate_sgsi": 0.5429,
+      "w_par_sgsi_onset": 0.8589,
+      "w_perp_sgsi_onset": 0.3006
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 77.49,
+        "mean_flux": 16.49,
+        "wer": 0.3182,
+        "transcript": "And so on, till you get to the end when a filia might say, ah yes, or something non-committal of that sort."
+      },
+      "orig_tags": {
+        "peak_flux": 77.35,
+        "mean_flux": 17.4,
+        "wer": 0.3182,
+        "transcript": "And so on, till you get to the end when a filia might say, ah yes, or something non-committal of that sort."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 90.16,
+        "mean_flux": 18.19,
+        "wer": 0.3182,
+        "transcript": "And so on, till you get to the end when a philia might say, ah yes, or something non-committal of that sort."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 90.4,
+        "mean_flux": 18.04,
+        "wer": 0.3182,
+        "transcript": "And so on, till you get to the end when a philia might say, ah yes, or something non-committal of that sort."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 84.89,
+        "mean_flux": 17.9,
+        "wer": 0.3182,
+        "transcript": "And so on, till you get to the end when a philia might say, ah yes, or something non-committal of that sort."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 76.9,
+        "mean_flux": 16.47,
+        "wer": 0.3182,
+        "transcript": "And so on, till you get to the end when a filia might say, ah yes, or something non-committal of that sort."
+      }
+    }
+  },
+  {
+    "sample_id": 77,
+    "speaker_id": "7176",
+    "ref_text": "It might have seemed that a trout of this size was a fairly substantial meal.",
+    "gen_text": "This would be an easy way of doing it, but it would not be the best way, for the reason that it is too easy to call attention to itself.",
+    "diag": {
+      "ratio_shock": 0.619,
+      "tanh_shock": 0.5505,
+      "w_tags": 0.8569,
+      "w_par_aor": 0.945,
+      "w_perp_aor": 0.4899,
+      "gate_sgsi": 0.5505,
+      "w_par_sgsi_onset": 0.8569,
+      "w_perp_sgsi_onset": 0.2999
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 63.26,
+        "mean_flux": 13.52,
+        "wer": 0.0333,
+        "transcript": "This would be an easy way of doing it, but it would not be the best way for the reason that it is too easy to call attention to itself."
+      },
+      "orig_tags": {
+        "peak_flux": 68.19,
+        "mean_flux": 13.36,
+        "wer": 0.0333,
+        "transcript": "This would be an easy way of doing it, but it would not be the best way for the reason that it is too easy to call attention to itself."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 71.7,
+        "mean_flux": 12.49,
+        "wer": 0.0333,
+        "transcript": "This would be an easy way of doing it, but it would not be the best way for the reason that it is too easy to call attention to itself."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 71.62,
+        "mean_flux": 12.53,
+        "wer": 0.0333,
+        "transcript": "This would be an easy way of doing it, but it would not be the best way for the reason that it is too easy to call attention to itself."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 69.53,
+        "mean_flux": 12.54,
+        "wer": 0.0333,
+        "transcript": "This would be an easy way of doing it, but it would not be the best way for the reason that it is too easy to call attention to itself."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 60.95,
+        "mean_flux": 13.12,
+        "wer": 0.0333,
+        "transcript": "This would be an easy way of doing it, but it would not be the best way for the reason that it is too easy to call attention to itself."
+      }
+    }
+  },
+  {
+    "sample_id": 78,
+    "speaker_id": "7176",
+    "ref_text": "Straightway the hawk glided from his perch and darted after him.",
+    "gen_text": "In the old badly made play it was frequently necessary for one of the characters to take the audience into his confidence.",
+    "diag": {
+      "ratio_shock": 0.5714,
+      "tanh_shock": 0.5164,
+      "w_tags": 0.8657,
+      "w_par_aor": 0.9484,
+      "w_perp_aor": 0.4967,
+      "gate_sgsi": 0.5164,
+      "w_par_sgsi_onset": 0.8657,
+      "w_perp_sgsi_onset": 0.303
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 62.66,
+        "mean_flux": 9.09,
+        "wer": 0.0455,
+        "transcript": "In the old badly made play, it was frequently necessary for one of the characters to take the audience into his confidence."
+      },
+      "orig_tags": {
+        "peak_flux": 62.75,
+        "mean_flux": 8.8,
+        "wer": 0.0455,
+        "transcript": "In the old badly made play, it was frequently necessary for one of the characters to take the audience into his confidence."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 57.83,
+        "mean_flux": 7.77,
+        "wer": 0.0455,
+        "transcript": "In the old badly made play, it was frequently necessary for one of the characters to take the audience into his confidence."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 57.89,
+        "mean_flux": 7.78,
+        "wer": 0.0455,
+        "transcript": "In the old badly made play, it was frequently necessary for one of the characters to take the audience into his confidence."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 64.67,
+        "mean_flux": 7.86,
+        "wer": 0.0455,
+        "transcript": "In the old badly made play, it was frequently necessary for one of the characters to take the audience into his confidence."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 61.2,
+        "mean_flux": 8.84,
+        "wer": 0.0455,
+        "transcript": "In the old badly made play, it was frequently necessary for one of the characters to take the audience into his confidence."
+      }
+    }
+  },
+  {
+    "sample_id": 80,
+    "speaker_id": "7176",
+    "ref_text": "In despair he hurled himself downward too soon.",
+    "gen_text": "Double nine two three, Elsinore.... Double- nine, yes.... Hallo, is that you, Horatio? Hamlet speaking.",
+    "diag": {
+      "ratio_shock": 0.4609,
+      "tanh_shock": 0.4308,
+      "w_tags": 0.888,
+      "w_par_aor": 0.9569,
+      "w_perp_aor": 0.5138,
+      "gate_sgsi": 0.4308,
+      "w_par_sgsi_onset": 0.888,
+      "w_perp_sgsi_onset": 0.3108
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 55.68,
+        "mean_flux": 11.37,
+        "wer": 0.2667,
+        "transcript": "Double nine two three, Elsinore. Double nine, yes. Hello, is that you, Horatio? Hamlet speaking."
+      },
+      "orig_tags": {
+        "peak_flux": 52.28,
+        "mean_flux": 11.36,
+        "wer": 0.4,
+        "transcript": "Double nine two three Elsinore. Double nine yes. Hello, is that you, Horatio? Hamlet speaking."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 48.72,
+        "mean_flux": 10.88,
+        "wer": 0.2667,
+        "transcript": "Double nine two three, Elsinore. Double nine, yes. Hello, is that you, Horatio? Hamlet speaking."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 48.79,
+        "mean_flux": 10.86,
+        "wer": 0.2667,
+        "transcript": "Double nine two three, Elsinore. Double nine, yes. Hello, is that you, Horatio? Hamlet speaking."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 47.79,
+        "mean_flux": 10.73,
+        "wer": 0.2667,
+        "transcript": "Double nine two three, Elsinore. Double nine, yes. Hello, is that you, Horatio? Hamlet speaking."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 51.28,
+        "mean_flux": 10.97,
+        "wer": 0.5333,
+        "transcript": "Double nine two three Elsinore. Double nine yes. Hello is that you Horatio. Hamlet speaking."
+      }
+    }
+  },
+  {
+    "sample_id": 81,
+    "speaker_id": "7176",
+    "ref_text": "Straightway the hawk glided from his perch and darted after him.",
+    "gen_text": "To be or not to be, that is the question; whether 'tis nobler in the mind to suffer the slings and arrows - What? No, Hamlet speaking.",
+    "diag": {
+      "ratio_shock": 0.4785,
+      "tanh_shock": 0.445,
+      "w_tags": 0.8843,
+      "w_par_aor": 0.9555,
+      "w_perp_aor": 0.511,
+      "gate_sgsi": 0.445,
+      "w_par_sgsi_onset": 0.8843,
+      "w_perp_sgsi_onset": 0.3095
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 68.69,
+        "mean_flux": 11.5,
+        "wer": 0.2222,
+        "transcript": "To be or not to be, that is the question whether Tisnobler in the mind to suffer the slings and arrows. What? No. Hamlet speaking."
+      },
+      "orig_tags": {
+        "peak_flux": 73.12,
+        "mean_flux": 11.43,
+        "wer": 0.2222,
+        "transcript": "To be or not to be, that is the question whether Tisnobler in the mind to suffer the slings and arrows. What? No. Hamlet speaking."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 72.86,
+        "mean_flux": 11.34,
+        "wer": 0.2222,
+        "transcript": "To be or not to be, that is the question whether Tisnobler in the mind to suffer the slings and arrows. What? No. Hamlet speaking."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 72.86,
+        "mean_flux": 11.34,
+        "wer": 0.2222,
+        "transcript": "To be or not to be, that is the question whether Tisnobler in the mind to suffer the slings and arrows. What? No. Hamlet speaking."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 72.47,
+        "mean_flux": 11.24,
+        "wer": 0.2222,
+        "transcript": "To be or not to be, that is the question whether Tisnobler in the mind to suffer the slings and arrows. What? No. Hamlet speaking."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 64.54,
+        "mean_flux": 11.14,
+        "wer": 0.2222,
+        "transcript": "To be or not to be, that is the question whether Tisnobler in the mind to suffer the slings and arrows. What? No. Hamlet speaking."
+      }
+    }
+  },
+  {
+    "sample_id": 82,
+    "speaker_id": "7176",
+    "ref_text": "But even the unsuccessful dramatist has his moments.",
+    "gen_text": "You gave me double- five, I want double- nine.... Hallo, is that you, Horatio? Hamlet speaking.",
+    "diag": {
+      "ratio_shock": 0.5408,
+      "tanh_shock": 0.4936,
+      "w_tags": 0.8717,
+      "w_par_aor": 0.9506,
+      "w_perp_aor": 0.5013,
+      "gate_sgsi": 0.4936,
+      "w_par_sgsi_onset": 0.8717,
+      "w_perp_sgsi_onset": 0.3051
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 59.87,
+        "mean_flux": 16.01,
+        "wer": 0.25,
+        "transcript": "You gave me double five, I want double nine. Hello, is that you, Horatio? Hamlet speaking."
+      },
+      "orig_tags": {
+        "peak_flux": 60.13,
+        "mean_flux": 15.18,
+        "wer": 0.25,
+        "transcript": "You gave me double five, I want double nine. Hello, is that you, Horatio? Hamlet speaking."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 61.94,
+        "mean_flux": 14.42,
+        "wer": 0.25,
+        "transcript": "You gave me double five, I want double nine. Hello, is that you, Horatio? Hamlet speaking."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 61.92,
+        "mean_flux": 14.5,
+        "wer": 0.25,
+        "transcript": "You gave me double five, I want double nine. Hello, is that you, Horatio? Hamlet speaking."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 63.4,
+        "mean_flux": 14.36,
+        "wer": 0.25,
+        "transcript": "You gave me double five, I want double nine. Hello, is that you, Horatio? Hamlet speaking."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 58.93,
+        "mean_flux": 15.78,
+        "wer": 0.25,
+        "transcript": "You gave me double five, I want double nine. Hello, is that you, Horatio? Hamlet speaking."
+      }
+    }
+  },
+  {
+    "sample_id": 83,
+    "speaker_id": "7176",
+    "ref_text": "Enter Hamlet with his favourite boar hound.",
+    "gen_text": "To be or not to be, that is the question; whether 'tis nobler",
+    "diag": {
+      "ratio_shock": 0.5593,
+      "tanh_shock": 0.5074,
+      "w_tags": 0.8681,
+      "w_par_aor": 0.9493,
+      "w_perp_aor": 0.4985,
+      "gate_sgsi": 0.5074,
+      "w_par_sgsi_onset": 0.8681,
+      "w_perp_sgsi_onset": 0.3038
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 54.82,
+        "mean_flux": 4.09,
+        "wer": 0.2308,
+        "transcript": "To be or not to be, that is the question whether tis nobler."
+      },
+      "orig_tags": {
+        "peak_flux": 51.16,
+        "mean_flux": 4.08,
+        "wer": 0.1538,
+        "transcript": "To be or not to be, that is the question whether tis nobler"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 45.55,
+        "mean_flux": 3.79,
+        "wer": 0.2308,
+        "transcript": "To be or not to be, that is the question whether Tis Snowblur"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 45.67,
+        "mean_flux": 3.79,
+        "wer": 0.2308,
+        "transcript": "To be or not to be, that is the question whether Tis Snowblur"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 45.64,
+        "mean_flux": 3.7,
+        "wer": 0.2308,
+        "transcript": "To be or not to be, that is the question whether Tis Snowblur"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 52.25,
+        "mean_flux": 4.09,
+        "wer": 0.2308,
+        "transcript": "To be or not to be, that is the question whether tis nobler."
+      }
+    }
+  },
+  {
+    "sample_id": 84,
+    "speaker_id": "7176",
+    "ref_text": "Straightway the hawk glided from his perch and darted after him.",
+    "gen_text": "In novels the hero has often \"pushed his meals away untasted,\" but no stage hero would do anything so unnatural as this.",
+    "diag": {
+      "ratio_shock": 0.495,
+      "tanh_shock": 0.4582,
+      "w_tags": 0.8809,
+      "w_par_aor": 0.9542,
+      "w_perp_aor": 0.5084,
+      "gate_sgsi": 0.4582,
+      "w_par_sgsi_onset": 0.8809,
+      "w_perp_sgsi_onset": 0.3083
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 70.93,
+        "mean_flux": 11.73,
+        "wer": 0.0909,
+        "transcript": "In novels the hero has often pushed his meals away untasted. But no stage hero would do anything so unnatural as this."
+      },
+      "orig_tags": {
+        "peak_flux": 70.16,
+        "mean_flux": 11.56,
+        "wer": 0.0909,
+        "transcript": "In novels the hero has often pushed his meals away untasted. But no stage hero would do anything so unnatural as this."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 66.65,
+        "mean_flux": 10.65,
+        "wer": 0.0909,
+        "transcript": "In novels the hero has often pushed his meals away untasted, but no stage hero would do anything so unnatural as this."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 66.6,
+        "mean_flux": 10.64,
+        "wer": 0.0909,
+        "transcript": "In novels the hero has often pushed his meals away untasted, but no stage hero would do anything so unnatural as this."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 67.14,
+        "mean_flux": 10.66,
+        "wer": 0.0909,
+        "transcript": "In novels the hero has often pushed his meals away untasted. But no stage hero would do anything so unnatural as this."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 70.37,
+        "mean_flux": 11.59,
+        "wer": 0.0909,
+        "transcript": "In novels the hero has often pushed his meals away untasted. But no stage hero would do anything so unnatural as this."
+      }
+    }
+  },
+  {
+    "sample_id": 85,
+    "speaker_id": "7176",
+    "ref_text": "Anyhow it's jolly exciting, and I can do the dialogue all right.",
+    "gen_text": "But it is the cigarette which chiefly has brought the modern drama to its present state of perfection.",
+    "diag": {
+      "ratio_shock": 0.6776,
+      "tanh_shock": 0.59,
+      "w_tags": 0.8466,
+      "w_par_aor": 0.941,
+      "w_perp_aor": 0.482,
+      "gate_sgsi": 0.59,
+      "w_par_sgsi_onset": 0.8466,
+      "w_perp_sgsi_onset": 0.2963
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 59.02,
+        "mean_flux": 15.81,
+        "wer": 0.0,
+        "transcript": "But it is the cigarette which chiefly has brought the modern drama to its present state of perfection."
+      },
+      "orig_tags": {
+        "peak_flux": 59.18,
+        "mean_flux": 15.77,
+        "wer": 0.0,
+        "transcript": "But it is the cigarette which chiefly has brought the modern drama to its present state of perfection."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 58.38,
+        "mean_flux": 13.63,
+        "wer": 0.0,
+        "transcript": "But it is the cigarette which chiefly has brought the modern drama to its present state of perfection."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 58.26,
+        "mean_flux": 13.98,
+        "wer": 0.0,
+        "transcript": "But it is the cigarette which chiefly has brought the modern drama to its present state of perfection."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 60.7,
+        "mean_flux": 14.97,
+        "wer": 0.0,
+        "transcript": "But it is the cigarette which chiefly has brought the modern drama to its present state of perfection."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 57.76,
+        "mean_flux": 15.6,
+        "wer": 0.0,
+        "transcript": "But it is the cigarette which chiefly has brought the modern drama to its present state of perfection."
+      }
+    }
+  },
+  {
+    "sample_id": 86,
+    "speaker_id": "4077",
+    "ref_text": "But a word further concerning the expedition in general.",
+    "gen_text": "Its origin was small - a germ, an insignificant seed, hardly to be thought of as likely to arouse opposition.",
+    "diag": {
+      "ratio_shock": 0.5831,
+      "tanh_shock": 0.5249,
+      "w_tags": 0.8635,
+      "w_par_aor": 0.9475,
+      "w_perp_aor": 0.495,
+      "gate_sgsi": 0.5249,
+      "w_par_sgsi_onset": 0.8635,
+      "w_perp_sgsi_onset": 0.3022
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 87.16,
+        "mean_flux": 20.25,
+        "wer": 0.05,
+        "transcript": "Its origin was small a germ, an insignificant seed, hardly to be thought of as likely to arouse opposition."
+      },
+      "orig_tags": {
+        "peak_flux": 85.75,
+        "mean_flux": 20.58,
+        "wer": 0.05,
+        "transcript": "Its origin was small a germ, an insignificant seed, hardly to be thought of as likely to arouse opposition."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 92.97,
+        "mean_flux": 20.83,
+        "wer": 0.1,
+        "transcript": "Its origin was small odd germ, an insignificant seed, hardly to be thought of as likely to arouse opposition."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 93.25,
+        "mean_flux": 20.9,
+        "wer": 0.1,
+        "transcript": "Its origin was small odd germ, an insignificant seed, hardly to be thought of as likely to arouse opposition."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 89.52,
+        "mean_flux": 20.77,
+        "wer": 0.1,
+        "transcript": "Its origin was small odd germ, an insignificant seed, hardly to be thought of as likely to arouse opposition."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 85.68,
+        "mean_flux": 20.36,
+        "wer": 0.05,
+        "transcript": "Its origin was small a germ, an insignificant seed, hardly to be thought of as likely to arouse opposition."
+      }
+    }
+  },
+  {
+    "sample_id": 87,
+    "speaker_id": "4077",
+    "ref_text": "But a word further concerning the expedition in general.",
+    "gen_text": "Instead of but six regularly affiliated members, and at most two score of adherents, the organization numbers today many hundred thousand souls.",
+    "diag": {
+      "ratio_shock": 0.6052,
+      "tanh_shock": 0.5407,
+      "w_tags": 0.8594,
+      "w_par_aor": 0.9459,
+      "w_perp_aor": 0.4919,
+      "gate_sgsi": 0.5407,
+      "w_par_sgsi_onset": 0.8594,
+      "w_perp_sgsi_onset": 0.3008
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 91.9,
+        "mean_flux": 16.51,
+        "wer": 0.0455,
+        "transcript": "Instead of but six regularly affiliated members and at most two score of adherents, the organization numbers today many hundred thousand souls."
+      },
+      "orig_tags": {
+        "peak_flux": 91.57,
+        "mean_flux": 16.36,
+        "wer": 0.0455,
+        "transcript": "Instead of but six regularly affiliated members and at most two score of adherents, the organization numbers today many hundred thousand souls."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 92.2,
+        "mean_flux": 14.28,
+        "wer": 0.0455,
+        "transcript": "Instead of but six regularly affiliated members, and at most two square of adherents, the organization numbers today many hundred thousand souls."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 92.96,
+        "mean_flux": 14.39,
+        "wer": 0.0455,
+        "transcript": "Instead of but six regularly affiliated members, and at most two square of adherents, the organization numbers today many hundred thousand souls."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 90.64,
+        "mean_flux": 14.75,
+        "wer": 0.0455,
+        "transcript": "Instead of but six regularly affiliated members, and at most two square of adherents, the organization numbers today many hundred thousand souls."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 90.23,
+        "mean_flux": 16.76,
+        "wer": 0.0455,
+        "transcript": "Instead of but six regularly affiliated members and at most two score of adherents, the organization numbers today many hundred thousand souls."
+      }
+    }
+  },
+  {
+    "sample_id": 89,
+    "speaker_id": "4077",
+    "ref_text": "Who began the quarrel? Was it the \"Mormons\"?",
+    "gen_text": "Their sufferings have never yet been fitly chronicled by human scribe.",
+    "diag": {
+      "ratio_shock": 0.6691,
+      "tanh_shock": 0.5844,
+      "w_tags": 0.8481,
+      "w_par_aor": 0.9416,
+      "w_perp_aor": 0.4831,
+      "gate_sgsi": 0.5844,
+      "w_par_sgsi_onset": 0.8481,
+      "w_perp_sgsi_onset": 0.2968
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 81.86,
+        "mean_flux": 23.93,
+        "wer": 0.0909,
+        "transcript": "Their sufferings have never yet been fitly chronicle by human scribe."
+      },
+      "orig_tags": {
+        "peak_flux": 82.74,
+        "mean_flux": 24.14,
+        "wer": 0.0,
+        "transcript": "Their sufferings have never yet been fitly chronicled by human scribe."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 87.42,
+        "mean_flux": 24.82,
+        "wer": 0.0,
+        "transcript": "Their sufferings have never yet been fitly chronicled by human scribe."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 87.09,
+        "mean_flux": 24.87,
+        "wer": 0.0,
+        "transcript": "Their sufferings have never yet been fitly chronicled by human scribe."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 85.03,
+        "mean_flux": 24.48,
+        "wer": 0.0,
+        "transcript": "Their sufferings have never yet been fitly chronicled by human scribe."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 79.64,
+        "mean_flux": 23.6,
+        "wer": 0.0909,
+        "transcript": "Their sufferings have never yet been fitly chronicle by human scribe."
+      }
+    }
+  },
+  {
+    "sample_id": 90,
+    "speaker_id": "4077",
+    "ref_text": "But a word further concerning the expedition in general.",
+    "gen_text": "Oh, what a record to read; what a picture to gaze upon; how awful the fact!",
+    "diag": {
+      "ratio_shock": 0.6303,
+      "tanh_shock": 0.5582,
+      "w_tags": 0.8549,
+      "w_par_aor": 0.9442,
+      "w_perp_aor": 0.4884,
+      "gate_sgsi": 0.5582,
+      "w_par_sgsi_onset": 0.8549,
+      "w_perp_sgsi_onset": 0.2992
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 119.33,
+        "mean_flux": 16.95,
+        "wer": 0.1875,
+        "transcript": "Oh, what a record to read, what a picture to gaze upon, how awful the fact."
+      },
+      "orig_tags": {
+        "peak_flux": 115.44,
+        "mean_flux": 16.53,
+        "wer": 0.1875,
+        "transcript": "Oh, what a record to read, what a picture to gaze upon, how awful the fact."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 107.77,
+        "mean_flux": 13.92,
+        "wer": 0.1875,
+        "transcript": "Oh, what a record to read, what a picture to gaze upon, how awful the fact."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 108.07,
+        "mean_flux": 13.92,
+        "wer": 0.1875,
+        "transcript": "Oh, what a record to read. What a picture to gaze upon. How awful the fact."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 111.52,
+        "mean_flux": 15.08,
+        "wer": 0.1875,
+        "transcript": "Oh, what a record to read, what a picture to gaze upon, how awful the fact."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 120.75,
+        "mean_flux": 17.16,
+        "wer": 0.1875,
+        "transcript": "Oh, what a record to read, what a picture to gaze upon, how awful the fact."
+      }
+    }
+  },
+  {
+    "sample_id": 91,
+    "speaker_id": "6930",
+    "ref_text": "Voltaire picked up something from the ground and looked at it.",
+    "gen_text": "The poor little things\"! cried Cynthia. \"Think of them having been turned to the wall all these years!",
+    "diag": {
+      "ratio_shock": 0.6833,
+      "tanh_shock": 0.5937,
+      "w_tags": 0.8456,
+      "w_par_aor": 0.9406,
+      "w_perp_aor": 0.4813,
+      "gate_sgsi": 0.5937,
+      "w_par_sgsi_onset": 0.8456,
+      "w_perp_sgsi_onset": 0.296
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 45.28,
+        "mean_flux": 13.22,
+        "wer": 0.2222,
+        "transcript": "The poor little things, cried Cynthia, think of them having been turned to the wall all these years."
+      },
+      "orig_tags": {
+        "peak_flux": 46.34,
+        "mean_flux": 12.7,
+        "wer": 0.2222,
+        "transcript": "The poor little things, cried Cynthia, think of them having been turned to the wall all these years."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 40.08,
+        "mean_flux": 12.61,
+        "wer": 0.2222,
+        "transcript": "The poor little things, cried Cynthia, think of them having been turned to the wall all these years."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 40.85,
+        "mean_flux": 12.6,
+        "wer": 0.2222,
+        "transcript": "The poor little things, cried Cynthia, think of them having been turned to the wall all these years."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 41.62,
+        "mean_flux": 12.27,
+        "wer": 0.2222,
+        "transcript": "The poor little things, cried Cynthia, think of them having been turned to the wall all these years."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 47.43,
+        "mean_flux": 12.91,
+        "wer": 0.2222,
+        "transcript": "The poor little things, cried Cynthia, think of them having been turned to the wall all these years."
+      }
+    }
+  },
+  {
+    "sample_id": 92,
+    "speaker_id": "6930",
+    "ref_text": "Do you suppose the miniature was a copy of the same thing\"?",
+    "gen_text": "But Joyce had not been listening. All at once she put down her candle on the table and faced her companion.",
+    "diag": {
+      "ratio_shock": 0.6621,
+      "tanh_shock": 0.5797,
+      "w_tags": 0.8493,
+      "w_par_aor": 0.942,
+      "w_perp_aor": 0.4841,
+      "gate_sgsi": 0.5797,
+      "w_par_sgsi_onset": 0.8493,
+      "w_perp_sgsi_onset": 0.2972
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 90.63,
+        "mean_flux": 32.0,
+        "wer": 0.0,
+        "transcript": "But Joyce had not been listening. All at once she put down her candle on the table and faced her companion."
+      },
+      "orig_tags": {
+        "peak_flux": 82.45,
+        "mean_flux": 31.76,
+        "wer": 0.0,
+        "transcript": "But Joyce had not been listening. All at once she put down her candle on the table and faced her companion."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 86.01,
+        "mean_flux": 30.9,
+        "wer": 0.0,
+        "transcript": "But Joyce had not been listening. All at once she put down her candle on the table and faced her companion."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 85.37,
+        "mean_flux": 30.99,
+        "wer": 0.0,
+        "transcript": "But Joyce had not been listening. All at once she put down her candle on the table and faced her companion."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 82.6,
+        "mean_flux": 30.6,
+        "wer": 0.0,
+        "transcript": "But Joyce had not been listening. All at once she put down her candle on the table and faced her companion."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 88.42,
+        "mean_flux": 31.3,
+        "wer": 0.0,
+        "transcript": "But Joyce had not been listening. All at once she put down her candle on the table and faced her companion."
+      }
+    }
+  },
+  {
+    "sample_id": 93,
+    "speaker_id": "6930",
+    "ref_text": "Do you suppose the miniature was a copy of the same thing\"?",
+    "gen_text": "The twin brother did something she didn't like, and she turned his picture to the wall.",
+    "diag": {
+      "ratio_shock": 0.6834,
+      "tanh_shock": 0.5937,
+      "w_tags": 0.8456,
+      "w_par_aor": 0.9406,
+      "w_perp_aor": 0.4813,
+      "gate_sgsi": 0.5937,
+      "w_par_sgsi_onset": 0.8456,
+      "w_perp_sgsi_onset": 0.296
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 80.45,
+        "mean_flux": 17.85,
+        "wer": 0.0,
+        "transcript": "The twin brother did something she didn't like, and she turned his picture to the wall."
+      },
+      "orig_tags": {
+        "peak_flux": 69.51,
+        "mean_flux": 16.55,
+        "wer": 0.0,
+        "transcript": "The twin brother did something she didn't like, and she turned his picture to the wall."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 70.81,
+        "mean_flux": 15.86,
+        "wer": 0.0,
+        "transcript": "The twin brother did something she didn't like, and she turned his picture to the wall."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 70.98,
+        "mean_flux": 15.75,
+        "wer": 0.0,
+        "transcript": "The twin brother did something she didn't like, and she turned his picture to the wall."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 71.75,
+        "mean_flux": 15.76,
+        "wer": 0.0,
+        "transcript": "The twin brother did something she didn't like, and she turned his picture to the wall."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 78.82,
+        "mean_flux": 17.63,
+        "wer": 0.0,
+        "transcript": "The twin brother did something she didn't like, and she turned his picture to the wall."
+      }
+    }
+  },
+  {
+    "sample_id": 94,
+    "speaker_id": "6930",
+    "ref_text": "They were certainly no nearer the solution of their problem.",
+    "gen_text": "Hers happened to be in the same frame too, but she evidently didn't care about that.",
+    "diag": {
+      "ratio_shock": 0.6365,
+      "tanh_shock": 0.5625,
+      "w_tags": 0.8537,
+      "w_par_aor": 0.9437,
+      "w_perp_aor": 0.4875,
+      "gate_sgsi": 0.5625,
+      "w_par_sgsi_onset": 0.8537,
+      "w_perp_sgsi_onset": 0.2988
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 72.39,
+        "mean_flux": 18.9,
+        "wer": 0.0,
+        "transcript": "Hers happened to be in the same frame too, but she evidently didn't care about that."
+      },
+      "orig_tags": {
+        "peak_flux": 75.13,
+        "mean_flux": 17.71,
+        "wer": 0.0,
+        "transcript": "Hers happened to be in the same frame too, but she evidently didn't care about that."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 81.05,
+        "mean_flux": 15.2,
+        "wer": 0.0,
+        "transcript": "Hers happened to be in the same frame too, but she evidently didn't care about that."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 82.7,
+        "mean_flux": 15.27,
+        "wer": 0.0,
+        "transcript": "Hers happened to be in the same frame too, but she evidently didn't care about that."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 81.14,
+        "mean_flux": 15.76,
+        "wer": 0.0,
+        "transcript": "Hers happened to be in the same frame too, but she evidently didn't care about that."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 70.32,
+        "mean_flux": 18.22,
+        "wer": 0.0,
+        "transcript": "Hers happened to be in the same frame too, but she evidently didn't care about that."
+      }
+    }
+  },
+  {
+    "sample_id": 95,
+    "speaker_id": "6930",
+    "ref_text": "Hers happened to be in the same frame too, but she evidently didn't care about that.",
+    "gen_text": "I thought we were 'stumped' again when I first saw that picture, but it's been of some use, after all.",
+    "diag": {
+      "ratio_shock": 0.6804,
+      "tanh_shock": 0.5917,
+      "w_tags": 0.8461,
+      "w_par_aor": 0.9408,
+      "w_perp_aor": 0.4817,
+      "gate_sgsi": 0.5917,
+      "w_par_sgsi_onset": 0.8461,
+      "w_perp_sgsi_onset": 0.2962
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 56.67,
+        "mean_flux": 17.22,
+        "wer": 0.2,
+        "transcript": "About that, I thought we were stumped again when I first saw that picture, but it's been of some use after all."
+      },
+      "orig_tags": {
+        "peak_flux": 61.37,
+        "mean_flux": 18.01,
+        "wer": 0.2,
+        "transcript": "About that, I thought we were stumped again when I first saw that picture, but it's been of some use after all."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 72.2,
+        "mean_flux": 18.26,
+        "wer": 0.2,
+        "transcript": "About that, I thought we were stumped again when I first saw that picture, but it's been of some use after all."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 68.34,
+        "mean_flux": 18.03,
+        "wer": 0.2,
+        "transcript": "About that, I thought we were stumped again when I first saw that picture, but it's been of some use after all."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 65.53,
+        "mean_flux": 18.1,
+        "wer": 0.2,
+        "transcript": "About that, I thought we were stumped again when I first saw that picture, but it's been of some use after all."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 56.63,
+        "mean_flux": 16.51,
+        "wer": 0.2,
+        "transcript": "About that, I thought we were stumped again when I first saw that picture, but it's been of some use after all."
+      }
+    }
+  },
+  {
+    "sample_id": 96,
+    "speaker_id": "6930",
+    "ref_text": "Isn't he the greatest for getting into odd corners\"!",
+    "gen_text": "They worry me terribly. And, besides, I'd like to see what this lovely furniture looks like without such quantities of dust all over it\". \"Good scheme, CYN\"!",
+    "diag": {
+      "ratio_shock": 0.6626,
+      "tanh_shock": 0.5801,
+      "w_tags": 0.8492,
+      "w_par_aor": 0.942,
+      "w_perp_aor": 0.484,
+      "gate_sgsi": 0.5801,
+      "w_par_sgsi_onset": 0.8492,
+      "w_perp_sgsi_onset": 0.2972
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 123.38,
+        "mean_flux": 25.59,
+        "wer": 0.2963,
+        "transcript": "They worry me terribly, and besides I'd like to see what this lovely furniture looks like without such quantities of dust all over it. Good scheme, see why in!"
+      },
+      "orig_tags": {
+        "peak_flux": 118.91,
+        "mean_flux": 23.84,
+        "wer": 0.2963,
+        "transcript": "They worry me terribly, and besides I'd like to see what this lovely furniture looks like without such quantities of dust all over it. Good scheme, see why in!"
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 91.32,
+        "mean_flux": 17.77,
+        "wer": 0.2963,
+        "transcript": "They worry me terribly, and besides I'd like to see what this lovely furniture looks like without such quantities of dust all over it. Good scheme, see why in!"
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 92.69,
+        "mean_flux": 18.14,
+        "wer": 0.2963,
+        "transcript": "They worry me terribly, and besides I'd like to see what this lovely furniture looks like without such quantities of dust all over it. Good scheme, see why in!"
+      },
+      "strat3_seam_window": {
+        "peak_flux": 104.18,
+        "mean_flux": 19.84,
+        "wer": 0.2963,
+        "transcript": "They worry me terribly, and besides I'd like to see what this lovely furniture looks like without such quantities of dust all over it. Good scheme, see why in!"
+      },
+      "strat4_sgsi": {
+        "peak_flux": 114.6,
+        "mean_flux": 24.99,
+        "wer": 0.2963,
+        "transcript": "They worry me terribly, and besides I'd like to see what this lovely furniture looks like without such quantities of dust all over it. Good scheme, see why in!"
+      }
+    }
+  },
+  {
+    "sample_id": 97,
+    "speaker_id": "6930",
+    "ref_text": "Hers happened to be in the same frame too, but she evidently didn't care about that.",
+    "gen_text": "We'll come in here this afternoon with old clothes on, and have a regular house cleaning!",
+    "diag": {
+      "ratio_shock": 0.6844,
+      "tanh_shock": 0.5944,
+      "w_tags": 0.8455,
+      "w_par_aor": 0.9406,
+      "w_perp_aor": 0.4811,
+      "gate_sgsi": 0.5944,
+      "w_par_sgsi_onset": 0.8455,
+      "w_perp_sgsi_onset": 0.2959
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 60.43,
+        "mean_flux": 19.4,
+        "wer": 0.25,
+        "transcript": "About that. We'll come in here this afternoon with old clothes on and have a regular house cleaning."
+      },
+      "orig_tags": {
+        "peak_flux": 60.37,
+        "mean_flux": 18.87,
+        "wer": 0.25,
+        "transcript": "About that. We'll come in here this afternoon with old clothes on and have a regular house cleaning."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 69.5,
+        "mean_flux": 18.21,
+        "wer": 0.25,
+        "transcript": "About that. We'll come in here this afternoon with old clothes on and have a regular house cleaning."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 67.93,
+        "mean_flux": 18.18,
+        "wer": 0.25,
+        "transcript": "About that. We'll come in here this afternoon with old clothes on and have a regular house cleaning."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 64.64,
+        "mean_flux": 18.53,
+        "wer": 0.25,
+        "transcript": "About that. We'll come in here this afternoon with old clothes on and have a regular house cleaning."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 59.97,
+        "mean_flux": 18.78,
+        "wer": 0.25,
+        "transcript": "About that. We'll come in here this afternoon with old clothes on and have a regular house cleaning."
+      }
+    }
+  },
+  {
+    "sample_id": 99,
+    "speaker_id": "6930",
+    "ref_text": "Now what have you to say, Cynthia Sprague\"?",
+    "gen_text": "This thought, however, did not enter the heads of the enthusiastic pair.",
+    "diag": {
+      "ratio_shock": 0.6506,
+      "tanh_shock": 0.5721,
+      "w_tags": 0.8513,
+      "w_par_aor": 0.9428,
+      "w_perp_aor": 0.4856,
+      "gate_sgsi": 0.5721,
+      "w_par_sgsi_onset": 0.8513,
+      "w_perp_sgsi_onset": 0.2979
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 45.5,
+        "mean_flux": 9.22,
+        "wer": 0.0,
+        "transcript": "This thought, however, did not enter the heads of the enthusiastic pair."
+      },
+      "orig_tags": {
+        "peak_flux": 45.94,
+        "mean_flux": 9.11,
+        "wer": 0.0,
+        "transcript": "This thought, however, did not enter the heads of the enthusiastic pair."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 45.2,
+        "mean_flux": 8.51,
+        "wer": 0.0,
+        "transcript": "This thought, however, did not enter the heads of the enthusiastic pair."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 45.09,
+        "mean_flux": 8.54,
+        "wer": 0.0,
+        "transcript": "This thought, however, did not enter the heads of the enthusiastic pair."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 44.87,
+        "mean_flux": 8.68,
+        "wer": 0.0,
+        "transcript": "This thought, however, did not enter the heads of the enthusiastic pair."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 44.67,
+        "mean_flux": 9.18,
+        "wer": 0.0,
+        "transcript": "This thought, however, did not enter the heads of the enthusiastic pair."
+      }
+    }
+  },
+  {
+    "sample_id": 100,
+    "speaker_id": "6930",
+    "ref_text": "Now let's dust the furniture and pictures\".",
+    "gen_text": "The lure proved too much for him, and he came sporting after it, as friskily as a young kitten, much to Cynthia's delight when she caught sight of him.",
+    "diag": {
+      "ratio_shock": 0.5801,
+      "tanh_shock": 0.5228,
+      "w_tags": 0.8641,
+      "w_par_aor": 0.9477,
+      "w_perp_aor": 0.4954,
+      "gate_sgsi": 0.5228,
+      "w_par_sgsi_onset": 0.8641,
+      "w_perp_sgsi_onset": 0.3024
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 106.78,
+        "mean_flux": 20.08,
+        "wer": 0.0345,
+        "transcript": "The lore proved too much for him, and he came sporting after it, as friskily as a young kitten, much to Cynthia's delight when she caught sight of him."
+      },
+      "orig_tags": {
+        "peak_flux": 106.84,
+        "mean_flux": 19.93,
+        "wer": 0.0345,
+        "transcript": "The lore proved too much for him, and he came sporting after it, as friskily as a young kitten, much to Cynthia's delight when she caught sight of him."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 100.17,
+        "mean_flux": 19.65,
+        "wer": 0.0345,
+        "transcript": "The lore proved too much for him, and he came sporting after it, as friskily as a young kitten, much to Cynthia's delight when she caught sight of him."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 100.21,
+        "mean_flux": 19.7,
+        "wer": 0.0345,
+        "transcript": "The lore proved too much for him, and he came sporting after it, as friskily as a young kitten, much to Cynthia's delight when she caught sight of him."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 97.25,
+        "mean_flux": 19.07,
+        "wer": 0.0345,
+        "transcript": "The lore proved too much for him, and he came sporting after it, as friskily as a young kitten, much to Cynthia's delight when she caught sight of him."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 105.37,
+        "mean_flux": 19.94,
+        "wer": 0.0345,
+        "transcript": "The lore proved too much for him, and he came sporting after it, as friskily as a young kitten, much to Cynthia's delight when she caught sight of him."
+      }
+    }
+  },
+  {
+    "sample_id": 67,
+    "speaker_id": "1221",
+    "ref_text": "Pearl was a born outcast of the infantile world.",
+    "gen_text": "It was the scarlet letter in another form: the scarlet letter endowed with life!",
+    "diag": {
+      "ratio_shock": 0.6231,
+      "tanh_shock": 0.5533,
+      "w_tags": 0.8561,
+      "w_par_aor": 0.9447,
+      "w_perp_aor": 0.4893,
+      "gate_sgsi": 0.5533,
+      "w_par_sgsi_onset": 0.8561,
+      "w_perp_sgsi_onset": 0.2996
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 84.07,
+        "mean_flux": 12.36,
+        "wer": 0.1429,
+        "transcript": "It was the Scarlet Letter in another form. The Scarlet Letter endowed with life."
+      },
+      "orig_tags": {
+        "peak_flux": 82.95,
+        "mean_flux": 12.17,
+        "wer": 0.1429,
+        "transcript": "It was the Scarlet Letter in another form. The Scarlet Letter endowed with life."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 80.07,
+        "mean_flux": 11.3,
+        "wer": 0.1429,
+        "transcript": "It was the Scarlet Letter in another form. The Scarlet Letter endowed with life."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 80.09,
+        "mean_flux": 11.32,
+        "wer": 0.1429,
+        "transcript": "It was the Scarlet Letter in another form. The Scarlet Letter endowed with life."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 80.03,
+        "mean_flux": 11.4,
+        "wer": 0.1429,
+        "transcript": "It was the Scarlet Letter in another form. The Scarlet Letter endowed with life."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 82.51,
+        "mean_flux": 12.08,
+        "wer": 0.1429,
+        "transcript": "It was the Scarlet Letter in another form. The Scarlet Letter endowed with life."
+      }
+    }
+  },
+  {
+    "sample_id": 68,
+    "speaker_id": "1221",
+    "ref_text": "If spoken to, she would not speak again.",
+    "gen_text": "She screamed and shouted, too, with a terrific volume of sound, which, doubtless, caused the hearts of the fugitives to quake within them.",
+    "diag": {
+      "ratio_shock": 0.6395,
+      "tanh_shock": 0.5646,
+      "w_tags": 0.8532,
+      "w_par_aor": 0.9435,
+      "w_perp_aor": 0.4871,
+      "gate_sgsi": 0.5646,
+      "w_par_sgsi_onset": 0.8532,
+      "w_perp_sgsi_onset": 0.2986
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 102.3,
+        "mean_flux": 28.71,
+        "wer": 0.0435,
+        "transcript": "She screamed and shouted too, with a terrific volume of sound, which, doubtless, caused the hearts of the fugitives to quake within them."
+      },
+      "orig_tags": {
+        "peak_flux": 101.18,
+        "mean_flux": 28.88,
+        "wer": 0.0435,
+        "transcript": "She screamed and shouted too, with a terrific volume of sound, which, doubtless, caused the hearts of the fugitives to quake within them."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 102.06,
+        "mean_flux": 28.94,
+        "wer": 0.0435,
+        "transcript": "She screamed and shouted too, with a terrific volume of sound, which, doubtless, caused the hearts of the fugitives to quake within them."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 101.65,
+        "mean_flux": 28.86,
+        "wer": 0.0435,
+        "transcript": "She screamed and shouted too, with a terrific volume of sound, which, doubtless, caused the hearts of the fugitives to quake within them."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 100.26,
+        "mean_flux": 29.06,
+        "wer": 0.0435,
+        "transcript": "She screamed and shouted too, with a terrific volume of sound, which, doubtless, caused the hearts of the fugitives to quake within them."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 105.13,
+        "mean_flux": 28.73,
+        "wer": 0.0435,
+        "transcript": "She screamed and shouted too, with a terrific volume of sound, which, doubtless, caused the hearts of the fugitives to quake within them."
+      }
+    }
+  },
+  {
+    "sample_id": 69,
+    "speaker_id": "1221",
+    "ref_text": "Come, therefore, and let us fling mud at them\"!",
+    "gen_text": "Yea, his honourable worship is within. But he hath a godly minister or two with him, and likewise a leech.",
+    "diag": {
+      "ratio_shock": 0.6451,
+      "tanh_shock": 0.5684,
+      "w_tags": 0.8522,
+      "w_par_aor": 0.9432,
+      "w_perp_aor": 0.4863,
+      "gate_sgsi": 0.5684,
+      "w_par_sgsi_onset": 0.8522,
+      "w_perp_sgsi_onset": 0.2983
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 93.91,
+        "mean_flux": 26.72,
+        "wer": 0.3,
+        "transcript": "Yeah, his honorable worship is within, but he hath a godly minister to with him and likewise a leech."
+      },
+      "orig_tags": {
+        "peak_flux": 99.84,
+        "mean_flux": 26.69,
+        "wer": 0.3,
+        "transcript": "Yeah, his honorable worship is within, but he hath a godly minister to with him and likewise a leech."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 86.63,
+        "mean_flux": 24.86,
+        "wer": 0.3,
+        "transcript": "Yeah, his honorable worship is within, but he hath a godly minister to with him and likewise a leech."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 86.16,
+        "mean_flux": 25.03,
+        "wer": 0.3,
+        "transcript": "Yeah, his honorable worship is within, but he hath a godly minister to with him and likewise a leech."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 91.56,
+        "mean_flux": 25.65,
+        "wer": 0.3,
+        "transcript": "Yeah, his honorable worship is within, but he hath a godly minister to with him and likewise a leech."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 92.62,
+        "mean_flux": 26.1,
+        "wer": 0.3,
+        "transcript": "Yeah, his honorable worship is within, but he hath a godly minister to with him and likewise a leech."
+      }
+    }
+  },
+  {
+    "sample_id": 70,
+    "speaker_id": "1221",
+    "ref_text": "In truth, she seemed absolutely hidden behind it.",
+    "gen_text": "Pearl, seeing the rose bushes, began to cry for a red rose, and would not be pacified.",
+    "diag": {
+      "ratio_shock": 0.5032,
+      "tanh_shock": 0.4646,
+      "w_tags": 0.8792,
+      "w_par_aor": 0.9535,
+      "w_perp_aor": 0.5071,
+      "gate_sgsi": 0.4646,
+      "w_par_sgsi_onset": 0.8792,
+      "w_perp_sgsi_onset": 0.3077
+    },
+    "evaluations": {
+      "baseline": {
+        "peak_flux": 71.12,
+        "mean_flux": 6.15,
+        "wer": 0.0588,
+        "transcript": "Pearl, seeing the rose bushes, began to cry for a red rose and would not be pacified."
+      },
+      "orig_tags": {
+        "peak_flux": 79.61,
+        "mean_flux": 7.14,
+        "wer": 0.0588,
+        "transcript": "Pearl, seeing the rose bushes, began to cry for a red rose and would not be pacified."
+      },
+      "strat1_adaptive_ortho": {
+        "peak_flux": 88.61,
+        "mean_flux": 8.22,
+        "wer": 0.0588,
+        "transcript": "Pearl, seeing the rose bushes, began to cry for a red rose and would not be pacified."
+      },
+      "strat2_calibrated_ortho": {
+        "peak_flux": 88.7,
+        "mean_flux": 8.3,
+        "wer": 0.0588,
+        "transcript": "Pearl, seeing the rose bushes, began to cry for a red rose and would not be pacified."
+      },
+      "strat3_seam_window": {
+        "peak_flux": 89.08,
+        "mean_flux": 8.33,
+        "wer": 0.0588,
+        "transcript": "Pearl, seeing the rose bushes, began to cry for a red rose and would not be pacified."
+      },
+      "strat4_sgsi": {
+        "peak_flux": 69.86,
+        "mean_flux": 6.06,
+        "wer": 0.0,
+        "transcript": "Pearl, seeing the rose bushes, began to cry for a red rose, and would not be pacified."
+      }
+    }
+  }
+]

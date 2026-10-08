@@ -1,0 +1,802 @@
+[
+  {
+    "utt_id": "common_voice_en_10119832-common_voice_en_10119840",
+    "gen_text": "Get the trust fund to the bank early.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.8671685378055909,
+      "sim_target": 0.8098257184028625,
+      "rtf": 21.664419954940048,
+      "peak_flux": 13.772143363952637,
+      "mean_flux": 2.8472650051116943,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.9984471797943115,
+      "bdy_ratio": 0.0,
+      "mcd": 402.8264908412917,
+      "stoi": 0.10345268206612872
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.8707629961230172,
+      "sim_target": 0.8166254758834839,
+      "rtf": 21.664419954940048,
+      "peak_flux": 14.467778205871582,
+      "mean_flux": 2.848402976989746,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.999645709991455,
+      "bdy_ratio": 0.0,
+      "mcd": 403.0939142950994,
+      "stoi": 0.10508638615220452
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.6663,
+      "tanh_shock": 0.5826,
+      "w_tags": 0.8485,
+      "w_par_aor": 0.9417,
+      "w_perp_aor": 0.4835,
+      "gate_sgsi": 0.5826,
+      "w_par_sgsi_onset": 0.8485,
+      "w_perp_sgsi_onset": 0.297
+    }
+  },
+  {
+    "utt_id": "common_voice_en_10119832-common_voice_en_10119847",
+    "gen_text": "The stained glass offered a hypnotic atmosphere.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.8584578804783153,
+      "sim_target": 0.763292857702931,
+      "rtf": 15.252363323321882,
+      "peak_flux": 11.000831604003906,
+      "mean_flux": 2.4194743633270264,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.5143558979034424,
+      "bdy_ratio": 0.0,
+      "mcd": 415.8176980561943,
+      "stoi": -0.027823990550496832
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.8571377311431024,
+      "sim_target": 0.7622775889800556,
+      "rtf": 15.252363323321882,
+      "peak_flux": 10.941630363464355,
+      "mean_flux": 2.4140284061431885,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.5086963176727295,
+      "bdy_ratio": 0.0,
+      "mcd": 415.0678860199387,
+      "stoi": -0.027747145664699237
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.6546,
+      "tanh_shock": 0.5748,
+      "w_tags": 0.8506,
+      "w_par_aor": 0.9425,
+      "w_perp_aor": 0.485,
+      "gate_sgsi": 0.5748,
+      "w_par_sgsi_onset": 0.8506,
+      "w_perp_sgsi_onset": 0.2977
+    }
+  },
+  {
+    "utt_id": "common_voice_en_103675-common_voice_en_103676",
+    "gen_text": "One by one, the campfires were extinguished, and the oasis fell as quiet as the desert.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.8281295895576477,
+      "sim_target": 0.82349693775177,
+      "rtf": 15.121322243251432,
+      "peak_flux": 10.479201316833496,
+      "mean_flux": 2.595719575881958,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.6517422199249268,
+      "bdy_ratio": 0.0,
+      "mcd": 387.04944344893596,
+      "stoi": 0.09939774887701579
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.8287383913993835,
+      "sim_target": 0.8231151103973389,
+      "rtf": 15.121322243251432,
+      "peak_flux": 10.509446144104004,
+      "mean_flux": 2.5946526527404785,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.6506524085998535,
+      "bdy_ratio": 0.0,
+      "mcd": 385.8389806341763,
+      "stoi": 0.09996726159770396
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.7801,
+      "tanh_shock": 0.6527,
+      "w_tags": 0.8303,
+      "w_par_aor": 0.9347,
+      "w_perp_aor": 0.4695,
+      "gate_sgsi": 0.6527,
+      "w_par_sgsi_onset": 0.8303,
+      "w_perp_sgsi_onset": 0.2906
+    }
+  },
+  {
+    "utt_id": "common_voice_en_103675-common_voice_en_103677",
+    "gen_text": "The boy knew the desert sensed his fear.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.7511993646621704,
+      "sim_target": 0.7541696722305266,
+      "rtf": 21.507996744174754,
+      "peak_flux": 11.229455947875977,
+      "mean_flux": 2.0117666721343994,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.1025230884552,
+      "bdy_ratio": 0.0,
+      "mcd": 336.9999270600021,
+      "stoi": 0.09847889846666615
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.7517337055047588,
+      "sim_target": 0.7544738200620533,
+      "rtf": 21.507996744174754,
+      "peak_flux": 11.157456398010254,
+      "mean_flux": 2.0080690383911133,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.098659038543701,
+      "bdy_ratio": 0.0,
+      "mcd": 336.1022479997073,
+      "stoi": 0.09834888507450286
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.7387,
+      "tanh_shock": 0.6283,
+      "w_tags": 0.8366,
+      "w_par_aor": 0.9372,
+      "w_perp_aor": 0.4743,
+      "gate_sgsi": 0.6283,
+      "w_par_sgsi_onset": 0.8366,
+      "w_perp_sgsi_onset": 0.2928
+    }
+  },
+  {
+    "utt_id": "common_voice_en_10933823-common_voice_en_10933822",
+    "gen_text": "When it comes to the crunch, our company will become insolvent.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.7600025761128243,
+      "sim_target": 0.7568600177764893,
+      "rtf": 18.12099344311399,
+      "peak_flux": 9.359574317932129,
+      "mean_flux": 1.8933449983596802,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.942101001739502,
+      "bdy_ratio": 0.0,
+      "mcd": 431.79776724187025,
+      "stoi": 0.11742277287929925
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.7575729037777852,
+      "sim_target": 0.7584489871920417,
+      "rtf": 18.12099344311399,
+      "peak_flux": 9.302976608276367,
+      "mean_flux": 1.8868589401245117,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.9354475736618042,
+      "bdy_ratio": 0.0,
+      "mcd": 431.8319979671234,
+      "stoi": 0.1177851358489807
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.7772,
+      "tanh_shock": 0.6511,
+      "w_tags": 0.8307,
+      "w_par_aor": 0.9349,
+      "w_perp_aor": 0.4698,
+      "gate_sgsi": 0.6511,
+      "w_par_sgsi_onset": 0.8307,
+      "w_perp_sgsi_onset": 0.2908
+    }
+  },
+  {
+    "utt_id": "common_voice_en_10933823-common_voice_en_10933825",
+    "gen_text": "The primary coil has fifty turns.",
+    "baseline": {
+      "wer": 0.16666666666666666,
+      "sim_prompt": 0.7312442282213044,
+      "sim_target": 0.7319098711013794,
+      "rtf": 21.793565985451384,
+      "peak_flux": 9.939666748046875,
+      "mean_flux": 1.7165318727493286,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.7817167043685913,
+      "bdy_ratio": 0.0,
+      "mcd": 470.4990427463322,
+      "stoi": 0.09395673592439013
+    },
+    "ssdg": {
+      "wer": 0.16666666666666666,
+      "sim_prompt": 0.7261576272892248,
+      "sim_target": 0.7284813523292542,
+      "rtf": 21.793565985451384,
+      "peak_flux": 9.937288284301758,
+      "mean_flux": 1.7135796546936035,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.778652310371399,
+      "bdy_ratio": 0.0,
+      "mcd": 469.9813775909676,
+      "stoi": 0.09455544520352445
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.7351,
+      "tanh_shock": 0.6262,
+      "w_tags": 0.8372,
+      "w_par_aor": 0.9374,
+      "w_perp_aor": 0.4748,
+      "gate_sgsi": 0.6262,
+      "w_par_sgsi_onset": 0.8372,
+      "w_perp_sgsi_onset": 0.293
+    }
+  },
+  {
+    "utt_id": "common_voice_en_120405-common_voice_en_120402",
+    "gen_text": "I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.9291769904388808,
+      "sim_target": 0.8617045961794513,
+      "rtf": 11.12872925645943,
+      "peak_flux": 15.09051513671875,
+      "mean_flux": 2.1315665245056152,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.1588943004608154,
+      "bdy_ratio": 0.0,
+      "mcd": 414.58170472474677,
+      "stoi": 0.17841391435409684
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.9296216049677616,
+      "sim_target": 0.8594115036550616,
+      "rtf": 11.12872925645943,
+      "peak_flux": 15.181434631347656,
+      "mean_flux": 2.1222927570343018,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.1495015621185303,
+      "bdy_ratio": 0.0,
+      "mcd": 414.41486554864997,
+      "stoi": 0.17910170950962429
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.5805,
+      "tanh_shock": 0.5231,
+      "w_tags": 0.864,
+      "w_par_aor": 0.9477,
+      "w_perp_aor": 0.4954,
+      "gate_sgsi": 0.5231,
+      "w_par_sgsi_onset": 0.864,
+      "w_perp_sgsi_onset": 0.3024
+    }
+  },
+  {
+    "utt_id": "common_voice_en_120405-common_voice_en_120406",
+    "gen_text": "The only shadow was that of the few scattered pine trees.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.905066967010498,
+      "sim_target": 0.8954202799624292,
+      "rtf": 13.741785720471412,
+      "peak_flux": 11.493497848510742,
+      "mean_flux": 1.8906548023223877,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.9322075843811035,
+      "bdy_ratio": 0.0,
+      "mcd": 457.69572384153037,
+      "stoi": 0.12589941607935765
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.9069207906723022,
+      "sim_target": 0.8959087996455674,
+      "rtf": 13.741785720471412,
+      "peak_flux": 11.362226486206055,
+      "mean_flux": 1.8818440437316895,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.923203468322754,
+      "bdy_ratio": 0.0,
+      "mcd": 457.15669169667393,
+      "stoi": 0.1265817213233419
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.6257,
+      "tanh_shock": 0.5551,
+      "w_tags": 0.8557,
+      "w_par_aor": 0.9445,
+      "w_perp_aor": 0.489,
+      "gate_sgsi": 0.5551,
+      "w_par_sgsi_onset": 0.8557,
+      "w_perp_sgsi_onset": 0.2995
+    }
+  },
+  {
+    "utt_id": "common_voice_en_1205005-common_voice_en_1205007",
+    "gen_text": "The work of the tailor is seen on each side.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.872712023692608,
+      "sim_target": 0.8867279291152954,
+      "rtf": 14.351387276945498,
+      "peak_flux": 8.950788497924805,
+      "mean_flux": 1.6856683492660522,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.7563955783843994,
+      "bdy_ratio": 0.0,
+      "mcd": 428.8905599322587,
+      "stoi": 0.07006800662645281
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.8764969780148892,
+      "sim_target": 0.8870006799697876,
+      "rtf": 14.351387276945498,
+      "peak_flux": 8.877434730529785,
+      "mean_flux": 1.690692663192749,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.761630654335022,
+      "bdy_ratio": 0.0,
+      "mcd": 428.57264209894373,
+      "stoi": 0.07027884445455566
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.6771,
+      "tanh_shock": 0.5896,
+      "w_tags": 0.8467,
+      "w_par_aor": 0.941,
+      "w_perp_aor": 0.4821,
+      "gate_sgsi": 0.5896,
+      "w_par_sgsi_onset": 0.8467,
+      "w_perp_sgsi_onset": 0.2963
+    }
+  },
+  {
+    "utt_id": "common_voice_en_1205005-common_voice_en_1205008",
+    "gen_text": "NASA plans to launch the rocket tomorrow.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.8860590525830373,
+      "sim_target": 0.8436787128448486,
+      "rtf": 15.685602828549841,
+      "peak_flux": 8.390393257141113,
+      "mean_flux": 1.8897395133972168,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.9719023704528809,
+      "bdy_ratio": 0.0,
+      "mcd": 399.42120125605345,
+      "stoi": 0.15130444856355432
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.883532709864814,
+      "sim_target": 0.8430669903755188,
+      "rtf": 15.685602828549841,
+      "peak_flux": 8.290388107299805,
+      "mean_flux": 1.8817132711410522,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.9635266065597534,
+      "bdy_ratio": 0.0,
+      "mcd": 398.9870970350531,
+      "stoi": 0.1521313180232355
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.6973,
+      "tanh_shock": 0.6027,
+      "w_tags": 0.8433,
+      "w_par_aor": 0.9397,
+      "w_perp_aor": 0.4795,
+      "gate_sgsi": 0.6027,
+      "w_par_sgsi_onset": 0.8433,
+      "w_perp_sgsi_onset": 0.2952
+    }
+  },
+  {
+    "utt_id": "common_voice_en_123125-common_voice_en_123126",
+    "gen_text": "After all, who doesn\u00e2\u20ac\u2122t want to overcome new challenges and achieve great heights?",
+    "baseline": {
+      "wer": 0.15384615384615385,
+      "sim_prompt": 0.8160842900301308,
+      "sim_target": 0.7818133234977722,
+      "rtf": 11.927896868229798,
+      "peak_flux": 11.643745422363281,
+      "mean_flux": 2.207343101501465,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.2577006816864014,
+      "bdy_ratio": 0.0,
+      "mcd": 495.2867477985436,
+      "stoi": 0.11646354808783152
+    },
+    "ssdg": {
+      "wer": 0.15384615384615385,
+      "sim_prompt": 0.8188550960335207,
+      "sim_target": 0.7833045954497041,
+      "rtf": 11.927896868229798,
+      "peak_flux": 11.788548469543457,
+      "mean_flux": 2.208831548690796,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.259222984313965,
+      "bdy_ratio": 0.0,
+      "mcd": 494.5447778821531,
+      "stoi": 0.11529517550480932
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.7363,
+      "tanh_shock": 0.6269,
+      "w_tags": 0.837,
+      "w_par_aor": 0.9373,
+      "w_perp_aor": 0.4746,
+      "gate_sgsi": 0.6269,
+      "w_par_sgsi_onset": 0.837,
+      "w_perp_sgsi_onset": 0.2929
+    }
+  },
+  {
+    "utt_id": "common_voice_en_123125-common_voice_en_123127",
+    "gen_text": "Later, we simply let life proceed, in its own direction, toward its own fate.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.848615288734436,
+      "sim_target": 0.7523741273657021,
+      "rtf": 11.84012319417994,
+      "peak_flux": 11.458053588867188,
+      "mean_flux": 2.290618896484375,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.3449418544769287,
+      "bdy_ratio": 0.0,
+      "mcd": 500.4824186587463,
+      "stoi": 0.048366863864915656
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.8472073330642982,
+      "sim_target": 0.7481556534767151,
+      "rtf": 11.84012319417994,
+      "peak_flux": 11.407033920288086,
+      "mean_flux": 2.298391580581665,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.3528990745544434,
+      "bdy_ratio": 0.0,
+      "mcd": 500.2230211162559,
+      "stoi": 0.048126294662360625
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.684,
+      "tanh_shock": 0.5941,
+      "w_tags": 0.8455,
+      "w_par_aor": 0.9406,
+      "w_perp_aor": 0.4812,
+      "gate_sgsi": 0.5941,
+      "w_par_sgsi_onset": 0.8455,
+      "w_perp_sgsi_onset": 0.2959
+    }
+  },
+  {
+    "utt_id": "common_voice_en_125386-common_voice_en_125388",
+    "gen_text": "The two men hurried back and found the cylinder still lying in the same position.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.8931387662887573,
+      "sim_target": 0.8112452626228333,
+      "rtf": 10.950864562369222,
+      "peak_flux": 13.1828031539917,
+      "mean_flux": 2.474127769470215,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.5328025817871094,
+      "bdy_ratio": 0.0,
+      "mcd": 435.8355078191138,
+      "stoi": 0.2205442533896147
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.8926972416847127,
+      "sim_target": 0.8111723903170944,
+      "rtf": 10.950864562369222,
+      "peak_flux": 13.129643440246582,
+      "mean_flux": 2.476165771484375,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.5348892211914062,
+      "bdy_ratio": 0.0,
+      "mcd": 434.80818511617565,
+      "stoi": 0.22117143294647026
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.6595,
+      "tanh_shock": 0.578,
+      "w_tags": 0.8497,
+      "w_par_aor": 0.9422,
+      "w_perp_aor": 0.4844,
+      "gate_sgsi": 0.578,
+      "w_par_sgsi_onset": 0.8497,
+      "w_perp_sgsi_onset": 0.2974
+    }
+  },
+  {
+    "utt_id": "common_voice_en_125386-common_voice_en_125389",
+    "gen_text": "I thought about the difficulties in translation that might arise.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.9023775400148372,
+      "sim_target": 0.8064972642956548,
+      "rtf": 12.792607564389991,
+      "peak_flux": 13.591363906860352,
+      "mean_flux": 2.645759344100952,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.723959445953369,
+      "bdy_ratio": 0.0,
+      "mcd": 421.48735352389826,
+      "stoi": 0.14814749108813163
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.9033524336428916,
+      "sim_target": 0.8036841633131616,
+      "rtf": 12.792607564389991,
+      "peak_flux": 13.34968090057373,
+      "mean_flux": 2.6404855251312256,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.718529224395752,
+      "bdy_ratio": 0.0,
+      "mcd": 422.1829685058575,
+      "stoi": 0.15013967751070526
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.7072,
+      "tanh_shock": 0.6089,
+      "w_tags": 0.8417,
+      "w_par_aor": 0.9391,
+      "w_perp_aor": 0.4782,
+      "gate_sgsi": 0.6089,
+      "w_par_sgsi_onset": 0.8417,
+      "w_perp_sgsi_onset": 0.2946
+    }
+  },
+  {
+    "utt_id": "common_voice_en_137148-common_voice_en_137152",
+    "gen_text": "Elvis Presley is often called the \"King of Rock and Roll\".",
+    "baseline": {
+      "wer": 0.09090909090909091,
+      "sim_prompt": 0.7281174659729004,
+      "sim_target": 0.6473396630680773,
+      "rtf": 12.352443694677936,
+      "peak_flux": 17.093955993652344,
+      "mean_flux": 1.6813228130340576,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.7265599966049194,
+      "bdy_ratio": 0.0,
+      "mcd": 417.93149605997235,
+      "stoi": 0.11925638777237121
+    },
+    "ssdg": {
+      "wer": 0.09090909090909091,
+      "sim_prompt": 0.7247797086703617,
+      "sim_target": 0.6457409262657166,
+      "rtf": 12.352443694677936,
+      "peak_flux": 17.208017349243164,
+      "mean_flux": 1.685964584350586,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 1.7313268184661865,
+      "bdy_ratio": 0.0,
+      "mcd": 415.4741947923562,
+      "stoi": 0.11820178807085573
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.6563,
+      "tanh_shock": 0.5759,
+      "w_tags": 0.8503,
+      "w_par_aor": 0.9424,
+      "w_perp_aor": 0.4848,
+      "gate_sgsi": 0.5759,
+      "w_par_sgsi_onset": 0.8503,
+      "w_perp_sgsi_onset": 0.2976
+    }
+  },
+  {
+    "utt_id": "common_voice_en_13900-common_voice_en_13901",
+    "gen_text": "We don't have the budget to produce it in studio quality.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.876868486404419,
+      "sim_target": 0.9065195918083191,
+      "rtf": 13.51150652866044,
+      "peak_flux": 11.556621551513672,
+      "mean_flux": 2.4877538681030273,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.561283588409424,
+      "bdy_ratio": 0.0,
+      "mcd": 443.762341152283,
+      "stoi": 0.2069989652583699
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.8774755001068115,
+      "sim_target": 0.9054850935935974,
+      "rtf": 13.51150652866044,
+      "peak_flux": 11.181066513061523,
+      "mean_flux": 2.4743781089782715,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.5475122928619385,
+      "bdy_ratio": 0.0,
+      "mcd": 438.857890489349,
+      "stoi": 0.20611118809160903
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.6699,
+      "tanh_shock": 0.5849,
+      "w_tags": 0.8479,
+      "w_par_aor": 0.9415,
+      "w_perp_aor": 0.483,
+      "gate_sgsi": 0.5849,
+      "w_par_sgsi_onset": 0.8479,
+      "w_perp_sgsi_onset": 0.2968
+    }
+  },
+  {
+    "utt_id": "common_voice_en_1416089-common_voice_en_1416090",
+    "gen_text": "Also, will numbers be written as digits or as words?",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.797195315361023,
+      "sim_target": 0.790608274376887,
+      "rtf": 14.165303443927737,
+      "peak_flux": 9.328658103942871,
+      "mean_flux": 2.3675248622894287,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.4546730518341064,
+      "bdy_ratio": 0.0,
+      "mcd": 404.43275127299233,
+      "stoi": 0.21775799972958013
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.795015811920166,
+      "sim_target": 0.7897556298825534,
+      "rtf": 14.165303443927737,
+      "peak_flux": 9.188692092895508,
+      "mean_flux": 2.3630330562591553,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.4500157833099365,
+      "bdy_ratio": 0.0,
+      "mcd": 403.9730286774884,
+      "stoi": 0.21682654051498168
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.7472,
+      "tanh_shock": 0.6335,
+      "w_tags": 0.8353,
+      "w_par_aor": 0.9367,
+      "w_perp_aor": 0.4733,
+      "gate_sgsi": 0.6335,
+      "w_par_sgsi_onset": 0.8353,
+      "w_perp_sgsi_onset": 0.2924
+    }
+  },
+  {
+    "utt_id": "common_voice_en_1416089-common_voice_en_1416093",
+    "gen_text": "I do not like sushi, so I did not really enjoy the meal.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.8133018612861633,
+      "sim_target": 0.8361223936080933,
+      "rtf": 13.988246428267807,
+      "peak_flux": 10.423311233520508,
+      "mean_flux": 2.336547613143921,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.4056079387664795,
+      "bdy_ratio": 0.0,
+      "mcd": 492.3147028949664,
+      "stoi": 0.09253494635405043
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.8203539252281189,
+      "sim_target": 0.8439546227455139,
+      "rtf": 13.988246428267807,
+      "peak_flux": 10.195449829101562,
+      "mean_flux": 2.324268102645874,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.392965793609619,
+      "bdy_ratio": 0.0,
+      "mcd": 491.9809006291745,
+      "stoi": 0.09231271264939217
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.6632,
+      "tanh_shock": 0.5805,
+      "w_tags": 0.8491,
+      "w_par_aor": 0.942,
+      "w_perp_aor": 0.4839,
+      "gate_sgsi": 0.5805,
+      "w_par_sgsi_onset": 0.8491,
+      "w_perp_sgsi_onset": 0.2972
+    }
+  },
+  {
+    "utt_id": "common_voice_en_15265-common_voice_en_15266",
+    "gen_text": "Large brown dog walks up a blue staircase.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.7861274480819702,
+      "sim_target": 0.7856883278899403,
+      "rtf": 17.79704937149608,
+      "peak_flux": 16.780994415283203,
+      "mean_flux": 2.3483519554138184,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.425347089767456,
+      "bdy_ratio": 0.0,
+      "mcd": 441.59273272135454,
+      "stoi": 0.12334882140431794
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.7821280230360059,
+      "sim_target": 0.7746681898436828,
+      "rtf": 17.79704937149608,
+      "peak_flux": 16.75015640258789,
+      "mean_flux": 2.34212589263916,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.418916940689087,
+      "bdy_ratio": 0.0,
+      "mcd": 440.91984470253055,
+      "stoi": 0.12479448828478387
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.7434,
+      "tanh_shock": 0.6312,
+      "w_tags": 0.8359,
+      "w_par_aor": 0.9369,
+      "w_perp_aor": 0.4738,
+      "gate_sgsi": 0.6312,
+      "w_par_sgsi_onset": 0.8359,
+      "w_perp_sgsi_onset": 0.2926
+    }
+  },
+  {
+    "utt_id": "common_voice_en_15265-common_voice_en_15268",
+    "gen_text": "A sky jumper falls toward the sea and the earth.",
+    "baseline": {
+      "wer": 0.0,
+      "sim_prompt": 0.8248196139824175,
+      "sim_target": 0.7884879221160374,
+      "rtf": 16.123342313733534,
+      "peak_flux": 15.384913444519043,
+      "mean_flux": 2.1450562477111816,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.2117419242858887,
+      "bdy_ratio": 0.0,
+      "mcd": 455.8956702274867,
+      "stoi": 0.06291541580901865
+    },
+    "ssdg": {
+      "wer": 0.0,
+      "sim_prompt": 0.8248820900917053,
+      "sim_target": 0.7884654637713872,
+      "rtf": 16.123342313733534,
+      "peak_flux": 15.076008796691895,
+      "mean_flux": 2.1426753997802734,
+      "bdy_flux": 0.0,
+      "non_bdy_flux": 2.20928692817688,
+      "bdy_ratio": 0.0,
+      "mcd": 455.7281528307939,
+      "stoi": 0.0638243301045923
+    },
+    "shock_diagnostics": {
+      "ratio_shock": 0.7486,
+      "tanh_shock": 0.6343,
+      "w_tags": 0.8351,
+      "w_par_aor": 0.9366,
+      "w_perp_aor": 0.4731,
+      "gate_sgsi": 0.6343,
+      "w_par_sgsi_onset": 0.8351,
+      "w_perp_sgsi_onset": 0.2923
+    }
+  }
+]

@@ -401,21 +401,21 @@ class DMOInference:
             
         # Run inference
         with torch.inference_mode():
-            cond, text, step_cond, cond_mask, max_duration = self._prepare_inputs(
+            cond, text, step_cond, cond_mask, max_duration, duration_tensor = self._prepare_inputs(
                 audio, final_text_list, duration
             )
             
             # Teacher-only sampling
             x1 = self._teacher_sampling(
-                step_cond, text, cond_mask, max_duration, duration,
-                teacher_steps, 1.0, eta, cfg_strength, sway_coefficient  # stopping_time=1.0 for full sampling
+                step_cond, text, cond_mask, max_duration, duration_tensor,
+                teacher_steps, 1.0, eta, cfg_strength, False, sway_coefficient  # stopping_time=1.0 for full sampling
             )
             
             # Decode to audio
             mel = x1.permute(0, 2, 1) * self.scale
             generated_wave = self.vocos.decode(mel[..., cond_mask.sum():])
             
-        return generated_wave
+        return generated_wave.cpu().numpy().squeeze()
         
     def _prepare_inputs(self, audio, text_list, duration):
         """Prepare inputs for generation."""
