@@ -1,0 +1,28 @@
+{
+  "name": "Risk-Calibrated Adaptive Handover Configuration",
+  "version": "1.0.0",
+  "source": "4-Fold Speaker-Disjoint Cross-Validation (telemetry/four_fold_cv_oof_telemetry.json)",
+  "calibration_target": "Risk bound delta <= 0.05, max NFE reduction subject to zero critical degradation",
+  "parameters": {
+    "lambda_threshold": 0.60,
+    "snr_gate_threshold_db": 20.0,
+    "student_restart_j": 1,
+    "student_tau": 0.0761,
+    "student_consistency_steps": 3,
+    "reference_fallback_step": 8,
+    "reference_s": 0.25,
+    "cfg_strength": 2.0,
+    "sway_coefficient": -1.0,
+    "candidate_steps": {
+      "4": 0.07,
+      "5": 0.10,
+      "6": 0.15
+    }
+  },
+  "accounting_specification": {
+    "teacher_cfg_forward_passes_per_step": 2,
+    "student_forward_passes_per_step": 1,
+    "formula": "actual_nfe = (2 * teacher_steps) + (1 * student_steps)",
+    "solver_steps_formula": "solver_steps = teacher_steps + student_steps"
+  }
+}

@@ -1,66 +1,78 @@
-# Final Thesis Deliverables: Handover Timing & Adaptive Schedulers
+# Master Workspace Map: Handover Scheduling in DMOSpeech 2
 
 **Author:** Rhenel Jhon Sajol  
-**Thesis Topic:** Input-Adaptive Teacher-to-Student Transition Timing for Efficient Diffusion Speech Synthesis (DMOSpeech 2)  
-**Deliverable Status:** Canonical Final Deliverables Package (Separated from all historical/exploratory experiments)  
+**Thesis Topic:** Input-Adaptive Teacher-to-Student Handover Scheduling in DMOSpeech 2  
+**Organization:** Topic-Based Modular Structure (3 Core Research Pillars + Figures & Chapter Guides)
 
 ---
 
-## 📁 Package Contents
+## 📂 Topic-Based Folder Structure
 
-This folder contains **only the final, verified results, metrics, and documentation** for the 240-run Handover Timing Problem and the Calibrated Hybrid Scheduler Solution:
+The entire workspace has been restructured into **three self-contained research pillars**, each with its own `spec/protocols/`, `reports/`, `code/`, `telemetry/`, and `audio/`:
 
 ```
-FINAL_THESIS_DELIVERABLES/
+Handover Scheduling/
 │
-├── 🏆 THESIS_PROBLEM_AND_SOLUTION_CONSOLIDATED_MASTER_REPORT.md  <── THE MAIN MASTER THESIS REPORT
-├── 📄 README.md                                                  <── Package Guide & Master Scorecard (This file)
+├── 📄 README.md                                      <── This Directory Roadmap
 │
-├── 📁 reports/
-│   ├── FIXED_HANDOVER_TIMING_EMPIRICAL_PROOF.md                 <── Problem proof report (240 generation runs)
-│   └── ADAPTIVE_SCHEDULER_EVALUATION_REPORT.md                  <── Solution benchmark report (48 instances)
+├── 🖼️ figures/                                        <── Publication-Ready Diagrams
+│   ├── handover_scheduling_architecture.jpg          <── OFFICIAL THESIS FIGURE 1 (Selected Architecture)
+│   └── proposed_solution_architecture.jpg            <── Detailed Mathematical Pipeline Diagram
 │
-├── 📁 metrics_and_telemetry/
-│   ├── fixed_handover_timing_proof.json                         <── Raw telemetry for all 240 diagnostic runs (186 KB)
-│   └── calibrated_hybrid_scheduler_telemetry.json               <── Raw telemetry for all 48 scheduler instances (47 KB)
+├── 📁 01_Problem_Validation/                          <── PILLAR 1: Proving Fixed Handover Fails
+│   ├── 📄 reports/
+│   │   └── FIXED_HANDOVER_TIMING_EMPIRICAL_PROOF.md   <── Problem Proof Report (87.5% safe early exit)
+│   ├── 💻 code/
+│   │   └── run_proving_fixed_timing_problem.py        <── Runner script (48 instances / 240 runs)
+│   ├── 📈 telemetry/
+│   │   └── fixed_handover_timing_proof.json           <── Raw telemetry metrics JSON
+│   └── 🎧 audio/
+│       └── audio_problem_proof/                       <── 240 diagnostic .wav synthesis files
 │
-└── 📁 code/
-    ├── run_proving_fixed_timing_problem.py                      <── Generates the 240 diagnostic runs across 12 speakers
-    └── run_adaptive_scheduler_evaluation.py                     <── Implements & evaluates the Calibrated Hybrid Scheduler
+├── 📁 02_Student_Restart_Validation/                  <── PILLAR 2: Proving Student Restart τ is Fixed at j=1
+│   ├── 📄 reports/
+│   │   ├── EXPANDED_HANDOVER_SCOPE_48_INSTANCES_PILOT_REPORT.md <── THE 48-INSTANCE REPORT (Proves j=1 is fixed)
+│   │   ├── EXPANDED_HANDOVER_SCOPE_PILOT_REPORT.md    <── Initial 2-case preliminary preview
+│   │   └── STUDENT_RESTART_LEVEL_PILOT_STEPS.md       <── Scope investigation notes
+│   ├── 📋 protocols/
+│   │   └── EXPANDED_HANDOVER_SCOPE_PROBLEM_VALIDATION.md <── Governing testbed design protocol
+│   ├── 💻 code/
+│   │   ├── run_expanded_scope_48_instances.py         <── Full 48-instance grid runner script
+│   │   ├── run_expanded_handover_scope_validation.py  <── 2-instance pilot validation script
+│   │   └── run_student_restart_pilot.py               <── Auxiliary pilot script
+│   ├── 📈 telemetry/
+│   │   ├── expanded_handover_scope_48_telemetry.json  <── 384 runs telemetry JSON
+│   │   └── expanded_handover_scope_telemetry.json     <── Preliminary telemetry JSON
+│   └── 🎧 audio/
+│       ├── audio_expanded_scope_48/                   <── 384 generated .wav files across all (s, j) grids
+│       └── audio_expanded_scope/                      <── Preliminary pilot audio
+│
+└── 📁 03_Adaptive_Handover_Solution/                  <── PILLAR 3: Proposed Risk-Calibrated Adaptive Solution
+    ├── 📐 spec/
+    │   └── RISK_CALIBRATED_ADAPTIVE_HANDOVER_IMPLEMENTATION_SPEC.md <── ALGORITHM & FORMULAS SPECIFICATION
+    ├── 📄 reports/
+    │   └── OFFICIAL_48_INSTANCE_BENCHMARK_REPORT.md   <── UNIFIED 48-INSTANCE MASTER REPORT (Verdict 1 & Figure 1)
+    ├── 💻 code/
+    │   ├── adaptive_handover_scheduler.py             <── THE OFFICIAL ADAPTIVE SCHEDULING ALGORITHM (Connects to DMOSpeech 2)
+    │   └── benchmark_runners/                         <── Dedicated benchmark execution scripts
+    ├── 📈 telemetry/
+    │   ├── four_fold_cv_oof_telemetry.json            <── Cross-validation out-of-fold telemetry
+    │   └── risk_calibrated_48_benchmark_telemetry.json <── 48-instance benchmark telemetry
+    └── 🎧 audio/
+        └── audio_48_benchmark/                        <── Synthesized benchmark evaluation audio
 ```
 
 ---
 
-## 🏆 Final Master Benchmark Scorecard (All 48 Test Instances)
+## ⚡ Direct File Finder
 
-Every metric below has been audited and verified 100% against the raw telemetry JSON files in `metrics_and_telemetry/`:
+| What are you looking for? | Exactly Where to Open |
+| :--- | :--- |
+| **The Official Adaptive Scheduling Algorithm** | [`03_Adaptive_Handover_Solution/code/adaptive_handover_scheduler.py`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/Handover%20Scheduling/03_Adaptive_Handover_Solution/code/adaptive_handover_scheduler.py) |
+| **Official 48-Instance Master Benchmark Report** | [`03_Adaptive_Handover_Solution/reports/OFFICIAL_48_INSTANCE_BENCHMARK_REPORT.md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/Handover%20Scheduling/03_Adaptive_Handover_Solution/reports/OFFICIAL_48_INSTANCE_BENCHMARK_REPORT.md) |
+| **The Handover Implementation & Algorithm Spec** | [`03_Adaptive_Handover_Solution/spec/RISK_CALIBRATED_ADAPTIVE_HANDOVER_IMPLEMENTATION_SPEC.md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/Handover%20Scheduling/03_Adaptive_Handover_Solution/spec/RISK_CALIBRATED_ADAPTIVE_HANDOVER_IMPLEMENTATION_SPEC.md) |
+| **The Student Restart Validation (48 Instances)** | [`02_Student_Restart_Validation/reports/EXPANDED_HANDOVER_SCOPE_48_INSTANCES_PILOT_REPORT.md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/Handover%20Scheduling/02_Student_Restart_Validation/reports/EXPANDED_HANDOVER_SCOPE_48_INSTANCES_PILOT_REPORT.md) |
+| **The Fixed Timing Problem Proof Report** | [`01_Problem_Validation/reports/FIXED_HANDOVER_TIMING_EMPIRICAL_PROOF.md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/Handover%20Scheduling/01_Problem_Validation/reports/FIXED_HANDOVER_TIMING_EMPIRICAL_PROOF.md) |
+| **Official Architecture Diagram (Figure 1)** | [`figures/handover_scheduling_architecture.jpg`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/Handover%20Scheduling/figures/handover_scheduling_architecture.jpg) |
 
-| Method / Policy | Base NFE | Probe Overhead | Effective NFE | Net Savings vs Baseline | Ref-Adjusted Failures (%) | Strict Ceiling Failures (%) | Median WER | Pitch Var ($CV_{F0}$) | Operational Classification |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **Fixed $t=0.05$** | 7.00 | 0.00 | 7.00 | $-6.00$ | 26 / 48 (**54.2%**) | 27 / 48 (56.2%) | 0.00% | 0.428 | Aggressively Unsafe |
-| **Fixed $t=0.10$** | 9.00 | 0.00 | 9.00 | $-4.00$ | 13 / 48 (**27.1%**) | 14 / 48 (29.2%) | 0.00% | 0.439 | Unsafe Under Stress |
-| **Fixed $t=0.15$** | 11.00 | 0.00 | 11.00 | $-2.00$ | 5 / 48 (**10.4%**) | 7 / 48 (14.6%) | 0.00% | 0.443 | Earliest 0% fail on clean |
-| **Fixed $t=0.25$ (Baseline)** | 13.00 | 0.00 | 13.00 | *baseline* | **0 / 48 (0.0%)** | 4 / 48 (8.3%) | 0.00% | 0.445 | Static Default (+4.8 NFE on clean) |
-| **Fixed $t=0.40$** | 16.00 | 0.00 | 16.00 | $+3.00$ | 10 / 48 (**20.8%**) | 12 / 48 (25.0%) | 0.00% | 0.449 | Overburn (Phonetic distortion) |
-| **Pre-Diffusion Input (Zero-Probe)**| 10.92 | 0.00 | 10.92 | $-2.08$ | 1 / 48 (2.1%)* | 5 / 48 (10.4%) | 0.00% | 0.446 | Fast Acoustic DSP Heuristic |
-| **Proposed Hybrid Scheduler ($\pi^*$)**| **11.21** | **+0.27** | **11.48** | **$-1.52$ (−11.7%)** | **0 / 48 (0.0%)** | **4 / 48 (8.3%)** | **0.00%** | **0.448** | **Proposed Causal Solution** |
-| *Ref-Adjusted Oracle (Target)* | *9.04* | *0.00* | *9.04* | *$-3.96$ (−30.5%)* | *0 / 48 (0.0%)* | *4 / 48 (8.3%)* | *0.00%* | — | *Theoretical Upper Bound* |
 
-*\*Note on Instance 21: Pre-Diffusion scheduler dispatched $t=0.10$ into phonetic drift ($15.38\%$ WER). The Hybrid Scheduler's trajectory probe measured $\rho_1 = 0.7584 < 0.78$, caught the divergence, and fell back to $t=0.15$ ($7.69\%$ WER), rescuing the utterance.*
-
----
-
-## 📊 Key Validated Findings
-
-1. **Zero Reliability Penalty:** The proposed hybrid scheduler achieves **0 / 48 failures (0.0%)** under baseline-relative criteria, matching the conservative fixed baseline while reducing compute.
-2. **Statistically Significant Compute Reduction:** Paired one-sided Wilcoxon signed-rank test across all 12 independent speakers:
-   $$W = 0.0, \quad p = 0.000244 \quad (p < 0.001)$$
-   The scheduler achieves strictly lower computation on **100% of tested speakers**.
-3. **Clean Speech Acceleration:** On clean speech, the scheduler achieves **11.00 effective NFE (−15.4% net compute savings)**.
-4. **Preserved Prosody:** Fundamental frequency coefficient of variation ($CV_{F0}$) shows no statistically significant pitch flattening ($0.4479$ vs $0.4453, p = 0.6782, \text{95% CI: } [-0.0076, +0.0128]$).
-
----
-
-## 🎧 Audio Files Location
-The 240 synthesized `.wav` audio files corresponding to these evaluations are stored at:
-`c:\Users\Rhenel Jhon Sajol\Desktop\TTS\DMOSpeech 2\PROVEN_PROBLEM\audio_problem_proof\`

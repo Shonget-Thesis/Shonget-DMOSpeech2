@@ -1,0 +1,3801 @@
+{
+  "metadata": {
+    "date": "2026-10-12 22:05:08",
+    "total_instances": 48,
+    "figure_architecture": "Figure 1: Risk-Calibrated Input-Adaptive Handover Scheduling"
+  },
+  "cases": [
+    {
+      "instance_id": "common_voice_en_10119832_Clean_Control",
+      "speaker": "common_voice_en_10119832",
+      "condition": "Clean_Control",
+      "prompt_snr": 35.83,
+      "adaptive_decision": {
+        "selected_step": 4,
+        "selected_s": 0.07,
+        "endpoint_score_d_i": 0.5173,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3498,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.5606,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.5744,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5173,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7649,
+        "latency": 60.34
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7725,
+        "latency": 47.67,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.07,
+        "nfe": 8,
+        "wer": 0.0,
+        "sim": 0.7761,
+        "latency": 38.98,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 4
+      }
+    },
+    {
+      "instance_id": "common_voice_en_10119832_Duration_Minus15",
+      "speaker": "common_voice_en_10119832",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 35.83,
+      "adaptive_decision": {
+        "selected_step": 6,
+        "selected_s": 0.15,
+        "endpoint_score_d_i": 0.3938,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3343,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.5535,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.4633,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5612,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.6143,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.3938,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7723,
+        "latency": 50.56
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7838,
+        "latency": 39.03,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7838,
+        "latency": 39.55,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 2
+      }
+    },
+    {
+      "instance_id": "common_voice_en_10119832_Duration_Plus15",
+      "speaker": "common_voice_en_10119832",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 35.83,
+      "adaptive_decision": {
+        "selected_step": 6,
+        "selected_s": 0.15,
+        "endpoint_score_d_i": 0.5337,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.4035,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.182,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.8293,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5737,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.648,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.5337,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7778,
+        "latency": 51.66
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7755,
+        "latency": 42.56,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7755,
+        "latency": 41.47,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 2
+      }
+    },
+    {
+      "instance_id": "common_voice_en_10119832_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_10119832",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 17.8,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1635,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3579,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.5275,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.2101,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.1584,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.1668,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1502,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.2132,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1635,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.375,
+        "sim": 0.6143,
+        "latency": 52.32
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.125,
+        "sim": 0.5974,
+        "latency": 43.94,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.375,
+        "sim": 0.6143,
+        "latency": 51.83,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_103675_Clean_Control",
+      "speaker": "common_voice_en_103675",
+      "condition": "Clean_Control",
+      "prompt_snr": 35.24,
+      "adaptive_decision": {
+        "selected_step": 6,
+        "selected_s": 0.15,
+        "endpoint_score_d_i": 0.4086,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.6548,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.4428,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7153,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5675,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.5714,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.4086,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7688,
+        "latency": 109.94
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7635,
+        "latency": 88.19,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7635,
+        "latency": 107.51,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 2
+      }
+    },
+    {
+      "instance_id": "common_voice_en_103675_Duration_Minus15",
+      "speaker": "common_voice_en_103675",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 35.24,
+      "adaptive_decision": {
+        "selected_step": 4,
+        "selected_s": 0.07,
+        "endpoint_score_d_i": 0.4675,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.5233,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.6446,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7529,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.4675,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7177,
+        "latency": 124.02
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7096,
+        "latency": 88.64,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.07,
+        "nfe": 8,
+        "wer": 0.0,
+        "sim": 0.7193,
+        "latency": 73.33,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 4
+      }
+    },
+    {
+      "instance_id": "common_voice_en_103675_Duration_Plus15",
+      "speaker": "common_voice_en_103675",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 35.24,
+      "adaptive_decision": {
+        "selected_step": 6,
+        "selected_s": 0.15,
+        "endpoint_score_d_i": 0.4451,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.6219,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.4043,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.6953,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5849,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.6176,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.4451,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0625,
+        "sim": 0.7393,
+        "latency": 109.43
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0625,
+        "sim": 0.7392,
+        "latency": 79.36,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0625,
+        "sim": 0.7392,
+        "latency": 79.6,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 2
+      }
+    },
+    {
+      "instance_id": "common_voice_en_103675_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_103675",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 17.69,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1854,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.2769,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.6024,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.2043,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.1986,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.1954,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1839,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.178,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1854,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.5625,
+        "sim": 0.6181,
+        "latency": 124.29
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.75,
+        "sim": 0.6032,
+        "latency": 110.0,
+        "relative_failure": true
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.5625,
+        "sim": 0.6181,
+        "latency": 94.74,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_10933823_Clean_Control",
+      "speaker": "common_voice_en_10933823",
+      "condition": "Clean_Control",
+      "prompt_snr": 28.18,
+      "adaptive_decision": {
+        "selected_step": 6,
+        "selected_s": 0.15,
+        "endpoint_score_d_i": 0.4048,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.5736,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.4244,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7556,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.825,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.5785,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.4048,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.6747,
+        "latency": 77.03
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.6923,
+        "latency": 67.04,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.6923,
+        "latency": 64.96,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 2
+      }
+    },
+    {
+      "instance_id": "common_voice_en_10933823_Duration_Minus15",
+      "speaker": "common_voice_en_10933823",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 28.18,
+      "adaptive_decision": {
+        "selected_step": 6,
+        "selected_s": 0.15,
+        "endpoint_score_d_i": 0.3954,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.5527,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.5637,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7186,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6973,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.6196,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.3954,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7071,
+        "latency": 77.84
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7021,
+        "latency": 61.88,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7021,
+        "latency": 55.77,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 2
+      }
+    },
+    {
+      "instance_id": "common_voice_en_10933823_Duration_Plus15",
+      "speaker": "common_voice_en_10933823",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 28.18,
+      "adaptive_decision": {
+        "selected_step": 6,
+        "selected_s": 0.15,
+        "endpoint_score_d_i": 0.3842,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.6623,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.3512,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7043,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.8929,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.6615,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.3842,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7259,
+        "latency": 84.54
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7101,
+        "latency": 64.27,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7101,
+        "latency": 62.41,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 2
+      }
+    },
+    {
+      "instance_id": "common_voice_en_10933823_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_10933823",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 17.54,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1437,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1908,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.5815,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.2443,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.1881,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.1217,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.135,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.1412,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1437,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.3636,
+        "sim": 0.5479,
+        "latency": 79.53
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.3636,
+        "sim": 0.5366,
+        "latency": 55.53,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.3636,
+        "sim": 0.5479,
+        "latency": 74.68,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_120405_Clean_Control",
+      "speaker": "common_voice_en_120405",
+      "condition": "Clean_Control",
+      "prompt_snr": 50.0,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.3693,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.2759,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.6696,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7788,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5661,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.3693,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.8149,
+        "latency": 91.63
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.8229,
+        "latency": 74.19,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.8303,
+        "latency": 65.83,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_120405_Duration_Minus15",
+      "speaker": "common_voice_en_120405",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 50.0,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.3963,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3406,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.7584,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7785,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.3963,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.8221,
+        "latency": 85.51
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0455,
+        "sim": 0.8294,
+        "latency": 65.97,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0455,
+        "sim": 0.8282,
+        "latency": 59.7,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_120405_Duration_Plus15",
+      "speaker": "common_voice_en_120405",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 50.0,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.2876,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.4215,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.8263,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.8063,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5551,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.2876,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.8181,
+        "latency": 108.15
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.8179,
+        "latency": 91.54,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0455,
+        "sim": 0.8214,
+        "latency": 76.37,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_120405_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_120405",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 18.26,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1953,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1309,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.5278,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.1693,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.2079,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.209,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1799,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.1559,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1953,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.3636,
+        "sim": 0.6592,
+        "latency": 76.91
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0909,
+        "sim": 0.6207,
+        "latency": 61.06,
+        "relative_failure": true
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.3636,
+        "sim": 0.6592,
+        "latency": 75.19,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_1205005_Clean_Control",
+      "speaker": "common_voice_en_1205005",
+      "condition": "Clean_Control",
+      "prompt_snr": 38.28,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.3569,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1884,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.8296,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7743,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6645,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.3569,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.767,
+        "latency": 39.23
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7461,
+        "latency": 31.28,
+        "relative_failure": true
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.757,
+        "latency": 26.32,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_1205005_Duration_Minus15",
+      "speaker": "common_voice_en_1205005",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 38.28,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.4937,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1451,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.8869,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7671,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5958,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4937,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7803,
+        "latency": 36.25
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7873,
+        "latency": 28.05,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.7888,
+        "latency": 27.82,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_1205005_Duration_Plus15",
+      "speaker": "common_voice_en_1205005",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 38.28,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.4005,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1831,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.9074,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.5994,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6228,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4005,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7587,
+        "latency": 42.03
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.761,
+        "latency": 32.31,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.7628,
+        "latency": 31.1,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_1205005_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_1205005",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 17.97,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1519,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1552,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.5603,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.2091,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.129,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.1137,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1141,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.1515,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1519,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.4,
+        "sim": 0.5711,
+        "latency": 39.06
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.1,
+        "sim": 0.5143,
+        "latency": 28.52,
+        "relative_failure": true
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.4,
+        "sim": 0.5711,
+        "latency": 40.37,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_123125_Clean_Control",
+      "speaker": "common_voice_en_123125",
+      "condition": "Clean_Control",
+      "prompt_snr": 34.53,
+      "adaptive_decision": {
+        "selected_step": 4,
+        "selected_s": 0.07,
+        "endpoint_score_d_i": 0.5202,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.4604,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.5342,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.5024,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5202,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.1538,
+        "sim": 0.7231,
+        "latency": 53.75
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0769,
+        "sim": 0.717,
+        "latency": 44.33,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.07,
+        "nfe": 8,
+        "wer": 0.2308,
+        "sim": 0.7134,
+        "latency": 37.47,
+        "relative_failure": true,
+        "nfe_saved_vs_ref": 4
+      }
+    },
+    {
+      "instance_id": "common_voice_en_123125_Duration_Minus15",
+      "speaker": "common_voice_en_123125",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 34.53,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.4825,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.4406,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.5859,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.4311,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5666,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4825,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.1538,
+        "sim": 0.734,
+        "latency": 55.8
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.1538,
+        "sim": 0.7404,
+        "latency": 46.39,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.1538,
+        "sim": 0.7357,
+        "latency": 42.41,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_123125_Duration_Plus15",
+      "speaker": "common_voice_en_123125",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 34.53,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.4184,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.4552,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.3691,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.4902,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5786,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4184,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0769,
+        "sim": 0.739,
+        "latency": 63.65
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.1538,
+        "sim": 0.7455,
+        "latency": 48.62,
+        "relative_failure": true
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.1538,
+        "sim": 0.7488,
+        "latency": 46.12,
+        "relative_failure": true,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_123125_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_123125",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 17.76,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.119,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1783,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.5214,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.1437,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.1125,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.1141,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1174,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.1017,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.119,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.1538,
+        "sim": 0.59,
+        "latency": 66.8
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.1538,
+        "sim": 0.5716,
+        "latency": 47.69,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.1538,
+        "sim": 0.59,
+        "latency": 63.83,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_125386_Clean_Control",
+      "speaker": "common_voice_en_125386",
+      "condition": "Clean_Control",
+      "prompt_snr": 33.73,
+      "adaptive_decision": {
+        "selected_step": 6,
+        "selected_s": 0.15,
+        "endpoint_score_d_i": 0.3626,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.4516,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.2978,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.5944,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6523,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.6074,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.3626,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.8128,
+        "latency": 56.1
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.815,
+        "latency": 41.14,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.815,
+        "latency": 41.25,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 2
+      }
+    },
+    {
+      "instance_id": "common_voice_en_125386_Duration_Minus15",
+      "speaker": "common_voice_en_125386",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 33.73,
+      "adaptive_decision": {
+        "selected_step": 6,
+        "selected_s": 0.15,
+        "endpoint_score_d_i": 0.3388,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3909,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.4884,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.5644,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6391,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.6162,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.3388,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7765,
+        "latency": 47.35
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7808,
+        "latency": 37.6,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7808,
+        "latency": 38.22,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 2
+      }
+    },
+    {
+      "instance_id": "common_voice_en_125386_Duration_Plus15",
+      "speaker": "common_voice_en_125386",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 33.73,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.5199,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.5419,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.1826,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.5918,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6525,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.5199,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.8036,
+        "latency": 56.52
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.8065,
+        "latency": 44.84,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.8055,
+        "latency": 41.48,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_125386_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_125386",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 17.9,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1363,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.2398,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.622,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.2513,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.1556,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.1732,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1379,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.154,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1363,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0667,
+        "sim": 0.5776,
+        "latency": 58.54
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0667,
+        "sim": 0.5716,
+        "latency": 46.26,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0667,
+        "sim": 0.5776,
+        "latency": 56.39,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_137148_Clean_Control",
+      "speaker": "common_voice_en_137148",
+      "condition": "Clean_Control",
+      "prompt_snr": 18.28,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1678,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.4115,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.3327,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.5844,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.4852,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4992,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.3421,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.2473,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1678,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7509,
+        "latency": 52.42
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7686,
+        "latency": 43.04,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7509,
+        "latency": 52.59,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_137148_Duration_Minus15",
+      "speaker": "common_voice_en_137148",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 18.28,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1729,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3022,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.3966,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.6648,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5238,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.5203,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.3224,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.2579,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1729,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7363,
+        "latency": 48.76
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7504,
+        "latency": 38.22,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7363,
+        "latency": 47.02,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_137148_Duration_Plus15",
+      "speaker": "common_voice_en_137148",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 18.28,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.165,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.4007,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 1.0536,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 1.0263,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.7305,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.7321,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.312,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.2645,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.165,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7583,
+        "latency": 56.78
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7497,
+        "latency": 46.66,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7583,
+        "latency": 58.81,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_137148_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_137148",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 15.01,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1503,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.2281,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.6615,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.2428,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.1551,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.186,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1496,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.1332,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1503,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 1.2727,
+        "sim": 0.6926,
+        "latency": 54.95
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.7273,
+        "sim": 0.6561,
+        "latency": 45.0,
+        "relative_failure": true
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 1.2727,
+        "sim": 0.6926,
+        "latency": 53.97,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_13900_Clean_Control",
+      "speaker": "common_voice_en_13900",
+      "condition": "Clean_Control",
+      "prompt_snr": 30.68,
+      "adaptive_decision": {
+        "selected_step": 4,
+        "selected_s": 0.07,
+        "endpoint_score_d_i": 0.5461,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1864,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.7341,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.8786,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.5461,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.6889,
+        "latency": 48.33
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.6921,
+        "latency": 39.91,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.07,
+        "nfe": 8,
+        "wer": 0.0,
+        "sim": 0.6955,
+        "latency": 29.14,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 4
+      }
+    },
+    {
+      "instance_id": "common_voice_en_13900_Duration_Minus15",
+      "speaker": "common_voice_en_13900",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 30.68,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.4351,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1495,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.6834,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.8633,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6253,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4351,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7188,
+        "latency": 44.77
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7076,
+        "latency": 35.77,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.705,
+        "latency": 30.86,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_13900_Duration_Plus15",
+      "speaker": "common_voice_en_13900",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 30.68,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.4693,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1544,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.6853,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.885,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6084,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4693,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7032,
+        "latency": 51.03
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7064,
+        "latency": 41.2,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.7036,
+        "latency": 36.6,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_13900_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_13900",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 17.64,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1275,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1337,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.4887,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.144,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.1535,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.1533,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1113,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.1209,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1275,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.3636,
+        "sim": 0.5745,
+        "latency": 46.6
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.2727,
+        "sim": 0.5568,
+        "latency": 36.93,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.3636,
+        "sim": 0.5745,
+        "latency": 46.29,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_1416089_Clean_Control",
+      "speaker": "common_voice_en_1416089",
+      "condition": "Clean_Control",
+      "prompt_snr": 40.93,
+      "adaptive_decision": {
+        "selected_step": 6,
+        "selected_s": 0.15,
+        "endpoint_score_d_i": 0.2955,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3482,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.5985,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.6531,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6743,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.5656,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.2955,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7463,
+        "latency": 41.66
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7649,
+        "latency": 34.15,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7649,
+        "latency": 33.2,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 2
+      }
+    },
+    {
+      "instance_id": "common_voice_en_1416089_Duration_Minus15",
+      "speaker": "common_voice_en_1416089",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 40.93,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.4768,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3118,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.5453,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.5937,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.6952,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4768,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7603,
+        "latency": 40.46
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7603,
+        "latency": 32.81,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.7597,
+        "latency": 27.87,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_1416089_Duration_Plus15",
+      "speaker": "common_voice_en_1416089",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 40.93,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.4525,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3722,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.5259,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.8699,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.599,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4525,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7762,
+        "latency": 46.8
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7629,
+        "latency": 36.46,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.7719,
+        "latency": 31.91,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_1416089_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_1416089",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 17.95,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.191,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1389,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.4764,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.1912,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.1672,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.1901,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1796,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.1452,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.191,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.1,
+        "sim": 0.6889,
+        "latency": 45.47
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.9,
+        "sim": 0.6159,
+        "latency": 38.04,
+        "relative_failure": true
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.1,
+        "sim": 0.6889,
+        "latency": 45.42,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_15265_Clean_Control",
+      "speaker": "common_voice_en_15265",
+      "condition": "Clean_Control",
+      "prompt_snr": 23.38,
+      "adaptive_decision": {
+        "selected_step": 4,
+        "selected_s": 0.07,
+        "endpoint_score_d_i": 0.2254,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.346,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.8308,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.3441,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.2254,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.6535,
+        "latency": 57.79
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.6684,
+        "latency": 45.62,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.07,
+        "nfe": 8,
+        "wer": 0.0,
+        "sim": 0.665,
+        "latency": 34.73,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 4
+      }
+    },
+    {
+      "instance_id": "common_voice_en_15265_Duration_Minus15",
+      "speaker": "common_voice_en_15265",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 23.38,
+      "adaptive_decision": {
+        "selected_step": 4,
+        "selected_s": 0.07,
+        "endpoint_score_d_i": 0.2477,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3364,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.8594,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.3683,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.2477,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.6666,
+        "latency": 53.48
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.6539,
+        "latency": 219.85,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.07,
+        "nfe": 8,
+        "wer": 0.0,
+        "sim": 0.6659,
+        "latency": 37.81,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 4
+      }
+    },
+    {
+      "instance_id": "common_voice_en_15265_Duration_Plus15",
+      "speaker": "common_voice_en_15265",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 23.38,
+      "adaptive_decision": {
+        "selected_step": 4,
+        "selected_s": 0.07,
+        "endpoint_score_d_i": 0.2843,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.3388,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.9615,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.3221,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.2843,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.6976,
+        "latency": 68.31
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7027,
+        "latency": 50.15,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.07,
+        "nfe": 8,
+        "wer": 0.0,
+        "sim": 0.7089,
+        "latency": 38.6,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 4
+      }
+    },
+    {
+      "instance_id": "common_voice_en_15265_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_15265",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 16.76,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1807,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.2639,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.738,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.2146,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.1888,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.1538,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1578,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.1547,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1807,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.875,
+        "sim": 0.5465,
+        "latency": 56.2
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.875,
+        "sim": 0.5558,
+        "latency": 44.84,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.875,
+        "sim": 0.5465,
+        "latency": 59.34,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    },
+    {
+      "instance_id": "common_voice_en_153872_Clean_Control",
+      "speaker": "common_voice_en_153872",
+      "condition": "Clean_Control",
+      "prompt_snr": 37.78,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.4806,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1131,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.672,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.731,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.661,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4806,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.723,
+        "latency": 28.44
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7013,
+        "latency": 23.21,
+        "relative_failure": true
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.7014,
+        "latency": 20.36,
+        "relative_failure": true,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_153872_Duration_Minus15",
+      "speaker": "common_voice_en_153872",
+      "condition": "Duration_Minus15",
+      "prompt_snr": 37.78,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.5052,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.1004,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.6785,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7315,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.744,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.5052,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.6875,
+        "latency": 27.89
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.712,
+        "latency": 22.46,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.7009,
+        "latency": 18.53,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_153872_Duration_Plus15",
+      "speaker": "common_voice_en_153872",
+      "condition": "Duration_Plus15",
+      "prompt_snr": 37.78,
+      "adaptive_decision": {
+        "selected_step": 5,
+        "selected_s": 0.1,
+        "endpoint_score_d_i": 0.4205,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.121,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.7045,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.7562,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.7338,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.4205,
+            "qualifies": true
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.7143,
+        "latency": 31.81
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.7105,
+        "latency": 27.7,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.1,
+        "nfe": 9,
+        "wer": 0.0,
+        "sim": 0.7084,
+        "latency": 24.73,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 3
+      }
+    },
+    {
+      "instance_id": "common_voice_en_153872_Noisy_Prompt_15dB",
+      "speaker": "common_voice_en_153872",
+      "condition": "Noisy_Prompt_15dB",
+      "prompt_snr": 18.0,
+      "adaptive_decision": {
+        "selected_step": 8,
+        "selected_s": 0.25,
+        "endpoint_score_d_i": 0.1958,
+        "trace": [
+          {
+            "step": 0,
+            "t": 0.0,
+            "d_i": null,
+            "qualifies": false
+          },
+          {
+            "step": 1,
+            "t": 0.0048,
+            "d_i": 0.2061,
+            "qualifies": false
+          },
+          {
+            "step": 2,
+            "t": 0.0192,
+            "d_i": 0.6276,
+            "qualifies": false
+          },
+          {
+            "step": 3,
+            "t": 0.0431,
+            "d_i": 0.2094,
+            "qualifies": false
+          },
+          {
+            "step": 4,
+            "t": 0.0761,
+            "d_i": 0.1469,
+            "qualifies": false
+          },
+          {
+            "step": 5,
+            "t": 0.1181,
+            "d_i": 0.1432,
+            "qualifies": false
+          },
+          {
+            "step": 6,
+            "t": 0.1685,
+            "d_i": 0.1522,
+            "qualifies": false
+          },
+          {
+            "step": 7,
+            "t": 0.227,
+            "d_i": 0.1604,
+            "qualifies": false
+          },
+          {
+            "step": 8,
+            "t": 0.2929,
+            "d_i": 0.1958,
+            "qualifies": false
+          }
+        ]
+      },
+      "reference_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.5937,
+        "latency": 32.68
+      },
+      "fixed_s015_arm": {
+        "s": 0.15,
+        "nfe": 10,
+        "wer": 0.0,
+        "sim": 0.6068,
+        "latency": 28.75,
+        "relative_failure": false
+      },
+      "adaptive_arm": {
+        "s": 0.25,
+        "nfe": 12,
+        "wer": 0.0,
+        "sim": 0.5937,
+        "latency": 34.37,
+        "relative_failure": false,
+        "nfe_saved_vs_ref": 0
+      }
+    }
+  ]
+}
