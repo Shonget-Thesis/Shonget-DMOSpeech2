@@ -1,6 +1,7 @@
 venv/
 .venv/
 __pycache__/
+**/__pycache__/**
 *.pyc
 ckpts/
 *.pt
@@ -15,6 +16,7 @@ IMPLEMENTATION_PLAN/LITERATURE_REVIEW/
 data/
 !Handover Scheduling/data/
 !Handover Scheduling/data/**
+Handover Scheduling/data/**/__pycache__/**
 BENCHMARK_100_SAMPLES/data/*.tar.gz
 BENCHMARK_100_SAMPLES/data/*.zip
 
