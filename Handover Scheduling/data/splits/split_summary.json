@@ -1,0 +1,35 @@
+{
+  "source_dataset": "Seed-TTS test-en (data/seed-tts-eval/en/meta.lst)",
+  "split_seed": 42,
+  "base_seed": 42,
+  "total_source_utterances": 1088,
+  "total_source_speakers": 666,
+  "splits": {
+    "development": {
+      "speakers": 100,
+      "utterances": 100,
+      "evaluations_with_conditions": 200
+    },
+    "calibration": {
+      "speakers": 200,
+      "utterances": 200,
+      "evaluations_with_conditions": 400
+    },
+    "test": {
+      "speakers": 200,
+      "utterances": 200,
+      "evaluations_with_conditions": 400
+    }
+  },
+  "conditions": [
+    "clean",
+    "noisy15"
+  ],
+  "noise_specification": {
+    "type": "Additive White Gaussian Noise (AWGN)",
+    "snr_target_db": 15.0,
+    "tolerance_db": 0.1,
+    "clipping_policy": "np.clip(noisy, -1.0, 1.0)",
+    "timing": "Applied directly to prompt audio before feature extraction and RMS normalization"
+  }
+}

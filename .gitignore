@@ -13,6 +13,8 @@ IMPLEMENTATION_PLAN/LITERATURE_REVIEW/
 *.tar
 *.zip
 data/
+!Handover Scheduling/data/
+!Handover Scheduling/data/**
 BENCHMARK_100_SAMPLES/data/*.tar.gz
 BENCHMARK_100_SAMPLES/data/*.zip
 
