@@ -9,7 +9,7 @@
 **Execution Targets:** 
 1. **CPU Baseline:** AMD Ryzen 7 5700U CPU (8 cores / 16 threads, FP32, seed 42)
 2. **GPU Verification:** NVIDIA Tesla T4 CUDA 15.64 GB (Google Colab, FP32/cuDNN, 17,738s / 295.6 min)  
-**Status:** **100% COMPLETE (Phases 1, 2, 3 CPU & Full 500-Speaker GPU Re-Test Concluded)**  
+**Status:** **100% COMPLETE (Phases 1, 2, 3 CPU & Full 500-Speaker GPU Retest Concluded)**  
 **Generated At:** 2026-10-20T17:00:00+08:00  
 
 ---
@@ -18,29 +18,30 @@
 
 Diffusion-based and flow-matching text-to-speech (TTS) architectures achieve state-of-the-art naturalness and speaker fidelity, but their multi-step numerical integration incurs substantial computational latency. In DMOSpeech 2, inference is accelerated by transferring intermediate representations from a high-capacity flow-matching teacher to a distilled student consistency model. However, deploying a fixed early handover schedule (e.g., Step 4) causes severe degradation when prompts are degraded by acoustic noise (exhibiting over 60% failure rates under 15 dB prompt noise). Conversely, employing a conservative fixed schedule (Step 8) expends unnecessary compute on clean, straightforward speech.
 
-This research establishes an **input-adaptive teacher-to-student handover scheduling policy** governed by a dual-mechanism architecture:
+This study investigates whether an **input-adaptive teacher-to-student handover scheduling policy** can reduce model evaluations while controlling reference-relative quality degradation. It evaluates a dual-mechanism architecture against fixed schedules and a simpler input-SNR gating baseline:
 1. **Prompt SNR Safety Gate ($\theta = 20.0\text{ dB}$):** Pre-generation gating that routes speech prompts with low signal-to-noise ratio ($\text{SNR} < 20.0\text{ dB}$) to the full 8-step teacher trajectory, providing fallback protection under adverse acoustic conditions.
-2. **Zero-NFE Trajectory Drift Probing ($\hat{\lambda} = 0.50$):** Evaluates normalized tangent deviation $d_i = \frac{\|\hat{x}_1(t_i) - \hat{x}_1(t_{i-1})\|_2}{\|\hat{x}_1(t_i)\|_2 + \epsilon}$ along early teacher steps as an algebraic byproduct of the Euler update without requiring additional forward passes, permitting early handover at Steps 4, 5, or 6 only when trajectory curvature indicates acoustic stabilization.
-3. **Learn-Then-Test (LTT) Risk Control:** Formulates threshold selection as a multiple hypothesis testing problem with finite-sample Probably Approximately Correct (PAC) statistical bounds, bounding the held-out robust failure rate $R \le 5.0\%$ at $90\%$ confidence.
+2. **Zero-NFE Trajectory Drift Probing ($\hat{\lambda} = 0.50$):** Evaluates normalized tangent deviation $d_i = \frac{\|\hat{x}_1(t_i) - \hat{x}_1(t_{i-1})\|_2}{\|\hat{x}_1(t_i)\|_2 + \epsilon}$ along early teacher steps as an algebraic byproduct of the Euler update without requiring additional forward passes, probing whether the intermediate velocity field has straightened sufficiently for student handover at Steps 4, 5, or 6.
+3. **Learn-Then-Test (LTT) Risk Control:** Formulates threshold selection as a multiple hypothesis testing problem with finite-sample Probably Approximately Correct (PAC) statistical bounds, bounding the held-out robust reference-relative added failure rate $R \le 5.0\%$ at $90\%$ confidence.
 
 ```mermaid
 flowchart TD
     subgraph S1 ["Total Workload (500 Speakers / 4,000 Candidate Evaluations)"]
         D1["Phase 1: Development Split<br/>100 Speakers (200 Cases / 800 Runs)<br/>Timing Trade-offs & Policy Freezing"]
-        D2["Phase 2: Calibration Split<br/>200 Speakers (400 Cases / 1,600 Runs)<br/>LTT Risk Calibration (λ̂ = 0.50 Certified)"]
+        D2["Phase 2: Calibration Split<br/>200 Speakers (400 Cases / 1,600 Runs)<br/>LTT Risk Calibration (λ̂ = 0.50 Certified, p = 0.0264)"]
         D3["Phase 3: Held-Out Test Split<br/>200 Speakers (400 Cases / 1,600 Runs)<br/>Master Comparative Benchmark & Verification"]
     end
 
     subgraph S2 ["Core Held-Out Findings on 200 Test Speakers"]
         R1["Compute Savings:<br/>13.6% Mean Forward NFE Reduction (18.15 vs 21.00)<br/>p = 1.56e-35 (Paired Wilcoxon Signed-Rank)"]
-        R2["Quality Invariance:<br/>No Statistically Significant Difference Detected vs Step 8<br/>Holm-Bonferroni Adj. p = 1.000 (WER, SIM, UTMOS)"]
-        R3["PAC Risk Criterion Met:<br/>Held-Out Robust Added Failure: 2.50% (5/200) ≤ 5% PAC limit<br/>Prespecified Binomial Certification p = 0.0264 ≤ 0.10"]
+        R2["Preserved Metric Parity:<br/>No Statistically Significant Difference Detected vs Step 8<br/>Holm-Bonferroni Adj. p = 1.000 (WER, SIM, UTMOS)"]
+        R3["PAC Risk Criterion Met:<br/>Held-Out Robust Added Failure: 2.50% (5/200) ≤ 5% PAC limit<br/>Prespecified Binomial Test p = 0.0623 ≤ 0.10"]
     end
 
     D1 --> D2 --> D3 --> S2
     style S1 fill:#f8f9fa,stroke:#6c757d,stroke-width:2px
     style S2 fill:#eafaf1,stroke:#27ae60,stroke-width:2px
 ```
+
 
 ---
 
@@ -106,8 +107,9 @@ An utterance is defined as a failure if and only if synthesis exhibits significa
 $$\text{Fail}(x, s) \iff \text{WER}(x, s) > \max(0.125, \text{WER}_{\text{ref}} + 0.01) \lor \text{SIM}(x, s) < \text{SIM}_{\text{ref}} - 0.02$$
 
 - Absolute WER ceiling $0.125$ (12.5%), Relative WER margin $+0.01$ (1.0% tolerance), Similarity margin $-0.02$ (0.02 cosine tolerance).
-- **Robust Speaker Failure:** A speaker fails under policy $\pi$ if *either* their clean *or* noisy15 utterance fails:
+- **Robust Speaker Failure:** A speaker fails under policy $\pi$ if *either* their clean *or* noisy15 utterance fails (respecting within-speaker pairing):
   $$\text{RobustFail}_i = \max(\text{Fail}_{i, \text{clean}}, \text{Fail}_{i, \text{noisy15}})$$
+- **Interpretation & Scope:** This metric evaluates *reference-relative added degradation* rather than absolute speech perfection. Zero added failure signifies that early handover introduced no measurable penalty compared to running the full Step-8 teacher baseline. Crucially, utterances routed to Step 8 (including noisy prompts diverted by the SNR gate) inherit the baseline Step-8 output and whatever acoustic artifacts or WER limits that reference baseline exhibits under adverse noise.
 
 ---
 
@@ -190,6 +192,8 @@ Two-sided paired Wilcoxon signed-rank tests evaluated against the Step-8 referen
 | **Proposed Adaptive ($\hat{\lambda}=0.50$)** | $\mathbf{1.56 \times 10^{-35}}$ | $\mathbf{1.0000}$ | $\mathbf{1.0000}$ | $\mathbf{1.0000}$ | **Significant compute reduction ($p < 10^{-34}$) with no statistically significant aggregate difference detected across WER, SIM, or UTMOS** |
 | **Proposed (No SNR Gate)** | $8.06 \times 10^{-71}$ | $< 0.0001$ | $0.0227$ | $0.1014$ | Severe collapse on noisy condition without prompt gate ($p < 0.0001$) |
 
+*Methodological Note on Quality Metrics:* The lack of statistically significant differences on aggregate WER, SIM, and UTMOS after Holm-Bonferroni correction does not establish mathematical identity or absolute perceptual equivalence. Rather, it indicates that at the tested sample size ($N=200$), the proposed policy produces no detectable aggregate quality degradation compared to running the full Step-8 teacher baseline.
+
 **Realized Risk Verification on Test Split:**
 - **Robust Added Failure Rate:** **2.50% (5 / 200)**.
 - **Exact 95% Clopper-Pearson Interval:** **[0.82%, 5.74%]**.
@@ -199,8 +203,8 @@ Two-sided paired Wilcoxon signed-rank tests evaluated against the Step-8 referen
 
 ---
 
-### 4.5 Paired 2x2 Contingency Comparison: Proposed Adaptive vs. SNR-Only
-Both policies were evaluated on the identical 200 test speakers. To formally evaluate whether the reduction from 11 failures to 5 failures is statistically meaningful, we evaluate the paired 2×2 contingency table:
+### 4.5 Paired 2x2 Contingency Comparison: Proposed Adaptive vs. Simpler SNR-Only Baseline
+Both policies were evaluated on the identical 200 test speakers. While fixed early handover (Step 4) causes catastrophic collapse on noisy speech (>60% failures), the simpler **SNR-Only Policy** (routing clean speech to Step 4 and noisy speech to Step 8) provides a strong, low-complexity baseline. To evaluate whether the additional mechanism of mid-flight trajectory drift probing provides a statistically defensible advantage, we analyze the paired 2×2 contingency table:
 
 | Proposed Adaptive Policy ($\hat{\lambda}=0.50$) | SNR-Only Policy: Pass | SNR-Only Policy: Fail | Marginal Total |
 |---|:---:|:---:|:---:|
@@ -208,12 +212,13 @@ Both policies were evaluated on the identical 200 test speakers. To formally eva
 | **Proposed: Fail** | 1 | 4 | **5** |
 | **Marginal Total** | **189** | **11** | **200** |
 
-- **Concordant Pairs:** 188 passed by both; 4 failed by both.
+- **Concordant Pairs:** 188 passed by both policies; 4 failed by both policies.
 - **Discordant Pairs:** 7 failed by SNR-only but rescued by Proposed; 1 failed by Proposed but passed by SNR-only.
-- **Exact McNemar Test (Two-Sided Binomial on Discordant Pairs):**
-  $$p = P(\text{Bin}(8, 0.5) \le 1) \times 2 = 0.0703$$
-  *(One-sided test favoring Proposed: $p = 0.0352$)*.
-  This confirms that trajectory drift probing provides a statistically descriptive 54.5% relative failure reduction over prompt SNR gating alone.
+- **Exact McNemar Test (Binomial on Discordant Pairs):**
+  - Two-Sided: $p = P(\text{Bin}(8, 0.5) \le 1) \times 2 = 0.0703$
+  - One-Sided (favoring Proposed): $p = 0.0352$
+
+*Analytical Interpretation:* On the CPU held-out split, trajectory drift probing provides a descriptive 54.5% relative failure reduction (from 11 down to 5 failures), though the two-sided test does not achieve significance at the conventional $\alpha = 0.05$ threshold ($p = 0.0703$). Furthermore, as shown in Section 4.8 on the GPU held-out test split, SNR-only achieves 4/200 failures versus 3/200 for the proposed method ($p = 1.0000$). Therefore, the simpler SNR-only heuristic is highly competitive, and determining whether the additional complexity of trajectory drift probing offers a consistent, decisive advantage remains an active research question rather than a resolved superiority claim.
 
 ---
 
@@ -231,17 +236,19 @@ Calibration ($N=200$) and test ($N=200$) cohorts were pooled (400 speakers total
 
 ---
 
-### 4.7 Cross-Split Comparison Across All 500 Speakers
-Comparing the evaluated splits across the full 500-speaker cohort:
+### 4.7 Cross-Split Comparison Across All 500 Speakers (CPU Baseline)
+Evaluating the frozen policies consistently across the three disjoint splits on the AMD Ryzen 7 5700U CPU:
 
 | Evaluated Metric | Phase 1: Dev ($N=100$) | Phase 2: Calib ($N=200$) | Phase 3: Held-Out Test ($N=200$) | Full Cohort Pattern |
 |---|:---:|:---:|:---:|:---:|
 | **Fixed Step 4 Robust Failure** | 64.00% (64 / 100) | 60.50% (121 / 200) | **69.50% (139 / 200)** | Severe degradation across all cohorts |
-| **Noisy15 Step 4 Failure** | 63.00% (63 / 100) | 58.00% (116 / 200) | **69.00% (138 / 200)** | Unsafe without prompt gating |
-| **SNR-Only Robust Failure** | 6.00% (6 / 100) | 6.00% (12 / 200) | **5.50% (11 / 200)** | Consistently produces >5% failures |
-| **Proposed Adaptive ($\hat{\lambda}=0.50$) Mean NFE** | 17.61 (at $\lambda=0.60$) | **18.19** | **18.15** | Consistent ~13.6% compute savings |
-| **Proposed Adaptive Robust Failure** | 1.00% (1 / 100) | **2.00% (4 / 200)** | **2.50% (5 / 200)** | Bounded $\le 2.5\% \le 5.0\%$ PAC limit |
-| **Proposed Adaptive Noisy Failure** | 0.00% (0 / 100) | **0.00% (0 / 200)** | **0.00% (0 / 200)** | 100% fallback safety on noisy speech |
+| **Noisy15 Step 4 Failure** | 63.00% (63 / 100) | 58.00% (116 / 200) | **69.00% (138 / 200)** | Catastrophic collapse without prompt gate |
+| **SNR-Only Robust Failure** | 2.00% (2 / 100) | 1.50% (3 / 200) | **5.50% (11 / 200)** | Strong baseline, but elevated risk on test split |
+| **Proposed Adaptive ($\hat{\lambda}=0.50$) Mean NFE** | **18.05** | **18.19** | **18.15** | Stable ~13.6% compute reduction across splits |
+| **Proposed Adaptive Robust Failure** | **2.00% (2 / 100)** | **2.00% (4 / 200)** | **2.50% (5 / 200)** | Strictly bounded $\le 5.0\%$ PAC limit |
+| **Proposed Adaptive Noisy Failure** | **0.00% (0 / 100)** | **0.00% (0 / 200)** | **0.00% (0 / 200)** | 100% fallback safety on noisy speech |
+
+*Key Methodological Observation:* Evaluating Phase 1 development data under the certified threshold $\hat{\lambda} = 0.50$ yields a mean NFE of 18.05 and a 2.00% failure rate, mirroring the behavior observed in calibration (18.19 NFE, 2.00% failure) and held-out testing (18.15 NFE, 2.50% failure). Both the Proposed Adaptive scheduler and the simpler SNR-only baseline easily pass the 5.0% risk bound during development and calibration; however, on the CPU held-out test split, SNR-only incurs 11 failures (5.50%), exceeding the 5.0% threshold, whereas the proposed method remains bounded at 5 failures (2.50%).
 
 ---
 
@@ -252,8 +259,8 @@ To confirm cross-platform validity and examine real-world throughput on producti
 #### 4.8.1 Timing Methodology & Measurement Boundaries
 In the batched GPU evaluation pipeline (`run_gpu_expanded_benchmark.py`), the teacher trajectory was integrated in an amortized single-pass per condition-pair ($t_{\text{int}}$) to compute all intermediate candidate endpoints simultaneously. The candidate loop then executed and timed `run_student_completion` (3 student consistency steps + Vocos neural vocoder decode) for each candidate step. 
 - **Candidate Student Completion + Vocoder Latency:** Averaged **0.527 seconds** per candidate on clean speech across all candidate steps ($s \in \{4, 5, 6, 8\}$) because each candidate executes an identical 3-step consistency solver followed by single-pass vocoder decoding.
-- **CPU vs. GPU Inference Acceleration:** On CPU, bare generation required an average of **9.08 seconds** per utterance (RTF $\approx 2.9\times$). On GPU, student completion and vocoder decode executed at **0.527 seconds** (RTF $\approx 0.111\times - 0.114\times$), achieving a **17.1× speedup** over CPU and operating **9× faster than real-time playback**.
-- **Computational Accounting:** Because wall-clock timing in the benchmark isolated the student/vocoder stage, compute savings are formally quantified via forward Neural Function Evaluations (NFE), which faithfully scale with teacher steps: Step 4 (13 NFE, 38.1% savings), Step 5 (15 NFE, 28.6% savings), Step 6 (17 NFE, 19.0% savings), and Step 8 (21 NFE, reference baseline).
+- **CPU vs. GPU Timing Scope:** On CPU, the reported timing (~9.08s per utterance, RTF $\approx 2.9$) measured complete end-to-end generation from initial noise to audio. On GPU, the benchmark candidate timer isolated student completion and vocoder decode (~0.527s, RTF $\approx 0.11$). Because teacher integration was amortized beforehand, direct wall-clock speedup comparisons between total CPU generation and GPU student/vocoder latency are invalid. Complete end-to-end GPU system latency (including teacher steps, scheduler overhead, student completion, and vocoder) requires a dedicated synchronized timing benchmark.
+- **Computational Accounting via Forward NFE:** Across both platforms, computational savings are formally and unambiguously quantified by forward Neural Function Evaluations (NFE), which faithfully scale with teacher steps: Step 4 (13 NFE, 38.1% savings), Step 5 (15 NFE, 28.6% savings), Step 6 (17 NFE, 19.0% savings), and Step 8 (21 NFE, reference baseline).
 
 #### 4.8.2 GPU Policy Results by Experimental Split
 Rather than relying solely on pooled statistics, the GPU evaluation records were mapped directly to the original disjoint 100/200/200 speaker partitions:
@@ -287,14 +294,15 @@ Matching all 1,600 candidate evaluations for the 200 held-out test speakers acro
 | **Compute Savings** | Held-Out Mean Forward NFE | **18.15 vs. 18.15** | Identical **13.6% compute reduction** on both CPU and GPU |
 | **Statistical Safety** | Held-Out Robust Added Risk | **2.50% (CPU) vs. 1.50% (GPU)** | Both strictly satisfy the prespecified PAC bound ($R \le 5.0\%$) |
 | **Adverse Noise Safety**| Noisy15 Robust Added Risk | **0.00% (CPU) vs. 0.00% (GPU)** | 100% fallback safety under 15 dB noise on both CPU and GPU |
-| **Acoustic Fidelity** | Absolute Difference in Speaker SIM | **0.0367** | Minor FP32/cuDNN arithmetic divergence in vocoder synthesis |
-| | Absolute Difference in UTMOS | **0.0978** | Minor naturalness divergence well within perceptual equivalence |
+| **Acoustic Metrics** | Absolute Difference in Speaker SIM | **0.0367** | Minor numerical divergence across CPU and GPU floating-point backends |
+| | Absolute Difference in UTMOS | **0.0978** | Small metric variation reflecting non-deterministic floating-point math |
 
-#### 4.8.4 Paired 2x2 Contingency Table on GPU: Proposed Adaptive vs. SNR-Only
+#### 4.8.4 Paired Comparison on GPU: Proposed Adaptive vs. SNR-Only Baseline
 Evaluating paired discordant failure pairs on the GPU cohort:
-- **Held-Out Test Split ($N=200$):** Both Pass: 195 | Both Fail: 2 | Rescued by Proposed (SNR-Only Fail, Proposed Pass): 2 | Proposed Fail, SNR-Only Pass: 1 (Two-sided exact McNemar $p = 1.0000$).
-- **Pooled Full Cohort ($N=500$):** Both Pass: 486 | Both Fail: 4 | Rescued by Proposed (SNR-Only Fail, Proposed Pass): 8 | Proposed Fail, SNR-Only Pass: 2 (Two-sided exact McNemar $p = 0.1094$; one-sided $p = 0.0547$).
-Across all 500 speakers, the proposed dual-mechanism scheduler cut robust failure counts in half (from 12 failures down to 6 failures, a **50.0% relative risk reduction** over prompt SNR gating alone).
+- **Held-Out Test Split ($N=200$):** Both Pass: 195 | Both Fail: 2 | Rescued by Proposed (SNR-Only Fail, Proposed Pass): 2 | Proposed Fail, SNR-Only Pass: 1 (Two-sided exact McNemar $p = 1.0000$; one-sided $p = 0.5000$).
+- **Calibration Split ($N=200$):** SNR-Only incurs 5 failures (2.50%), which under a single-hypothesis binomial test corresponds to $p \approx 0.0623 \le 0.10$, satisfying the 5% risk bound independently.
+- **Pooled Full Cohort ($N=500$):** Both Pass: 486 | Both Fail: 4 | Rescued by Proposed: 8 | Proposed Fail, SNR-Only Pass: 2 (Two-sided exact McNemar $p = 0.1094$; one-sided $p = 0.0547$).
+Across the pooled 500-speaker population, the proposed scheduler descriptively reduces failures from 12 down to 6. However, on the 200 held-out test speakers, SNR-only achieves 4/200 failures at 17.04 NFE versus 3/200 failures at 18.15 NFE for the proposed method. The 1-failure difference is statistically inconclusive ($p = 1.0000$). This indicates that while prompt SNR gating is indispensable for adverse noise safety, the incremental benefit of mid-flight trajectory drift probing is subtle and remains a legitimate empirical question for ongoing thesis investigation.
 
 ---
 
@@ -303,17 +311,24 @@ Across all 500 speakers, the proposed dual-mechanism scheduler cut robust failur
 ### 5.1 Why Does Fixed Early Handover Fail on Noisy Speech?
 In flow matching, early velocity vectors $v_\theta(x_t, t)$ must resolve phonetic trajectory direction while decoupling acoustic background noise from speech content. Under additive prompt noise, early latent states are dominated by noise disambiguation. Handing off at Step 4 passes an ambiguous intermediate representation to the student consistency model, which projects onto corrupted acoustic regions, resulting in phonetic hallucinations and speaker similarity loss.
 
-### 5.2 Why Prompt SNR Alone Is Insufficient to Control Risk
-An input SNR gate measures acoustic channel energy ratios, not model generation difficulty. Pristine speech prompts (SNR $> 35\text{ dB}$) can still exhibit high trajectory curvature due to complex phonetic transitions or uncommon prosody. The SNR-only policy produces a 5.50% failure rate, failing the 5.0% target. Mid-flight trajectory drift probing detects this curvature, reducing failures by 54.5% (McNemar discordant pairs: 7 vs 1).
+### 5.2 Evaluating SNR Gating vs. Trajectory Drift Probing
+A critical finding of this study is the comparative trade-off between pre-generation prompt gating and mid-flight trajectory probing:
+- **Pre-Generation Prompt SNR Gating ($\theta = 20.0\text{ dB}$):** An acoustic channel energy metric that operates before generation starts. It reliably identifies noisy speech prompts and routes them to the Step-8 teacher baseline, achieving a 0.0% failure rate under 15 dB synthetic noise across all 500 speakers on both CPU and GPU.
+- **Mid-Flight Trajectory Drift Probing ($\hat{\lambda} = 0.50$):** Measures internal velocity field curvature during early teacher integration. On clean speech prompts, channel SNR cannot predict phonetic transition difficulty or model uncertainty; drift probing aims to detect high-curvature regions and delay handover to Step 5, 6, or 8.
+- **Empirical Contrast:**
+  - On the CPU held-out test split ($N=200$), trajectory probing rescued 7 speakers that failed under SNR-only, reducing failures from 11 (5.50%) to 5 (2.50%), yielding an exact McNemar $p = 0.0703$ (one-sided $p = 0.0352$).
+  - On the GPU held-out test split ($N=200$), SNR-only achieved 4 failures (2.00%) at 17.04 NFE, compared to 3 failures (1.50%) at 18.15 NFE for the proposed scheduler (two-sided McNemar $p = 1.0000$). On the GPU calibration split, SNR-only also achieved 5 failures (2.50%, binomial $p \approx 0.0623 \le 0.10$).
+- **Defense Framing:** The proposed dual-mechanism policy does not claim universal dominance over SNR-only in all hardware settings. Rather, input SNR gating provides essential coarse fallback protection against acoustic noise, while trajectory drift probing provides a fine-grained, zero-NFE model-internal safeguard against subtle trajectory deviations on clean speech. Evaluating whether this additional safeguard justifies its implementation overhead remains a central, legitimate empirical inquiry of this thesis.
 
 ### 5.3 Zero-NFE Overhead of Trajectory Drift Probing
 The tangent drift metric:
 $$d_i = \frac{\|\hat{x}_1(t_i) - \hat{x}_1(t_{i-1})\|_2}{\|\hat{x}_1(t_i)\|_2 + \epsilon}$$
-is computed strictly using the algebraic endpoint projection $\hat{x}_1(t_i) = x_{t_i} + (1 - t_i) v_\theta(x_{t_i}, t_i)$ obtained during the normal Euler update step. Computing the Euclidean norm across generated mel frames takes less than **0.05 ms** of CPU tensor operations, introducing zero additional forward evaluations.
+is computed strictly using the algebraic endpoint projection $\hat{x}_1(t_i) = x_{t_i} + (1 - t_i) v_\theta(x_{t_i}, t_i)$ obtained during the normal Euler update step. Computing the Euclidean norm across generated mel frames takes less than **0.05 ms** of tensor operations, introducing zero additional forward evaluations.
 
 ### 5.4 Synthesis Latency vs. Offline Metric Overhead
-- **Bare Speech Generation on AMD Ryzen 7 5700U CPU:** Averages **9.08 seconds** per candidate evaluation (Step 4: ~5.62s, RTF $\approx 1.8x$; Step 8: ~9.08s, RTF $\approx 2.9x$).
-- **Bare Speech Generation on NVIDIA Tesla T4 GPU:** Averages **0.53 seconds** per candidate evaluation (**RTF $\approx 0.111x - 0.114x$**, a **17.1× speedup** over CPU, generating audio 9× faster than real-time speech).
+- **Bare Speech Generation on AMD Ryzen 7 5700U CPU:** Complete end-to-end generation averages **9.08 seconds** per candidate evaluation (Step 4: ~5.62s, RTF $\approx 1.8\times$; Step 8: ~9.08s, RTF $\approx 2.9\times$).
+- **Student Completion & Vocoder on NVIDIA Tesla T4 GPU:** In the GPU benchmark pipeline, student completion and Vocos vocoder synthesis executed at **0.53 seconds** per utterance (RTF $\approx 0.11\times$). Full end-to-end GPU generation (including teacher steps 0..s and decision logic) will be benchmarked in dedicated synchronized timing experiments.
+- **Computational Metric Integrity:** Because isolated timing measurements depend heavily on kernel launch overhead and pipeline batching, forward NFE reduction (**13.6% reduction; 18.15 vs. 21.00 NFE**) serves as the primary, platform-independent metric of computational acceleration.
 - **Offline Metric Audit Suite:** Whisper large-v3 transcription, WavLM x-vector embedding, and UTMOS scoring account for the majority of offline audit time. These models are required solely for thesis auditing and validation and are omitted in production inference.
 
 ### 5.5 Threats to Validity & Safeguards
@@ -321,11 +336,13 @@ is computed strictly using the algebraic endpoint projection $\hat{x}_1(t_i) = x
 2. **Multiple Comparison Corrections:** LTT calibration controls FWER via fixed-sequence testing; test hypothesis tests enforce Holm-Bonferroni corrections.
 3. **Multi-Faceted Quality Metric (Definition 3.1):** Incorporates both WER and WavLM SIM margins calibrated against identical-seed Step-8 references.
 
-### 5.6 Disclosed Study Limitations
-- Evaluated on Seed-TTS English (`test-en`) data only;
-- Degraded condition evaluated under synthetic 15 dB AWGN;
-- Objective metrics (Whisper, WavLM, UTMOS) used without blinded human subjective MUSHRA listening tests;
-- The statistical guarantee applies at the population distribution level for the defined WER/SIM failure event, not as a deterministic per-utterance guarantee.
+### 5.6 Disclosed Study Limitations & Proposal Framing
+- **Defensible Framing:** This study investigates whether risk-calibrated teacher-to-student handover scheduling can reduce model evaluations while controlling reference-relative quality degradation in DMOSpeech 2. It compares the proposed policy with fixed schedules and a simpler SNR-only policy, and evaluates the added value of trajectory drift probing.
+- **Dataset Scope:** Evaluated on Seed-TTS English (`test-en`) data only; broader multi-lingual or conversational speech generalization remains future work.
+- **Acoustic Noise Condition:** Degraded speech was evaluated under synthetic 15 dB AWGN; real-world reverberation and non-stationary babble noise remain open directions.
+- **Objective Evaluation:** Metrics rely on automated neural models (Whisper, WavLM, UTMOS) without blinded human subjective MUSHRA listening tests.
+- **Statistical Guarantee Scope:** The Learn-Then-Test PAC guarantee applies at the population distribution level for the defined reference-relative WER/SIM failure event, not as an unconditional guarantee on every arbitrary utterance.
+- **Baseline Competitiveness:** Results demonstrate solid feasibility and compute savings against fixed Step 8. However, because SNR-only is a strong baseline, establishing the exact conditions under which mid-flight trajectory probing provides decisive added value is an ongoing research question that will be thoroughly explored in subsequent work.
 
 ---
 
