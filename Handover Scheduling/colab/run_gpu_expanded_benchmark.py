@@ -80,24 +80,6 @@ def load_expanded_manifest(scope: str = "test200", n_speakers: Optional[int] = N
         dev_path = os.path.join(splits_dir, "development_manifest.json")
         with open(dev_path, "r", encoding="utf-8") as f:
             rows = json.load(f)
-
-        # Normalize Windows paths from manifest to Linux / local repo paths
-        for r in rows:
-            p_orig = r["prompt_wav_path"].replace("\\", "/")
-            if "seed-tts-eval/en/" in p_orig:
-                rel_p = p_orig.split("seed-tts-eval/en/")[-1]
-                r["prompt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", rel_p)
-            elif "seed-tts-eval/" in p_orig:
-                rel_p = p_orig.split("seed-tts-eval/")[-1]
-                r["prompt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", rel_p)
-
-            g_orig = r["gt_wav_path"].replace("\\", "/")
-            if "seed-tts-eval/en/" in g_orig:
-                rel_g = g_orig.split("seed-tts-eval/en/")[-1]
-                r["gt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", rel_g)
-            elif "seed-tts-eval/" in g_orig:
-                rel_g = g_orig.split("seed-tts-eval/")[-1]
-                r["gt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", rel_g)
     elif scope == "expanded":
         meta_lst = os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", "meta.lst")
         print(f"[Dataset] Building expanded manifest from Seed-TTS meta.lst: {meta_lst}")
@@ -149,6 +131,24 @@ def load_expanded_manifest(scope: str = "test200", n_speakers: Optional[int] = N
         # Custom subset
         with open(test_manifest_path, "r", encoding="utf-8") as f:
             rows = json.load(f)
+
+    # Normalize Windows paths from manifest to Linux / Colab / current repo paths
+    for r in rows:
+        p_orig = r.get("prompt_wav_path", "").replace("\\", "/")
+        if "seed-tts-eval/en/" in p_orig:
+            rel_p = p_orig.split("seed-tts-eval/en/")[-1]
+            r["prompt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", rel_p)
+        elif "seed-tts-eval/" in p_orig:
+            rel_p = p_orig.split("seed-tts-eval/")[-1]
+            r["prompt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", rel_p)
+
+        g_orig = r.get("gt_wav_path", "").replace("\\", "/")
+        if "seed-tts-eval/en/" in g_orig:
+            rel_g = g_orig.split("seed-tts-eval/en/")[-1]
+            r["gt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", rel_g)
+        elif "seed-tts-eval/" in g_orig:
+            rel_g = g_orig.split("seed-tts-eval/")[-1]
+            r["gt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", rel_g)
 
     if n_speakers is not None:
         selected_spks = list(dict.fromkeys([r["speaker_id"] for r in rows]))[:n_speakers]
@@ -254,6 +254,12 @@ def run_gpu_benchmark(
             print(f"[Warning] Prompt file not found: {prompt_wav_path}. Skipping.")
             continue
 
+        if os.path.getsize(prompt_wav_path) < 1000:
+            raise RuntimeError(
+                f"File {prompt_wav_path} is only {os.path.getsize(prompt_wav_path)} bytes (Git LFS pointer file, not actual audio data!). "
+                "Please run Step 4 in DMOSpeech2_Live_1000_GPU_Retest.ipynb to download the actual audio binary files via huggingface_hub."
+            )
+
         prompt_raw, sr = torchaudio.load(prompt_wav_path)
         prompt_np = prompt_raw.squeeze().numpy()
         if condition == "noisy15":
@@ -329,7 +335,17 @@ def run_gpu_benchmark(
             candidate_times[step] = t_s
 
         # Ground truth audio
-        if os.path.exists(gt_wav_path):
+        if not os.path.exists(gt_wav_path):
+            candidates_gt = [
+                os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", "wavs", os.path.basename(gt_wav_path)),
+                os.path.join(ROOT_DIR, "data", "seed-tts-eval", "wavs", os.path.basename(gt_wav_path)),
+            ]
+            for c in candidates_gt:
+                if os.path.exists(c):
+                    gt_wav_path = c
+                    break
+
+        if os.path.exists(gt_wav_path) and os.path.getsize(gt_wav_path) >= 1000:
             gt_raw, gt_sr = torchaudio.load(gt_wav_path)
             gt_np = gt_raw.squeeze().numpy()
         else:
