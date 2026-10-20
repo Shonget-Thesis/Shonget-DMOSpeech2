@@ -288,12 +288,15 @@ class WavLMSimilarityEvaluator:
         candidate_audio: Union[str, np.ndarray],
         ground_truth_audio: Union[str, np.ndarray],
         sample_rate: int = 24000,
+        gt_sr: Optional[int] = None,
     ) -> float:
         """
         Computes cosine similarity between synthesized audio and ground-truth target recording.
+        Properly honors gt_sr if ground_truth_audio is provided as a numpy array.
         """
+        target_gt_sr = gt_sr if gt_sr is not None else sample_rate
         emb_cand = self.get_embedding(candidate_audio, sample_rate)
-        emb_gt = self.get_embedding(ground_truth_audio, sample_rate)
+        emb_gt = self.get_embedding(ground_truth_audio, target_gt_sr)
         sim = F.cosine_similarity(emb_cand, emb_gt).item()
         return float(sim)
 
@@ -355,9 +358,11 @@ class MetricSuite:
         cand_audio: Union[str, np.ndarray],
         gt_audio: Union[str, np.ndarray],
         sample_rate: int = 24000,
-        gt_sr: int = 24000,
+        gt_sr: Optional[int] = None,
     ) -> float:
-        return float(self.sim.compute_similarity(cand_audio, gt_audio, sample_rate=sample_rate))
+        target_gt_sr = gt_sr if gt_sr is not None else sample_rate
+        return float(self.sim.compute_similarity(cand_audio, gt_audio, sample_rate=sample_rate, gt_sr=target_gt_sr))
+
 
     def compute_utmos(self, cand_audio: Union[str, np.ndarray], sample_rate: int = 24000) -> float:
         return float(self.utmos.score(cand_audio, sample_rate=sample_rate))

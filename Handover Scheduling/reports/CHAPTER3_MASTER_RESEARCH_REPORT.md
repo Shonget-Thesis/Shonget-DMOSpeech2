@@ -60,8 +60,9 @@ flowchart TD
 | **DMOSpeech 2 (Teacher & Student)** | `ckpts/model_85000.pt` | 4,019,822,332 | `e143188f7c46b69abb60786937d79b89dac9777d3c4c1e91a97634bcd39ebf2c` |
 | **Duration Predictor (GRPO)** | `ckpts/model_1500.pt` | 270,615,794 | `6bd50428f3b5f0f25c1a60a0053f40ee47c817bda03c8ee120100f22680ae4c2` |
 | **Whisper large-v3 ASR** | HuggingFace `model.safetensors` (Commit `06f233f`) | 3,087,130,976 | `a8e94b85976e5864ba3e9525c7e6c83b2a1eca42d4b797a0c7c24d778e40fd95` |
-| **WavLM-large Speaker Verifier (bin)** | HuggingFace `pytorch_model.bin` (Commit `feb593a`) | 404,547,053 | `e906bce2fa42fb497a1d1a9ecf81548adb7e03b12a5644e32d2f42f0d6500fad` |
-| **WavLM-large Speaker Verifier (safe)** | HuggingFace `model.safetensors` | 404,507,764 | `e7b31a8e62a136830fe105fbcfa89f07f108d014b0fa55fd4aebdf4c72886d4c` |
+| **WavLM Speaker Verifier (bin)** | HuggingFace `microsoft/wavlm-base-plus-sv` (`pytorch_model.bin`) | 404,547,053 | `e906bce2fa42fb497a1d1a9ecf81548adb7e03b12a5644e32d2f42f0d6500fad` |
+| **WavLM Speaker Verifier (safe)** | HuggingFace `microsoft/wavlm-base-plus-sv` (`model.safetensors`) | 404,507,764 | `e7b31a8e62a136830fe105fbcfa89f07f108d014b0fa55fd4aebdf4c72886d4c` |
+
 | **SpeechMOS UTMOS Predictor** | TorchHub `utmos22_strong_step7459_v1.pt` (`tarepan/SpeechMOS:v1.2.0`) | 411,179,119 | `38aa51ab79e2a4e09a1449758a4b37e9cbb2e8235a49662a732d33a9ba1e9bff` |
 
 ### 1.3 Hardware Configuration & Numerical Precision
@@ -254,7 +255,8 @@ Evaluating the frozen policies consistently across the three disjoint splits on 
 
 ### 4.8 Full Cohort GPU Acceleration Re-Test & Cross-Platform Invariance Audit
 
-To confirm cross-platform validity and examine real-world throughput on production hardware, the entire 500-speaker evaluation cohort (1,000 condition pairs: clean and 15 dB noisy) was re-tested live on an **NVIDIA Tesla T4 GPU (15.64 GB VRAM)** using Google Colab. The pipeline executed all 4,000 candidate evaluations (Steps 4, 5, 6, and 8) with online ASR (Whisper large-v3), speaker verification (WavLM-large), and naturalness scoring (UTMOS).
+To confirm cross-platform validity and examine real-world throughput on production hardware, the entire 500-speaker evaluation cohort (1,000 condition pairs: clean and 15 dB noisy) was re-tested live on an **NVIDIA Tesla T4 GPU (15.64 GB VRAM)** using Google Colab. The pipeline executed all 4,000 candidate evaluations (Steps 4, 5, 6, and 8) with online ASR (Whisper large-v3), speaker verification (`microsoft/wavlm-base-plus-sv`), and naturalness scoring (UTMOS).
+
 
 #### 4.8.1 Timing Methodology & Measurement Boundaries
 In the batched GPU evaluation pipeline (`run_gpu_expanded_benchmark.py`), the teacher trajectory was integrated in an amortized single-pass per condition-pair ($t_{\text{int}}$) to compute all intermediate candidate endpoints simultaneously. The candidate loop then executed and timed `run_student_completion` (3 student consistency steps + Vocos neural vocoder decode) for each candidate step. 
