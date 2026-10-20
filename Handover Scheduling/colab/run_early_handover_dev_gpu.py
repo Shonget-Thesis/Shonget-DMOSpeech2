@@ -39,6 +39,7 @@ for p in [ROOT_DIR, os.path.join(ROOT_DIR, "src"), HANDOVER_DIR, SCRIPT_DIR]:
 
 import torch
 import torchaudio
+from torch.nn.utils.rnn import pad_sequence
 import soundfile as sf
 import tempfile
 
@@ -206,52 +207,61 @@ def run_expanded_development_grid(
 
         # If only steps 2 and 3 are missing, we run teacher single pass to extract 2, 3 + signals
         # Load and preprocess prompt audio
-        prompt_wav, sr = sf.read(prompt_wav_path)
-        if prompt_wav.ndim > 1:
-            prompt_wav = prompt_wav.mean(axis=-1)
-        if sr != 24000:
-            prompt_wav = torchaudio.functional.resample(
-                torch.from_numpy(prompt_wav).float(), orig_freq=sr, new_freq=24000
-            ).numpy()
+        prompt_raw, sr = torchaudio.load(prompt_wav_path)
+        prompt_np = prompt_raw.squeeze().numpy()
 
         if cond == "noisy15":
-            prompt_wav = add_gaussian_noise_15db(prompt_wav, seed=input_seed)
+            prompt_np, _, injected_snr = add_gaussian_noise_15db(prompt_np, seed=input_seed, target_snr_db=15.0)
 
-        prompt_snr = estimate_prompt_snr(prompt_wav, sample_rate=24000)
+        prompt_snr = estimate_prompt_snr(prompt_np, sample_rate=sr)
 
-        # Prepare model inputs
         with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as f_tmp:
-            tmp_wav_path = f_tmp.name
-            sf.write(tmp_wav_path, prompt_wav, 24000)
+            temp_prompt_path = f_tmp.name
+        sf.write(temp_prompt_path, prompt_np, sr)
 
         try:
-            ref_audio_tensor, ref_text_processed = preprocess_ref_audio_text(
-                ref_audio_orig=tmp_wav_path,
-                ref_text=case["prompt_text"],
-                device=device,
+            ref_audio_clean, ref_text_clean = preprocess_ref_audio_text(temp_prompt_path, case["prompt_text"])
+
+            audio_tensor = torch.from_numpy(prompt_np).float().unsqueeze(0)
+            rms = torch.sqrt(torch.mean(torch.square(audio_tensor)))
+            if rms < 0.3:
+                audio_tensor = audio_tensor * 0.3 / rms
+            if sr != tts.target_sample_rate:
+                audio_tensor = torchaudio.transforms.Resample(sr, tts.target_sample_rate)(audio_tensor)
+            audio_tensor = audio_tensor.to(device)
+
+            torch.manual_seed(input_seed)
+            predicted_dur = tts.predict_duration(
+                temp_prompt_path,
+                gt_text,
+                case["prompt_text"],
+                dp_softmax_range=0.7,
+                temperature=0,
             )
+            target_dur = max(10, int(predicted_dur))
+
+            text_list = [ref_text_clean + gt_text]
+            final_text_list = convert_char_to_pinyin(text_list)
+            ref_audio_len = audio_tensor.shape[-1] // tts.hop_length
+            total_duration = ref_audio_len + target_dur
+
+            cond_tensor, text_ids, step_cond, cond_mask, max_dur, dur_tensor = tts._prepare_inputs(
+                audio_tensor, final_text_list, total_duration
+            )
+            prompt_len = cond_mask.sum().item()
+
+            gen_t = make_local_generator(input_seed, device=device)
+            y0 = [torch.randn(dur, 100, dtype=torch.float32, generator=gen_t) for dur in dur_tensor]
+            y0 = pad_sequence(y0, padding_value=0, batch_first=True).to(device)
         finally:
-            if os.path.exists(tmp_wav_path):
-                os.remove(tmp_wav_path)
-
-        text_list = [ref_text_processed + convert_char_to_pinyin([gt_text])[0]]
-        prompt_len = int(ref_audio_tensor.shape[1] // 2)
-
-        # Teacher input conditioning
-        step_cond, text_tokens = tts.prepare_condition(ref_audio_tensor, text_list)
-        gen_t = make_local_generator(input_seed, device=device)
-        y0 = torch.randn(
-            (1, step_cond.shape[1], 100),
-            dtype=torch.float32,
-            device=device,
-            generator=gen_t,
-        )
+            if os.path.exists(temp_prompt_path):
+                os.remove(temp_prompt_path)
 
         # Single-pass Euler teacher trajectory with full signal extraction
         endpoints, d_trace, q_A_trace, q_B_trace, q_C_trace, _ = extract_all_trajectory_signals(
             tts=tts,
             step_cond=step_cond,
-            text=text_tokens,
+            text=text_ids,
             y0=y0,
             prompt_len=prompt_len,
             target_steps=EXPANDED_TARGET_STEPS,
@@ -264,8 +274,8 @@ def run_expanded_development_grid(
             # Must evaluate step 8 first as reference
             _, ref_audio = run_student_completion(
                 tts=tts,
-                cond=step_cond,
-                text=text_tokens,
+                cond=cond_tensor,
+                text=text_ids,
                 teacher_endpoint=endpoints[8],
                 prompt_len=prompt_len,
                 input_seed=input_seed,
@@ -322,8 +332,8 @@ def run_expanded_development_grid(
                 # Generate student completion
                 _, cand_audio = run_student_completion(
                     tts=tts,
-                    cond=step_cond,
-                    text=text_tokens,
+                    cond=cond_tensor,
+                    text=text_ids,
                     teacher_endpoint=endpoints[s],
                     prompt_len=prompt_len,
                     input_seed=input_seed,
@@ -811,10 +821,12 @@ def main():
 
     # 3. Model initialization
     print(f"[Model] Initializing DMOInference on {args.device}...")
+    ckpt_model = os.path.join(ROOT_DIR, "ckpts", "model_85000.pt")
+    ckpt_duration = os.path.join(ROOT_DIR, "ckpts", "model_1500.pt")
     tts = DMOInference(
-        checkpoint_dir=os.path.join(ROOT_DIR, "ckpts"),
+        student_checkpoint_path=ckpt_model,
+        duration_predictor_path=ckpt_duration,
         device=args.device,
-        compile=False,
     )
     evaluator = MetricSuite(device=args.device)
 
