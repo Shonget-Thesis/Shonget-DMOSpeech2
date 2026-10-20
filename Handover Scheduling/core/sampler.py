@@ -325,9 +325,9 @@ def run_student_completion(
             eps = torch.randn(
                 x_curr.shape,
                 dtype=torch.float32,
-                device="cpu",
+                device=device,
                 generator=gen_s,
-            ).to(device)
+            )
 
             time_tensor = torch.tensor([tau], device=device, dtype=torch.float32)
             t_scalar = time_tensor.unsqueeze(-1).unsqueeze(-1)
