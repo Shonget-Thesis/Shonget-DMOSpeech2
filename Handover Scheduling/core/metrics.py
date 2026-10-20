@@ -344,6 +344,22 @@ class MetricSuite:
         self.sim = WavLMSimilarityEvaluator(device=device)
         self.utmos = UTMOSEvaluator(device=device)
 
+    def compute_wer(self, cand_audio: Union[str, np.ndarray], gt_text: str, sample_rate: int = 24000) -> float:
+        hypo_text = self.asr.transcribe(cand_audio, sample_rate=sample_rate)
+        return float(compute_wer_details(gt_text, hypo_text)["wer"])
+
+    def compute_similarity(
+        self,
+        cand_audio: Union[str, np.ndarray],
+        gt_audio: Union[str, np.ndarray],
+        sample_rate: int = 24000,
+        gt_sr: int = 24000,
+    ) -> float:
+        return float(self.sim.compute_similarity(cand_audio, gt_audio, sample_rate=sample_rate))
+
+    def compute_utmos(self, cand_audio: Union[str, np.ndarray], sample_rate: int = 24000) -> float:
+        return float(self.utmos.score(cand_audio, sample_rate=sample_rate))
+
     def evaluate_utterance(
         self,
         cand_audio: Union[str, np.ndarray],
