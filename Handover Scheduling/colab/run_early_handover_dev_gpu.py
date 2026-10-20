@@ -69,9 +69,41 @@ EXPANDED_CANDIDATE_STEPS: Tuple[int, ...] = (2, 3, 4, 5, 6)
 STEP_NFE_MAP = {2: 9, 3: 11, 4: 13, 5: 15, 6: 17, 8: 21}
 
 
+def normalize_audio_path(path_str: str) -> str:
+    if not path_str or os.path.exists(path_str):
+        return path_str
+    p_norm = path_str.replace("\\", "/")
+    base_name = os.path.basename(p_norm)
+    candidates = [
+        path_str,
+        p_norm,
+        os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", "prompt-wavs", base_name),
+        os.path.join(ROOT_DIR, "data", "seed-tts-eval", "prompt-wavs", base_name),
+        os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", "wavs", base_name),
+        os.path.join(ROOT_DIR, "data", "seed-tts-eval", "wavs", base_name),
+        os.path.join("data", "seed-tts-eval", "en", "prompt-wavs", base_name),
+        os.path.join("data", "seed-tts-eval", "en", "wavs", base_name),
+    ]
+    if "seed-tts-eval/en/" in p_norm:
+        rel = p_norm.split("seed-tts-eval/en/")[-1]
+        candidates.append(os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", rel))
+        candidates.append(os.path.join("data", "seed-tts-eval", "en", rel))
+    elif "seed-tts-eval/" in p_norm:
+        rel = p_norm.split("seed-tts-eval/")[-1]
+        candidates.append(os.path.join(ROOT_DIR, "data", "seed-tts-eval", rel))
+        candidates.append(os.path.join("data", "seed-tts-eval", rel))
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return path_str
+
+
 def load_development_manifest(manifest_path: str) -> List[Dict[str, Any]]:
     with open(manifest_path, "r", encoding="utf-8") as f:
         cases = json.load(f)
+    for c in cases:
+        c["prompt_wav_path"] = normalize_audio_path(c.get("prompt_wav_path", ""))
+        c["gt_wav_path"] = normalize_audio_path(c.get("gt_wav_path", ""))
     print(f"[Manifest] Loaded {len(cases)} development condition-cases from {manifest_path}")
     return cases
 
