@@ -56,9 +56,29 @@ def load_expanded_manifest(scope: str = "test200", n_speakers: Optional[int] = N
     splits_dir = os.path.join(HANDOVER_DIR, "data", "splits")
     test_manifest_path = os.path.join(splits_dir, "test_manifest.json")
 
-    if scope == "test200":
+    if scope in ["all1000", "all", "1000"]:
+        print(f"[Dataset] Loading ALL 500 speakers (1,000 condition-pairs) across Dev, Calib, and Test splits...")
+        dev_path = os.path.join(splits_dir, "development_manifest.json")
+        calib_path = os.path.join(splits_dir, "calibration_manifest.json")
+        test_path = os.path.join(splits_dir, "test_manifest.json")
+        
+        rows = []
+        for p in [dev_path, calib_path, test_path]:
+            if os.path.exists(p):
+                with open(p, "r", encoding="utf-8") as f:
+                    rows.extend(json.load(f))
+        print(f"[Dataset] Combined {len(rows)} condition pairs across all 500 speakers.")
+    elif scope in ["test200", "test"]:
         print(f"[Dataset] Loading standard held-out test manifest: {test_manifest_path}")
         with open(test_manifest_path, "r", encoding="utf-8") as f:
+            rows = json.load(f)
+    elif scope in ["calib200", "calib"]:
+        calib_path = os.path.join(splits_dir, "calibration_manifest.json")
+        with open(calib_path, "r", encoding="utf-8") as f:
+            rows = json.load(f)
+    elif scope in ["dev100", "dev"]:
+        dev_path = os.path.join(splits_dir, "development_manifest.json")
+        with open(dev_path, "r", encoding="utf-8") as f:
             rows = json.load(f)
 
         # Normalize Windows paths from manifest to Linux / local repo paths
@@ -387,7 +407,7 @@ def run_gpu_benchmark(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="GPU-Accelerated Adaptive Handover Benchmark")
-    parser.add_argument("--scope", type=str, default="test200", choices=["test200", "expanded"], help="Scope: test200 or expanded (all)")
+    parser.add_argument("--scope", type=str, default="test200", choices=["test200", "all1000", "expanded", "calib200", "dev100"], help="Scope: test200, all1000, or expanded")
     parser.add_argument("--n_speakers", type=int, default=None, help="Limit to N speakers (for quick tests)")
     parser.add_argument("--device", type=str, default=None, help="Device: cuda, cpu, or cuda:0")
     parser.add_argument("--output_dir", type=str, default=None, help="Output directory")
