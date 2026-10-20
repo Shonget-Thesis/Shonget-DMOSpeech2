@@ -28,12 +28,6 @@ unidecode
 vocos
 wandb
 x_transformers>=1.31.14
-
-# Optional dependencies for evaluation
-# Uncomment if you need eval features:
-# faster_whisper==0.10.1
-# funasr
-# jiwer
-# modelscope
-# zhconv
-# zhon
+speechbrain
+jiwer
+pyarrow
