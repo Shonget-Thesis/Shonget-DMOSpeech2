@@ -1,7 +1,6 @@
 # Input-Adaptive Teacher-to-Student Handover Scheduling in DMOSpeech 2
 ## Chapter 3 Comprehensive Research, Benchmark & Replication Master Report
 
-**Author:** Rhenel Jhon Sajol  
 **Thesis Topic:** Input-Adaptive Teacher-to-Student Handover Scheduling in DMOSpeech 2  
 **Evaluation Cohort:** Full 500-Speaker Cohort from Seed-TTS English (`test-en`) (500 clean/noisy condition-pairs, or 1,000 condition-specific cases; 4,000 candidate-grid evaluations and 3,000 dedicated policy timing runs)  
 **Primary Certified Decision Threshold:** $\hat{\lambda} = 0.50$ (Prespecified PAC Criterion: $P(R > 0.05) \le 0.10$)  
