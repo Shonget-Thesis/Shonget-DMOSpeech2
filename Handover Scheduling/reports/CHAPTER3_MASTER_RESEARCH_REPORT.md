@@ -6,9 +6,11 @@
 **Evaluation Cohort:** Full 500-Speaker Cohort from Seed-TTS English (`test-en`) (1,000 cases / 4,000 candidate evaluations)  
 **Primary Certified Decision Threshold:** $\hat{\lambda} = 0.50$ (Prespecified PAC Criterion: $P(R > 0.05) \le 0.10$)  
 **Safety Gate Threshold:** $\theta = 20.0\text{ dB}$ (Dual-Mechanism Architecture)  
-**Execution Target:** AMD Ryzen 7 5700U CPU (8 cores / 16 threads), Full 32-bit Floating Point Precision (`torch.float32`), Seeded Local Generators (`base_seed = 42`)  
-**Status:** **100% COMPLETE (Phases 1, 2, and 3 Concluded)**  
-**Generated At:** 2026-10-20T08:00:00+08:00  
+**Execution Targets:** 
+1. **CPU Baseline:** AMD Ryzen 7 5700U CPU (8 cores / 16 threads, FP32, seed 42)
+2. **GPU Verification:** NVIDIA Tesla T4 CUDA 15.64 GB (Google Colab, FP32/cuDNN, 17,738s / 295.6 min)  
+**Status:** **100% COMPLETE (Phases 1, 2, 3 CPU & Full 500-Speaker GPU Re-Test Concluded)**  
+**Generated At:** 2026-10-20T17:00:00+08:00  
 
 ---
 
@@ -243,6 +245,47 @@ Comparing the evaluated splits across the full 500-speaker cohort:
 
 ---
 
+### 4.8 Full Cohort GPU Acceleration Re-Test (NVIDIA Tesla T4, 500 Speakers / 4,000 Evaluations)
+
+To confirm cross-platform validity and examine real-world throughput on production hardware, the entire 500-speaker evaluation cohort (1,000 condition pairs: clean and 15 dB noisy) was re-tested live on an **NVIDIA Tesla T4 GPU (15.64 GB VRAM)** using Google Colab. The pipeline executed all 4,000 candidate evaluations (Steps 4, 5, 6, and 8) with online ASR (Whisper large-v3), speaker verification (WavLM-large), and naturalness scoring (UTMOS).
+
+#### 4.8.1 Throughput & Real-Time Factor (RTF) Comparison
+- **Bare Speech Generation:** Reduced from **9.08 seconds** per utterance on CPU to **0.53 seconds** on GPU (**17.1× speedup**).
+- **Real-Time Factor (RTF):** Improved from **2.9×** (slower than real-time playback on CPU) to **0.111× – 0.114×** (nearly **9× faster than real-time playback** on GPU).
+- **Total Pipeline Execution:** Evaluated all 4,000 speech generations in **17,738.4 seconds (295.6 minutes / ~4.9 hours)** on a single T4 GPU instance.
+
+#### 4.8.2 Candidate Step Evaluation on GPU Across All 500 Speakers ($N=500$)
+
+| Handover Step ($s$) | Condition | NFE | Mean WER (%) | Speaker SIM vs GT | Mean UTMOS | Failure Rate (%) | Mean Synthesis Time (s) | Mean RTF |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Step 4** | Clean | 13 | 1.60% | 0.9379 | 3.8638 | 2.40% (12 / 500) | 0.527s | 0.1141 |
+| **Step 4** | Noisy15 | 13 | 75.00% | 0.6938 | 1.2519 | **64.40%** (322 / 500) | 0.536s | 0.1110 |
+| **Step 5** | Clean | 15 | 1.59% | 0.9376 | 3.8727 | 1.80% (9 / 500) | 0.527s | 0.1141 |
+| **Step 5** | Noisy15 | 15 | 74.33% | 0.6993 | 1.2512 | **53.80%** (269 / 500) | 0.535s | 0.1108 |
+| **Step 6** | Clean | 17 | 1.70% | 0.9380 | 3.8705 | 1.00% (5 / 500) | 0.527s | 0.1142 |
+| **Step 6** | Noisy15 | 17 | 29.62% | 0.7046 | 1.2488 | **49.40%** (247 / 500) | 0.536s | 0.1109 |
+| **Step 8 (Ref)** | Clean | 21 | 1.65% | 0.9376 | 3.8730 | 0.00% (0 / 500) | 0.527s | 0.1141 |
+| **Step 8 (Ref)** | Noisy15 | 21 | 36.13% | 0.7115 | 1.2486 | 0.00% (0 / 500) | 0.536s | 0.1110 |
+
+#### 4.8.3 Master Policy Comparison on GPU (All 500 Speakers / 1,000 Cases)
+
+| Policy Under Test | Mean Forward NFE | NFE Savings (%) | Robust Failure Rate (%) | Clean Failure Rate (%) | Noisy15 Failure Rate (%) | Mean WER (%) | Mean Speaker SIM | Mean UTMOS |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Fixed Step 4** | 13.00 | **38.1%** | **65.2%** (326 / 500) | 2.4% (12 / 500) | **64.4%** (322 / 500) | 38.30% | 0.8159 | 2.5578 |
+| **Fixed Step 5** | 15.00 | **28.6%** | **55.2%** (276 / 500) | 1.8% (9 / 500) | **53.8%** (269 / 500) | 37.96% | 0.8185 | 2.5620 |
+| **Fixed Step 6** | 17.00 | **19.0%** | **49.4%** (247 / 500) | 1.0% (5 / 500) | **49.4%** (247 / 500) | 15.66% | 0.8213 | 2.5597 |
+| **Fixed Step 8 (Ref)** | 21.00 | **0.0%** | **0.0%** (0 / 500) | 0.0% (0 / 500) | 0.0% (0 / 500) | 18.89% | 0.8246 | 2.5608 |
+| **SNR-Only Policy** | 17.02 | **18.9%** | **2.4%** (12 / 500) | 2.4% (12 / 500) | 0.0% (0 / 500) | 18.86% | 0.8247 | 2.5562 |
+| **Proposed Adaptive ($\hat{\lambda}=0.50$)** | **18.15** | **13.6%** | **1.2%** (6 / 500) | **1.2%** (6 / 500) | **0.0%** (0 / 500) | **18.86%** | **0.8246** | **2.5625** |
+
+#### 4.8.4 Key Insights & Cross-Platform Invariance
+1. **Mathematical Invariance of Compute Savings:** The proposed adaptive policy achieved an identical **13.6% compute reduction** (18.15 mean NFE) on both CPU and GPU, confirming that trajectory curvature $d_i$ and prompt SNR gating function deterministically across hardware platforms.
+2. **Certified Safety Margin Satisfied:** The realized robust failure rate across the entire 500-speaker population was **1.2% (6 / 500 speakers)**, well below the prespecified 5.0% PAC failure limit ($R \le 0.05$).
+3. **Flawless Fallback Protection:** Under 15 dB prompt noise, 100% of degraded speech prompts were successfully routed to the Step-8 teacher reference by the SNR safety gate, achieving a **0.0% failure rate** under noise.
+4. **Naturalness & Quality Parity:** Proposed adaptive handover matches or slightly exceeds the Step-8 baseline across all perceptual dimensions: UTMOS naturalness (2.5625 vs 2.5608), WavLM speaker similarity (0.8246 vs 0.8246), and Whisper WER (18.86% vs 18.89%).
+
+---
+
 ## 5. Considerations for Thesis Defense & Oral Examination
 
 ### 5.1 Why Does Fixed Early Handover Fail on Noisy Speech?
@@ -257,8 +300,9 @@ $$d_i = \frac{\|\hat{x}_1(t_i) - \hat{x}_1(t_{i-1})\|_2}{\|\hat{x}_1(t_i)\|_2 + 
 is computed strictly using the algebraic endpoint projection $\hat{x}_1(t_i) = x_{t_i} + (1 - t_i) v_\theta(x_{t_i}, t_i)$ obtained during the normal Euler update step. Computing the Euclidean norm across generated mel frames takes less than **0.05 ms** of CPU tensor operations, introducing zero additional forward evaluations.
 
 ### 5.4 Synthesis Latency vs. Offline Metric Overhead
-- **Bare Speech Generation on AMD Ryzen 7 5700U:** Averages **9.08 seconds** per candidate evaluation (Step 4: ~5.62s, RTF $\approx 1.8x$; Step 8: ~9.08s, RTF $\approx 2.9x$).
-- **Offline Metric Audit Suite:** Whisper large-v3 transcription (~18.2s), WavLM x-vector embedding (~14.1s), and UTMOS scoring (~12.3s) account for 83.1% of pipeline duration (44.64s). These models are required solely for thesis auditing and are omitted in production.
+- **Bare Speech Generation on AMD Ryzen 7 5700U CPU:** Averages **9.08 seconds** per candidate evaluation (Step 4: ~5.62s, RTF $\approx 1.8x$; Step 8: ~9.08s, RTF $\approx 2.9x$).
+- **Bare Speech Generation on NVIDIA Tesla T4 GPU:** Averages **0.53 seconds** per candidate evaluation (**RTF $\approx 0.111x - 0.114x$**, a **17.1× speedup** over CPU, generating audio 9× faster than real-time speech).
+- **Offline Metric Audit Suite:** Whisper large-v3 transcription, WavLM x-vector embedding, and UTMOS scoring account for the majority of offline audit time. These models are required solely for thesis auditing and validation and are omitted in production inference.
 
 ### 5.5 Threats to Validity & Safeguards
 1. **Disjoint Partitioning:** 500 speakers were split into 100 dev, 200 calib, and 200 test speakers with zero speaker overlap.
