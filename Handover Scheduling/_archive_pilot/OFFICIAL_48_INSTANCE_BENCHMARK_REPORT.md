@@ -1,6 +1,22 @@
 # Official 48-Instance Handover Scheduling Benchmark Report: Full-Scale Empirical Validation & 4-Fold Cross-Validation
 
-**Document Type:** Primary Thesis Empirical Evaluation Artifact (Chapters 3 & 4)  
+> [!WARNING]
+> ### Archival Correction Notice (Task 7 Audit Reconciliation)
+> **Status:** Preliminary Pilot Evidence Only — NOT Final Thesis Evidence.
+> This report has been preserved in `_archive_pilot/` for historical auditability and preliminary context. Please note the following verified corrections:
+> 1. **Compute Accounting:** “Mean NFE 12.00 → 9.65” in this report referred to solver steps. Actual forward-pass NFE (accounting for 2× CFG in the teacher) is `21 → 16.29`, a reduction of 22.4%.
+> 2. **Switching Distribution Discrepancy:** The switching distribution cited in Section 5 (`15/12/6/15`) does not match the out-of-fold telemetry (`18/11/4/15`). The out-of-fold telemetry is the authoritative historical record.
+> 3. **Search Direction Clarification:** Section 2 Item 2 was incorrectly phrased as larger lambda being conservative; under the rule $d_i \le \lambda$, a larger $\lambda$ allows earlier (more aggressive) switching.
+> 4. **Boundary Calibration:** The chosen threshold $\lambda = 0.60$ was the upper boundary of the searched grid $[0.20, 0.60]$ in every fold, indicating that the pilot grid was truncated.
+> 5. **Uncomputed Risk Bound:** The statement `risk bound delta <= 0.05` in `calibrated_handover_config.json` was an uncomputed target claim and has been removed. True statistical risk bounds are guaranteed by the Learn-Then-Test procedure in Chapter 3 (Task 5).
+> 6. **Missing Cross-Validation Script:** The standalone script that generated `four_fold_cv_oof_telemetry.json` was absent from initial repository commits; therefore, that specific pilot telemetry cannot be fully independently regenerated from scratch.
+> 7. **WER/SIM Discrepancy:** WER and SIM values in this report differ slightly from `run_risk_calibrated_48_benchmark.py` for identical instances due to different text normalization rules (strip punctuation vs raw), different ASR pipelines (Whisper large-v3 pipeline vs raw model), and different random seeds across independent pilot runs.
+> 8. **Runner Docstring Correction:** Corrected runner docstring in `run_risk_calibrated_48_benchmark.py` which erroneously stated `lambda = 0.08` instead of `lambda = 0.60`.
+> 9. **Runner Code Comment Correction:** Corrected line 322 comment in `run_risk_calibrated_48_benchmark.py` which erroneously said `ARM 1 ... step 6`; the reference is step 8 ($s = 0.25$).
+>
+> The archived report remains preliminary evidence and must not be cited as the final benchmark.
+
+**Document Type:** Archived Preliminary Pilot Evaluation Artifact (Historical Reference Only)  
 **Governing Architecture Diagram:** [`Handover Scheduling/figures/handover_scheduling_architecture.jpg`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/Handover%20Scheduling/figures/handover_scheduling_architecture.jpg)  
 **Governing Verdict:** [`Handover Scheduling/HANDOVER_SCHEDULING_TEST_VERDICT (1).md`](file:///c:/Users/Rhenel%20Jhon%20Sajol/Desktop/TTS/DMOSpeech%202/Handover%20Scheduling/HANDOVER_SCHEDULING_TEST_VERDICT%20%281%29.md)  
 **Primary Telemetry:**  

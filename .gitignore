@@ -26,6 +26,7 @@ BENCHMARK_100_SAMPLES/data/*.zip
 *.mp3
 *.m4a
 *.ogg
+!Handover Scheduling/demo/audio/*.wav
 
 # Benchmark and Output Audio Folders
 BENCHMARK_100_SAMPLES/outputs/

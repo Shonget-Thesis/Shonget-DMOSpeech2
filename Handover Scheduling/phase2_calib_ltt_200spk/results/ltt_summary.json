@@ -1,0 +1,782 @@
+{
+  "config_sha256": "d3644f989f09925ffa1e8fbf502a3dfb5781ed447fc77fcbd1d22985f6830d73",
+  "config": {
+    "protocol": "Chapter 3 Learn-Then-Test Risk Calibration Specification",
+    "candidate_steps": [
+      4,
+      5,
+      6
+    ],
+    "reference_step": 8,
+    "snr_gate_threshold_db": 20.0,
+    "lambda_grid": [
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1.0,
+      1.05,
+      1.1,
+      1.15,
+      1.2
+    ],
+    "primary_guarantee": {
+      "alpha": 0.05,
+      "delta": 0.1,
+      "description": "Primary robust risk bound: P(R(pi_lambda) > 0.05) <= 0.10"
+    },
+    "secondary_analysis": {
+      "alpha": 0.1,
+      "delta": 0.1,
+      "description": "Prespecified secondary relaxed risk bound: P(R(pi_lambda) > 0.10) <= 0.10"
+    },
+    "failure_definition": {
+      "absolute_wer_ceiling": 0.125,
+      "relative_wer_margin": 0.01,
+      "similarity_margin": 0.02
+    },
+    "random_seed": 42
+  },
+  "primary_results": {
+    "alpha": 0.05,
+    "delta": 0.1,
+    "n_speakers": 200,
+    "lambda_hat": 0.5,
+    "testing_table": [
+      {
+        "lambda": 0.2,
+        "k_failures": 0,
+        "n_speakers": 200,
+        "empirical_risk": 0.0,
+        "p_value": 3.505266624882899e-05,
+        "status": "ACCEPTED",
+        "mean_nfe": 20.83,
+        "clean_risk": 0.0,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0025,
+          "5": 0.005,
+          "6": 0.03,
+          "8": 0.9625
+        }
+      },
+      {
+        "lambda": 0.25,
+        "k_failures": 2,
+        "n_speakers": 200,
+        "empirical_risk": 0.01,
+        "p_value": 0.002336294190063917,
+        "status": "ACCEPTED",
+        "mean_nfe": 20.56,
+        "clean_risk": 0.01,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0025,
+          "5": 0.015,
+          "6": 0.0825,
+          "8": 0.9
+        }
+      },
+      {
+        "lambda": 0.3,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "ACCEPTED",
+        "mean_nfe": 20.075,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.01,
+          "5": 0.0275,
+          "6": 0.17,
+          "8": 0.7925
+        }
+      },
+      {
+        "lambda": 0.35,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "ACCEPTED",
+        "mean_nfe": 19.545,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0225,
+          "5": 0.0425,
+          "6": 0.255,
+          "8": 0.68
+        }
+      },
+      {
+        "lambda": 0.4,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "ACCEPTED",
+        "mean_nfe": 18.9,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0325,
+          "5": 0.09,
+          "6": 0.325,
+          "8": 0.5525
+        }
+      },
+      {
+        "lambda": 0.45,
+        "k_failures": 5,
+        "n_speakers": 200,
+        "empirical_risk": 0.025,
+        "p_value": 0.06234249504229521,
+        "status": "ACCEPTED",
+        "mean_nfe": 18.545,
+        "clean_risk": 0.025,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0475,
+          "5": 0.1625,
+          "6": 0.275,
+          "8": 0.515
+        }
+      },
+      {
+        "lambda": 0.5,
+        "k_failures": 4,
+        "n_speakers": 200,
+        "empirical_risk": 0.02,
+        "p_value": 0.026446800009120083,
+        "status": "ACCEPTED",
+        "mean_nfe": 18.19,
+        "clean_risk": 0.02,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0925,
+          "5": 0.23,
+          "6": 0.1725,
+          "8": 0.505
+        }
+      },
+      {
+        "lambda": 0.55,
+        "k_failures": 6,
+        "n_speakers": 200,
+        "empirical_risk": 0.03,
+        "p_value": 0.12374302602009477,
+        "status": "REJECTED_STOP",
+        "mean_nfe": 17.815,
+        "clean_risk": 0.03,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.175,
+          "5": 0.2475,
+          "6": 0.075,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.6,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.585,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.245,
+          "5": 0.2225,
+          "6": 0.03,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.65,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.425,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.3075,
+          "5": 0.1775,
+          "6": 0.0125,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.7,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.265,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.3775,
+          "5": 0.1175,
+          "6": 0.0025,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.75,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.13,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4425,
+          "5": 0.055,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.8,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.06,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4775,
+          "5": 0.02,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.85,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.04,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4875,
+          "5": 0.01,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.9,
+        "k_failures": 4,
+        "n_speakers": 200,
+        "empirical_risk": 0.02,
+        "p_value": 0.026446800009120083,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.03,
+        "clean_risk": 0.02,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4925,
+          "5": 0.005,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.95,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.025,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.495,
+          "5": 0.0025,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 1.0,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.02,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4975,
+          "5": 0.0,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 1.05,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.02,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4975,
+          "5": 0.0,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 1.1,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.02,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4975,
+          "5": 0.0,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 1.15,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.02,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4975,
+          "5": 0.0,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 1.2,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 0.00904837639610153,
+        "status": "UNTESTED_STOPPED",
+        "mean_nfe": 17.02,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4975,
+          "5": 0.0,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      }
+    ]
+  },
+  "secondary_results": {
+    "alpha": 0.1,
+    "delta": 0.1,
+    "n_speakers": 200,
+    "lambda_hat": 1.2,
+    "testing_table": [
+      {
+        "lambda": 0.2,
+        "k_failures": 0,
+        "n_speakers": 200,
+        "empirical_risk": 0.0,
+        "p_value": 7.055079108655332e-10,
+        "status": "ACCEPTED",
+        "mean_nfe": 20.83,
+        "clean_risk": 0.0,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0025,
+          "5": 0.005,
+          "6": 0.03,
+          "8": 0.9625
+        }
+      },
+      {
+        "lambda": 0.25,
+        "k_failures": 2,
+        "n_speakers": 200,
+        "empirical_risk": 0.01,
+        "p_value": 1.8971194822916457e-07,
+        "status": "ACCEPTED",
+        "mean_nfe": 20.56,
+        "clean_risk": 0.01,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0025,
+          "5": 0.015,
+          "6": 0.0825,
+          "8": 0.9
+        }
+      },
+      {
+        "lambda": 0.3,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 20.075,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.01,
+          "5": 0.0275,
+          "6": 0.17,
+          "8": 0.7925
+        }
+      },
+      {
+        "lambda": 0.35,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 19.545,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0225,
+          "5": 0.0425,
+          "6": 0.255,
+          "8": 0.68
+        }
+      },
+      {
+        "lambda": 0.4,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 18.9,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0325,
+          "5": 0.09,
+          "6": 0.325,
+          "8": 0.5525
+        }
+      },
+      {
+        "lambda": 0.45,
+        "k_failures": 5,
+        "n_speakers": 200,
+        "empirical_risk": 0.025,
+        "p_value": 3.8711932462676425e-05,
+        "status": "ACCEPTED",
+        "mean_nfe": 18.545,
+        "clean_risk": 0.025,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0475,
+          "5": 0.1625,
+          "6": 0.275,
+          "8": 0.515
+        }
+      },
+      {
+        "lambda": 0.5,
+        "k_failures": 4,
+        "n_speakers": 200,
+        "empirical_risk": 0.02,
+        "p_value": 8.416395494962762e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 18.19,
+        "clean_risk": 0.02,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.0925,
+          "5": 0.23,
+          "6": 0.1725,
+          "8": 0.505
+        }
+      },
+      {
+        "lambda": 0.55,
+        "k_failures": 6,
+        "n_speakers": 200,
+        "empirical_risk": 0.03,
+        "p_value": 0.00014811248262386464,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.815,
+        "clean_risk": 0.03,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.175,
+          "5": 0.2475,
+          "6": 0.075,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.6,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.585,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.245,
+          "5": 0.2225,
+          "6": 0.03,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.65,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.425,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.3075,
+          "5": 0.1775,
+          "6": 0.0125,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.7,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.265,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.3775,
+          "5": 0.1175,
+          "6": 0.0025,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.75,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.13,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4425,
+          "5": 0.055,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.8,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.06,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4775,
+          "5": 0.02,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.85,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.04,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4875,
+          "5": 0.01,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.9,
+        "k_failures": 4,
+        "n_speakers": 200,
+        "empirical_risk": 0.02,
+        "p_value": 8.416395494962762e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.03,
+        "clean_risk": 0.02,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4925,
+          "5": 0.005,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 0.95,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.025,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.495,
+          "5": 0.0025,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 1.0,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.02,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4975,
+          "5": 0.0,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 1.05,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.02,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4975,
+          "5": 0.0,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 1.1,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.02,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4975,
+          "5": 0.0,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 1.15,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.02,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4975,
+          "5": 0.0,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      },
+      {
+        "lambda": 1.2,
+        "k_failures": 3,
+        "n_speakers": 200,
+        "empirical_risk": 0.015,
+        "p_value": 1.4607875176815657e-06,
+        "status": "ACCEPTED",
+        "mean_nfe": 17.02,
+        "clean_risk": 0.015,
+        "noisy_risk": 0.0,
+        "step_distribution": {
+          "4": 0.4975,
+          "5": 0.0,
+          "6": 0.0,
+          "8": 0.5025
+        }
+      }
+    ]
+  }
+}

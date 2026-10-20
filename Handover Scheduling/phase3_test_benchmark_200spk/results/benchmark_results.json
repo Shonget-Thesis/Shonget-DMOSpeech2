@@ -1,0 +1,247 @@
+{
+  "Fixed Step 4": {
+    "policy_name": "Fixed Step 4",
+    "n_speakers": 200,
+    "robust_failure_rate": 0.695,
+    "clean_failure_rate": 0.055,
+    "noisy_failure_rate": 0.685,
+    "mean_nfe": 13.0,
+    "nfe_95_ci": [
+      13.0,
+      13.0
+    ],
+    "nfe_savings_pct": 38.095238095238095,
+    "mean_wer": 0.2595952899224958,
+    "mean_sim": 0.8163273181021213,
+    "mean_utmos": 2.571627853214741,
+    "step_distribution": {
+      "4": 1.0,
+      "5": 0.0,
+      "6": 0.0,
+      "8": 0.0
+    }
+  },
+  "Fixed Step 5": {
+    "policy_name": "Fixed Step 5",
+    "n_speakers": 200,
+    "robust_failure_rate": 0.565,
+    "clean_failure_rate": 0.02,
+    "noisy_failure_rate": 0.555,
+    "mean_nfe": 15.0,
+    "nfe_95_ci": [
+      15.0,
+      15.0
+    ],
+    "nfe_savings_pct": 28.57142857142857,
+    "mean_wer": 0.12924439612674907,
+    "mean_sim": 0.8177049019932747,
+    "mean_utmos": 2.5701030948758126,
+    "step_distribution": {
+      "4": 0.0,
+      "5": 1.0,
+      "6": 0.0,
+      "8": 0.0
+    }
+  },
+  "Fixed Step 6": {
+    "policy_name": "Fixed Step 6",
+    "n_speakers": 200,
+    "robust_failure_rate": 0.535,
+    "clean_failure_rate": 0.01,
+    "noisy_failure_rate": 0.525,
+    "mean_nfe": 17.0,
+    "nfe_95_ci": [
+      17.0,
+      17.0
+    ],
+    "nfe_savings_pct": 19.047619047619047,
+    "mean_wer": 0.12368859061689945,
+    "mean_sim": 0.8208991359174251,
+    "mean_utmos": 2.5694464567303656,
+    "step_distribution": {
+      "4": 0.0,
+      "5": 0.0,
+      "6": 1.0,
+      "8": 0.0
+    }
+  },
+  "Fixed Step 8": {
+    "policy_name": "Fixed Step 8",
+    "n_speakers": 200,
+    "robust_failure_rate": 0.0,
+    "clean_failure_rate": 0.0,
+    "noisy_failure_rate": 0.0,
+    "mean_nfe": 21.0,
+    "nfe_95_ci": [
+      21.0,
+      21.0
+    ],
+    "nfe_savings_pct": 0.0,
+    "mean_wer": 0.48290664380554094,
+    "mean_sim": 0.8253549034893513,
+    "mean_utmos": 2.5662685146927835,
+    "step_distribution": {
+      "4": 0.0,
+      "5": 0.0,
+      "6": 0.0,
+      "8": 1.0
+    }
+  },
+  "SNR-Only Policy": {
+    "policy_name": "SNR-Only Policy",
+    "n_speakers": 200,
+    "robust_failure_rate": 0.055,
+    "clean_failure_rate": 0.055,
+    "noisy_failure_rate": 0.0,
+    "mean_nfe": 17.04,
+    "nfe_95_ci": [
+      17.0,
+      17.1
+    ],
+    "nfe_savings_pct": 18.85714285714286,
+    "mean_wer": 0.48535613875503586,
+    "mean_sim": 0.8251680202782155,
+    "mean_utmos": 2.569700472652912,
+    "step_distribution": {
+      "4": 0.495,
+      "5": 0.0,
+      "6": 0.0,
+      "8": 0.505
+    }
+  },
+  "Proposed Adaptive (\u03bb=0.50)": {
+    "policy_name": "Proposed Adaptive (\u03bb=0.50)",
+    "n_speakers": 200,
+    "robust_failure_rate": 0.025,
+    "clean_failure_rate": 0.025,
+    "noisy_failure_rate": 0.0,
+    "mean_nfe": 18.15,
+    "nfe_95_ci": [
+      18.045,
+      18.265
+    ],
+    "nfe_savings_pct": 13.571428571428578,
+    "mean_wer": 0.4849015933004903,
+    "mean_sim": 0.8251817551255226,
+    "mean_utmos": 2.5692273554205896,
+    "step_distribution": {
+      "4": 0.0975,
+      "5": 0.24,
+      "6": 0.1575,
+      "8": 0.505
+    },
+    "fraction_of_oracle_savings": 47.02970297029705
+  },
+  "Proposed Adaptive (No SNR Gate, \u03bb=0.50)": {
+    "policy_name": "Proposed Adaptive (No SNR Gate, \u03bb=0.50)",
+    "n_speakers": 200,
+    "robust_failure_rate": 0.7,
+    "clean_failure_rate": 0.025,
+    "noisy_failure_rate": 0.685,
+    "mean_nfe": 14.125,
+    "nfe_95_ci": [
+      14.025,
+      14.225125
+    ],
+    "nfe_savings_pct": 32.73809523809524,
+    "mean_wer": 0.2591407444679504,
+    "mean_sim": 0.8163519488275051,
+    "mean_utmos": 2.5711182484030726,
+    "step_distribution": {
+      "4": 0.5975,
+      "5": 0.2425,
+      "6": 0.16,
+      "8": 0.0
+    }
+  },
+  "Oracle Policy": {
+    "policy_name": "Oracle Policy",
+    "n_speakers": 200,
+    "robust_failure_rate": 0.0,
+    "clean_failure_rate": 0.0,
+    "noisy_failure_rate": 0.0,
+    "mean_nfe": 14.94,
+    "nfe_95_ci": [
+      14.71,
+      15.17
+    ],
+    "nfe_savings_pct": 28.857142857142858,
+    "mean_wer": 0.09327363241333829,
+    "mean_sim": 0.8319616736471653,
+    "mean_utmos": 2.570590726137161,
+    "step_distribution": {
+      "4": 0.63,
+      "5": 0.12,
+      "6": 0.075,
+      "8": 0.175
+    }
+  },
+  "significance_tests": [
+    {
+      "policy": "Fixed Step 4",
+      "raw_p_nfe": 5.507248237212311e-89,
+      "raw_p_wer": 7.151309274002687e-06,
+      "raw_p_sim": 0.003963386213799542,
+      "raw_p_utmos": 0.08924009832233717,
+      "adj_p_nfe": 3.3043489423273866e-88,
+      "adj_p_wer": 4.290785564401612e-05,
+      "adj_p_sim": 0.019816931068997706,
+      "adj_p_utmos": 0.44620049161168585
+    },
+    {
+      "policy": "Fixed Step 5",
+      "raw_p_nfe": 5.507248237212311e-89,
+      "raw_p_wer": 0.30929564296311307,
+      "raw_p_sim": 0.0020262509584274197,
+      "raw_p_utmos": 0.2943976934615199,
+      "adj_p_nfe": 3.3043489423273866e-88,
+      "adj_p_wer": 1.0,
+      "adj_p_sim": 0.01215750575056452,
+      "adj_p_utmos": 1.0
+    },
+    {
+      "policy": "Fixed Step 6",
+      "raw_p_nfe": 5.507248237212311e-89,
+      "raw_p_wer": 0.7232066078252355,
+      "raw_p_sim": 0.1755697902815776,
+      "raw_p_utmos": 0.48679609469917107,
+      "adj_p_nfe": 3.3043489423273866e-88,
+      "adj_p_wer": 1.0,
+      "adj_p_sim": 0.5267093708447328,
+      "adj_p_utmos": 1.0
+    },
+    {
+      "policy": "SNR-Only Policy",
+      "raw_p_nfe": 5.705416841931803e-45,
+      "raw_p_wer": 0.5929800980174267,
+      "raw_p_sim": 0.6543158159836117,
+      "raw_p_utmos": 0.7667272668506296,
+      "adj_p_nfe": 1.1410833683863606e-44,
+      "adj_p_wer": 1.0,
+      "adj_p_sim": 1.0,
+      "adj_p_utmos": 1.0
+    },
+    {
+      "policy": "Proposed Adaptive (\u03bb=0.50)",
+      "raw_p_nfe": 1.5634981016478172e-35,
+      "raw_p_wer": 0.7864570351373764,
+      "raw_p_sim": 0.810578166413562,
+      "raw_p_utmos": 0.4614983290962481,
+      "adj_p_nfe": 1.5634981016478172e-35,
+      "adj_p_wer": 1.0,
+      "adj_p_sim": 1.0,
+      "adj_p_utmos": 1.0
+    },
+    {
+      "policy": "Proposed Adaptive (No SNR Gate, \u03bb=0.50)",
+      "raw_p_nfe": 2.6882765864534867e-71,
+      "raw_p_wer": 9.037831387787157e-06,
+      "raw_p_sim": 0.005665678789808228,
+      "raw_p_utmos": 0.01690429731061636,
+      "adj_p_nfe": 8.06482975936046e-71,
+      "adj_p_wer": 4.518915693893578e-05,
+      "adj_p_sim": 0.02266271515923291,
+      "adj_p_utmos": 0.10142578386369816
+    }
+  ]
+}

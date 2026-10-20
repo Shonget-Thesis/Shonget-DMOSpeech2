@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3 Thesis Presentation: Input-Adaptive Handover Scheduling</title>
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --card-bg: #111827;
+            --card-border: #1f293d;
+            --accent-cyan: #38bdf8;
+            --accent-blue: #3b82f6;
+            --accent-green: #10b981;
+            --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Top Navigation Bar */
+        .top-nav {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #fff;
+            font-size: 14px;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .brand-title {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .brand-sub {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            background: #1e293b;
+            color: var(--text-main);
+            border: 1px solid #334155;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #334155;
+            border-color: #475569;
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #0284c7, #2563eb);
+            border: none;
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0369a1, #1d4ed8);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #059669, #10b981);
+            border: none;
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-success:hover {
+            background: linear-gradient(135deg, #047857, #059669);
+        }
+
+        .voice-select-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--text-muted);
+            background: #0f172a;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--card-border);
+        }
+
+        select {
+            background: transparent;
+            color: var(--accent-cyan);
+            border: none;
+            outline: none;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            max-width: 170px;
+        }
+
+        select option {
+            background: #0f172a;
+            color: #fff;
+        }
+
+        /* Slide Progress Header */
+        .progress-bar-container {
+            width: 100%;
+            height: 4px;
+            background: #1e293b;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 20%;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+            transition: width 0.4s ease;
+        }
+
+        /* Main Slide Stage */
+        .stage-container {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px 24px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide-frame {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 36px 40px;
+            min-height: 580px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-frame::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue), var(--accent-green));
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .slide-number {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-cyan);
+            margin-bottom: 6px;
+        }
+
+        .slide-title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .slide-badge {
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--accent-cyan);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Slide Content Areas */
+        .slide-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* End-to-End Pipeline Visualization */
+        .pipeline-flow {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .flow-step {
+            background: #0d1322;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 16px 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .flow-step.highlight {
+            border-color: var(--accent-cyan);
+            background: rgba(56, 189, 248, 0.08);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+            transform: scale(1.03);
+        }
+
+        .flow-step-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .flow-step-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 4px;
+        }
+
+        .flow-step-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .flow-arrow {
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-cyan);
+            font-weight: bold;
+            font-size: 14px;
+            z-index: 2;
+        }
+
+        /* Formula Cards */
+        .formula-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .formula-card {
+            background: #0d1322;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .formula-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .formula-box {
+            background: #050811;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            padding: 14px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 13.5px;
+            color: #38bdf8;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        .formula-expl {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Results Metrics Cards */
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .metric-card {
+            background: #0d1322;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px 16px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 4px;
+        }
+
+        .metric-value.cyan { color: var(--accent-cyan); }
+        .metric-value.green { color: var(--accent-green); }
+        .metric-value.amber { color: var(--accent-amber); }
+
+        .metric-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-sub {
+            font-size: 11px;
+            color: var(--text-dim);
+            margin-top: 4px;
+        }
+
+        /* Live Audio Demo Cards */
+        .demo-samples-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .demo-card {
+            background: #0d1322;
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .demo-card.active-playback {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+        }
+
+        .demo-card-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .demo-card-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-bottom: 4px;
+        }
+
+        .tag-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .tag-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .tag-red { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+        .demo-card-text {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            line-height: 1.4;
+            background: #080c16;
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .audio-player-mini {
+            margin-top: 4px;
+        }
+
+        .audio-player-mini label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        audio {
+            width: 100%;
+            height: 32px;
+            outline: none;
+        }
+
+        /* Bottom Controller Bar */
+        .controls-bar {
+            margin-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 14px 24px;
+        }
+
+        .slide-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #334155;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dot.active {
+            background: var(--accent-cyan);
+            width: 24px;
+            border-radius: 5px;
+        }
+
+        /* Voice Live Narration Banner */
+        .narration-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12.5px;
+            color: var(--text-muted);
+        }
+
+        .waveform-anim {
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            height: 16px;
+        }
+
+        .waveform-anim span {
+            display: block;
+            width: 3px;
+            background: var(--accent-cyan);
+            border-radius: 2px;
+            height: 4px;
+        }
+
+        .waveform-anim.speaking span:nth-child(1) { animation: wave 0.8s infinite 0.1s; }
+        .waveform-anim.speaking span:nth-child(2) { animation: wave 0.8s infinite 0.3s; }
+        .waveform-anim.speaking span:nth-child(3) { animation: wave 0.8s infinite 0.2s; }
+        .waveform-anim.speaking span:nth-child(4) { animation: wave 0.8s infinite 0.4s; }
+
+        @keyframes wave {
+            0%, 100% { height: 4px; }
+            50% { height: 16px; }
+        }
+
+        /* Callout Box */
+        .callout {
+            background: rgba(30, 41, 59, 0.7);
+            border-left: 4px solid var(--accent-cyan);
+            padding: 14px 18px;
+            border-radius: 0 8px 8px 0;
+            font-size: 13.5px;
+            line-height: 1.5;
+            color: #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+        <div class="brand">
+            <div class="brand-logo">D2</div>
+            <div>
+                <div class="brand-title">Input-Adaptive Teacher-to-Student Handover Scheduling</div>
+                <div class="brand-sub">Master Thesis Presentation & Walkthrough (Rhenel Jhon Sajol &bull; 2026)</div>
+            </div>
+        </div>
+
+        <div class="nav-controls">
+            <div class="voice-select-box">
+                <span>Voice:</span>
+                <select id="voiceSelect"></select>
+            </div>
+
+            <button class="btn btn-primary" id="btnAutoPresent" onclick="toggleAutoPresentation()">
+                <span id="playIcon">&#9658;</span>
+                <span id="btnPresentText">Start 60–90s Guided Presentation</span>
+            </button>
+
+            <a href="index.html" class="btn" title="Open Complete Interactive Player Table">
+                <span>&#127911; Audio Player Table</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Progress Indicator -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Main Slide Stage -->
+    <main class="stage-container">
+        <div class="slide-frame">
+
+            <!-- Slide 1: The Problem & Motivation -->
+            <section class="slide active" id="slide-1">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-number">Slide 1 of 5 &bull; The Research Problem</div>
+                        <h1 class="slide-title">The Fixed Handover Dilemma in Fast TTS</h1>
+                    </div>
+                    <span class="slide-badge">Motivation</span>
+                </div>
+                <div class="slide-body">
+                    <div class="callout">
+                        <strong>Core Dilemma:</strong> In modern two-stage non-autoregressive speech synthesis (like DMOSpeech 2), a deep Flow-Matching Teacher establishes phonetic alignment, then hands off to a fast Consistency Student to finish synthesis. 
+                        Where should this handover occur?
+                    </div>
+
+                    <div class="formula-grid">
+                        <div class="formula-card">
+                            <div class="formula-title" style="color: var(--accent-red);">&#9888; Fixed Early Handover (Step 4 / 13 NFE)</div>
+                            <p class="formula-expl">
+                                <strong>Pros:</strong> Cuts inference latency by 38.1% (saves 8 model evaluations).<br>
+                                <strong>Catastrophic Failure:</strong> On noisy or phonetically complex prompts, early handover fails <strong>64.0% of speakers</strong>, causing severe acoustic collapse, word dropouts, and robotic garble.
+                            </p>
+                        </div>
+
+                        <div class="formula-card">
+                            <div class="formula-title" style="color: var(--accent-amber);">&#8987; Fixed Conservative Handover (Step 8 / 21 NFE)</div>
+                            <p class="formula-expl">
+                                <strong>Pros:</strong> High synthesis fidelity and robust against noise (0% failures).<br>
+                                <strong>Wasteful Compute:</strong> Runs 21 full forward evaluations on clean, simple audio prompts that could have cleanly completed at Step 4, wasting valuable CPU resources.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="callout" style="border-left-color: var(--accent-green);">
+                        <strong>Thesis Objective:</strong> Can we design an <em>input-adaptive</em> handover policy that automatically exits early on clean speech to maximize savings, while guaranteeing reliability under PAC statistical risk bounds?
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2: End-to-End Pipeline: Audio to Numbers and Numbers to Audio -->
+            <section class="slide" id="slide-2">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-number">Slide 2 of 5 &bull; Architectural Pipeline</div>
+                        <h1 class="slide-title">End-to-End Pipeline: Sound Wave &harr; Numbers</h1>
+                    </div>
+                    <span class="slide-badge">Architecture</span>
+                </div>
+                <div class="slide-body">
+                    <div class="callout">
+                        How audio transforms into mathematical vectors and reconstructs back to pristine human speech:
+                    </div>
+
+                    <div class="pipeline-flow">
+                        <!-- Step 1 -->
+                        <div class="flow-step" id="flow-1">
+                            <div class="flow-step-icon">&#127897;</div>
+                            <div class="flow-step-title">1. Audio Input</div>
+                            <div class="flow-step-desc">24 kHz reference waveform loaded from speaker.</div>
+                            <div class="flow-arrow">&rarr;</div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="flow-step" id="flow-2">
+                            <div class="flow-step-icon">&#128202;</div>
+                            <div class="flow-step-title">2. STFT Mel-Spec</div>
+                            <div class="flow-step-desc">Audio converted to 80-bin Mel-spectrogram tensor numbers.</div>
+                            <div class="flow-arrow">&rarr;</div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="flow-step" id="flow-3">
+                            <div class="flow-step-icon">&#128394;</div>
+                            <div class="flow-step-title">3. Teacher ODE</div>
+                            <div class="flow-step-desc">Latent noise moves along velocity vector field $v_\theta(x_t)$.</div>
+                            <div class="flow-arrow">&rarr;</div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="flow-step highlight" id="flow-4">
+                            <div class="flow-step-icon">&#9878;</div>
+                            <div class="flow-step-title">4. Handover Point</div>
+                            <div class="flow-step-desc"><strong>Adaptive Decision:</strong> Transfer latent $x_{t_h}$ to student.</div>
+                            <div class="flow-arrow">&rarr;</div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="flow-step" id="flow-5">
+                            <div class="flow-step-icon">&#9889;</div>
+                            <div class="flow-step-title">5. Student Consistency</div>
+                            <div class="flow-step-desc">Jumps directly to clean mel-spectrogram in 3 passes.</div>
+                            <div class="flow-arrow">&rarr;</div>
+                        </div>
+
+                        <!-- Step 6 -->
+                        <div class="flow-step" id="flow-6">
+                            <div class="flow-step-icon">&#127926;</div>
+                            <div class="flow-step-title">6. Vocos Vocoder</div>
+                            <div class="flow-step-desc">Reconstructs numbers into 24 kHz speech waveform!</div>
+                        </div>
+                    </div>
+
+                    <div class="formula-grid">
+                        <div class="formula-card">
+                            <div class="formula-title">&#128269; Pre-Handover Observable State</div>
+                            <p class="formula-expl">
+                                During teacher steps $1 \dots s$, the model computes tangent velocity vectors $v_\theta(x_t, t)$. We tap these existing intermediate activations with <strong>zero added forward passes</strong>.
+                            </p>
+                        </div>
+                        <div class="formula-card">
+                            <div class="formula-title">&#128640; Neural Consistency Reconstruction</div>
+                            <p class="formula-expl">
+                                The student model uses consistency distillation to enforce $f_\theta(x_t, t) = f_\theta(x_{t'}, t')$, leaping from intermediate latent coordinates directly to the target acoustic space.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: The Formulas & Dual Mechanism -->
+            <section class="slide" id="slide-3">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-number">Slide 3 of 5 &bull; Mathematical Formulation</div>
+                        <h1 class="slide-title">Dual-Mechanism Policy & PAC Risk Control</h1>
+                    </div>
+                    <span class="slide-badge">Formulation</span>
+                </div>
+                <div class="slide-body">
+                    <div class="formula-grid">
+                        <!-- Mechanism 1 -->
+                        <div class="formula-card">
+                            <div class="formula-title">&#128737; Mechanism 1: Prompt SNR Safety Gate</div>
+                            <div class="formula-box">
+                                SNR = 10 &middot; log10( P_speech / P_noise ) &ge; 20.0 dB
+                            </div>
+                            <p class="formula-expl">
+                                If prompt noise is high ($\text{SNR} < 20.0\text{ dB}$), early exit is immediately prohibited and synthesis is routed to Step 8. This eliminates noise-induced collapse.
+                            </p>
+                        </div>
+
+                        <!-- Mechanism 2 -->
+                        <div class="formula-card">
+                            <div class="formula-title">&#128200; Mechanism 2: Zero-NFE Tangent Drift Probe</div>
+                            <div class="formula-box">
+                                d_s = || v_s - v_{s-1} ||2 / || v_s ||2 &le; &lambda;̂ = 0.50
+                            </div>
+                            <p class="formula-expl">
+                                Probes trajectory curvature during teacher ODE integration. If drift $d_s \le 0.50$, the manifold is stable and early handover is safely executed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="formula-card" style="margin-top: 5px;">
+                        <div class="formula-title" style="color: var(--accent-green);">&#9879; Learn-Then-Test (LTT) Statistical Risk Bound</div>
+                        <div class="formula-box" style="color: var(--accent-green);">
+                            P( R(&lambda;̂) > &alpha; ) &le; &delta;  &bull;  (&alpha; = 0.05, &delta; = 0.10, p = 0.0264)
+                        </div>
+                        <p class="formula-expl">
+                            Calibrated across 200 distinct calibration speakers using fixed-sequence testing to bound the Family-Wise Error Rate (FWER). Guarantees that the expected failure rate will not exceed 5% with 90% confidence.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: Empirical Validation Results -->
+            <section class="slide" id="slide-4">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-number">Slide 4 of 5 &bull; Experimental Verification</div>
+                        <h1 class="slide-title">Held-Out Results on 200 Unseen Speakers</h1>
+                    </div>
+                    <span class="slide-badge">Results</span>
+                </div>
+                <div class="slide-body">
+                    <div class="metrics-row">
+                        <div class="metric-card">
+                            <div class="metric-value cyan">18.15</div>
+                            <div class="metric-label">Mean NFE</div>
+                            <div class="metric-sub">vs 21.0 Baseline (-13.6%)</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-value green">2.50%</div>
+                            <div class="metric-label">Observed Failure</div>
+                            <div class="metric-sub">5 / 200 Speakers (&le; 5.0% Bound)</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-value amber">54.5%</div>
+                            <div class="metric-label">Failure Reduction</div>
+                            <div class="metric-sub">vs SNR-only (McNemar p=0.070)</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-value">p = 1.00</div>
+                            <div class="metric-label">Quality Invariance</div>
+                            <div class="metric-sub">No stat. sig. degradation (WER/SIM)</div>
+                        </div>
+                    </div>
+
+                    <div class="callout" style="border-left-color: var(--accent-green); margin-top: 10px;">
+                        <strong>Examiner Verified Conclusion:</strong> On 200 completely held-out speakers, the proposed adaptive scheduler significantly reduced compute ($p = 1.56 \times 10^{-35}$), while maintaining audio naturalness and speaker timbre with no statistically significant aggregate difference detected.
+                    </div>
+
+                    <div class="formula-grid" style="margin-top: 10px;">
+                        <div class="formula-card">
+                            <div class="formula-title">&#9201; Real-Time Factor (RTF) Breakdown</div>
+                            <p class="formula-expl">
+                                On host AMD Ryzen 7 5700U CPU: bare speech synthesis takes only <strong>9.08s</strong> (RTF ~2.9&times;), while the evaluation audit (Whisper-large-v3, WavLM, and UTMOS) takes 44.64s.
+                            </p>
+                        </div>
+                        <div class="formula-card">
+                            <div class="formula-title">&#128394; Cross-Validation Stability</div>
+                            <p class="formula-expl">
+                                100-fold Monte Carlo resplitting confirms that <strong>94% of resamples</strong> satisfy the strict &le; 5.0% risk bound, demonstrating robust generalizability across speaker partitions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: Live Audio Demonstration -->
+            <section class="slide" id="slide-5">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-number">Slide 5 of 5 &bull; Audio Verification Demo</div>
+                        <h1 class="slide-title">Interactive 3-Input Audio Verification</h1>
+                    </div>
+                    <span class="slide-badge">Live Demo</span>
+                </div>
+                <div class="slide-body">
+                    <div class="demo-samples-grid">
+
+                        <!-- Case 1: Clean -->
+                        <div class="demo-card" id="demo-card-1">
+                            <span class="demo-card-tag tag-green">&#9989; Case 1: Clean Speech</span>
+                            <div class="demo-card-title">Early Exit at Step 4 (38.1% Savings)</div>
+                            <div class="demo-card-text">
+                                <em>Prompt:</em> "Man with guitar holding a microphone..."<br>
+                                <strong>SNR: 23.38 dB &bull; Drift: d_4 = 0.2784</strong>
+                            </div>
+                            
+                            <div class="audio-player-mini">
+                                <label>Step 8 Baseline (21 NFE):</label>
+                                <audio controls id="audio-c1-ref">
+                                    <source src="audio/clean_early_step4_ref_step8.wav" type="audio/wav">
+                                </audio>
+                            </div>
+
+                            <div class="audio-player-mini">
+                                <label style="color: var(--accent-green);">Proposed Step 4 (13 NFE - 38% Saved):</label>
+                                <audio controls id="audio-c1-adapt">
+                                    <source src="audio/clean_early_step4_adaptive_step4.wav" type="audio/wav">
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Case 2: Moderate -->
+                        <div class="demo-card" id="demo-card-2">
+                            <span class="demo-card-tag tag-blue">&#128737; Case 2: Complex Clean</span>
+                            <div class="demo-card-title">Step 8 Safety Fallback</div>
+                            <div class="demo-card-text">
+                                <em>Prompt:</em> "She walked across the street wearing stereo..."<br>
+                                <strong>Phonetic complexity &bull; Fallback to Step 8</strong>
+                            </div>
+
+                            <div class="audio-player-mini">
+                                <label>Step 8 Baseline (21 NFE):</label>
+                                <audio controls id="audio-c2-ref">
+                                    <source src="audio/moderate_step5_ref_step8.wav" type="audio/wav">
+                                </audio>
+                            </div>
+
+                            <div class="audio-player-mini">
+                                <label style="color: var(--accent-cyan);">Proposed Step 8 (Protected):</label>
+                                <audio controls id="audio-c2-adapt">
+                                    <source src="audio/moderate_step5_adaptive_step8.wav" type="audio/wav">
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- Case 3: Noisy -->
+                        <div class="demo-card" id="demo-card-3">
+                            <span class="demo-card-tag tag-red">&#9888; Case 3: Noisy Prompt (+15 dB)</span>
+                            <div class="demo-card-title">Safety Gate Prevents Collapse</div>
+                            <div class="demo-card-text">
+                                <em>Prompt:</em> "I'm never more aware of a room's acoustics..."<br>
+                                <strong>SNR: 17.73 dB &bull; Gate: Routed to Step 8</strong>
+                            </div>
+
+                            <div class="audio-player-mini">
+                                <label style="color: var(--accent-red);">Unprotected Step 4 (Acoustic Failure):</label>
+                                <audio controls id="audio-c3-unprot">
+                                    <source src="audio/noisy_protected_step8_unprotected_step4.wav" type="audio/wav">
+                                </audio>
+                            </div>
+
+                            <div class="audio-player-mini">
+                                <label style="color: var(--accent-green);">Proposed Step 8 (Pristine Audio):</label>
+                                <audio controls id="audio-c3-adapt">
+                                    <source src="audio/noisy_protected_step8_adaptive_step8.wav" type="audio/wav">
+                                </audio>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="callout" style="margin-top: 10px;">
+                        <strong>Defense Key Listening Point:</strong> Notice how Case 1 sounds identical while saving 38.1% of inference compute. In Case 3, notice the robotic garble and stuttering in the Unprotected Step 4 clip, and how our Safety Gate completely restored clear speech in the Proposed clip!
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Bottom Controller Bar -->
+        <div class="controls-bar">
+            <div style="display: flex; gap: 8px;">
+                <button class="btn" onclick="prevSlide()">&#9664; Previous</button>
+                <button class="btn" onclick="nextSlide()">Next &#9654;</button>
+            </div>
+
+            <div class="slide-dots">
+                <div class="dot active" onclick="goToSlide(1)"></div>
+                <div class="dot" onclick="goToSlide(2)"></div>
+                <div class="dot" onclick="goToSlide(3)"></div>
+                <div class="dot" onclick="goToSlide(4)"></div>
+                <div class="dot" onclick="goToSlide(5)"></div>
+            </div>
+
+            <div class="narration-status">
+                <div class="waveform-anim" id="waveformAnim">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+                <span id="narrationText">Ready to present.</span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Slide & Narration State
+        let currentSlide = 1;
+        const totalSlides = 5;
+        let isAutoPresenting = false;
+        let currentUtterance = null;
+
+        // Narration Scripts for each slide (timed for 60-90s total presentation)
+        const slideScripts = {
+            1: "Welcome to the presentation on Input-Adaptive Teacher-to-Student Handover Scheduling for DMOSpeech 2. The core research problem is the fixed handover dilemma: early handover at step 4 cuts computation by 38%, but catastrophically fails on 64% of noisy speech. Conversely, the fixed step 8 baseline is robust, but wastes compute on clean prompts.",
+            2: "Here is the end-to-end architectural pipeline showing how audio transforms to numbers and back to sound. The 24 kilohertz reference audio is converted into an 80-bin Mel-spectrogram tensor. In the latent space, the teacher integrates an ordinary differential equation along a velocity vector field. At our adaptive handover point, the intermediate latent vector is transferred to the student consistency model, which leaps directly to clean acoustic features in just three passes, and the Vocos neural vocoder synthesizes the final audio waveform.",
+            3: "Our solution uses a dual-mechanism scheduler. Mechanism 1 is a prompt Signal-to-Noise Ratio safety gate thresholded at 20 decibels. If noise is high, it safely routes to Step 8. Mechanism 2 is a zero-N-F-E tangent drift probe thresholded at lambda equals 0.50, probing curvature with zero extra compute. The threshold was calibrated using Learn-Then-Test to bound the failure rate under 5% with 90% confidence.",
+            4: "On 200 unseen held-out speakers, our adaptive scheduler achieved a mean of 18.15 N-F-E, saving 13.6% computational cost. The observed failure rate was only 2.5%, safely satisfying the 5% bound. Statistical testing showed a 54.5% relative failure reduction over the S-N-R baseline, with no statistically significant degradation in word error rate or speaker similarity.",
+            5: "Finally, let's verify with audio. In Case 1 with clean speech, the adaptive scheduler exits at Step 4, saving 38% compute with identical quality. In Case 3 with noisy speech, listen to the unprotected Step 4 audio which exhibits severe distortion, and compare it with our proposed adaptive output where the safety gate restored crisp, intelligible speech."
+        };
+
+        // Initialize Speech Synthesis Voices
+        function loadVoices() {
+            const voiceSelect = document.getElementById('voiceSelect');
+            voiceSelect.innerHTML = '';
+            const voices = window.speechSynthesis.getVoices();
+            
+            const englishVoices = voices.filter(v => v.lang.startsWith('en'));
+            const listToUse = englishVoices.length > 0 ? englishVoices : voices;
+
+            listToUse.forEach((voice, index) => {
+                const opt = document.createElement('option');
+                opt.value = voice.name;
+                opt.textContent = `${voice.name} (${voice.lang})`;
+                if (voice.name.includes("Google") || voice.name.includes("Natural") || voice.name.includes("US") || index === 0) {
+                    opt.selected = true;
+                }
+                voiceSelect.appendChild(opt);
+            });
+        }
+
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+            loadVoices();
+        }
+
+        function updateSlideUI() {
+            // Hide all slides
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById(`slide-${i}`).classList.remove('active');
+            }
+            // Show active slide
+            document.getElementById(`slide-${currentSlide}`).classList.add('active');
+
+            // Update Progress Bar
+            const progress = (currentSlide / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+
+            // Update Dots
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                if (index + 1 === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function goToSlide(n) {
+            currentSlide = n;
+            updateSlideUI();
+            if (isAutoPresenting) {
+                speakCurrentSlide();
+            }
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlideUI();
+                if (isAutoPresenting) {
+                    speakCurrentSlide();
+                }
+            } else if (isAutoPresenting) {
+                stopAutoPresentation();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlideUI();
+                if (isAutoPresenting) {
+                    speakCurrentSlide();
+                }
+            }
+        }
+
+        function speakCurrentSlide() {
+            if (!('speechSynthesis' in window)) return;
+
+            window.speechSynthesis.cancel();
+            const text = slideScripts[currentSlide];
+            const utterance = new SpeechSynthesisUtterance(text);
+            
+            const selectedVoiceName = document.getElementById('voiceSelect').value;
+            const voices = window.speechSynthesis.getVoices();
+            const voice = voices.find(v => v.name === selectedVoiceName);
+            if (voice) utterance.voice = voice;
+
+            utterance.rate = 1.05; // Slightly brisk, clear pace
+            utterance.pitch = 1.0;
+
+            const waveform = document.getElementById('waveformAnim');
+            const narrationText = document.getElementById('narrationText');
+
+            utterance.onstart = () => {
+                waveform.classList.add('speaking');
+                narrationText.textContent = `Narrating Slide ${currentSlide}...`;
+            };
+
+            utterance.onend = () => {
+                waveform.classList.remove('speaking');
+                narrationText.textContent = "Slide narration finished.";
+
+                // If on Slide 5 in auto mode, play audio snippets
+                if (currentSlide === 5 && isAutoPresenting) {
+                    playDemoSamplesSequenced();
+                } else if (isAutoPresenting && currentSlide < totalSlides) {
+                    setTimeout(() => {
+                        if (isAutoPresenting) nextSlide();
+                    }, 1500);
+                } else if (isAutoPresenting && currentSlide === totalSlides) {
+                    stopAutoPresentation();
+                }
+            };
+
+            utterance.onerror = () => {
+                waveform.classList.remove('speaking');
+                narrationText.textContent = "Narration paused.";
+            };
+
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function playDemoSamplesSequenced() {
+            const card3Unprot = document.getElementById('audio-c3-unprot');
+            const card3Adapt = document.getElementById('audio-c3-adapt');
+            const narrationText = document.getElementById('narrationText');
+
+            narrationText.textContent = "Playing Unprotected Step 4 audio (distorted failure)...";
+            card3Unprot.play();
+
+            card3Unprot.onended = () => {
+                narrationText.textContent = "Playing Proposed Protected Step 8 audio (restored)...";
+                card3Adapt.play();
+
+                card3Adapt.onended = () => {
+                    narrationText.textContent = "Presentation complete! Thank you.";
+                    stopAutoPresentation();
+                };
+            };
+        }
+
+        function toggleAutoPresentation() {
+            if (isAutoPresenting) {
+                stopAutoPresentation();
+            } else {
+                startAutoPresentation();
+            }
+        }
+
+        function startAutoPresentation() {
+            isAutoPresenting = true;
+            document.getElementById('playIcon').innerHTML = '&#9632;';
+            document.getElementById('btnPresentText').textContent = 'Stop Presentation';
+            document.getElementById('btnAutoPresent').classList.remove('btn-primary');
+            document.getElementById('btnAutoPresent').classList.add('btn-success');
+            
+            currentSlide = 1;
+            updateSlideUI();
+            speakCurrentSlide();
+        }
+
+        function stopAutoPresentation() {
+            isAutoPresenting = false;
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+            }
+            document.getElementById('playIcon').innerHTML = '&#9658;';
+            document.getElementById('btnPresentText').textContent = 'Start 60–90s Guided Presentation';
+            document.getElementById('btnAutoPresent').classList.remove('btn-success');
+            document.getElementById('btnAutoPresent').classList.add('btn-primary');
+            document.getElementById('waveformAnim').classList.remove('speaking');
+            document.getElementById('narrationText').textContent = 'Presentation ended.';
+        }
+
+        // Keyboard arrows navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+    </script>
+</body>
+</html>

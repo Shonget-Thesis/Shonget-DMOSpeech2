@@ -1,0 +1,27 @@
+{
+  "protocol": "Chapter 3 Learn-Then-Test Risk Calibration Specification",
+  "candidate_steps": [4, 5, 6],
+  "reference_step": 8,
+  "snr_gate_threshold_db": 20.0,
+  "lambda_grid": [
+    0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60,
+    0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00, 1.05,
+    1.10, 1.15, 1.20
+  ],
+  "primary_guarantee": {
+    "alpha": 0.05,
+    "delta": 0.10,
+    "description": "Primary robust risk bound: P(R(pi_lambda) > 0.05) <= 0.10"
+  },
+  "secondary_analysis": {
+    "alpha": 0.10,
+    "delta": 0.10,
+    "description": "Prespecified secondary relaxed risk bound: P(R(pi_lambda) > 0.10) <= 0.10"
+  },
+  "failure_definition": {
+    "absolute_wer_ceiling": 0.125,
+    "relative_wer_margin": 0.01,
+    "similarity_margin": 0.02
+  },
+  "random_seed": 42
+}

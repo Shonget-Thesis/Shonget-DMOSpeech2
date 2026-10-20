@@ -10,8 +10,8 @@ HANDOVER_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if HANDOVER_DIR not in sys.path:
     sys.path.insert(0, HANDOVER_DIR)
 
-from obj1_grid.run_grid import run_grid
-from obj1_grid.analyze import run_analysis
+from phase1_dev_grid_100spk.run_grid import run_grid
+from phase1_dev_grid_100spk.analyze import run_analysis
 
 if __name__ == "__main__":
     print("=" * 80)

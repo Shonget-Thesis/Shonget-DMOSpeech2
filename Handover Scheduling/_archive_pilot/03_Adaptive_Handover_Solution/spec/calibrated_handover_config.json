@@ -2,7 +2,7 @@
   "name": "Risk-Calibrated Adaptive Handover Configuration",
   "version": "1.0.0",
   "source": "4-Fold Speaker-Disjoint Cross-Validation (telemetry/four_fold_cv_oof_telemetry.json)",
-  "calibration_target": "Risk bound delta <= 0.05, max NFE reduction subject to zero critical degradation",
+  "calibration_target": "Empirical risk minimization under zero added pilot failures (preliminary pilot heuristic)",
   "parameters": {
     "lambda_threshold": 0.60,
     "snr_gate_threshold_db": 20.0,

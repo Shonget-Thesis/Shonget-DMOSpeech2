@@ -6,7 +6,7 @@ Evaluates the Figure 1 Architecture across all 48 development instances:
   - Projected Endpoint: \hat{x}_1(t_i) = x_{t_i} + (1 - t_i) v(x_{t_i}, t_i)
   - Zero-Overhead Endpoint Stabilization Metric: d_i
   - Prompt-SNR Gate: \hat{SNR} >= \theta (20.0 dB)
-  - Calibrated Decision Gate: d_i <= \hat{\lambda} (0.08)
+  - Calibrated Decision Gate: d_i <= \hat{\lambda} (0.60)
   - Early Candidate Exits: s in {0.07, 0.10, 0.15} with reference fallback s = 0.25
   - Handover Interface: Teacher Endpoint T -> Re-noised at fixed j=1 (\tau = 0.0761)
   - Phase 2: Student Generator (DMOSpeech 2) executing exactly 3 steps to t = 1.00
@@ -319,7 +319,7 @@ def main():
                     "latency_sec": round(latency, 2)
                 }
 
-            # ARM 1: Fixed Reference Baseline (s=0.25, step 6, fixed j=1)
+            # ARM 1: Fixed Reference Baseline (s=0.25, step 8, fixed j=1)
             t_start_ref = time.time()
             t_sub_ref = t_vec[:REFERENCE_STEP + 1]
             traj_ref = odeint(teacher_fn, y0, t_sub_ref, method="euler")

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3 Audio Demo: Input-Adaptive Handover Scheduling</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #0d9488;
+            --success: #16a34a;
+            --danger: #dc2626;
+            --warning: #d97706;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            padding: 30px 20px;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #60a5fa;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .badge-primary { background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); }
+        .badge-success { background: rgba(34, 197, 94, 0.2); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.4); }
+        .badge-warning { background: rgba(245, 158, 11, 0.2); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.4); }
+        .badge-danger { background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); }
+        
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #38bdf8;
+        }
+        .text-box {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 18px;
+            font-size: 13.5px;
+        }
+        .text-label {
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .grid-players {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .player-box {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .player-box.reference {
+            border-left: 4px solid #6b7280;
+        }
+        .player-box.adaptive {
+            border-left: 4px solid #10b981;
+        }
+        .player-box.unprotected {
+            border-left: 4px solid #ef4444;
+        }
+        .player-title {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .player-meta {
+            font-size: 12px;
+            color: #9ca3af;
+            margin-bottom: 10px;
+        }
+        audio {
+            width: 100%;
+            height: 38px;
+            outline: none;
+        }
+        .drift-trace {
+            margin-top: 15px;
+            padding-top: 12px;
+            border-top: 1px dashed var(--border);
+            font-size: 12px;
+            color: #cbd5e1;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Input-Adaptive Teacher-to-Student Handover Scheduling</h1>
+            <div class="subtitle">Chapter 3 Interactive 3-Input Audio Verification Demo (Tasks T56 & T57)</div>
+            <div class="badge badge-primary">Model: DMOSpeech 2 CPU FP32</div>
+            <div class="badge badge-success">Certified λ̂ = 0.50 (PAC Bounded)</div>
+            <div class="badge badge-warning">Safety Gate: θ = 20.0 dB</div>
+        </header>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">1. Clean Prompt (Low Drift)</div>
+                <div class="badge badge-success">Step 4 Early Exit (38.1% Savings)</div>
+            </div>
+            <div class="text-box">
+                <div class="text-label">Prompt Reference Text:</div>
+                <div style="color: #cbd5e1; margin-bottom: 8px;">"Man with guitar holding a microphone in one hand and extending his other arm."</div>
+                <div class="text-label">Target Text to Synthesize:</div>
+                <div style="color: #f1f5f9; font-weight: 500;">"Large brown dog walks up a blue staircase."</div>
+                <div style="margin-top: 8px; font-size: 12px; color: #38bdf8;">
+                    <strong>Prompt SNR:</strong> 23.38 dB (Gate: &ge; 20.0 dB) &bull; 
+                    <strong>Condition:</strong> clean
+                </div>
+            </div>
+            
+            <div class="grid-players">
+                <!-- Reference Player -->
+                <div class="player-box reference">
+                    <div class="player-title">Step 8 Reference (Baseline)</div>
+                    <div class="player-meta">21 NFE (0.0% Savings) &bull; Runtime: 11.03s</div>
+                    <audio controls preload="none">
+                        <source src="audio/clean_early_step4_ref_step8.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                
+                <!-- Proposed Adaptive Player -->
+                <div class="player-box adaptive">
+                    <div class="player-title" style="color: #34d399;">Proposed Adaptive Policy (Step 4)</div>
+                    <div class="player-meta"><strong>13 NFE (38.1% Savings)</strong> &bull; Runtime: 10.13s</div>
+                    <audio controls preload="none">
+                        <source src="audio/clean_early_step4_adaptive_step4.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+            </div>
+            <div class="drift-trace">
+                <strong>Tangent Drift Trace:</strong> d_1=0.2139 | d_2=0.8198 | d_3=0.2669 | d_4=0.2784 | d_5=0.2477 | d_6=0.1957 | d_7=0.1278 | d_8=0.0836
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">2. Moderate Clean Prompt (Phonetic Complexity)</div>
+                <div class="badge badge-primary">Step 8 Safety Fallback (Protected)</div>
+            </div>
+            <div class="text-box">
+                <div class="text-label">Prompt Reference Text:</div>
+                <div style="color: #cbd5e1; margin-bottom: 8px;">"She walked across the street wearing stereo headphones and staring at her smartphone."</div>
+                <div class="text-label">Target Text to Synthesize:</div>
+                <div style="color: #f1f5f9; font-weight: 500;">"Elvis Presley is often called the "King of Rock and Roll"."</div>
+                <div style="margin-top: 8px; font-size: 12px; color: #38bdf8;">
+                    <strong>Prompt SNR:</strong> 18.28 dB (Gate: &ge; 20.0 dB) &bull; 
+                    <strong>Condition:</strong> clean
+                </div>
+            </div>
+            
+            <div class="grid-players">
+                <!-- Reference Player -->
+                <div class="player-box reference">
+                    <div class="player-title">Step 8 Reference (Baseline)</div>
+                    <div class="player-meta">21 NFE (0.0% Savings) &bull; Runtime: 23.09s</div>
+                    <audio controls preload="none">
+                        <source src="audio/moderate_step5_ref_step8.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                
+                <!-- Proposed Adaptive Player -->
+                <div class="player-box adaptive">
+                    <div class="player-title" style="color: #34d399;">Proposed Adaptive Policy (Step 8)</div>
+                    <div class="player-meta"><strong>21 NFE (0.0% Savings)</strong> &bull; Runtime: 18.53s</div>
+                    <audio controls preload="none">
+                        <source src="audio/moderate_step5_adaptive_step8.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+            </div>
+            <div class="drift-trace">
+                <strong>Tangent Drift Trace:</strong> d_1=0.4249 | d_2=1.1157 | d_3=0.6370 | d_4=0.6711 | d_5=0.4429 | d_6=0.2814 | d_7=0.2377 | d_8=0.1822
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">3. Noisy Prompt (+15 dB Gaussian Noise)</div>
+                <div class="badge badge-primary">Step 8 Safety Fallback (Protected)</div>
+            </div>
+            <div class="text-box">
+                <div class="text-label">Prompt Reference Text:</div>
+                <div style="color: #cbd5e1; margin-bottom: 8px;">"I'm never more aware of a room's acoustics than when I'm trying to enjoy a snack I have no intention of sharing."</div>
+                <div class="text-label">Target Text to Synthesize:</div>
+                <div style="color: #f1f5f9; font-weight: 500;">"The boy knew the desert sensed his fear."</div>
+                <div style="margin-top: 8px; font-size: 12px; color: #38bdf8;">
+                    <strong>Prompt SNR:</strong> 17.73 dB (Gate: &ge; 20.0 dB) &bull; 
+                    <strong>Condition:</strong> noisy15
+                </div>
+            </div>
+            
+            <div class="grid-players">
+                <!-- Reference Player -->
+                <div class="player-box reference">
+                    <div class="player-title">Step 8 Reference (Baseline)</div>
+                    <div class="player-meta">21 NFE (0.0% Savings) &bull; Runtime: 8.86s</div>
+                    <audio controls preload="none">
+                        <source src="audio/noisy_protected_step8_ref_step8.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                
+                <!-- Proposed Adaptive Player -->
+                <div class="player-box adaptive">
+                    <div class="player-title" style="color: #34d399;">Proposed Adaptive Policy (Step 8)</div>
+                    <div class="player-meta"><strong>21 NFE (0.0% Savings)</strong> &bull; Runtime: 9.65s</div>
+                    <audio controls preload="none">
+                        <source src="audio/noisy_protected_step8_adaptive_step8.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- Unprotected Step 4 Player -->
+                <div class="player-box unprotected">
+                    <div class="player-title" style="color: #f87171;">Fixed Step 4 (No Safety Gate)</div>
+                    <div class="player-meta">13 NFE &bull; <strong>CATASTROPHIC DEGRADATION (Prevented by Gate)</strong></div>
+                    <audio controls preload="none">
+                        <source src="audio/noisy_protected_step8_unprotected_step4.wav" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+            </div>
+            <div class="drift-trace">
+                <strong>Tangent Drift Trace:</strong> d_1=0.2678 | d_2=0.5922 | d_3=0.1879 | d_4=0.1526 | d_5=0.1859 | d_6=0.1624 | d_7=0.1837 | d_8=0.2194
+            </div>
+        </div>
+
+        <footer>
+            DMOSpeech 2 Input-Adaptive Handover Scheduling &bull; Host AMD Ryzen 7 5700U CPU Evaluation Stack &bull; Rhenel Jhon Sajol (Thesis 2026)
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "lambda_hat": 0.5,
+  "is_reference_only": false,
+  "n_test_speakers": 200,
+  "robust_failures_k": 5,
+  "robust_failure_rate": 0.025,
+  "clopper_pearson_95_ci": [
+    0.00816616619071024,
+    0.05737435112726702
+  ],
+  "clean_failures_k": 5,
+  "clean_failure_rate": 0.025,
+  "noisy_failures_k": 0,
+  "noisy_failure_rate": 0.0,
+  "mean_nfe": 18.15,
+  "nfe_savings_pct": 13.571428571428578,
+  "step_distribution": {
+    "4": 0.0975,
+    "5": 0.24,
+    "6": 0.1575,
+    "8": 0.505
+  }
+}
