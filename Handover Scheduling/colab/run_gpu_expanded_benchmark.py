@@ -373,6 +373,9 @@ def run_gpu_benchmark(
                 utmos_k = metric_suite.compute_utmos(audio_k, sample_rate=24000)
                 is_fail, fail_diag = check_failure(wer_k, wer_ref, sim_k, sim_ref, config=failure_cfg)
 
+            fail_wer = bool(fail_diag.get("fail_wer", fail_diag.get("wer_failed", False)))
+            fail_sim = bool(fail_diag.get("fail_sim", fail_diag.get("sim_failed", False)))
+
             meta = STEP_METADATA[step]
             sw_time = meta.get("switch_time", meta.get("actual_teacher_time", 0.0))
             row = {
@@ -394,8 +397,10 @@ def run_gpu_benchmark(
                 "similarity_ref": float(sim_ref),
                 "utmos_ref": float(utmos_ref),
                 "is_failure": bool(is_fail),
-                "fail_wer": bool(fail_diag["fail_wer"]),
-                "fail_sim": bool(fail_diag["fail_sim"]),
+                "fail_wer": bool(fail_wer),
+                "fail_sim": bool(fail_sim),
+                "wer_failed": bool(fail_wer),
+                "sim_failed": bool(fail_sim),
                 "synthesis_time": float(wall_time),
                 "audio_duration": float(dur_sec),
                 "rtf": float(rtf),

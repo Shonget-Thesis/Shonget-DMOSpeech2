@@ -175,6 +175,8 @@ def check_failure(
         "is_failure": is_failure,
         "wer_failed": wer_failed,
         "sim_failed": sim_failed,
+        "fail_wer": wer_failed,
+        "fail_sim": sim_failed,
         "wer_cand": float(wer_cand),
         "wer_ref": float(wer_ref),
         "wer_threshold": float(wer_threshold),
