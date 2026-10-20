@@ -70,14 +70,35 @@ EXPANDED_CANDIDATE_STEPS: Tuple[int, ...] = (2, 3, 4, 5, 6)
 STEP_NFE_MAP = {2: 9, 3: 11, 4: 13, 5: 15, 6: 17, 8: 21}
 
 
+def ensure_seed_tts_dataset():
+    test_file = os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", "prompt-wavs", "common_voice_en_10933823.wav")
+    if not os.path.exists(test_file) or os.path.getsize(test_file) < 1000:
+        print("[Dataset] Seed-TTS evaluation audio missing or LFS pointers. Downloading via huggingface_hub...")
+        try:
+            from huggingface_hub import snapshot_download
+            target_dir = os.path.join(ROOT_DIR, "data", "seed-tts-eval")
+            os.makedirs(target_dir, exist_ok=True)
+            snapshot_download(
+                repo_id="zhaochenyang20/seed-tts-eval",
+                repo_type="dataset",
+                local_dir=target_dir,
+            )
+            print("[Dataset] Seed-TTS evaluation audio downloaded and verified!")
+        except Exception as e:
+            print(f"[Dataset Warning] snapshot_download failed: {e}. Please ensure data/seed-tts-eval exists.")
+
+
 def normalize_audio_path(path_str: str) -> str:
-    if not path_str or os.path.exists(path_str):
+    if not path_str:
         return path_str
     p_norm = path_str.replace("\\", "/")
+    if os.path.exists(path_str) and os.path.getsize(path_str) > 1000:
+        return path_str
+    if os.path.exists(p_norm) and os.path.getsize(p_norm) > 1000:
+        return p_norm
+
     base_name = os.path.basename(p_norm)
     candidates = [
-        path_str,
-        p_norm,
         os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", "prompt-wavs", base_name),
         os.path.join(ROOT_DIR, "data", "seed-tts-eval", "prompt-wavs", base_name),
         os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", "wavs", base_name),
@@ -93,10 +114,11 @@ def normalize_audio_path(path_str: str) -> str:
         rel = p_norm.split("seed-tts-eval/")[-1]
         candidates.append(os.path.join(ROOT_DIR, "data", "seed-tts-eval", rel))
         candidates.append(os.path.join("data", "seed-tts-eval", rel))
+
     for c in candidates:
-        if os.path.exists(c):
+        if os.path.exists(c) and os.path.getsize(c) > 1000:
             return c
-    return path_str
+    return candidates[0]
 
 
 def load_development_manifest(manifest_path: str) -> List[Dict[str, Any]]:
@@ -809,6 +831,9 @@ def main():
     print(f"Device: {args.device} | PyTorch: {torch.__version__}")
     print(f"Output Directory: {args.output_dir}")
     print("=" * 70)
+
+    # 0. Ensure Seed-TTS evaluation audio is present
+    ensure_seed_tts_dataset()
 
     # 1. Load manifest
     manifest_cases = load_development_manifest(args.manifest)
