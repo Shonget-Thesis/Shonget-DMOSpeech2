@@ -11,7 +11,7 @@ hydra-core>=1.3.0
 jieba
 librosa
 matplotlib
-numpy>=1.26.0
+numpy>=2.0.0,<2.3.0
 pydantic
 pydub
 pypinyin
