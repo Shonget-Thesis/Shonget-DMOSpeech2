@@ -13,6 +13,17 @@ IMPLEMENTATION_PLAN/LITERATURE_REVIEW/
 *.tar.gz
 *.tar
 *.zip
+_archive/
+archive/
+boundary_cushioning/
+BENCHMARK_100_SAMPLES/
+BENCHMARK_SUITE/
+COMPUTATIONS/
+eval_results/
+scratch/
+*/scratch/
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
 data/
 !Handover Scheduling/data/
 !Handover Scheduling/data/**
