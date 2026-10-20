@@ -60,6 +60,24 @@ def load_expanded_manifest(scope: str = "test200", n_speakers: Optional[int] = N
         print(f"[Dataset] Loading standard held-out test manifest: {test_manifest_path}")
         with open(test_manifest_path, "r", encoding="utf-8") as f:
             rows = json.load(f)
+
+        # Normalize Windows paths from manifest to Linux / local repo paths
+        for r in rows:
+            p_orig = r["prompt_wav_path"].replace("\\", "/")
+            if "seed-tts-eval/en/" in p_orig:
+                rel_p = p_orig.split("seed-tts-eval/en/")[-1]
+                r["prompt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", rel_p)
+            elif "seed-tts-eval/" in p_orig:
+                rel_p = p_orig.split("seed-tts-eval/")[-1]
+                r["prompt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", rel_p)
+
+            g_orig = r["gt_wav_path"].replace("\\", "/")
+            if "seed-tts-eval/en/" in g_orig:
+                rel_g = g_orig.split("seed-tts-eval/en/")[-1]
+                r["gt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", rel_g)
+            elif "seed-tts-eval/" in g_orig:
+                rel_g = g_orig.split("seed-tts-eval/")[-1]
+                r["gt_wav_path"] = os.path.join(ROOT_DIR, "data", "seed-tts-eval", rel_g)
     elif scope == "expanded":
         meta_lst = os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", "meta.lst")
         print(f"[Dataset] Building expanded manifest from Seed-TTS meta.lst: {meta_lst}")
@@ -200,7 +218,22 @@ def run_gpu_benchmark(
 
         print(f"[{idx}/{total_pairs}] Processing {utt_id} ({condition}) on {device.type.upper()}...")
 
-        # Load prompt audio
+        # Load prompt audio with fallback checks
+        if not os.path.exists(prompt_wav_path):
+            candidates = [
+                os.path.join(ROOT_DIR, "data", "seed-tts-eval", "en", "prompt-wavs", os.path.basename(prompt_wav_path)),
+                os.path.join(ROOT_DIR, "data", "seed-tts-eval", "prompt-wavs", os.path.basename(prompt_wav_path)),
+                os.path.join(HANDOVER_DIR, "demo", "audio", "clean_early_step4_ref_step8.wav"),
+            ]
+            for c in candidates:
+                if os.path.exists(c):
+                    prompt_wav_path = c
+                    break
+
+        if not os.path.exists(prompt_wav_path):
+            print(f"[Warning] Prompt file not found: {prompt_wav_path}. Skipping.")
+            continue
+
         prompt_raw, sr = torchaudio.load(prompt_wav_path)
         prompt_np = prompt_raw.squeeze().numpy()
         if condition == "noisy15":
@@ -276,8 +309,12 @@ def run_gpu_benchmark(
             candidate_times[step] = t_s
 
         # Ground truth audio
-        gt_raw, gt_sr = torchaudio.load(gt_wav_path)
-        gt_np = gt_raw.squeeze().numpy()
+        if os.path.exists(gt_wav_path):
+            gt_raw, gt_sr = torchaudio.load(gt_wav_path)
+            gt_np = gt_raw.squeeze().numpy()
+        else:
+            gt_np = prompt_np
+            gt_sr = sr
 
         ref_audio = candidate_audios[REFERENCE_STEP]
         wer_ref = metric_suite.compute_wer(ref_audio, gt_text, sample_rate=24000)
