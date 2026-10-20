@@ -112,7 +112,7 @@ $$\text{NFE}(s) = 2 \times (s + 1) + 3$$
 ### 2.3 Normalized Endpoint Trajectory Drift Probing
 At each teacher integration step $t_i$, the instantaneous endpoint prediction is computed algebraically using the guided velocity field:
 $$\hat{x}_1(t_i) = x_{t_i} + (1 - t_i) v_{\text{guided}}(x_{t_i}, t_i)$$
-where $v_{\text{guided}} = v_{\text{uncond}} + \text{cfg} \cdot (v_{\text{cond}} - v_{\text{uncond}})$. The normalized tangent drift $d_i$ evaluates consecutive endpoint changes over generated speech frames (excluding reference prompt frames):
+where $v_{\text{guided}} = v_{\text{cond}} + \text{cfg\_strength} \cdot (v_{\text{cond}} - v_{\text{uncond}})$ with $\text{cfg\_strength} = 2.0$. The normalized tangent drift $d_i$ evaluates consecutive endpoint changes over generated speech frames (excluding reference prompt frames):
 $$d_i = \frac{\|\hat{x}_1(t_i) - \hat{x}_1(t_{i-1})\|_2}{\|\hat{x}_1(t_i)\|_2 + \epsilon}$$
 
 > **Interpretation & Scope:** The normalized endpoint-drift score measures changes between consecutive teacher endpoint predictions over generated speech frames. The scheduler uses a score below the calibrated threshold as a heuristic for permitting early handover. Low drift does not guarantee accurate speech or successful student completion. Its predictive usefulness and incremental benefit over SNR-only scheduling are evaluated empirically.

@@ -26,6 +26,8 @@ CFG_STRENGTH: float = 2.0
 CANDIDATE_STEPS: Tuple[int, ...] = (4, 5, 6)
 REFERENCE_STEP: int = 8
 ALL_TARGET_STEPS: Tuple[int, ...] = (4, 5, 6, 8)
+EXPANDED_CANDIDATE_STEPS: Tuple[int, ...] = (2, 3, 4, 5, 6)
+EXPANDED_TARGET_STEPS: Tuple[int, ...] = (2, 3, 4, 5, 6, 8)
 STUDENT_RESTART_J: int = 1
 
 # Teacher Sway Grid (16 intervals swayed with coefficient s = -1):
@@ -41,8 +43,32 @@ STUDENT_TAUS: List[float] = [
     float(1.0 - math.cos(math.pi / 2.0 * s)) for s in (0.25, 0.50, 0.75)
 ]  # [0.07612046748871326, 0.2928932188134524, 0.6173165676349102]
 
-# Canonical step metadata table (Section 1.4)
+# Canonical step metadata table (Section 1.4, expanded with steps 2 & 3)
 STEP_METADATA: Dict[int, Dict[str, Any]] = {
+    2: {
+        "teacher_step": 2,
+        "legacy_label": 0.02,
+        "actual_teacher_time": SWAY_TEACHER_GRID[2],
+        "switch_time": SWAY_TEACHER_GRID[2],
+        "teacher_solver_steps": 3,
+        "student_solver_steps": 3,
+        "solver_steps": 6,
+        "teacher_nfe": 6,
+        "student_nfe": 3,
+        "nfe": 9,
+    },
+    3: {
+        "teacher_step": 3,
+        "legacy_label": 0.04,
+        "actual_teacher_time": SWAY_TEACHER_GRID[3],
+        "switch_time": SWAY_TEACHER_GRID[3],
+        "teacher_solver_steps": 4,
+        "student_solver_steps": 3,
+        "solver_steps": 7,
+        "teacher_nfe": 8,
+        "student_nfe": 3,
+        "nfe": 11,
+    },
     4: {
         "teacher_step": 4,
         "legacy_label": 0.07,
@@ -51,6 +77,8 @@ STEP_METADATA: Dict[int, Dict[str, Any]] = {
         "teacher_solver_steps": 5,
         "student_solver_steps": 3,
         "solver_steps": 8,
+        "teacher_nfe": 10,
+        "student_nfe": 3,
         "nfe": 13,
     },
     5: {
@@ -61,6 +89,8 @@ STEP_METADATA: Dict[int, Dict[str, Any]] = {
         "teacher_solver_steps": 6,
         "student_solver_steps": 3,
         "solver_steps": 9,
+        "teacher_nfe": 12,
+        "student_nfe": 3,
         "nfe": 15,
     },
     6: {
@@ -71,6 +101,8 @@ STEP_METADATA: Dict[int, Dict[str, Any]] = {
         "teacher_solver_steps": 7,
         "student_solver_steps": 3,
         "solver_steps": 10,
+        "teacher_nfe": 14,
+        "student_nfe": 3,
         "nfe": 17,
     },
     8: {
@@ -81,6 +113,8 @@ STEP_METADATA: Dict[int, Dict[str, Any]] = {
         "teacher_solver_steps": 9,
         "student_solver_steps": 3,
         "solver_steps": 12,
+        "teacher_nfe": 18,
+        "student_nfe": 3,
         "nfe": 21,
     },
 }
