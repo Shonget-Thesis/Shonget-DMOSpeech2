@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-10-21T20:34:03.638400",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python_version": "3.12.10",
+  "torch_version": "not_installed",
+  "cuda_available": false,
+  "device": "cpu",
+  "n_development_speakers": 100,
+  "n_cases": 200,
+  "candidate_steps": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "n_grid_records": 1200,
+  "timed_online": false
+}
