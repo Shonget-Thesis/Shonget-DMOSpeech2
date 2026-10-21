@@ -78,6 +78,7 @@ def ensure_torch_and_models(device_str: str = "cuda"):
         torchaudio = _torchaudio
         from core.metrics import MetricSuite as _MetricSuite, check_failure as _check_failure, load_failure_config as _lfc
         from infer import DMOInference as _DMOInference
+        DMOInference = _DMOInference
         MetricSuite = _MetricSuite
         check_failure = _check_failure
         load_failure_config = _lfc
