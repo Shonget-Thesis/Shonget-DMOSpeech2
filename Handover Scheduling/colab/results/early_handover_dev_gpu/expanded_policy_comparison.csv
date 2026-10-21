@@ -1,0 +1,8 @@
+policy,n_speakers,mean_nfe,nfe_reduction_vs_step8_%,robust_failures,robust_failure_rate_%,clean_failures,clean_failure_rate_%,noisy_failures,clean_mean_wer,clean_mean_sim,clean_mean_utmos,step2_exits,step3_exits,step4_exits,step5_exits,step6_exits,step8_exits
+Fixed_Step_8,100,21.0,0.0,0,0.0,0,0.0,0,0.0227,0.9344,3.8654,0,0,0,0,0,100
+SNR_Only_4_8,100,17.0,19.05,3,3.0,3,3.0,0,0.0204,0.9339,3.8567,0,0,100,0,0,0
+SNR_Only_2_8,100,15.0,28.57,7,7.0,7,7.0,0,0.0222,0.9349,3.804,100,0,0,0,0,0
+SNR_Only_3_8,100,16.0,23.81,3,3.0,3,3.0,0,0.0234,0.9355,3.8102,0,100,0,0,0,0
+Original_SNR_Plus_Drift_4_8,100,18.05,14.05,1,1.0,1,1.0,0,0.0217,0.9338,3.8714,0,0,22,51,27,0
+Original_Oracle_4_8,100,17.05,18.81,0,0.0,0,0.0,0,0.0204,0.9344,3.8585,0,0,97,1,2,0
+Expanded_Oracle_2_8,100,15.07,28.24,0,0.0,0,0.0,0,0.0205,0.937,3.8209,93,7,0,0,0,0
