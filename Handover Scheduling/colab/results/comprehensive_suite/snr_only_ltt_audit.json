@@ -1,0 +1,122 @@
+{
+  "certified_theta_db": 18.5,
+  "calibration_table": [
+    {
+      "theta": 35.0,
+      "k": 2,
+      "risk": 0.01,
+      "p_value": 0.002336294190063899,
+      "status": "ACCEPTED",
+      "nfe": 18.8
+    },
+    {
+      "theta": 30.0,
+      "k": 2,
+      "risk": 0.01,
+      "p_value": 0.002336294190063899,
+      "status": "ACCEPTED",
+      "nfe": 17.76
+    },
+    {
+      "theta": 28.0,
+      "k": 3,
+      "risk": 0.015,
+      "p_value": 0.009048376396101461,
+      "status": "ACCEPTED",
+      "nfe": 17.56
+    },
+    {
+      "theta": 26.0,
+      "k": 3,
+      "risk": 0.015,
+      "p_value": 0.009048376396101461,
+      "status": "ACCEPTED",
+      "nfe": 17.28
+    },
+    {
+      "theta": 24.0,
+      "k": 3,
+      "risk": 0.015,
+      "p_value": 0.009048376396101461,
+      "status": "ACCEPTED",
+      "nfe": 17.16
+    },
+    {
+      "theta": 22.0,
+      "k": 3,
+      "risk": 0.015,
+      "p_value": 0.009048376396101461,
+      "status": "ACCEPTED",
+      "nfe": 17.08
+    },
+    {
+      "theta": 20.0,
+      "k": 3,
+      "risk": 0.015,
+      "p_value": 0.009048376396101461,
+      "status": "ACCEPTED",
+      "nfe": 17.02
+    },
+    {
+      "theta": 19.0,
+      "k": 3,
+      "risk": 0.015,
+      "p_value": 0.009048376396101461,
+      "status": "ACCEPTED",
+      "nfe": 17.02
+    },
+    {
+      "theta": 18.5,
+      "k": 3,
+      "risk": 0.015,
+      "p_value": 0.009048376396101461,
+      "status": "ACCEPTED",
+      "nfe": 17.02
+    },
+    {
+      "theta": 18.0,
+      "k": 36,
+      "risk": 0.18,
+      "p_value": 0.9999999999937338,
+      "status": "REJECTED_STOP",
+      "nfe": 15.84
+    },
+    {
+      "theta": 17.5,
+      "k": 96,
+      "risk": 0.48,
+      "p_value": 1.0,
+      "status": "UNTESTED_STOPPED",
+      "nfe": 13.66
+    },
+    {
+      "theta": 17.0,
+      "k": 110,
+      "risk": 0.55,
+      "p_value": 1.0,
+      "status": "UNTESTED_STOPPED",
+      "nfe": 13.26
+    },
+    {
+      "theta": 16.0,
+      "k": 116,
+      "risk": 0.58,
+      "p_value": 1.0,
+      "status": "UNTESTED_STOPPED",
+      "nfe": 13.08
+    },
+    {
+      "theta": 15.0,
+      "k": 116,
+      "risk": 0.58,
+      "p_value": 1.0,
+      "status": "UNTESTED_STOPPED",
+      "nfe": 13.04
+    }
+  ],
+  "test_results": {
+    "failures": 11,
+    "risk": 0.055,
+    "mean_nfe": 17.02
+  }
+}

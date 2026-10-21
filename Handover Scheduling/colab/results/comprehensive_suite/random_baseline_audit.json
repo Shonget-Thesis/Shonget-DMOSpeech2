@@ -1,0 +1,16 @@
+{
+  "n_clean_utterances": 200,
+  "mean_nfe": 15.3,
+  "step_distribution": {
+    "4": 0.195,
+    "5": 0.48,
+    "6": 0.315,
+    "8": 0.01
+  },
+  "proposed_failures": 5,
+  "proposed_risk": 0.025,
+  "random_baseline_mean_failures": 4.70066,
+  "random_baseline_risk": 0.0235033,
+  "p_value_random_le_proposed": 0.70848,
+  "conclusion": "Proposed drift rule does NOT statistically outperform random step selection on clean speech (p = 0.7085). On clean speech, fixed Step 5 alone achieves 2.0% risk with 15 NFE."
+}

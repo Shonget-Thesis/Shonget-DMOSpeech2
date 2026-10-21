@@ -1,0 +1,14 @@
+{
+  "cpu_step8_raw_mean": 0.48290664380554094,
+  "gpu_step8_raw_mean": 0.23710818327913918,
+  "cpu_step8_median": 0.0,
+  "gpu_step8_median": 0.0,
+  "cpu_step8_clip1_mean": 0.11215183611323316,
+  "gpu_step8_clip1_mean": 0.12312404241999829,
+  "cpu_outliers_count": 27,
+  "gpu_outliers_count": 30,
+  "cpu_step8_clean_mean": 0.011452061827061823,
+  "gpu_step8_clean_mean": 0.013926934176934176,
+  "cpu_step8_noisy_median": 0.1,
+  "gpu_step8_noisy_median": 0.1111111111111111
+}
