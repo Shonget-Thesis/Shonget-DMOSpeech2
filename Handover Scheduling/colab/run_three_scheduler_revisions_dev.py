@@ -1383,11 +1383,18 @@ def run_smoke_test_synthesis(
             estimate_prompt_snr,
             run_student_completion,
         )
-        from colab.early_handover_signals import (
-            compute_tangent_drift,
-            compute_candidate_a_drift_trend,
-            compute_candidate_c_conditioning_disagreement,
-        )
+        try:
+            from early_handover_signals import (
+                compute_tangent_drift,
+                compute_candidate_a_drift_trend,
+                compute_candidate_c_conditioning_disagreement,
+            )
+        except ImportError:
+            from colab.early_handover_signals import (
+                compute_tangent_drift,
+                compute_candidate_a_drift_trend,
+                compute_candidate_c_conditioning_disagreement,
+            )
         from data.make_splits import add_gaussian_noise_15db
     except ImportError as e:
         raise RuntimeError(f"[Timing Smoke Test] Missing required import: {e}. Smoke test aborted.")
@@ -1783,11 +1790,18 @@ def run_conditional_gpu_timing(
             estimate_prompt_snr,
             run_student_completion,
         )
-        from colab.early_handover_signals import (
-            compute_tangent_drift,
-            compute_candidate_a_drift_trend,
-            compute_candidate_c_conditioning_disagreement,
-        )
+        try:
+            from early_handover_signals import (
+                compute_tangent_drift,
+                compute_candidate_a_drift_trend,
+                compute_candidate_c_conditioning_disagreement,
+            )
+        except ImportError:
+            from colab.early_handover_signals import (
+                compute_tangent_drift,
+                compute_candidate_a_drift_trend,
+                compute_candidate_c_conditioning_disagreement,
+            )
         from data.make_splits import add_gaussian_noise_15db
     except Exception as e:
         inclusion_audit["timing_status"] = f"skipped_import_error: {e}"
@@ -1797,8 +1811,26 @@ def run_conditional_gpu_timing(
         return None
 
     print(f"\n[Timing Benchmark] Initializing real synthesis model on {device}...")
-    ckpt_model = os.path.join(ROOT_DIR, "ckpts", "model_85000.pt")
-    ckpt_duration = os.path.join(ROOT_DIR, "ckpts", "model_1500.pt")
+    ckpt_dir = os.path.join(ROOT_DIR, "ckpts")
+    os.makedirs(ckpt_dir, exist_ok=True)
+    ckpt_model = os.path.join(ckpt_dir, "model_85000.pt")
+    ckpt_duration = os.path.join(ckpt_dir, "model_1500.pt")
+
+    import subprocess
+    if not os.path.exists(ckpt_model) or os.path.getsize(ckpt_model) < 1000000:
+        print("[Timing Benchmark] Downloading model_85000.pt from HuggingFace...")
+        try:
+            subprocess.run(["wget", "-c", "https://huggingface.co/yl4579/DMOSpeech2/resolve/main/model_85000.pt", "-O", ckpt_model], check=True)
+        except Exception as e:
+            print(f"[Timing Benchmark] wget error for model_85000.pt: {e}")
+
+    if not os.path.exists(ckpt_duration) or os.path.getsize(ckpt_duration) < 100000:
+        print("[Timing Benchmark] Downloading model_1500.pt from HuggingFace...")
+        try:
+            subprocess.run(["wget", "-c", "https://huggingface.co/yl4579/DMOSpeech2/resolve/main/model_1500.pt", "-O", ckpt_duration], check=True)
+        except Exception as e:
+            print(f"[Timing Benchmark] wget error for model_1500.pt: {e}")
+
     if not os.path.exists(ckpt_model):
         inclusion_audit["timing_status"] = f"skipped_missing_checkpoint: {ckpt_model}"
         with open(os.path.join(out_dir, "timing_inclusion_audit.json"), "w", encoding="utf-8") as f:
