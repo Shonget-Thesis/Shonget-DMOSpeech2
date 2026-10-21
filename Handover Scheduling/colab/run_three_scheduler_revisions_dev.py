@@ -1763,19 +1763,58 @@ def run_conditional_gpu_timing(
         print("[Timing Benchmark] CUDA GPU unavailable. Marking latency as 'not measured'. Manifest and inclusion audit exported.")
         return None
 
-    # Auto-install essential dependencies if missing (e.g. torchdiffeq, x-transformers, vocos in clean Colab)
-    for pkg in ["torchdiffeq", "x_transformers", "vocos", "soundfile", "jieba", "pypinyin"]:
+    # Install the FULL inference import chain in one shot (infer.py -> f5_tts -> core.sampler).
+    # Previously packages were added one at a time (torchdiffeq, x_transformers, ema_pytorch...),
+    # so each Colab run failed on the next missing module.
+    import subprocess
+    import importlib
+    import re as _re
+    _PIP_NAME = {
+        "x_transformers": "x-transformers",
+        "ema_pytorch": "ema-pytorch",
+        "hydra": "hydra-core",
+        "sklearn": "scikit-learn",
+        "yaml": "pyyaml",
+        "cv2": "opencv-python",
+    }
+    _REQUIRED = [
+        "torchdiffeq", "x_transformers", "ema_pytorch", "vocos", "soundfile", "jieba", "pypinyin",
+        "cached_path", "accelerate", "transformers", "librosa", "pydub", "safetensors", "matplotlib",
+        "huggingface_hub", "datasets", "wandb", "unidecode", "tomli", "omegaconf", "hydra",
+        "jiwer", "zhon", "zhconv", "tqdm", "scipy",
+    ]
+    _missing = []
+    for _mod in _REQUIRED:
         try:
-            __import__(pkg)
-        except ImportError:
-            pip_pkg = "x-transformers" if pkg == "x_transformers" else pkg
-            print(f"[Timing Benchmark] {pip_pkg} not found. Installing via pip...")
-            try:
-                import subprocess
-                subprocess.run([sys.executable, "-m", "pip", "install", "-q", pip_pkg], check=True)
-                print(f"[Timing Benchmark] Successfully installed {pip_pkg}.")
-            except Exception as install_err:
-                print(f"[Timing Benchmark] Warning: failed to auto-install {pip_pkg}: {install_err}")
+            importlib.import_module(_mod)
+        except Exception:
+            _missing.append(_PIP_NAME.get(_mod, _mod))
+    if _missing:
+        print(f"[Timing Benchmark] Installing missing dependencies: {' '.join(_missing)}")
+        subprocess.run([sys.executable, "-m", "pip", "install", "-q", *_missing], check=False)
+        importlib.invalidate_caches()
+
+    # Self-healing: try the real import chain; install any module still reported missing and retry.
+    for _attempt in range(10):
+        try:
+            importlib.import_module("infer")
+            importlib.import_module("f5_tts.infer.utils_infer")
+            break
+        except ModuleNotFoundError as _e:
+            _name = (_e.name or "").split(".")[0]
+            if not _name:
+                _m = _re.search(r"No module named '([^'.]+)", str(_e))
+                _name = _m.group(1) if _m else ""
+            if not _name or _name in ("infer", "f5_tts", "core"):
+                print(f"[Timing Benchmark] Import chain failed on project module: {_e}")
+                break
+            _pip = _PIP_NAME.get(_name, _name)
+            print(f"[Timing Benchmark] Missing module '{_name}' -> pip install {_pip}")
+            subprocess.run([sys.executable, "-m", "pip", "install", "-q", _pip], check=False)
+            importlib.invalidate_caches()
+        except Exception as _e:
+            print(f"[Timing Benchmark] Import chain pre-check error (non-module): {type(_e).__name__}: {_e}")
+            break
 
     try:
         import torchaudio
