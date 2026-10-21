@@ -46,6 +46,32 @@ load_failure_config = None
 def ensure_torch_and_models(device_str: str = "cuda"):
     global torch, torchaudio, MetricSuite, DMOInference, check_failure, load_failure_config
     if torch is None:
+        import subprocess
+        import importlib
+        _REQUIRED = [
+            "torchdiffeq", "x_transformers", "ema_pytorch", "vocos", "soundfile", "jieba", "pypinyin",
+            "cached_path", "accelerate", "transformers", "librosa", "pydub", "safetensors", "matplotlib",
+            "huggingface_hub", "datasets", "wandb", "unidecode", "tomli", "omegaconf", "hydra",
+            "jiwer", "zhon", "zhconv", "tqdm", "scipy", "speechbrain",
+        ]
+        _PIP_NAME = {
+            "x_transformers": "x-transformers",
+            "ema_pytorch": "ema-pytorch",
+            "hydra": "hydra-core",
+            "sklearn": "scikit-learn",
+            "yaml": "pyyaml",
+        }
+        _missing = []
+        for _mod in _REQUIRED:
+            try:
+                importlib.import_module(_mod)
+            except Exception:
+                _missing.append(_PIP_NAME.get(_mod, _mod))
+        if _missing:
+            print(f"[Setup] Auto-installing missing dependencies: {' '.join(_missing)}")
+            subprocess.run([sys.executable, "-m", "pip", "install", "-q", *_missing], check=False)
+            importlib.invalidate_caches()
+
         import torch as _torch
         import torchaudio as _torchaudio
         torch = _torch
