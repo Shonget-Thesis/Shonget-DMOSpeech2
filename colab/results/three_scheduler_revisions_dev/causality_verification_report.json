@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-21T21:08:33.401915",
+  "timestamp": "2026-10-21T22:27:10.080276",
   "negative_tests_passed": true,
   "positive_integration_passed": true,
   "checked_speakers": 100,
@@ -7,6 +7,9 @@
   "details": {
     "blocked_future_step": true,
     "blocked_future_column": true,
-    "blocked_quality_feature": true
+    "blocked_quality_feature": true,
+    "blocked_backward_access_8_to_2": true,
+    "blocked_exit_below_visited_step": true,
+    "candidate_7_fallback_to_8_verified": true
   }
 }

@@ -3,7 +3,6 @@
 
 **Notebook File:** [`colab/DMOSpeech2_Three_Scheduler_Revisions_Comparison.ipynb`](file:///c:/Users/Ryzen/Documents/Shonget-DMOSpeech2/colab/DMOSpeech2_Three_Scheduler_Revisions_Comparison.ipynb)  
 **Author:** Rhenel Jhon Sajol (DMOSpeech 2 Project)  
-**Instruction Source:** [`COLAB_THREE_SCHEDULER_REVISIONS_INSTRUCTIONS.md`](file:///c:/Users/Ryzen/Documents/Shonget-DMOSpeech2/COLAB_THREE_SCHEDULER_REVISIONS_INSTRUCTIONS.md)  
 **Evaluation Scope:** 100 Development Speakers Only (200 Cases: Clean & Noisy15)  
 **Candidate Grid:** $\{2, 3, 4, 5, 6, 8\}$ ($1,200$ Candidate Records)  
 **Status:** **Development-Stage Exploratory Analysis & Pre-Run Audit**  
@@ -22,7 +21,7 @@ The central research hypothesis investigates whether **multi-parameter early han
 1. **Workload:** 100 development speakers only (200 cases: 100 clean, 100 noisy15).
 2. **Data Reuse:** All 1,200 records from the expanded candidate grid $\{2, 3, 4, 5, 6, 8\}$ are reused under strict anchor verification.
 3. **No Leakage:** Neither the 200 calibration speakers nor the 200 test speakers are accessed to select formulas, parameters, directions, or thresholds.
-4. **Fair Pairing:** All 3 revisions and all baselines are evaluated on the exact same 200 cases with matched speaker clustering.
+4. **Fair Pairing:** All revisions and baselines are evaluated on the exact same 200 cases with matched speaker clustering.
 5. **Reference Baseline:** Index 8 is the full-compute reference baseline (not an assumed upper bound on audio quality).
 
 ---
@@ -73,7 +72,7 @@ $$\text{NFE}(s) = 2(s + 1) + 3 \implies \{2: 9,\; 3: 11,\; 4: 13,\; 5: 15,\; 6: 
 
 ## 3. Cell-by-Cell Notebook Walkthrough & Exact Code Audit
 
-The notebook [`DMOSpeech2_Three_Scheduler_Revisions_Comparison.ipynb`](file:///c:/Users/Ryzen/Documents/Shonget-DMOSpeech2/colab/DMOSpeech2_Three_Scheduler_Revisions_Comparison.ipynb) strictly follows the 12-cell structure mandated in Section 13:
+The notebook [`DMOSpeech2_Three_Scheduler_Revisions_Comparison.ipynb`](file:///c:/Users/Ryzen/Documents/Shonget-DMOSpeech2/colab/DMOSpeech2_Three_Scheduler_Revisions_Comparison.ipynb) strictly follows the 12-cell structure:
 
 ```mermaid
 flowchart TD
@@ -148,21 +147,23 @@ flowchart TD
 ### Cell 8: Training-Fold Parameter Search & Held-Out Outer Validation
 - **Type:** Markdown + Code
 - **Actions:**
-  - Accurately implements direct training-risk minimization: on training speakers (80 per fold), screens parameter grid combinations for $\text{robust risk} \le 5.0\%$ and selects combination minimizing mean NFE.
+  - Implements direct training-risk minimization: on training speakers (80 per fold), screens parameter grid combinations for $\text{robust risk} \le 5.0\%$ and selects combination minimizing mean NFE.
   - Evaluates the frozen selected rule on the held-out validation speakers (20 per fold) once.
   - Accurately logged as training-fold search with outer validation (not nested cross-validation).
   - Saves `threshold_search_log.csv`, `revision_fold_results.csv`, and `out_of_fold_case_decisions.csv`.
 
-### Cell 9: Unified Comparison Table & Paired Baseline Statistical Tests
+### Cell 9: Unified 13-Policy Comparison Table & Paired Baseline Statistical Tests
 - **Type:** Markdown + Code
 - **Actions:**
-  - Generates comprehensive 11-policy comparison table across matched 200 cases.
-  - Saves `all_policy_comparison.csv`.
-  - Computes paired statistical differences against SNR-only 2/8, 3/8, 4/8, Candidate A, and Fixed 8.
+  - Generates comprehensive 13-policy comparison table across matched 200 cases:
+    - 9 Deployable / evaluated policies (Fixed 8 reference, 4 fixed baselines, 4 out-of-fold revisions).
+    - 4 Non-deployable offline oracle diagnostics (Original 4/8 and Expanded 2/8, Unrestricted and SNR-gated).
+  - Saves `all_policy_comparison.csv` (13 rows).
+  - Computes paired statistical differences across 19 rows against Fixed 8, SNR-only 4/8, SNR-only 3/8, Original SNR+drift, and Candidate A.
   - Calculates McNemar exact p-values on discordant failure pairs.
   - Computes 95% speaker cluster bootstrap confidence intervals on NFE differences.
-  - Performs Wilcoxon signed-rank tests.
-  - Saves `paired_baseline_comparisons.csv`.
+  - Performs Wilcoxon signed-rank tests with scientific formatting for small p-values ($p < 0.0001$).
+  - Saves `paired_baseline_comparisons.csv` (19 rows).
 
 ### Cell 10: Deep-Dive Case Audit
 - **Type:** Markdown + Code
@@ -174,11 +175,10 @@ flowchart TD
 ### Cell 11: Conditional Genuine Online GPU Latency Benchmarking
 - **Type:** Markdown + Code
 - **Actions:**
-  - Checks if CUDA GPU is available and timing is enabled.
   - Formalizes development screen qualification rules (`timing_inclusion_audit.json`).
   - Exports exact 50-case manifest (`timing_case_manifest.json`, 25 balanced speaker pairs).
   - If CUDA GPU is available: runs sequential inference with genuine early stopping in the teacher Euler trajectory, measuring high-resolution wall-clock latency (ms) and RTF with CUDA synchronization before and after. Saves `online_policy_timing.csv`.
-  - If CUDA is unavailable: marks latency as "not measured" per protocol while preserving timing inclusion audit and case manifest.
+  - If CUDA is unavailable: marks latency as "not measured / pending execution in Colab GPU environment" per protocol while preserving timing inclusion audit and case manifest.
 
 ### Cell 12: Master Report Compilation & Artifact Archive
 - **Type:** Markdown + Code
@@ -200,137 +200,87 @@ The original SNR+drift policy replay aligns with `expanded_policy_comparison.csv
 - **Robust Failures:** **1 / 100 (1.0%)**.
 - **Clean Quality:** WER = **0.0217**, SIM = **0.9338**, UTMOS = **3.8714**.
 
-*(Note: The 17.31 NFE / 3 failures mentioned in an earlier draft was a typographical error from draft aggregation; the raw records and executable replay confirm 18.05 NFE and 1 failure).*
+*(Note: The 17.31 NFE / 3 failures mentioned in an earlier draft was a typographical error from preliminary draft aggregation; the raw records and executable replay confirm 18.05 NFE and 1 failure).*
 
-### B. Unified 11-Policy Comparison Table
+### B. Oracle Diagnostic Definitions & Clean/Noisy Breakdown
+- **Unrestricted Oracle (`Expanded_Oracle_Unrestricted_2_8`):** Can exit early on clean OR noisy speech if reference-relative quality passes. Mean NFE: **12.01** (Clean: 9.14 NFE, Noisy: 14.88 NFE).
+- **SNR-Gated Oracle (`Expanded_Oracle_SNR_Gated_2_8`):** Gated by prompt SNR; forces all noisy speech to Index 8 (21 NFE) and only selects the earliest non-failing candidate on clean speech. Mean NFE: **15.07** = (9.14 + 21.0) / 2.
+- **Unrestricted Oracle 4/8 (`Original_Oracle_Unrestricted_4_8`):** Mean NFE: **14.70** (Clean: 13.10 NFE, Noisy: 16.30 NFE).
+- **SNR-Gated Oracle 4/8 (`Original_Oracle_SNR_Gated_4_8`):** Mean NFE: **17.05** = (13.10 + 21.0) / 2.
+- *Note:* Neither oracle is deployable online because both require offline quality labels (`is_failure`). They serve solely as diagnostic bounds under perfect foresight.
 
-| Policy | Status | Mean NFE | NFE Red. (%) | Robust Fails | Robust Risk (%) | Clean Risk (%) | Clean WER | Clean SIM | Clean UTMOS | Step 2 Exits | Step 3 Exits | Step 4 Exits | Step 8 Exits |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Fixed_Index_8** | fixed_reference | 21.00 | 0.00% | 0 | 0.0% | 0.0% | 0.0227 | 0.9344 | 3.8654 | 0 | 0 | 0 | 100 |
-| **SNR_Only_4_8** | fixed_baseline | 17.00 | 19.05% | 3 | 3.0% | 3.0% | 0.0204 | 0.9339 | 3.8567 | 0 | 0 | 100 | 0 |
-| **SNR_Only_3_8** | fixed_baseline | 16.00 | 23.81% | 3 | 3.0% | 3.0% | 0.0234 | 0.9355 | 3.8102 | 0 | 100 | 0 | 0 |
-| **SNR_Only_2_8** | fixed_baseline | 15.00 | 28.57% | 7 | 7.0% | 7.0% | 0.0222 | 0.9349 | 3.8040 | 100 | 0 | 0 | 0 |
-| **Original_SNR_Plus_Drift** | fixed_baseline | 18.05 | 14.05% | 1 | 1.0% | 1.0% | 0.0217 | 0.9338 | 3.8714 | 0 | 0 | 22 | 0 |
-| **Candidate_A_Replay_1.0** | fixed_replay | 16.25 | 22.62% | 2 | 2.0% | 2.0% | 0.0208 | 0.9343 | 3.8269 | 2 | 73 | 23 | 0 |
-| **Expanded_Oracle_2_8** | offline_oracle | 12.01 | 42.81% | 0 | 0.0% | 0.0% | 0.0205 | 0.9370 | 3.8209 | 93 | 7 | 0 | 0 |
-| **Original_Oracle_4_8** | offline_oracle | 14.70 | 30.00% | 0 | 0.0% | 0.0% | 0.0204 | 0.9344 | 3.8585 | 0 | 0 | 97 | 0 |
-| **Candidate_A_OOF** | out_of_fold_exploratory | 16.25 | 22.62% | 2 | 2.0% | 2.0% | 0.0208 | 0.9343 | 3.8269 | 2 | 73 | 23 | 0 |
-| **Revision_1_OOF** | out_of_fold_exploratory | 16.26 | 22.57% | 2 | 2.0% | 2.0% | 0.0208 | 0.9343 | 3.8288 | 2 | 72 | 24 | 0 |
-| **Revision_2_OOF** | out_of_fold_exploratory | 16.25 | 22.62% | 2 | 2.0% | 2.0% | 0.0208 | 0.9343 | 3.8269 | 2 | 73 | 23 | 0 |
-| **Revision_3_OOF** | out_of_fold_exploratory | 16.25 | 22.62% | 2 | 2.0% | 2.0% | 0.0208 | 0.9343 | 3.8269 | 2 | 73 | 23 | 0 |
+### C. Unified 13-Policy Comparison Table
 
----
-
-### C. Out-of-Fold Cross-Validation Breakdown (Per-Fold Selected Parameters)
-
-| Fold | Policy Family | Selected Parameters | Val Risk (%) | Val Mean NFE | Step 2 Exits | Step 3 Exits | Step 4 Exits |
-| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| 0 | Candidate A | $b=1.0$ | 0.0% | 16.30 | 0 | 14 | 6 |
-| 0 | Revision 1 | $a=1.0,\; b=1.0$ | 0.0% | 16.35 | 0 | 13 | 7 |
-| 0 | Revision 2 | $b=1.0,\; c=0.20$ | 0.0% | 16.30 | 0 | 14 | 6 |
-| 0 | Revision 3 | $b_2=1.0,\; b_3=1.0,\; b_{\text{later}}=1.0$ | 0.0% | 16.30 | 0 | 14 | 6 |
-| 1 | Candidate A | $b=1.0$ | 0.0% | 16.40 | 0 | 13 | 6 |
-| 1 | Revision 1 | $a=1.2,\; b=1.0$ | 0.0% | 16.40 | 0 | 13 | 6 |
-| 1 | Revision 2 | $b=1.0,\; c=0.20$ | 0.0% | 16.40 | 0 | 13 | 6 |
-| 1 | Revision 3 | $b_2=1.0,\; b_3=1.0,\; b_{\text{later}}=1.0$ | 0.0% | 16.40 | 0 | 13 | 6 |
-| 2 | Candidate A | $b=1.0$ | 0.0% | 16.10 | 1 | 16 | 3 |
-| 2 | Revision 1 | $a=1.2,\; b=1.0$ | 0.0% | 16.10 | 1 | 16 | 3 |
-| 2 | Revision 2 | $b=1.0,\; c=0.20$ | 0.0% | 16.10 | 1 | 16 | 3 |
-| 2 | Revision 3 | $b_2=1.0,\; b_3=1.0,\; b_{\text{later}}=1.0$ | 0.0% | 16.10 | 1 | 16 | 3 |
-| 3 | Candidate A | $b=1.0$ | 10.0% | 16.15 | 1 | 15 | 4 |
-| 3 | Revision 1 | $a=1.2,\; b=1.0$ | 10.0% | 16.15 | 1 | 15 | 4 |
-| 3 | Revision 2 | $b=1.0,\; c=0.20$ | 10.0% | 16.15 | 1 | 15 | 4 |
-| 3 | Revision 3 | $b_2=1.0,\; b_3=1.0,\; b_{\text{later}}=1.0$ | 10.0% | 16.15 | 1 | 15 | 4 |
-| 4 | Candidate A | $b=1.0$ | 0.0% | 16.30 | 0 | 15 | 4 |
-| 4 | Revision 1 | $a=1.2,\; b=1.0$ | 0.0% | 16.30 | 0 | 15 | 4 |
-| 4 | Revision 2 | $b=1.0,\; c=0.20$ | 0.0% | 16.30 | 0 | 15 | 4 |
-| 4 | Revision 3 | $b_2=1.0,\; b_3=1.0,\; b_{\text{later}}=1.0$ | 0.0% | 16.30 | 0 | 15 | 4 |
+| Policy | Status | Mean NFE | NFE Red. (%) | Robust Fails | Robust Risk (%) | Clean Risk (%) | Clean WER | Clean SIM | Clean UTMOS | Step 2 Exits | Step 3 Exits | Step 4 Exits | Step 5 Exits | Step 6 Exits | Step 8 Exits |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Fixed_Index_8** | fixed_reference | 21.00 | 0.00% | 0 | 0.0% | 0.0% | 0.0227 | 0.9344 | 3.8654 | 0 | 0 | 0 | 0 | 0 | 100 |
+| **SNR_Only_4_8** | fixed_baseline | 17.00 | 19.05% | 3 | 3.0% | 3.0% | 0.0204 | 0.9339 | 3.8567 | 0 | 0 | 100 | 0 | 0 | 0 |
+| **SNR_Only_3_8** | fixed_baseline | 16.00 | 23.81% | 3 | 3.0% | 3.0% | 0.0234 | 0.9355 | 3.8102 | 0 | 100 | 0 | 0 | 0 | 0 |
+| **SNR_Only_2_8** | fixed_baseline | 15.00 | 28.57% | 7 | 7.0% | 7.0% | 0.0222 | 0.9349 | 3.8040 | 100 | 0 | 0 | 0 | 0 | 0 |
+| **Original_SNR_Plus_Drift** | fixed_baseline | 18.05 | 14.05% | 1 | 1.0% | 1.0% | 0.0217 | 0.9338 | 3.8714 | 0 | 0 | 22 | 51 | 27 | 0 |
+| **Candidate_A_OOF** | out_of_fold_evaluated | 16.25 | 22.62% | 2 | 2.0% | 2.0% | 0.0208 | 0.9343 | 3.8269 | 2 | 73 | 23 | 2 | 0 | 0 |
+| **Revision_1_OOF** | out_of_fold_evaluated | 16.26 | 22.57% | 2 | 2.0% | 2.0% | 0.0208 | 0.9343 | 3.8288 | 2 | 72 | 24 | 2 | 0 | 0 |
+| **Revision_2_OOF** | out_of_fold_evaluated | 16.25 | 22.62% | 2 | 2.0% | 2.0% | 0.0208 | 0.9343 | 3.8269 | 2 | 73 | 23 | 2 | 0 | 0 |
+| **Revision_3_OOF** | out_of_fold_evaluated | 16.25 | 22.62% | 2 | 2.0% | 2.0% | 0.0208 | 0.9343 | 3.8269 | 2 | 73 | 23 | 2 | 0 | 0 |
+| **Original_Oracle_4_8** | offline_oracle_diagnostic | 14.70 | 30.00% | 0 | 0.0% | 0.0% | 0.0204 | 0.9344 | 3.8585 | 0 | 0 | 97 | 1 | 2 | 0 |
+| **Original_Oracle_4_8_SNR_Gated** | offline_oracle_diagnostic | 17.05 | 18.81% | 0 | 0.0% | 0.0% | 0.0204 | 0.9344 | 3.8585 | 0 | 0 | 97 | 1 | 2 | 0 |
+| **Expanded_Oracle_2_8** | offline_oracle_diagnostic | 12.01 | 42.81% | 0 | 0.0% | 0.0% | 0.0205 | 0.9370 | 3.8209 | 93 | 7 | 0 | 0 | 0 | 0 |
+| **Expanded_Oracle_2_8_SNR_Gated** | offline_oracle_diagnostic | 15.07 | 28.24% | 0 | 0.0% | 0.0% | 0.0205 | 0.9370 | 3.8209 | 93 | 7 | 0 | 0 | 0 | 0 |
 
 ---
 
-### D. Paired Baseline Statistical Comparisons
+### D. Paired Baseline Statistical Comparisons (19 Rows)
 
-| Revision Policy | Baseline Policy | Rescued Fails | Harmed Fails | Net Failure Reduction | McNemar Exact $p$ | Mean NFE Diff | 95% CI Lower | 95% CI Upper | Wilcoxon $p$ |
+| Revision Policy | Baseline Policy | Rescued Fails | Harmed Fails | Net Avoided Failures | McNemar Exact $p$ | Mean NFE Diff | 95% CI Lower | 95% CI Upper | Wilcoxon $p$ |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Candidate_A_OOF** | **SNR_Only_2_8** | 6 | 1 | 5 | 0.1250 | +1.25 | +1.16 | +1.35 | 0.0000 |
-| **Candidate_A_OOF** | **SNR_Only_3_8** | 2 | 1 | 1 | 1.0000 | +0.25 | +0.15 | +0.36 | 0.0000 |
-| **Candidate_A_OOF** | **SNR_Only_4_8** | 3 | 2 | 1 | 1.0000 | -0.75 | -0.85 | -0.65 | 0.0000 |
-| **Candidate_A_OOF** | **Original_SNR_Plus_Drift** | 1 | 2 | -1 | 1.0000 | -1.80 | -1.98 | -1.63 | 0.0000 |
-| **Candidate_A_OOF** | **Candidate_A_Replay_1.0** | 0 | 0 | 0 | 1.0000 | 0.00 | 0.00 | 0.00 | 1.0000 |
-| **Candidate_A_OOF** | **Fixed_Index_8** | 0 | 2 | -2 | 0.5000 | -4.75 | -4.85 | -4.65 | 0.0000 |
-| **Revision_1_OOF** | **SNR_Only_2_8** | 6 | 1 | 5 | 0.1250 | +1.26 | +1.15 | +1.37 | 0.0000 |
-| **Revision_1_OOF** | **SNR_Only_3_8** | 2 | 1 | 1 | 1.0000 | +0.26 | +0.16 | +0.36 | 0.0000 |
-| **Revision_1_OOF** | **SNR_Only_4_8** | 3 | 2 | 1 | 1.0000 | -0.74 | -0.85 | -0.63 | 0.0000 |
-| **Revision_1_OOF** | **Original_SNR_Plus_Drift** | 1 | 2 | -1 | 1.0000 | -1.79 | -1.97 | -1.62 | 0.0000 |
-| **Revision_1_OOF** | **Candidate_A_Replay_1.0** | 0 | 0 | 0 | 1.0000 | +0.01 | 0.00 | +0.03 | 0.3173 |
-| **Revision_1_OOF** | **Fixed_Index_8** | 0 | 2 | -2 | 0.5000 | -4.74 | -4.84 | -4.64 | 0.0000 |
-| **Revision_2_OOF** | **SNR_Only_3_8** | 2 | 1 | 1 | 1.0000 | +0.25 | +0.15 | +0.35 | 0.0000 |
-| **Revision_2_OOF** | **Candidate_A_Replay_1.0** | 0 | 0 | 0 | 1.0000 | 0.00 | 0.00 | 0.00 | 1.0000 |
-| **Revision_3_OOF** | **SNR_Only_3_8** | 2 | 1 | 1 | 1.0000 | +0.25 | +0.15 | +0.35 | 0.0000 |
-| **Revision_3_OOF** | **Candidate_A_Replay_1.0** | 0 | 0 | 0 | 1.0000 | 0.00 | 0.00 | 0.00 | 1.0000 |
+| **Candidate_A_OOF** | **Fixed_Index_8** | 0 | 2 | -2 | 0.5000 | -4.75 | -4.84 | -4.65 | 5.9500e-20 |
+| **Candidate_A_OOF** | **SNR_Only_4_8** | 3 | 2 | 1 | 1.0000 | -0.75 | -0.84 | -0.65 | 1.8725e-16 |
+| **Candidate_A_OOF** | **SNR_Only_3_8** | 2 | 1 | 1 | 1.0000 | +0.25 | +0.16 | +0.35 | 1.3932e-05 |
+| **Candidate_A_OOF** | **Original_SNR_Plus_Drift** | 1 | 2 | -1 | 1.0000 | -1.80 | -1.97 | -1.63 | 8.9436e-18 |
+| **Revision_1_OOF** | **Fixed_Index_8** | 0 | 2 | -2 | 0.5000 | -4.74 | -4.83 | -4.64 | 7.0002e-20 |
+| **Revision_1_OOF** | **SNR_Only_4_8** | 3 | 2 | 1 | 1.0000 | -0.74 | -0.83 | -0.64 | 3.0955e-16 |
+| **Revision_1_OOF** | **SNR_Only_3_8** | 2 | 1 | 1 | 1.0000 | +0.26 | +0.17 | +0.36 | 8.5022e-06 |
+| **Revision_1_OOF** | **Original_SNR_Plus_Drift** | 1 | 2 | -1 | 1.0000 | -1.79 | -1.96 | -1.62 | 8.7565e-18 |
+| **Revision_1_OOF** | **Candidate_A_OOF** | 0 | 0 | 0 | 1.0000 | +0.01 | 0.00 | +0.03 | 0.317311 |
+| **Revision_2_OOF** | **Fixed_Index_8** | 0 | 2 | -2 | 0.5000 | -4.75 | -4.84 | -4.65 | 5.9500e-20 |
+| **Revision_2_OOF** | **SNR_Only_4_8** | 3 | 2 | 1 | 1.0000 | -0.75 | -0.84 | -0.65 | 1.8725e-16 |
+| **Revision_2_OOF** | **SNR_Only_3_8** | 2 | 1 | 1 | 1.0000 | +0.25 | +0.16 | +0.35 | 1.3932e-05 |
+| **Revision_2_OOF** | **Original_SNR_Plus_Drift** | 1 | 2 | -1 | 1.0000 | -1.80 | -1.97 | -1.63 | 8.9436e-18 |
+| **Revision_2_OOF** | **Candidate_A_OOF** | 0 | 0 | 0 | 1.0000 | 0.00 | 0.00 | 0.00 | 1.000000 |
+| **Revision_3_OOF** | **Fixed_Index_8** | 0 | 2 | -2 | 0.5000 | -4.75 | -4.84 | -4.65 | 5.9500e-20 |
+| **Revision_3_OOF** | **SNR_Only_4_8** | 3 | 2 | 1 | 1.0000 | -0.75 | -0.84 | -0.65 | 1.8725e-16 |
+| **Revision_3_OOF** | **SNR_Only_3_8** | 2 | 1 | 1 | 1.0000 | +0.25 | +0.16 | +0.35 | 1.3932e-05 |
+| **Revision_3_OOF** | **Original_SNR_Plus_Drift** | 1 | 2 | -1 | 1.0000 | -1.80 | -1.97 | -1.63 | 8.9436e-18 |
+| **Revision_3_OOF** | **Candidate_A_OOF** | 0 | 0 | 0 | 1.0000 | 0.00 | 0.00 | 0.00 | 1.000000 |
 
 ---
 
-## 5. Answers to the 6 Core Thesis Questions (Section 14)
+## 5. Answers to the 6 Core Thesis Questions
 
 ### 1. Does any revision improve on the original scheduler?
-**Yes.** All three revisions (and Candidate A) achieve significant computation savings over the reconciled original SNR+drift scheduler ($16.25 \dots 16.26$ NFE vs $18.05$ NFE, saving $\sim 1.79$ NFE per utterance) while maintaining low risk ($2.0\%$ vs $1.0\%$, a non-significant difference with McNemar $p = 1.0000$).
+**Exploratory computation–risk trade-off, not established overall superiority.**  
+All three revisions (and Candidate A) achieve substantial computation reduction over the reconciled original SNR+drift scheduler ($16.25 \dots 16.26$ NFE vs $18.05$ NFE, saving $\sim 1.79$ NFE per utterance). However, this lower computation accompanies 2 observed robust failures ($2.0\%$ risk) versus 1 robust failure ($1.0\%$ risk) in the reconciled original scheduler. Because failure counts are small (1 vs 2, McNemar exact $p = 1.0000$), this represents a computation–risk trade-off rather than established algorithmic dominance.
 
 ### 2. Does any revision improve on original Candidate A?
 **No.** None of the three multi-parameter revisions out-performed original Candidate A:
-- **Revision 1** selected $a=1.0$ or $1.2, b=1.0$, producing $16.26$ NFE and $2.0\%$ risk ($+0.01$ NFE penalty due to delaying one case).
-- **Revision 2** selected $b=1.0, c=0.20$, producing identical exits to Candidate A ($16.25$ NFE, $2.0\%$ risk).
-- **Revision 3** selected uniform $b_2=1.0, b_3=1.0, b_{\text{later}}=1.0$, collapsing identically into Candidate A.
+- **Revision 1:** Out-of-fold cross-validation selected $a=1.0, b=1.0$ on Fold 0 and $a=1.2, b=1.0$ on Folds 1–4, producing an aggregate out-of-fold mean NFE of **16.26** and $2.0\%$ risk ($+0.01$ NFE penalty due to delaying one Fold-0 speaker from Step 3 to Step 4). When evaluated as a single frozen deployable rule ($a=1.2, b=1.0$) across all 100 development speakers, it reproduces **16.25** mean NFE, identically matching Candidate A.
+- **Revision 2:** Selected $b=1.0, c=0.20$, producing identical exits to Candidate A (**16.25** NFE, $2.0\%$ risk).
+- **Revision 3:** Selected uniform $b_2=1.0, b_3=1.0, b_{\text{later}}=1.0$, collapsing identically into Candidate A (**16.25** NFE, $2.0\%$ risk).
 
-*Scientific explanation:* Auxiliary signals ($d_i$ and $c_i$) have negligible discriminative correlation with early failure (ROC-AUC $\approx 0.49 \dots 0.54$). Imposing them as additional conjuncts adds hypothesis complexity without improving out-of-fold risk or computation.
+*Signal Discriminative Analysis:* On clean development speech, conditioning disagreement ($c_i$ / $q_C$) exhibits moderate-to-high ranking capability for early quality failure (ROC-AUC = **0.7450** at Step 2, **0.7663** at Step 3, **0.7113** at Step 4, and **0.8061** at Step 5), whereas tangent drift ($d_2$ AUC = 0.4071, $d_4$ AUC = 0.4742) and trend ratio ($q_A$ Step 2 AUC = 0.5054) have near-chance discriminative power. However, because early-exit quality failures on clean speech are rare (only 7/100 at Step 2 and 3/100 at Step 3), setting a conservative disagreement threshold (e.g., $c \le 0.20$) delays dozens of passing utterances to later steps without rescuing the few genuine failures, inflating mean NFE without reducing out-of-fold risk. Consequently, parameter search screens favored thresholds ($c=0.20$ or $a \ge 1.0$) where the auxiliary constraints become non-binding, causing Revisions 1, 2, and 3 to degenerate to or slightly trail Candidate A's single trend ratio rule.
 
 ### 3. What does each revision gain or lose versus each SNR-only alternative?
-- **Versus SNR-only 2/8 (15.00 NFE, 7% risk):** All revisions rescue 5 failing speakers at an NFE cost of $+1.25$ to $+1.26$ NFE ($p = 0.1250$).
-- **Versus SNR-only 3/8 (16.00 NFE, 3% risk):** All revisions rescue 2 failing speakers but harm 1 previously passing speaker (Net: $-1$ failure, $2\%$ vs $3\%$). This 1-speaker difference is **not statistically significant** (McNemar exact $p = 1.0000$), while incurring a computation penalty of $+0.25$ to $+0.26$ NFE (95% CI: $[+0.15, +0.36]$ NFE).
-- **Versus SNR-only 4/8 (17.00 NFE, 3% risk):** All revisions save $0.74$ to $0.75$ NFE with 1 fewer failure (McNemar $p = 1.0000$).
+- **Versus SNR-only 3/8 (16.00 NFE, 3% risk):** All revisions rescue 2 failing speakers but harm 1 previously passing speaker (Net: 1 net avoided failure, $2\%$ vs $3\%$). This 1-speaker difference is **not statistically significant** (McNemar exact $p = 1.0000$), while incurring a computation penalty of $+0.25$ to $+0.26$ NFE (95% CI: $[+0.16, +0.36]$ NFE, Wilcoxon $p \le 1.3932 \times 10^{-5}$).
+- **Versus SNR-only 4/8 (17.00 NFE, 3% risk):** All revisions save $0.74$ to $0.75$ NFE with 1 net avoided failure (McNemar $p = 1.0000$, Wilcoxon $p \le 3.0955 \times 10^{-16}$).
 
 ### 4. Is the benefit in failure count, NFE, measured runtime, or more than one?
 The observed benefit of the adaptive trend family is **exclusively a tiny 1-speaker margin** ($2$ failures vs $3$ failures) relative to SNR-only 3/8. However, it incurs a computation penalty of $+0.25$ NFE and requires online Euler endpoint projections, norm calculations, and ratio arithmetic that add telemetry overhead.
 
 ### 5. Is the observed improvement large enough and sufficiently stable to justify further evaluation?
 - **For Revisions 1, 2, and 3:** **NO.** Adding parameters produces zero gain over Candidate A.
-- **For Candidate A vs SNR-only 3/8:** **UNCERTAIN.** A 1-speaker failure reduction with $p = 1.0000$ does not statistically prove superiority over the zero-drift-overhead fixed policy SNR-only 3/8.
+- **For Candidate A vs SNR-only 3/8:** **UNCERTAIN.** A 1-speaker failure difference with $p = 1.0000$ does not statistically prove superiority over the zero-drift-overhead fixed policy SNR-only 3/8.
 
 ### 6. What remains unverified?
 1. Generalization on fresh held-out Calibration (200 speakers) and Test (200 speakers) splits.
 2. Hardware-level execution latency across diverse GPUs (A100, L4, V100 vs T4).
 3. Perceptual human listening tests (MUSHRA / CMOS) verifying whether Step 3 exits are indistinguishable from Step 8.
-
----
-
-## 6. Inventory of Generated Artifacts
-
-All 15 required artifacts are generated and archived under [`colab/results/three_scheduler_revisions_dev/`](file:///c:/Users/Ryzen/Documents/Shonget-DMOSpeech2/colab/results/three_scheduler_revisions_dev/):
-
-| File Name | Size | Purpose & Content |
-| :--- | :---: | :--- |
-| `speaker_fold_assignments.csv` | 2.8 KB | Deterministic 5-fold outer speaker assignments (20 val speakers per fold). |
-| `revision_definitions.json` | 1.4 KB | Formal mathematical definitions, signal dependencies, and parameter grids. |
-| `threshold_search_log.csv` | 31.3 KB | Exhaustive record of every attempted parameter combination on training folds. |
-| `revision_fold_results.csv` | 1.4 KB | Fold-by-fold selected parameters, validation risk, mean NFE, and exit breakdown. |
-| `out_of_fold_case_decisions.csv` | 65.5 KB | Case-level decisions (exit step, NFE, WER, SIM, UTMOS, failure) for all revisions. |
-| `all_policy_comparison.csv` | 2.1 KB | Unified master table comparing all 11 policies on matched 200 cases. |
-| `paired_baseline_comparisons.csv` | 1.8 KB | Rescued/harmed counts, McNemar exact $p$-values, mean NFE diffs, and 95% bootstrap CIs. |
-| `failure_and_waiting_case_audit.csv` | 15.0 KB | Individual speaker case audit of failures, rescued cases, and unnecessary waiting. |
-| `data_validation_report.json` | 1.7 KB | Formal record of the 7-point input verification with stop-on-failure guarantee. |
-| `causality_verification_report.json` | 0.3 KB | Active causality check report with negative unit test results and positive 100-speaker check. |
-| `timing_inclusion_audit.json` | 1.8 KB | Declares explicit screening rules, qualified policies, and exclusion rationales. |
-| `timing_case_manifest.json` | 8.8 KB | Exact list of 50 development cases (25 clean/noisy speaker pairs) used for timing. |
-| `experiment_metadata.json` | 0.7 KB | Hardware specs, Git commit hash, SHA256 file hashes, random seeds, and timestamps. |
-| `THREE_SCHEDULER_REVISIONS_DEVELOPMENT_REPORT.md` | 9.9 KB | Comprehensive master report answering all 6 mandatory thesis questions. |
-| `three_scheduler_revisions_dev_artifacts.tar.gz` | 19.3 KB | Self-contained compressed archive of all experimental artifacts. |
-
----
-
-## 7. How to Execute in Google Colab
-
-1. **Open Colab:** Go to [Google Colab](https://colab.research.google.com).
-2. **Upload Notebook:** Upload [`colab/DMOSpeech2_Three_Scheduler_Revisions_Comparison.ipynb`](file:///c:/Users/Ryzen/Documents/Shonget-DMOSpeech2/colab/DMOSpeech2_Three_Scheduler_Revisions_Comparison.ipynb).
-3. **Hardware Accelerator:** Select `Runtime` $\to$ `Change runtime type` $\to$ `T4 GPU`.
-4. **Run All:** Select `Runtime` $\to$ `Run all`.
-5. **Download Artifacts:** Cell 12 will automatically download `three_scheduler_revisions_dev_artifacts.tar.gz` directly to your local machine.

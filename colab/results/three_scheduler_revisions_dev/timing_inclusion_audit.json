@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-21T21:08:34.914828",
+  "timestamp": "2026-10-21T22:27:11.900815",
   "screening_rule": "Policies qualifying by meeting robust risk <= 5.0% and achieving compute reduction vs Fixed 8",
   "sample_size_cases": 50,
   "sample_description": "First 50 development manifest cases (25 clean/noisy speaker pairs, balanced, non-cherry-picked)",
@@ -11,33 +11,34 @@
     },
     {
       "policy": "SNR_Only_3_8",
-      "binding": "exit_step=3 if clean else 8",
+      "binding": "exit_step=3 if prompt_snr >= 20 dB else 8",
       "reason": "Strongest simple fixed competitor (16.00 NFE, 3.0% risk)"
     },
     {
       "policy": "SNR_Only_4_8",
-      "binding": "exit_step=4 if clean else 8",
+      "binding": "exit_step=4 if prompt_snr >= 20 dB else 8",
       "reason": "Standard conservative fixed competitor (17.00 NFE, 3.0% risk)"
     },
     {
       "policy": "Candidate_A_1.0",
-      "binding": "r_i <= 1.0",
+      "binding": "r_i <= 1.0 if prompt_snr >= 20 dB else 8",
       "reason": "Primary trend ratio candidate qualifying under 5% risk screen (16.25 NFE, 2.0% risk)"
     },
     {
-      "policy": "Revision_1_a1.0_b1.0",
-      "binding": "d_i <= 1.0 AND r_i <= 1.0",
-      "reason": "Trend + absolute drift revision qualifying under 5% risk screen (16.26 NFE, 2.0% risk)"
+      "policy": "Revision_1_a1.2_b1.0",
+      "binding": "d_i <= 1.2 AND r_i <= 1.0 if prompt_snr >= 20 dB else 8",
+      "reason": "Frozen full-development deployable setting selected in 4/5 folds (16.25 NFE full dev, 2.0% risk)"
+    },
+    {
+      "policy": "Revision_2_b1.0_c0.20",
+      "binding": "r_i <= 1.0 AND c_i <= 0.20 if prompt_snr >= 20 dB else 8",
+      "reason": "Trend + disagreement revision assessing disagreement feature compute overhead"
     }
   ],
   "excluded_policies": [
     {
       "policy": "SNR_Only_2_8",
       "reason": "Exceeds 5.0% risk screen (7.0% risk)"
-    },
-    {
-      "policy": "Revision_2",
-      "reason": "Decision rule degenerated identically into Candidate A (b=1.0)"
     },
     {
       "policy": "Revision_3",
