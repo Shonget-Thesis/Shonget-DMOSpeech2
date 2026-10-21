@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-21T22:27:11.900815",
+  "timestamp": "2026-10-21T23:15:35.693371",
   "screening_rule": "Policies qualifying by meeting robust risk <= 5.0% and achieving compute reduction vs Fixed 8",
   "sample_size_cases": 50,
   "sample_description": "First 50 development manifest cases (25 clean/noisy speaker pairs, balanced, non-cherry-picked)",

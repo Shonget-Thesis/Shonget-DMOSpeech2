@@ -1316,11 +1316,17 @@ def run_all_policy_comparison(
 
         # Unnecessary waiting: speaker cleanly passes at step 3, but policy waits until step >= 4
         clean_pass_s3 = not case_dict[(spk, "clean")][3]["is_failure"]
+        row_dict["step3_clean_passed"] = clean_pass_s3
         ca_exit = row_dict["Candidate_A_OOF_clean_exit"]
         row_dict["cand_a_unnecessary_waiting"] = bool(clean_pass_s3 and ca_exit > 3)
 
         r1_exit = row_dict["Revision_1_OOF_clean_exit"]
         row_dict["revision_1_unnecessary_waiting"] = bool(clean_pass_s3 and r1_exit > 3)
+
+        # Aliases for robust failure column names
+        row_dict["Revision_1_OOF_robust_fail"] = row_dict["Revision_1_OOF_robust_failure"]
+        row_dict["SNR_Only_3_8_robust_fail"] = row_dict["SNR_Only_3_8_robust_failure"]
+        row_dict["Candidate_A_OOF_robust_fail"] = row_dict["Candidate_A_OOF_robust_failure"]
 
         audit_rows.append(row_dict)
 
