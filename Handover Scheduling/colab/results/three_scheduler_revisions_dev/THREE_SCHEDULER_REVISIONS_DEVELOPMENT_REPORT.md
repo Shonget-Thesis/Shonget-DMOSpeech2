@@ -1,7 +1,8 @@
 # DMOSpeech 2: Three Scheduler Revisions in One Comparative Experiment
-## Comprehensive Development Experiment Report & Pre-Registration Audit
+## Development Experiment Report & Reconciled Baseline Analysis
 
-**Date:** 2026-10-21 20:34:03  
+**Date:** 2026-10-21 21:08:35  
+**Git Commit:** `7f23aebc307e90cfdf050eef1d33837b24243eff`  
 **Scope:** 100 Development Speakers (200 Matched Cases: Clean & Noisy15)  
 **Candidate Grid:** {2, 3, 4, 5, 6, 8} (1,200 Candidate Records)  
 **Validation Status:** Passed all 7 data & causality checks (`data_validation_report.json`)  
@@ -11,15 +12,15 @@
 ## 1. Executive Summary & Direct Answers to Mandatory Questions
 
 ### Question 1: Does any revision improve on the original scheduler?
-- **Empirical Result:** Yes, all three revisions (and Candidate A) achieve substantial NFE reduction over the original proposed SNR+drift scheduler.
-- The original scheduler achieved **18.05 NFE** with 3 robust failures (3.0% risk).
-- Revision 1 achieves **16.26 NFE** with **2 failures (2.0%)**, saving **1.05 NFE**.
+- **Empirical Result:** Yes, all three revisions (and Candidate A) achieve substantial NFE reduction over the reconciled original SNR+drift scheduler.
+- The reconciled original scheduler achieved **18.05 NFE** with **1 failure (1.0% risk)**.
+- Revision 1 achieves **16.26 NFE** with **2 failures (2.0% risk)**, saving **1.79 NFE** per utterance.
 
 ### Question 2: Does any revision improve on original Candidate A?
 - **Empirical Result: NO.** None of the three revised multi-parameter formulas outperform Candidate A in out-of-fold generalization.
 - Candidate A achieves **16.25 NFE** and **2.0% risk** (2 robust failures across 100 development speakers).
 - Revision 1 (Trend + Drift) achieves **16.26 NFE** and **2.0% risk** (identical failure count, +0.01 NFE).
-- Revision 2 (Trend + Disagreement) achieves **16.25 NFE** and **2.0% risk** (identical failure count, identical NFE).
+- Revision 2 (Trend + Disagreement) achieves **16.25 NFE** and **2.0% risk** (identical exits, identical NFE).
 - Revision 3 (Index-Specific Trend) achieves **16.25 NFE** and **2.0% risk** (selects uniform b=1.0 across all folds).
 - **Why:** The auxiliary signals (absolute drift d_i and conditioning disagreement c_i) exhibit near-zero discriminative ROC-AUC at early steps (AUC ~0.49 to 0.54). Adding them as secondary conjuncts either degenerates to the trend threshold or delays exits unnecessarily without rescuing additional failures.
 
@@ -44,7 +45,15 @@
 
 ---
 
-## 2. Unified Policy Comparison Table
+## 2. Reconciled Baseline Analysis
+The original SNR+drift policy replay in this experiment aligns with `expanded_policy_comparison.csv` and `early_handover_case_audit.csv`:
+- **Mean NFE:** 18.05 (Clean exits: 22 at Step 4, 51 at Step 5, 27 at Step 6, 0 at Step 8).
+- **Robust Failures:** 1 / 100 (1.0%).
+- **Clean Quality:** WER = 0.0217, SIM = 0.9338, UTMOS = 3.8714.
+
+---
+
+## 3. Unified Policy Comparison Table
 
 | policy | status | mean_nfe | nfe_reduction_% | robust_failures | robust_risk_% | clean_risk_% | clean_wer | clean_sim | step2_exits | step3_exits | step4_exits | step8_exits |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -63,7 +72,7 @@
 
 ---
 
-## 3. Paired Baseline Statistical Comparisons
+## 4. Paired Baseline Statistical Comparisons
 
 | revision_policy | baseline_policy | rescued_failures | harmed_failures | net_failure_reduction | mcnemar_exact_p_value | mean_nfe_difference | nfe_diff_95%_ci_lower | nfe_diff_95%_ci_upper |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -94,7 +103,7 @@
 
 ---
 
-## 4. Out-of-Fold Cross-Validation Performance
+## 5. Out-of-Fold Cross-Validation Performance
 
 | fold | candidate_formula | selected_params | val_robust_fails | val_robust_risk_% | val_mean_nfe | val_step2_exits | val_step3_exits | val_step4_exits |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

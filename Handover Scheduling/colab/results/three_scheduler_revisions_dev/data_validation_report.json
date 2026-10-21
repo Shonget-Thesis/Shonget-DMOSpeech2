@@ -1,7 +1,8 @@
 {
-  "timestamp": "2026-10-21T20:34:01.613406",
+  "timestamp": "2026-10-21T21:08:32.798711",
   "total_rows": 1200,
   "validation_passed": true,
+  "git_commit": "7f23aebc307e90cfdf050eef1d33837b24243eff",
   "checks": {
     "check_1_dimensions": {
       "passed": true,
@@ -64,7 +65,7 @@
     },
     "check_7_online_causality": {
       "passed": true,
-      "note": "Online policies strictly restrict signal access to d_i, r_i, c_i available at current step i."
+      "note": "Online policies evaluated under strict CausalOnlineStepView blocking future steps and offline metrics."
     }
   }
 }

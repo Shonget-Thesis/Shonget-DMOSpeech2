@@ -1,5 +1,6 @@
 {
-  "timestamp": "2026-10-21T20:34:03.638400",
+  "timestamp": "2026-10-21T21:08:34.915857",
+  "git_commit": "7f23aebc307e90cfdf050eef1d33837b24243eff",
   "platform": "Windows-11-10.0.26200-SP0",
   "python_version": "3.12.10",
   "torch_version": "not_installed",
@@ -15,5 +16,10 @@
     6
   ],
   "n_grid_records": 1200,
-  "timed_online": false
+  "timed_online": false,
+  "sha256_hashes": {
+    "grid_csv": "2d7b081ea4889ba63f87bf99600ac7af4de40437160b20bef6c081893a6365ce",
+    "manifest": "39a18db4abe963012565913778bd8963747797886fffc2ea68800d453778b24c",
+    "runner_script": "b38748dacbbe0b79829ebe76694dd3eee4afc4d156f8204ef78cc40211ea34b0"
+  }
 }

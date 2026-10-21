@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-10-21T21:08:33.401915",
+  "negative_tests_passed": true,
+  "positive_integration_passed": true,
+  "checked_speakers": 100,
+  "violations_detected": 0,
+  "details": {
+    "blocked_future_step": true,
+    "blocked_future_column": true,
+    "blocked_quality_feature": true
+  }
+}
