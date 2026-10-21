@@ -1756,6 +1756,19 @@ def run_conditional_gpu_timing(
         print("[Timing Benchmark] CUDA GPU unavailable. Marking latency as 'not measured'. Manifest and inclusion audit exported.")
         return None
 
+    # Auto-install essential dependencies if missing (e.g. torchdiffeq, vocos in clean Colab)
+    for pkg in ["torchdiffeq", "vocos", "soundfile"]:
+        try:
+            __import__(pkg)
+        except ImportError:
+            print(f"[Timing Benchmark] {pkg} not found. Installing via pip...")
+            try:
+                import subprocess
+                subprocess.run([sys.executable, "-m", "pip", "install", "-q", pkg], check=True)
+                print(f"[Timing Benchmark] Successfully installed {pkg}.")
+            except Exception as install_err:
+                print(f"[Timing Benchmark] Warning: failed to auto-install {pkg}: {install_err}")
+
     try:
         import torchaudio
         import soundfile as sf
