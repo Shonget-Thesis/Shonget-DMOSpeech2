@@ -216,8 +216,6 @@ def run_expanded_development_grid(
         if not steps_needed:
             continue
 
-        print(f"[{c_idx+1}/{total_cases}] Evaluating {utt_id} ({cond}) - Needed steps: {steps_needed}")
-
         # Check if steps 4, 5, 6, 8 can be reused from df_reusable
         can_reuse_steps = []
         if df_reusable is not None:
@@ -226,6 +224,9 @@ def run_expanded_development_grid(
                 r_step = sub[sub["teacher_step"] == s]
                 if len(r_step) > 0:
                     can_reuse_steps.append(s)
+
+        generate_steps = [s for s in steps_needed if s not in can_reuse_steps]
+        print(f"[{c_idx+1}/{total_cases}] Evaluating {utt_id} ({cond}) - Generating: {generate_steps} | Reusing: {can_reuse_steps}")
 
         # If only steps 2 and 3 are missing, we run teacher single pass to extract 2, 3 + signals
         # Load and preprocess prompt audio
@@ -272,7 +273,7 @@ def run_expanded_development_grid(
             )
             prompt_len = cond_mask.sum().item()
 
-            gen_t = make_local_generator(input_seed, device=device)
+            gen_t = make_local_generator(input_seed)
             y0 = [torch.randn(dur, 100, dtype=torch.float32, generator=gen_t) for dur in dur_tensor]
             y0 = pad_sequence(y0, padding_value=0, batch_first=True).to(device)
         finally:
