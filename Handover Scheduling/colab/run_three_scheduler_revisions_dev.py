@@ -68,7 +68,7 @@ DEFAULT_CONFIG = {
     "experiment_name": "three_scheduler_revisions_dev",
     "manifest_path": "Handover Scheduling/data/splits/development_manifest.json",
     "grid_csv_path": "Handover Scheduling/colab/results/early_handover_dev_gpu/development_expanded_grid.csv",
-    "output_dir": "colab/results/three_scheduler_revisions_dev",
+    "output_dir": "Handover Scheduling/colab/results/three_scheduler_revisions_dev",
     "candidate_steps": [2, 3, 4, 5, 6, 8],
     "step_nfe_map": STEP_NFE_MAP,
     "robust_risk_target": 0.05,
@@ -2242,7 +2242,7 @@ def main():
     parser = argparse.ArgumentParser(description="DMOSpeech 2: Three Scheduler Revisions in One Experiment")
     parser.add_argument("--manifest", type=str, default="Handover Scheduling/data/splits/development_manifest.json")
     parser.add_argument("--grid_csv", type=str, default="Handover Scheduling/colab/results/early_handover_dev_gpu/development_expanded_grid.csv")
-    parser.add_argument("--output_dir", type=str, default="colab/results/three_scheduler_revisions_dev")
+    parser.add_argument("--output_dir", type=str, default="Handover Scheduling/colab/results/three_scheduler_revisions_dev")
     parser.add_argument("--device", type=str, default="cuda" if has_cuda else "cpu")
     parser.add_argument("--timed_online", action="store_true", help="Run conditional real GPU online timing benchmark")
     parser.add_argument("--smoke_test_only", action="store_true", help="Run 1-case smoke test and halt")
