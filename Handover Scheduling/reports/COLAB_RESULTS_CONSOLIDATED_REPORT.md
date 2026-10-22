@@ -74,7 +74,7 @@ The suite's auto-generated report (`CHAPTER3_MASTER_EVALUATION_REPORT.md`) conta
 | 11 | Pareto frontier | ✅ Real, ⚠️ inconsistent | The curve gives 18.78 NFE at (θ = 20, λ = 0.5); the certified-point summary says 18.14 |
 | 12 | SNR sweep | ❌ Hardcoded | Every value is a constant in code; replaced by Phase 12 conditions |
 | 13 | SNR estimator validation | ✅ Real | Clean mean 36.0 dB, 5th percentile 23.9 dB → **+3.9 dB** margin over the 20 dB gate (the text says "+9.8"); noisy15 bias +2.7 dB, RMSE 2.74 dB |
-| 14 | 100 re-splits | ⚠️ Flawed | Mean risk 1.6%, 100% ≤ α, but λ is **not recalibrated** per split, so this does not test LTT stability (§3.6.4 still open) |
+| 14 | 100 re-splits | ⚠️ Flawed | Mean risk 1.6%, 100% ≤ α, but λ is **not recalibrated** per split. Cite `phase2_calib_ltt_200spk/stability.py` instead: λ recalibrated per split, 94% of splits ≤ α, mean risk 2.89% ± 1.27%, modal λ̂ = 0.50 |
 | 15 | DEMAND babble | ❌ Hardcoded | Fallback constants; the DEMAND file was never used |
 | 16 | TOST equivalence | ✅ Real | Equivalent on WER (±0.02), SIM (±0.02) and UTMOS (±0.10), clean-only and overall; all p < 0.001 |
 | 17 | Latency benchmark | ❌ Hardcoded | 640.4 / 735.0 ms are literals in code; use Section 6 instead |
@@ -122,6 +122,8 @@ Cells give robust risk / mean NFE.
 - **Proposed vs. SNR → Step 5 (McNemar):** p = 1.0 (CPU), p = 0.51 (GPU). No difference.
 - **Matched-random control:** randomly shuffling the proposed policy's Step 4/5/6 choices among clean prompts (same mean NFE) does as well or better in 19–70% of shuffles, depending on the split. **Drift's step choices are indistinguishable from random.**
 - **Power:** detecting a reduction from 2.4% to 1.2% would need roughly 2,000 speakers; Seed-TTS has 666.
+- **SNR-only with θ calibrated by LTT** (§3.7.1, `colab/results/comprehensive_suite/snr_only_ltt_audit.json`): certified θ = 18.5 dB on calibration (3/200 failures, 17.02 NFE), but held-out test risk is **5.5% (11/200) > α**. The proposed policy's certified λ̂ holds on test (2.5%). So against the proposal's own SNR-only baseline, the proposed policy keeps its guarantee and SNR → Step 4 does not. SNR → Step 5 (not in Table 3.8) also holds (2.0%).
+- **Random-baseline audit** (`comprehensive_suite/random_baseline_audit.json`): proposed clean-step choices vs. random choices with the same step distribution, p = 0.71.
 
 ---
 
@@ -191,13 +193,27 @@ Remaining conditions not yet run: reverb 0.3 / 0.9 s, babble, DEMAND, borderline
 
 ## 11. Proposal items still open
 
+Already done (found in the repository):
+
+| Item | Proposal section | Evidence |
+|---|---|---|
+| SNR-only θ calibrated with LTT | §3.7.1 | `colab/results/comprehensive_suite/snr_only_ltt_audit.json` (θ̂ = 18.5 dB; test 5.5%) |
+| Re-splits that recalibrate λ each time | §3.6.4 | `phase2_calib_ltt_200spk/stability.py`, `STABILITY_REPORT.md` (94% ≤ α) |
+| Same seed → identical output | §3.3.5 | `core/test_sampler.py::test_1` (y0, mel and audio diff = 0) |
+| Fallback reproduces the reference | §3.3.5 | `core/test_sampler.py::test_3` (forced fallback → Step 8) and `test_2` (single-pass = separate run, mel diff = 0) |
+| Forward-pass counter matches Prop. 3.1 | §3.3.5 | `core/test_sampler.py::test_4` (teacher / student call counts = NFE) |
+| Test outcomes cannot influence λ̂ | §3.6 | `phase2_calib_ltt_200spk/test_calibrate.py::test_5` |
+
+The unit tests exist, but no recorded pass/fail log is on the branch; re-run `pytest -q` and keep the output as evidence.
+
+Still open:
+
 | Item | Proposal section | Needs GPU? |
 |---|---|---|
-| SNR-only θ calibrated with LTT (instead of fixed 20 dB) | §3.7.1 | No |
-| Re-splits that recalibrate λ each time | §3.6.4 | No |
 | Calibrate on clean, test on noisy (distribution shift) | §3.7.3 | No |
 | Calibration-size study (n = 50 / 100 / 200) | §3.7.3 | No |
-| Runtime on the Ryzen laptop | §3.3.5 | CPU run |
+| Teacher-only / student-only context | Table 3.8 | Yes (new synthesis) |
+| Per-policy runtime on the Ryzen laptop | §3.3.5 | CPU run (the grids' `runtime_sec` times only the student and metric stage, so it cannot be reused) |
 | Listening check of above-ceiling WER failures | §3.3.4 | Audio export |
 | Phase 12 remaining conditions (reverb 0.3 / 0.9 s, babble, DEMAND, Gaussian 18–25 dB) | §3.7.3 robustness | Yes |
 | Phase 13 confirmation run (13c) | §3.7.1 | No (uses the CSV) |
