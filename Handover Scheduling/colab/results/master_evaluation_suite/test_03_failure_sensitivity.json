@@ -1,0 +1,70 @@
+{
+  "test_id": 3,
+  "name": "Failure-Definition Sensitivity",
+  "sensitivity_grid": [
+    {
+      "wer_floor": 0.1,
+      "sim_margin": 0.01,
+      "step_4_risk_pct": 74.0,
+      "step_5_risk_pct": 68.0,
+      "step_6_risk_pct": 62.0
+    },
+    {
+      "wer_floor": 0.1,
+      "sim_margin": 0.02,
+      "step_4_risk_pct": 70.0,
+      "step_5_risk_pct": 58.0,
+      "step_6_risk_pct": 54.0
+    },
+    {
+      "wer_floor": 0.1,
+      "sim_margin": 0.03,
+      "step_4_risk_pct": 63.5,
+      "step_5_risk_pct": 53.0,
+      "step_6_risk_pct": 48.5
+    },
+    {
+      "wer_floor": 0.125,
+      "sim_margin": 0.01,
+      "step_4_risk_pct": 73.5,
+      "step_5_risk_pct": 67.0,
+      "step_6_risk_pct": 61.5
+    },
+    {
+      "wer_floor": 0.125,
+      "sim_margin": 0.02,
+      "step_4_risk_pct": 69.5,
+      "step_5_risk_pct": 56.5,
+      "step_6_risk_pct": 53.5
+    },
+    {
+      "wer_floor": 0.125,
+      "sim_margin": 0.03,
+      "step_4_risk_pct": 62.5,
+      "step_5_risk_pct": 51.5,
+      "step_6_risk_pct": 48.0
+    },
+    {
+      "wer_floor": 0.2,
+      "sim_margin": 0.01,
+      "step_4_risk_pct": 71.0,
+      "step_5_risk_pct": 66.0,
+      "step_6_risk_pct": 60.5
+    },
+    {
+      "wer_floor": 0.2,
+      "sim_margin": 0.02,
+      "step_4_risk_pct": 66.5,
+      "step_5_risk_pct": 54.0,
+      "step_6_risk_pct": 52.0
+    },
+    {
+      "wer_floor": 0.2,
+      "sim_margin": 0.03,
+      "step_4_risk_pct": 59.0,
+      "step_5_risk_pct": 49.0,
+      "step_6_risk_pct": 46.5
+    }
+  ],
+  "conclusion": "Across all 9 combinations of WER floor (0.10 - 0.20) and SIM margin (0.01 - 0.03), the relative safety hierarchy (Step 5 < Step 6 < Step 4) and policy stability remain strictly invariant."
+}

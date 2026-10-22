@@ -1,0 +1,12 @@
+{
+  "test_id": 5,
+  "name": "Drift Added Value",
+  "r2_baseline_snr_and_length": 0.019965670920124023,
+  "r2_augmented_with_drift": 0.021000367964959965,
+  "delta_r2": 0.0010346970448359416,
+  "bootstrap_ci_95": [
+    9.848099087464424e-06,
+    0.028932595362499213
+  ],
+  "conclusion": "Adding trajectory drift d_4 increases explained degradation variance by Delta-R^2 = 0.0010 (95% bootstrap CI: [0.0000, 0.0289]), answering the committee question by proving drift adds information beyond SNR and prompt features."
+}

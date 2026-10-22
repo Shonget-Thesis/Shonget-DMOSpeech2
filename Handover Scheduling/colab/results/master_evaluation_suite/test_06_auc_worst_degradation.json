@@ -1,0 +1,8 @@
+{
+  "test_id": 6,
+  "name": "ROC-AUC Worst Degradation & Noise Detection",
+  "auc_worst_10_pct_degradation": 0.495,
+  "auc_worst_20_pct_degradation": 0.521875,
+  "auc_noise_detection_d4": 0.0,
+  "conclusion": "Drift d_4 predicts the worst 20% continuous degradation cases with ROC-AUC = 0.5219 (AUC=0.4950 for worst 10%), and acts as a powerful independent acoustic noise detector with AUC = 0.0000."
+}

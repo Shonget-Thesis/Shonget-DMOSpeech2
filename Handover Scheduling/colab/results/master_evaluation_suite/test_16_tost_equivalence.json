@@ -1,0 +1,77 @@
+{
+  "test_id": 16,
+  "name": "TOST Quality Equivalence",
+  "results": {
+    "Clean-Only (Primary)": {
+      "WER (Clipped@1.0)": {
+        "margin": 0.02,
+        "mean_diff": 0.0039898989898989904,
+        "se": 0.005090426456158521,
+        "ci_90": [
+          -0.004422268686825963,
+          0.012402066666623943
+        ],
+        "p_tost": 0.0009572396777633459,
+        "equivalent": true
+      },
+      "SIM (WavLM)": {
+        "margin": 0.02,
+        "mean_diff": -0.00034629672765731646,
+        "se": 0.0005739763049797327,
+        "ci_90": [
+          -0.0012948194028282807,
+          0.0006022259475136477
+        ],
+        "p_tost": 3.1400757898814944e-88,
+        "equivalent": true
+      },
+      "UTMOS (Naturalness)": {
+        "margin": 0.1,
+        "mean_diff": 0.0059176814556122,
+        "se": 0.01347405076056503,
+        "ci_90": [
+          -0.01634881728644265,
+          0.028184180197667046
+        ],
+        "p_tost": 2.119162365208795e-11,
+        "equivalent": true
+      }
+    },
+    "Overall (Clean + Noisy15)": {
+      "WER (Clipped@1.0)": {
+        "margin": 0.02,
+        "mean_diff": 0.0019949494949494952,
+        "se": 0.0025452132280792605,
+        "ci_90": [
+          -0.0022111343434129817,
+          0.006201033333311972
+        ],
+        "p_tost": 1.2526831012491828e-11,
+        "equivalent": true
+      },
+      "SIM (WavLM)": {
+        "margin": 0.02,
+        "mean_diff": -0.00017314836382865907,
+        "se": 0.0002869881524898664,
+        "ci_90": [
+          -0.0006474097014141412,
+          0.00030111297375682314
+        ],
+        "p_tost": 8.995767865213636e-143,
+        "equivalent": true
+      },
+      "UTMOS (Naturalness)": {
+        "margin": 0.1,
+        "mean_diff": 0.0029588407278060957,
+        "se": 0.006737025380282515,
+        "ci_90": [
+          -0.008174408643221328,
+          0.01409209009883352
+        ],
+        "p_tost": 5.388114471981292e-33,
+        "equivalent": true
+      }
+    }
+  },
+  "conclusion": "All 3 target speech quality dimensions (WER, SIM, UTMOS) are statistically EQUIVALENT to full Step-8 execution within declared regulatory margins on both clean-only and overall speech cohorts."
+}

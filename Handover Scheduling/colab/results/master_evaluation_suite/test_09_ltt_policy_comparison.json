@@ -1,0 +1,55 @@
+{
+  "test_id": 9,
+  "name": "LTT Certified Policy Comparison",
+  "table": [
+    {
+      "policy": "1. Reference Step 8",
+      "certified_param": "k=8",
+      "test_failures": "0/200",
+      "test_risk_pct": "0.00%",
+      "ci_95": "[0.0%, 0.0%]",
+      "mean_nfe": "21.00"
+    },
+    {
+      "policy": "2. Fixed Step (LTT)",
+      "certified_param": "k=8",
+      "test_failures": "0/200",
+      "test_risk_pct": "0.00%",
+      "ci_95": "[0.0%, 0.0%]",
+      "mean_nfe": "21.00"
+    },
+    {
+      "policy": "3. SNR Gate + Fixed Step 5",
+      "certified_param": "theta=20.0 dB",
+      "test_failures": "4/200",
+      "test_risk_pct": "2.00%",
+      "ci_95": "[0.5%, 4.0%]",
+      "mean_nfe": "18.03"
+    },
+    {
+      "policy": "4. Drift Only (No Gate)",
+      "certified_param": "lambda=0.1",
+      "test_failures": "0/200",
+      "test_risk_pct": "0.00%",
+      "ci_95": "[0.0%, 0.0%]",
+      "mean_nfe": "21.00"
+    },
+    {
+      "policy": "5. Proposed (SNR + Drift)",
+      "certified_param": "theta=20dB, lambda=0.50",
+      "test_failures": "5/200",
+      "test_risk_pct": "2.50%",
+      "ci_95": "[0.5%, 5.0%]",
+      "mean_nfe": "18.15"
+    },
+    {
+      "policy": "6. Random Baseline",
+      "certified_param": "NFE-matched",
+      "test_failures": "6/200",
+      "test_risk_pct": "3.00%",
+      "ci_95": "[1.2%, 5.8%]",
+      "mean_nfe": "18.15"
+    }
+  ],
+  "conclusion": "Under exact LTT certification (alpha=0.05, delta=0.10), Proposed SNR+drift and SNR-Gated Step 5 both strictly satisfy the safety ceiling (risk <= 5.0%), achieving 13-14% NFE savings."
+}

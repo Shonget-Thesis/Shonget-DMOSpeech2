@@ -1,0 +1,96 @@
+{
+  "preregistration_timestamp": "2026-10-22 12:07:48 UTC",
+  "code_commit": "229d455053e1b7d09862d771974045a5e4470fd5",
+  "python_version": "3.12.10",
+  "system_os": "win32",
+  "split_checksums": {
+    "development_manifest_sha256": "39a18db4abe963012565913778bd8963747797886fffc2ea68800d453778b24c",
+    "calibration_manifest_sha256": "20ec2828bc1366d8744e939c9ad98f07177b581e40561c42064822921449e5a1",
+    "test_manifest_sha256": "b61bddde6bc4d89400d42d902793b3a8477155cbaed294f50e02568d47107416"
+  },
+  "seeds": {
+    "s0_primary": 42,
+    "s1_control": 1337,
+    "split_seed": 42
+  },
+  "frozen_ltt_parameters": {
+    "alpha_risk_bound": 0.05,
+    "delta_significance": 0.1
+  },
+  "frozen_failure_constants": {
+    "wer_floor_W0": 0.125,
+    "wer_relative_margin": 0.01,
+    "similarity_margin": 0.02,
+    "reference_step": 8,
+    "formula": "fail = WER(k) > max(0.125, WER(8) + 0.01) or SIM(k) < SIM(8) - 0.02"
+  },
+  "candidate_handover_steps": {
+    "primary": [
+      4,
+      5,
+      6,
+      8
+    ],
+    "dev_extended": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "frozen_grids": {
+    "theta_snr_db": [
+      35.0,
+      30.0,
+      28.0,
+      26.0,
+      24.0,
+      22.0,
+      20.0,
+      19.0,
+      18.5,
+      18.0,
+      17.5,
+      17.0,
+      16.0,
+      15.0
+    ],
+    "lambda_drift": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.7,
+      0.8,
+      1.0
+    ],
+    "fixed_step_ltt_order": [
+      8,
+      6,
+      5,
+      4
+    ]
+  },
+  "frozen_success_thresholds": {
+    "test_4_spearman_rho": 0.2,
+    "test_4_spearman_p": 0.05,
+    "test_5_incremental_r2": 0.05,
+    "test_5_bootstrap_ci_lower": 0.0,
+    "test_6_auc_worst_degradation": 0.65
+  },
+  "tost_equivalence_margins": {
+    "wer_margin": 0.02,
+    "similarity_margin": 0.02,
+    "utmos_margin": 0.1
+  }
+}

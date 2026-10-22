@@ -1,0 +1,12 @@
+{
+  "test_id": 14,
+  "name": "100 Random Re-splits Stability Audit",
+  "n_resplits": 100,
+  "alpha_bound": 0.05,
+  "coverage_probability_le_alpha": 1.0,
+  "mean_risk": 0.016149999999999998,
+  "std_risk": 0.004628984769903656,
+  "p95_risk": 0.025,
+  "mean_nfe": 18.82965,
+  "conclusion": "Across 100 independent random 50/50 re-partitions, the empirical risk satisfies the alpha=0.05 ceiling in 100.0% of splits (mean risk = 1.61% +- 0.46%, 95th percentile worst split = 2.50% <= 5.0%)."
+}

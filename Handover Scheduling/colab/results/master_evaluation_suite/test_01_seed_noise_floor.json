@@ -1,0 +1,12 @@
+{
+  "test_id": 1,
+  "name": "Seed-Noise Floor",
+  "n_speakers": 200,
+  "seed_failures": 5,
+  "seed_failure_rate": 0.025,
+  "ci_95": [
+    0.005,
+    0.05
+  ],
+  "conclusion": "Step 8 vs. Step 8 with seed s1 exhibits an empirical failure rate of 2.50% (95% CI: [0.50%, 5.00%]). This establishes the irreducible metric noise floor."
+}

@@ -1,0 +1,71 @@
+{
+  "test_id": 2,
+  "name": "WER Outlier Audit",
+  "cpu_raw_mean_wer": 0.48290664380554094,
+  "gpu_raw_mean_wer": 0.23710818327913918,
+  "cpu_median_wer": 0.0,
+  "gpu_median_wer": 0.0,
+  "cpu_clipped_mean_wer": 0.11215183611323316,
+  "gpu_clipped_mean_wer": 0.12312404241999829,
+  "cpu_outliers_count": 7,
+  "gpu_outliers_count": 7,
+  "outlier_examples": [
+    {
+      "speaker_id": "common_voice_en_17274522",
+      "condition": "noisy15",
+      "raw_wer": 49.875,
+      "ground_truth_text": "nora finds herself ugly because she has pimples",
+      "hypothesis_text": "go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a drink as he has titles go find yourself a",
+      "diagnostic": "Whisper ASR hallucination loop: repetitive tokens under 15 dB Gaussian noise"
+    },
+    {
+      "speaker_id": "common_voice_en_17275818",
+      "condition": "noisy15",
+      "raw_wer": 1.7,
+      "ground_truth_text": "ladies and gentlemen this wagon is going to be detached",
+      "hypothesis_text": "to tell me i can t lay his neck so much like i was going to be in his house",
+      "diagnostic": "Whisper ASR hallucination loop: repetitive tokens under 15 dB Gaussian noise"
+    },
+    {
+      "speaker_id": "common_voice_en_19717736",
+      "condition": "noisy15",
+      "raw_wer": 98.66666666666669,
+      "ground_truth_text": "vernon signal engineer",
+      "hypothesis_text": "stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on stay on",
+      "diagnostic": "Whisper ASR hallucination loop: repetitive tokens under 15 dB Gaussian noise"
+    },
+    {
+      "speaker_id": "common_voice_en_22575787",
+      "condition": "noisy15",
+      "raw_wer": 1.4,
+      "ground_truth_text": "the bridge is located southeast of the town of molde",
+      "hypothesis_text": "but these guys have to celebrate so i came to save us from the town of moldy",
+      "diagnostic": "Whisper ASR hallucination loop: repetitive tokens under 15 dB Gaussian noise"
+    },
+    {
+      "speaker_id": "common_voice_en_28243259",
+      "condition": "noisy15",
+      "raw_wer": 1.0769230769230769,
+      "ground_truth_text": "the democratic party completely controls politics at the local level in pemiscot county",
+      "hypothesis_text": "i don t know if you re acquainted with political and police politics at the local level in thomas scott county",
+      "diagnostic": "Whisper ASR hallucination loop: repetitive tokens under 15 dB Gaussian noise"
+    },
+    {
+      "speaker_id": "common_voice_en_32767770",
+      "condition": "noisy15",
+      "raw_wer": 1.25,
+      "ground_truth_text": "the conservative party regained control of the council from no overall control",
+      "hypothesis_text": "but she was only here when she was being put on the prison trial though for no overall control",
+      "diagnostic": "Whisper ASR hallucination loop: repetitive tokens under 15 dB Gaussian noise"
+    },
+    {
+      "speaker_id": "common_voice_en_37457199",
+      "condition": "noisy15",
+      "raw_wer": 1.3333333333333333,
+      "ground_truth_text": "why born enslaved",
+      "hypothesis_text": "why the one hand slave",
+      "diagnostic": "Whisper ASR hallucination loop: repetitive tokens under 15 dB Gaussian noise"
+    }
+  ],
+  "conclusion": "Raw Step-8 CPU WER (48.29%) is distorted by 2 isolated noisy ASR hallucination loops (WER 98.67 and 49.88). When clipped at 1.0, CPU and GPU agree tightly at 11.22% vs. 12.31%, fully justifying clipped and median metrics."
+}

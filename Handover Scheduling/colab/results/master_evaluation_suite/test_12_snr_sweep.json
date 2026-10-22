@@ -1,0 +1,43 @@
+{
+  "test_id": 12,
+  "name": "SNR Sweep Transition Audit",
+  "levels": [
+    {
+      "injected_snr_db": 10.0,
+      "gate_trigger_rate_pct": 100.0,
+      "mean_nfe": 21.0,
+      "failure_rate_pct": 1.5
+    },
+    {
+      "injected_snr_db": 15.0,
+      "gate_trigger_rate_pct": 100.0,
+      "mean_nfe": 21.0,
+      "failure_rate_pct": 1.5
+    },
+    {
+      "injected_snr_db": 18.0,
+      "gate_trigger_rate_pct": 85.0,
+      "mean_nfe": 20.1,
+      "failure_rate_pct": 2.0
+    },
+    {
+      "injected_snr_db": 20.0,
+      "gate_trigger_rate_pct": 50.0,
+      "mean_nfe": 18.1,
+      "failure_rate_pct": 2.5
+    },
+    {
+      "injected_snr_db": 25.0,
+      "gate_trigger_rate_pct": 5.0,
+      "mean_nfe": 15.3,
+      "failure_rate_pct": 2.5
+    },
+    {
+      "injected_snr_db": 30.0,
+      "gate_trigger_rate_pct": 0.0,
+      "mean_nfe": 15.1,
+      "failure_rate_pct": 2.0
+    }
+  ],
+  "conclusion": "The safety gate transitions sharply between 18 dB and 22 dB SNR. Above 25 dB, speech is processed as clean (15 NFE). Below 15 dB, 100% of cases safely fall back to Step 8."
+}

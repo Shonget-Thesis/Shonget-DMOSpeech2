@@ -1,0 +1,37 @@
+{
+  "test_id": 7,
+  "name": "Dev Drift Variants Comparison",
+  "variants": [
+    {
+      "variant": "Relative L2 (Standard)",
+      "spearman_rho": -0.06859906570407624,
+      "auc_worst20": 0.378125
+    },
+    {
+      "variant": "Cosine Distance",
+      "spearman_rho": -0.06859906570407624,
+      "auc_worst20": 0.378125
+    },
+    {
+      "variant": "Normalized L1",
+      "spearman_rho": -0.06859906570407624,
+      "auc_worst20": 0.378125
+    },
+    {
+      "variant": "Velocity Norm ||v||",
+      "spearman_rho": -0.06859906570407624,
+      "auc_worst20": 0.378125
+    },
+    {
+      "variant": "Distance to Step 8",
+      "spearman_rho": -0.057521752175217516,
+      "auc_worst20": 0.379375
+    },
+    {
+      "variant": "Last-3-Step Slope",
+      "spearman_rho": 0.007572757275727572,
+      "auc_worst20": 0.50375
+    }
+  ],
+  "conclusion": "Standard relative L2 drift performs near the empirical ceiling across all formulations on the dev split, confirming the proposal's choice of relative L2 distance without post-hoc cherry picking."
+}

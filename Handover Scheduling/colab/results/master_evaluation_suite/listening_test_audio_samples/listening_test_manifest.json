@@ -1,0 +1,502 @@
+[
+  {
+    "trial_id": 1,
+    "speaker_id": "common_voice_en_103675",
+    "utt_id": "common_voice_en_103675-common_voice_en_103677",
+    "target_text": "the boy knew the desert sensed his fear",
+    "condition": "clean",
+    "sample_A": "spk_001_step8_ref.wav",
+    "sample_B": "spk_001_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 2,
+    "speaker_id": "common_voice_en_1205005",
+    "utt_id": "common_voice_en_1205005-common_voice_en_1205007",
+    "target_text": "the work of the tailor is seen on each side",
+    "condition": "clean",
+    "sample_A": "spk_002_step8_ref.wav",
+    "sample_B": "spk_002_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 3,
+    "speaker_id": "common_voice_en_137148",
+    "utt_id": "common_voice_en_137148-common_voice_en_137152",
+    "target_text": "elvis presley is often called the king of rock and roll",
+    "condition": "clean",
+    "sample_A": "spk_003_step8_ref.wav",
+    "sample_B": "spk_003_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 4,
+    "speaker_id": "common_voice_en_15265",
+    "utt_id": "common_voice_en_15265-common_voice_en_15266",
+    "target_text": "large brown dog walks up a blue staircase",
+    "condition": "clean",
+    "sample_A": "spk_004_step8_ref.wav",
+    "sample_B": "spk_004_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 5,
+    "speaker_id": "common_voice_en_16666041",
+    "utt_id": "common_voice_en_16666041-common_voice_en_16666040",
+    "target_text": "i was well but i m all the better for being here",
+    "condition": "clean",
+    "sample_A": "spk_005_step8_ref.wav",
+    "sample_B": "spk_005_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 6,
+    "speaker_id": "common_voice_en_17249419",
+    "utt_id": "common_voice_en_17249419-common_voice_en_17249428",
+    "target_text": "i heard the land where the hobbits live the shire has actually been filmed in new zealand",
+    "condition": "clean",
+    "sample_A": "spk_006_step8_ref.wav",
+    "sample_B": "spk_006_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 7,
+    "speaker_id": "common_voice_en_17274522",
+    "utt_id": "common_voice_en_17274522-common_voice_en_17274523",
+    "target_text": "nora finds herself ugly because she has pimples",
+    "condition": "clean",
+    "sample_A": "spk_007_step8_ref.wav",
+    "sample_B": "spk_007_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 8,
+    "speaker_id": "common_voice_en_17275818",
+    "utt_id": "common_voice_en_17275818-common_voice_en_17275817",
+    "target_text": "ladies and gentlemen this wagon is going to be detached",
+    "condition": "clean",
+    "sample_A": "spk_008_step8_ref.wav",
+    "sample_B": "spk_008_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 9,
+    "speaker_id": "common_voice_en_17281385",
+    "utt_id": "common_voice_en_17281385-common_voice_en_17281386",
+    "target_text": "as he couldn t prove his innocence he was brought to the detention zone as if guilty",
+    "condition": "clean",
+    "sample_A": "spk_009_step8_ref.wav",
+    "sample_B": "spk_009_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 10,
+    "speaker_id": "common_voice_en_17288057",
+    "utt_id": "common_voice_en_17288057-common_voice_en_17288059",
+    "target_text": "did you really think it through",
+    "condition": "clean",
+    "sample_A": "spk_010_step8_ref.wav",
+    "sample_B": "spk_010_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 11,
+    "speaker_id": "common_voice_en_17324784",
+    "utt_id": "common_voice_en_17324784-common_voice_en_17324785",
+    "target_text": "despite years of research the problem remained intractable",
+    "condition": "clean",
+    "sample_A": "spk_011_step8_ref.wav",
+    "sample_B": "spk_011_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 12,
+    "speaker_id": "common_voice_en_17347410",
+    "utt_id": "common_voice_en_17347410-common_voice_en_17347409",
+    "target_text": "worryingly the radio signal became weaker",
+    "condition": "clean",
+    "sample_A": "spk_012_step8_ref.wav",
+    "sample_B": "spk_012_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 13,
+    "speaker_id": "common_voice_en_17352169",
+    "utt_id": "common_voice_en_17352169-common_voice_en_17352173",
+    "target_text": "this swallow is twittering without internet connection and has a swarm of followers",
+    "condition": "clean",
+    "sample_A": "spk_013_step8_ref.wav",
+    "sample_B": "spk_013_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 14,
+    "speaker_id": "common_voice_en_17369851",
+    "utt_id": "common_voice_en_17369851-common_voice_en_17369849",
+    "target_text": "do you know what they re up to",
+    "condition": "clean",
+    "sample_A": "spk_014_step8_ref.wav",
+    "sample_B": "spk_014_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 15,
+    "speaker_id": "common_voice_en_17406452",
+    "utt_id": "common_voice_en_17406452-common_voice_en_17406466",
+    "target_text": "when you re at a party and somebody says banana bread a sniper might be near you",
+    "condition": "clean",
+    "sample_A": "spk_015_step8_ref.wav",
+    "sample_B": "spk_015_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 16,
+    "speaker_id": "common_voice_en_17429166",
+    "utt_id": "common_voice_en_17429166-common_voice_en_17429171",
+    "target_text": "one key is for encryption the other one for decryption",
+    "condition": "clean",
+    "sample_A": "spk_016_step8_ref.wav",
+    "sample_B": "spk_016_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 17,
+    "speaker_id": "common_voice_en_17442686",
+    "utt_id": "common_voice_en_17442686-common_voice_en_17442688",
+    "target_text": "do the roses compete in athletic events",
+    "condition": "clean",
+    "sample_A": "spk_017_step8_ref.wav",
+    "sample_B": "spk_017_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 18,
+    "speaker_id": "common_voice_en_17444666",
+    "utt_id": "common_voice_en_17444666-common_voice_en_17444667",
+    "target_text": "he paused looked back at the house but then pocketed the keys opened the gate and strode down the path quickly",
+    "condition": "clean",
+    "sample_A": "spk_018_step8_ref.wav",
+    "sample_B": "spk_018_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 19,
+    "speaker_id": "common_voice_en_175348",
+    "utt_id": "common_voice_en_175348-common_voice_en_175349",
+    "target_text": "any edition is fine and i use the premium edition",
+    "condition": "clean",
+    "sample_A": "spk_019_step8_ref.wav",
+    "sample_B": "spk_019_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 20,
+    "speaker_id": "common_voice_en_17736608",
+    "utt_id": "common_voice_en_17736608-common_voice_en_17736610",
+    "target_text": "little thieves are hanged but great ones escape",
+    "condition": "clean",
+    "sample_A": "spk_020_step8_ref.wav",
+    "sample_B": "spk_020_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 21,
+    "speaker_id": "common_voice_en_17899910",
+    "utt_id": "common_voice_en_17899910-common_voice_en_17899909",
+    "target_text": "please shut the door",
+    "condition": "clean",
+    "sample_A": "spk_021_step8_ref.wav",
+    "sample_B": "spk_021_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 22,
+    "speaker_id": "common_voice_en_18105426",
+    "utt_id": "common_voice_en_18105426-common_voice_en_18105430",
+    "target_text": "real schools secondary schools giving a general practical education",
+    "condition": "clean",
+    "sample_A": "spk_022_step8_ref.wav",
+    "sample_B": "spk_022_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 23,
+    "speaker_id": "common_voice_en_18466098",
+    "utt_id": "common_voice_en_18466098-common_voice_en_18466097",
+    "target_text": "not a thing",
+    "condition": "clean",
+    "sample_A": "spk_023_step8_ref.wav",
+    "sample_B": "spk_023_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 24,
+    "speaker_id": "common_voice_en_18485041",
+    "utt_id": "common_voice_en_18485041-common_voice_en_18485042",
+    "target_text": "my mother has rheumatoid arthritis",
+    "condition": "clean",
+    "sample_A": "spk_024_step8_ref.wav",
+    "sample_B": "spk_024_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 25,
+    "speaker_id": "common_voice_en_18533403",
+    "utt_id": "common_voice_en_18533403-common_voice_en_18533404",
+    "target_text": "increment the order quantity if you require more than one item",
+    "condition": "clean",
+    "sample_A": "spk_025_step8_ref.wav",
+    "sample_B": "spk_025_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 26,
+    "speaker_id": "common_voice_en_18681919",
+    "utt_id": "common_voice_en_18681919-common_voice_en_18681920",
+    "target_text": "moreover because none of the neighbors remember her they cannot confirm her identity",
+    "condition": "clean",
+    "sample_A": "spk_026_step8_ref.wav",
+    "sample_B": "spk_026_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 27,
+    "speaker_id": "common_voice_en_18699078",
+    "utt_id": "common_voice_en_18699078-common_voice_en_18699081",
+    "target_text": "the national monument surrounds the castle mountain mine area",
+    "condition": "clean",
+    "sample_A": "spk_027_step8_ref.wav",
+    "sample_B": "spk_027_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 28,
+    "speaker_id": "common_voice_en_18746637",
+    "utt_id": "common_voice_en_18746637-common_voice_en_18746639",
+    "target_text": "the nest is a flimsy platform of sticks is built by both sexes",
+    "condition": "clean",
+    "sample_A": "spk_028_step8_ref.wav",
+    "sample_B": "spk_028_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 29,
+    "speaker_id": "common_voice_en_18786931",
+    "utt_id": "common_voice_en_18786931-common_voice_en_18786946",
+    "target_text": "a judge later found that harrison had unintentionally plagiarized the earlier song",
+    "condition": "clean",
+    "sample_A": "spk_029_step8_ref.wav",
+    "sample_B": "spk_029_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 30,
+    "speaker_id": "common_voice_en_188092",
+    "utt_id": "common_voice_en_188092-common_voice_en_188093",
+    "target_text": "he also tried to remember some good stories to relate as he sheared the sheep",
+    "condition": "clean",
+    "sample_A": "spk_030_step8_ref.wav",
+    "sample_B": "spk_030_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 31,
+    "speaker_id": "common_voice_en_18828571",
+    "utt_id": "common_voice_en_18828571-common_voice_en_18828573",
+    "target_text": "his career took a significant turn in these years",
+    "condition": "clean",
+    "sample_A": "spk_031_step8_ref.wav",
+    "sample_B": "spk_031_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 32,
+    "speaker_id": "common_voice_en_18852076",
+    "utt_id": "common_voice_en_18852076-common_voice_en_18852085",
+    "target_text": "the sacred bridge program continues to tour internationally",
+    "condition": "clean",
+    "sample_A": "spk_032_step8_ref.wav",
+    "sample_B": "spk_032_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 33,
+    "speaker_id": "common_voice_en_18877786",
+    "utt_id": "common_voice_en_18877786-common_voice_en_18877788",
+    "target_text": "it borders five other kent districts as well as east sussex to the south west",
+    "condition": "clean",
+    "sample_A": "spk_033_step8_ref.wav",
+    "sample_B": "spk_033_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 34,
+    "speaker_id": "common_voice_en_18889688",
+    "utt_id": "common_voice_en_18889688-common_voice_en_18889687",
+    "target_text": "in terms of its natural environment lleida offers a wide variety of landscapes",
+    "condition": "clean",
+    "sample_A": "spk_034_step8_ref.wav",
+    "sample_B": "spk_034_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 35,
+    "speaker_id": "common_voice_en_18998723",
+    "utt_id": "common_voice_en_18998723-common_voice_en_18998722",
+    "target_text": "in the time trials the distances were the same for each classification",
+    "condition": "clean",
+    "sample_A": "spk_035_step8_ref.wav",
+    "sample_B": "spk_035_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 36,
+    "speaker_id": "common_voice_en_19017623",
+    "utt_id": "common_voice_en_19017623-common_voice_en_19017624",
+    "target_text": "however he died in the fire and explosion",
+    "condition": "clean",
+    "sample_A": "spk_036_step8_ref.wav",
+    "sample_B": "spk_036_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 37,
+    "speaker_id": "common_voice_en_19211875",
+    "utt_id": "common_voice_en_19211875-common_voice_en_19211870",
+    "target_text": "the airport is served by calm air and perimeter aviation with flights to winnipeg",
+    "condition": "clean",
+    "sample_A": "spk_037_step8_ref.wav",
+    "sample_B": "spk_037_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 38,
+    "speaker_id": "common_voice_en_19343495",
+    "utt_id": "common_voice_en_19343495-common_voice_en_19343497",
+    "target_text": "he also regularly attends events with the royal family",
+    "condition": "clean",
+    "sample_A": "spk_038_step8_ref.wav",
+    "sample_B": "spk_038_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 39,
+    "speaker_id": "common_voice_en_19361636",
+    "utt_id": "common_voice_en_19361636-common_voice_en_19361635",
+    "target_text": "his interpretation of a doctrine of free will became known as pelagianism",
+    "condition": "clean",
+    "sample_A": "spk_039_step8_ref.wav",
+    "sample_B": "spk_039_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 40,
+    "speaker_id": "common_voice_en_19384720",
+    "utt_id": "common_voice_en_19384720-common_voice_en_19384721",
+    "target_text": "several pieces of public art were also commissioned for the site",
+    "condition": "clean",
+    "sample_A": "spk_040_step8_ref.wav",
+    "sample_B": "spk_040_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 41,
+    "speaker_id": "common_voice_en_19481268",
+    "utt_id": "common_voice_en_19481268-common_voice_en_19481270",
+    "target_text": "they had three sons and lived mainly in wolvercote oxford",
+    "condition": "clean",
+    "sample_A": "spk_041_step8_ref.wav",
+    "sample_B": "spk_041_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 42,
+    "speaker_id": "common_voice_en_19602798",
+    "utt_id": "common_voice_en_19602798-common_voice_en_19602797",
+    "target_text": "staff do not always do enough to prevent violence",
+    "condition": "clean",
+    "sample_A": "spk_042_step8_ref.wav",
+    "sample_B": "spk_042_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 43,
+    "speaker_id": "common_voice_en_19622969",
+    "utt_id": "common_voice_en_19622969-common_voice_en_19622971",
+    "target_text": "a skunk s spray is powerful enough to ward off bears and other potential attackers",
+    "condition": "clean",
+    "sample_A": "spk_043_step8_ref.wav",
+    "sample_B": "spk_043_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 44,
+    "speaker_id": "common_voice_en_19638442",
+    "utt_id": "common_voice_en_19638442-common_voice_en_19638444",
+    "target_text": "after his execution ogilvie s followers were rounded up and put in jail",
+    "condition": "clean",
+    "sample_A": "spk_044_step8_ref.wav",
+    "sample_B": "spk_044_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 45,
+    "speaker_id": "common_voice_en_19641789",
+    "utt_id": "common_voice_en_19641789-common_voice_en_19641784",
+    "target_text": "alone he considers taking his own life",
+    "condition": "clean",
+    "sample_A": "spk_045_step8_ref.wav",
+    "sample_B": "spk_045_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 46,
+    "speaker_id": "common_voice_en_19686493",
+    "utt_id": "common_voice_en_19686493-common_voice_en_19686494",
+    "target_text": "gordon battelle an ohio native who sought to introduce a resolution for gradual emancipation",
+    "condition": "clean",
+    "sample_A": "spk_046_step8_ref.wav",
+    "sample_B": "spk_046_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 47,
+    "speaker_id": "common_voice_en_19691556",
+    "utt_id": "common_voice_en_19691556-common_voice_en_19691557",
+    "target_text": "the law has been replaced twice since then",
+    "condition": "clean",
+    "sample_A": "spk_047_step8_ref.wav",
+    "sample_B": "spk_047_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 48,
+    "speaker_id": "common_voice_en_19695366",
+    "utt_id": "common_voice_en_19695366-common_voice_en_19695364",
+    "target_text": "comer s administration applied the increases in spending for education only of white students",
+    "condition": "clean",
+    "sample_A": "spk_048_step8_ref.wav",
+    "sample_B": "spk_048_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 49,
+    "speaker_id": "common_voice_en_19717736",
+    "utt_id": "common_voice_en_19717736-common_voice_en_19717739",
+    "target_text": "vernon signal engineer",
+    "condition": "clean",
+    "sample_A": "spk_049_step8_ref.wav",
+    "sample_B": "spk_049_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  },
+  {
+    "trial_id": 50,
+    "speaker_id": "common_voice_en_19724242",
+    "utt_id": "common_voice_en_19724242-common_voice_en_19724245",
+    "target_text": "the show also featured a walk on appearance from clements as benny baritone",
+    "condition": "clean",
+    "sample_A": "spk_050_step8_ref.wav",
+    "sample_B": "spk_050_proposed_handover.wav",
+    "evaluation_type": "Double-Blind ABX / Naturalness MOS"
+  }
+]

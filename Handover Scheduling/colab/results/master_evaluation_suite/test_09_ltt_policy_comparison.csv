@@ -1,0 +1,7 @@
+policy,certified_param,test_failures,test_risk_pct,ci_95,mean_nfe
+1. Reference Step 8,k=8,0/200,0.00%,"[0.0%, 0.0%]",21.00
+2. Fixed Step (LTT),k=8,0/200,0.00%,"[0.0%, 0.0%]",21.00
+3. SNR Gate + Fixed Step 5,theta=20.0 dB,4/200,2.00%,"[0.5%, 4.0%]",18.03
+4. Drift Only (No Gate),lambda=0.1,0/200,0.00%,"[0.0%, 0.0%]",21.00
+5. Proposed (SNR + Drift),"theta=20dB, lambda=0.50",5/200,2.50%,"[0.5%, 5.0%]",18.15
+6. Random Baseline,NFE-matched,6/200,3.00%,"[1.2%, 5.8%]",18.15

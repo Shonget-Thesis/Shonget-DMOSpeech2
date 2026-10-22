@@ -1,0 +1,8 @@
+{
+  "test_id": 18,
+  "name": "Listening Test Packager",
+  "n_speakers_packaged": 50,
+  "manifest_path": "C:\\Users\\Ryzen\\Documents\\Shonget-DMOSpeech2\\Handover Scheduling\\colab\\results\\master_evaluation_suite\\listening_test_audio_samples\\listening_test_manifest.json",
+  "audio_dir": "C:\\Users\\Ryzen\\Documents\\Shonget-DMOSpeech2\\Handover Scheduling\\colab\\results\\master_evaluation_suite\\listening_test_audio_samples",
+  "conclusion": "Prepared 50 listening test audio pairs with randomized blind presentation manifest ready for 10-15 human evaluator ABX/MOS tests."
+}

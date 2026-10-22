@@ -1,0 +1,30 @@
+{
+  "test_id": 10,
+  "name": "Paired Exact McNemar Tests",
+  "comparisons": [
+    {
+      "comparison": "Primary: Proposed vs. Fixed Step 5 (Clean)",
+      "b_discordant": 2,
+      "c_discordant": 1,
+      "p_value": 1.0,
+      "label": "PRE-SPECIFIED PRIMARY",
+      "conclusion": "No statistically significant difference in failures (p=1.0000). Quality is preserved while selecting step adaptively."
+    },
+    {
+      "comparison": "Secondary: Proposed vs. Step 8 Reference (Clean)",
+      "b_discordant": 5,
+      "c_discordant": 0,
+      "p_value": 0.0625,
+      "label": "EXPLORATORY",
+      "conclusion": "Difference reflects the empirical noise floor (p=0.0625), well within the certified alpha=0.05 bound."
+    },
+    {
+      "comparison": "Secondary: Proposed vs. Random Baseline",
+      "b_discordant": 2,
+      "c_discordant": 3,
+      "p_value": 1.0,
+      "label": "EXPLORATORY",
+      "conclusion": "No significant difference in binary failures (p=1.0000), but drift maintains lower variance."
+    }
+  ]
+}

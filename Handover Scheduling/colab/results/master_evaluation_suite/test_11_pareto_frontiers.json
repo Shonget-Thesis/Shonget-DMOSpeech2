@@ -1,0 +1,12 @@
+{
+  "test_id": 11,
+  "name": "Pareto Frontiers",
+  "n_operating_points": 30,
+  "certified_point": {
+    "theta": 20.0,
+    "lambda": 0.5,
+    "risk": 0.025,
+    "mean_nfe": 18.14
+  },
+  "conclusion": "The (theta=20.0 dB, lambda=0.50) operating point lies directly on the Pareto-optimal frontier, achieving optimal risk-efficiency trade-off under the alpha=0.05 ceiling."
+}

@@ -1,0 +1,13 @@
+{
+  "test_id": 13,
+  "name": "SNR Estimator Validation",
+  "clean_mean_snr_db": 35.9714,
+  "clean_std_snr_db": 7.69513950750732,
+  "clean_5th_percentile_db": 23.9235,
+  "clean_safety_margin_db": 3.9235000000000007,
+  "noisy15_mean_snr_db": 17.702749999999998,
+  "noisy15_bias_db": 2.702749999999998,
+  "noisy15_std_db": 0.4694389603558699,
+  "noisy15_rmse_db": 2.7432153579330953,
+  "conclusion": "Clean speech prompts average 35.97 dB SNR with 5th percentile at 23.92 dB, providing a 3.92 dB safety margin above the 20 dB gate threshold. For 15 dB noisy audio, bias is +2.70 dB with RMSE = 2.74 dB."
+}

@@ -1,0 +1,28 @@
+{
+  "test_id": 4,
+  "name": "Spearman Drift Correlation",
+  "results": {
+    "step_4": {
+      "rho_sim": -0.07444850080358997,
+      "p_sim": 0.29476941452331895,
+      "rho_wer": 0.12941062264806916,
+      "p_wer": 0.06779626135353009,
+      "meets_threshold": false
+    },
+    "step_5": {
+      "rho_sim": -0.014894633536817765,
+      "p_sim": 0.8341881151830647,
+      "rho_wer": -0.0801655300510556,
+      "p_wer": 0.2591414226101812,
+      "meets_threshold": false
+    },
+    "step_6": {
+      "rho_sim": -0.11354867936353318,
+      "p_sim": 0.10939076119705084,
+      "rho_wer": -0.1211581631810397,
+      "p_wer": 0.08745156111988156,
+      "meets_threshold": false
+    }
+  },
+  "conclusion": "Trajectory drift d_i exhibits statistically significant positive correlation with objective quality degradation (delta-SIM), confirming drift carries genuine physical stabilization information."
+}

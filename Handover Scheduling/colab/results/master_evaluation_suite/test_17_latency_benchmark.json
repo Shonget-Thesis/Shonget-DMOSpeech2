@@ -1,0 +1,37 @@
+{
+  "test_id": 17,
+  "name": "Latency Benchmarking",
+  "timing_data": {
+    "Step 4": {
+      "median_ms": 560.2,
+      "iqr_ms": 28.4,
+      "nfe": 13,
+      "speedup_pct": 23.8
+    },
+    "Step 5": {
+      "median_ms": 635.8,
+      "iqr_ms": 31.0,
+      "nfe": 15,
+      "speedup_pct": 13.5
+    },
+    "Step 6": {
+      "median_ms": 710.1,
+      "iqr_ms": 33.2,
+      "nfe": 17,
+      "speedup_pct": 3.4
+    },
+    "Step 8": {
+      "median_ms": 735.0,
+      "iqr_ms": 35.1,
+      "nfe": 21,
+      "speedup_pct": 0.0
+    },
+    "Proposed Adaptive Handover": {
+      "median_ms": 640.4,
+      "iqr_ms": 32.5,
+      "nfe": 18.14,
+      "speedup_pct": 12.9
+    }
+  },
+  "conclusion": "Proposed Adaptive Handover achieves a solid 12.9% median wall-clock latency speedup (640.4 ms vs 735.0 ms, IQR = 32.5 ms) with batch size 1, matching the theoretical NFE reduction."
+}
