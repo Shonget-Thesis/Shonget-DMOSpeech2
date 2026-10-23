@@ -1,15 +1,16 @@
-# Input-Adaptive Teacher-to-Student Handover Scheduling in DMOSpeech 2
+# A Risk-Calibrated Adaptive Handover Method for Teacher-Guided Flow-Matching TTS Inference
 ## Chapter 3 Comprehensive Research, Benchmark & Replication Master Report
 
-**Thesis Topic:** Input-Adaptive Teacher-to-Student Handover Scheduling in DMOSpeech 2  
+**Thesis Title (proposal):** A Risk-Calibrated Adaptive Handover Method for Teacher-Guided Flow-Matching Text-to-Speech Inference  
+**Proposed Method:** SNR + drift adaptive handover policy (Definition 3.4) with Learn-Then-Test calibration  
 **Evaluation Cohort:** Full 500-Speaker Cohort from Seed-TTS English (`test-en`) (500 clean/noisy condition-pairs, or 1,000 condition-specific cases; 4,000 candidate-grid evaluations and 3,000 dedicated policy timing runs)  
 **Primary Certified Decision Threshold:** $\hat{\lambda} = 0.50$ (Prespecified PAC Criterion: $P(R > 0.05) \le 0.10$)  
 **Safety Gate Threshold:** $\theta = 20.0\text{ dB}$ (Dual-Mechanism Architecture)  
 **Execution Targets:** 
 1. **CPU Baseline:** AMD Ryzen 7 5700U CPU (8 cores / 16 threads, FP32, seed 42)
 2. **GPU Verification & Dedicated Timing Benchmark:** NVIDIA Tesla T4 CUDA 15.64 GB (Google Colab, FP32/cuDNN, timing session `timing_session_20261020_130952`)  
-**Status:** **100% COMPLETE & AUDITED** (Phases 1, 2, 3 CPU Baseline & Full 500-Speaker GPU Retest and Timing Benchmark Concluded)  
-**Last Updated:** October 2026  
+**Status:** Phases 1–3 (CPU), the full 500-speaker GPU retest, the T4 timing benchmark and the ablation audits are complete. Proposal items still open are listed in Section 8.  
+**Last Updated:** 23 October 2026  
 
 ---
 
@@ -21,6 +22,24 @@ This study investigates whether an **input-adaptive teacher-to-student handover 
 1. **Prompt SNR Safety Gate ($\theta = 20.0\text{ dB}$):** Pre-generation gating that routes speech prompts with low signal-to-noise ratio ($\text{SNR} < 20.0\text{ dB}$) to the full 8-step teacher trajectory, providing fallback protection under adverse acoustic conditions.
 2. **Zero-NFE Trajectory Drift Probing ($\hat{\lambda} = 0.50$):** Evaluates normalized tangent deviation $d_i = \frac{\|\hat{x}_1(t_i) - \hat{x}_1(t_{i-1})\|_2}{\|\hat{x}_1(t_i)\|_2 + \epsilon}$ along early teacher steps as an algebraic byproduct of the Euler update without requiring additional forward passes, probing whether the intermediate velocity field has stabilized sufficiently for student handover at Steps 4, 5, or 6.
 3. **Learn-Then-Test (LTT) Risk Control:** Formulates threshold selection as a multiple hypothesis testing problem with finite-sample Probably Approximately Correct (PAC) statistical bounds, bounding the held-out robust reference-relative added failure rate $R \le 5.0\%$ at $90\%$ confidence.
+
+### Contributions and Their Status
+
+The proposal's objectives amount to two main contributions, supported by an empirical characterization (Objective 1) and a benchmark (Objective 4):
+
+| # | Contribution | Proposal Source | Status | Evidence |
+|---|---|---|---|---|
+| **C1** | **Algorithm:** the per-utterance SNR + drift handover policy. Training-free, zero extra forward passes, never costs more than Step 8 | Objective 2; Definition 3.4; Propositions 3.2, 3.4 | ⚠️ **Holds as a policy; the drift component is unestablished** | Safe and efficient on held-out speakers (Sections 4.3, 4.8). The ablations (Sections 4.9, 4.10) show that the SNR gate carries the benefit and drift adds no measurable improvement |
+| **C2** | **Framework:** risk-calibrated handover via Learn-Then-Test | Objective 3; Proposition 3.6 | ✅ **Holds** | λ̂ = 0.50 certified; held-out risk 2.5% ≤ 5%; 94% of 100 recalibrated re-splits ≤ 5% (Sections 4.2, 4.4, 4.6) |
+| (support) | Characterization of the switching-time space | Objective 1 | ✅ Holds | Noisy prompts fail 49–64% at Steps 4–6; clean failures sit at the 2.5% seed-noise floor (Sections 4.1, 4.9.1) |
+
+### Verdict at a Glance (Held-Out Test Split, 200 Speakers)
+
+| Comparison | Result | Verdict |
+|---|---|---|
+| **Proposed vs. DMOSpeech 2 fixed Step 8** (main comparison) | 18.15 vs. 21.00 NFE (−13.6%); T4 latency −13.3% overall, −27.0% on clean prompts; added failures 2.5% ≤ 5%; quality TOST-equivalent | ✅ **Proposed wins** |
+| **Proposed vs. SNR-only rule** (Table 3.8, earliest candidate = Step 4) | 2.5% vs. 5.5%. With θ also calibrated by LTT (θ̂ = 18.5 dB), SNR-only still exceeds α on test. McNemar 7 vs. 1, p = 0.070 | ✅ **Proposed holds the guarantee, SNR-only does not** (a practical, not statistically significant, difference) |
+| **Proposed vs. SNR gate + fixed Step 5** (additional ablation, not in Table 3.8) | 2.5% / 18.15 vs. 2.0% / 18.03; McNemar p = 1.0 (CPU), 0.51 (GPU) | ≈ **Tie**: drift's step choices add nothing measurable |
 
 ### Summary of Primary Held-Out Benchmark Findings (200 Test Speakers / 400 Cases)
 
@@ -73,6 +92,8 @@ flowchart TD
 | **WavLM Speaker Verifier (safe)** | HuggingFace `microsoft/wavlm-base-plus-sv` (`model.safetensors`) | 404,507,764 | `e7b31a8e62a136830fe105fbcfa89f07f108d014b0fa55fd4aebdf4c72886d4c` |
 | **SpeechMOS UTMOS Predictor** | TorchHub `utmos22_strong_step7459_v1.pt` (`tarepan/SpeechMOS:v1.2.0`) | 411,179,119 | `38aa51ab79e2a4e09a1449758a4b37e9cbb2e8235a49662a732d33a9ba1e9bff` |
 
+> **Speaker-verifier note:** the SIM model actually loaded is `microsoft/wavlm-base-plus-sv` (WavLM **Base+** with an x-vector head). The proposal (Table 3.5), DMOSpeech 2 and the code comments in `core/metrics.py` say "WavLM-large". All failure decisions compare a candidate with the Step-8 reference scored by the same verifier, so internal results are valid. Absolute SIM values (≈ 0.94 on clean prompts) are **not comparable** with published DMOSpeech 2 SIM, which uses the WavLM-large Seed-TTS verifier. Chapter 3 must name the model actually used, or all audio must be re-scored with WavLM-large.
+
 ### 1.3 Hardware Configuration & Numerical Precision
 - **Host CPU Platform (Phases 1, 2, 3 Baseline):**
   - Processor: AMD Ryzen 7 5700U with Radeon Graphics (8 physical cores, 16 logical threads, base 1.8 GHz, boost 4.3 GHz)
@@ -95,6 +116,8 @@ Candidate teacher handover points $s \in \{4, 5, 6, 8\}$ correspond to swayed ti
 $$t(s) \in [0.0761, 0.1181, 0.1685, 0.2929]$$
 
 Upon handover at step $s$, the student consistency model completes synthesis using restart level $j = 1$ over consistency times $\tau \in [0.0761, 0.2929, 0.6173]$, requiring exactly **3 student forward passes**.
+
+*Grid check (proposal Remark 3.1):* the released sampler (`src/infer.py:520-523`) stops at the first grid point above $t_{\text{switch}}$. On this 16-interval grid, $t_{\text{switch}} = 0.25$ gives $k = 8$ ($t_8 = 0.2929$), our Step-8 reference. The DMOSpeech 2 paper's "14 teacher + 2 student steps at $t_{\text{switch}} = 0.25$" arises only on a **32-interval** grid read as "last point not above 0.25": $t_{14} = 0.2270$, **not ≈ 0.236** as Remark 3.1 states. This is the same flow time as our Step 7. The released `generate_teacher_only` defaults to `teacher_steps=32` (`src/infer.py:341`), which supports the 32-interval reading. Forward passes for the paper's configuration: $2 \times 14 + 2 = 30$ vs. $64$ (2.13×), or $32$ vs. $64$ (2.0×) with the endpoint evaluation. Details and figure: `reports/PROPOSAL_TODO_CHECKS_REPORT.md`, `figures/sway_grid_tswitch.png`.
 
 ### 2.2 Forward NFE Accounting
 In this implementation, Classifier-Free Guidance is evaluated by executing separate conditional and unconditional forward calls through the teacher network at each evaluated step index (the numeric CFG scale itself does not dictate the number of calls, but the dual-forward evaluation requires 2 calls per step). Therefore, evaluating teacher indices $0, 1, \dots, s$ requires $2 \times (s + 1)$ forward passes. Adding the 3 student forward passes gives:
@@ -141,6 +164,8 @@ The evaluation cohort consists of **500 unique, disjoint speakers** sampled from
 | **Phase 2: Calibration** | `data/splits/calibration_manifest.json` | 200 | 400 (200 clean / 200 noisy) | 1,600 | 1,200 | Fixed-sequence LTT hypothesis testing; certify threshold $\hat{\lambda}$ | **100% COMPLETE** |
 | **Phase 3: Held-Out Test** | `data/splits/test_manifest.json` | 200 | 400 (200 clean / 200 noisy) | 1,600 | 1,200 | Unbiased held-out benchmarking; Wilcoxon & McNemar significance | **100% COMPLETE** |
 | **Total Cohort** | `data/splits/split_summary.json` | **500** | **1,000 cases (500 pairs)** | **4,000** | **3,000** | Complete Chapter 3 experimental scope across Seed-TTS English | **100% COMPLETE** |
+
+*Source Corpus and Feasibility:* Seed-TTS test-en contains **1,088 utterances from 666 unique prompt speakers** (`data/splits/split_summary.json`). The 500 speakers used leave 166 unused, later used as fresh speakers in Phase 12. With $n = 200$ calibration speakers, $\alpha = 0.05$ and $\delta = 0.10$, up to 5 added failures still certify a threshold; the minimum certifiable size is $n = 45$. The proposal's Table 3.7 was re-computed exactly. Speaker identity is the prompt clip ID (`common_voice_en_<clip>`), not the Common Voice contributor ID, so disjointness holds at the level of Seed-TTS prompt identities. A heuristic check found no cross-split clips within 3 IDs of each other.
 
 *Accounting Distinction:* The 4,000 candidate-grid evaluations refer to evaluating individual fixed candidate steps ($s \in \{4, 5, 6, 8\}$) across all 1,000 cases. The 3,000 policy timing runs refer to evaluating the complete end-to-end execution of the three dynamic policies (`proposed`, `snr_only`, `step8`) across all 1,000 cases.
 
@@ -333,6 +358,84 @@ Matching all candidate evaluations for the 200 held-out test speakers across ide
 
 *Note on Pseudo-Random Generators:* In PyTorch, identical seeds do not guarantee identical random tensor sequences across CPU and CUDA backends. Acoustic differences between platforms arise from both generator divergence and floating-point arithmetic differences, not floating-point rounding alone.
 
+#### 4.8.5 Full 500-Speaker GPU Retest (`colab/results/gpu_grid_all1000.csv`)
+All 500 speakers × 2 conditions × 4 steps = 4,000 evaluations were re-synthesized and re-scored on the T4. Per-condition failure rates agree with the CPU grids:
+
+| Step | NFE | Clean (CPU) | Clean (GPU) | Noisy15 (CPU) | Noisy15 (GPU) |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 4 | 13 | 3.2% | 2.4% | 63.2% | 64.4% |
+| 5 | 15 | 2.4% | 1.8% | 52.2% | 53.8% |
+| 6 | 17 | 2.2% | 1.0% | 49.2% | 49.4% |
+| 8 | 21 | 0% | 0% | 0% | 0% |
+
+> **RTF validity:** the `rtf` / `runtime_sec` columns in the grid CSVs time only the student completion and vocoder; the shared teacher pass is excluded, so they read ≈ 0.11 at every step. **Cite only the full-pipeline timing run (Section 4.8)** for latency and RTF. All valid timings are T4 numbers; the Ryzen-laptop runtimes promised in proposal §3.3.5 have not been measured.
+
+---
+
+### 4.9 Ablations: What Drives the Proposed Policy's Benefit?
+
+Proposal §3.7.1: *"The SNR-only rule tests whether the stabilization signal adds anything beyond the prompt check."* These analyses answer that question.
+
+#### 4.9.1 Seed-Noise Floor
+Step 8 compared with Step 8 under a different seed "fails" Definition 3.1 on **5/200 speakers = 2.5%** (95% CI 0.5–5.0%). Clean early-handover failure rates (1.0–3.2%) are indistinguishable from this floor. Most clean-prompt failures are therefore evaluation-model jitter (Whisper / WavLM), not real degradation, and no stopping signal can be expected to predict them.
+
+#### 4.9.2 SNR-Only Baseline with θ Calibrated by LTT (Table 3.8)
+The proposal requires the SNR-only gate to be calibrated with the same procedure as λ̂ (`colab/results/comprehensive_suite/snr_only_ltt_audit.json`):
+- **Calibration:** θ̂ = 18.5 dB certified (3/200 failures, 17.02 NFE).
+- **Held-out test:** **5.5% (11/200) > α = 5%.** The certified SNR-only rule fails its guarantee on test, while the proposed policy's λ̂ holds (2.5%).
+- Under the proposal's prespecified secondary bound (α = 10%), SNR-only's 5.5% would pass. The "SNR-only fails" statement applies to the primary 5% bound only.
+
+#### 4.9.3 SNR Gate + Fixed Early Step (Additional Ablation)
+SNR-only hands over at the **earliest** candidate (Step 4). Holding the gate fixed and varying the early step separates the gate's effect from drift's (cells give robust risk / mean NFE):
+
+| Policy | Calibration | Test | Development | CPU, all 500 | GPU, all 500 |
+|---|:---:|:---:|:---:|:---:|:---:|
+| SNR → Step 4 (= SNR-only) | 1.5% / 17.02 | 5.5% / 17.04 | 2.0% / 17.00 | 3.2% | 2.4% |
+| SNR → Step 5 | 2.5% / 18.02 | **2.0% / 18.03** | 3.0% / 18.00 | 2.4% | 1.8% |
+| SNR → Step 6 | 2.5% / 19.01 | 1.0% / 19.02 | 4.0% / 19.00 | 2.2% | 1.0% |
+| **Proposed (SNR + drift)** | 2.0% / 18.19 | 2.5% / 18.15 | 2.0% / 18.05 | 2.2% | 1.2% |
+
+- **Proposed vs. SNR → Step 5 (exact McNemar):** p = 1.0 (CPU), p = 0.51 (GPU). No difference.
+- **Matched-random control:** proposed clean-step choices vs. random choices with the same step distribution give p = 0.71 (`comprehensive_suite/random_baseline_audit.json`). Drift's Step 4/5/6 choices are indistinguishable from random.
+- **Power:** detecting a reduction from 2.4% to 1.2% would need about 2,000 speakers; Seed-TTS test-en has 666.
+- SNR → Step 5 was identified after inspecting test results. It is reported as an observation, not a certified method. On calibration it would pass LTT (5/200, p = 0.062), but SNR → Step 4 also passed calibration and then failed on test.
+
+#### 4.9.4 Quality Equivalence (TOST)
+Two one-sided tests show the proposed policy is **equivalent** to Step 8 within margins of ±0.02 WER, ±0.02 SIM and ±0.10 UTMOS, both on clean prompts and overall (all p < 0.001). This addresses the limitation in Section 4.4 that non-significant Wilcoxon tests alone do not establish equivalence.
+
+---
+
+### 4.10 Drift Signal Diagnostics
+
+#### 4.10.1 Drift as a Degradation Predictor (Existing Grids)
+| Test | Result | Threshold Met? |
+|---|---|:---:|
+| Spearman ρ, drift vs. per-utterance degradation | All ρ in [−0.12, 0.13], all p > 0.05 | ❌ |
+| Added explained variance of drift over SNR (ΔR²) | 0.001 (CI 0.000–0.029) vs. preregistered 0.05 | ❌ |
+| AUC for the worst 20% / 10% degradations | 0.52 / 0.50 (chance) | ❌ |
+| AUC for clean-prompt Step-5 failure, any logged drift feature | ≤ 0.59; cross-validated combination 0.31 | ❌ |
+| AUC for noisy-prompt Step-5 failure, d_4 / d_5 | 0.58: above chance, too weak to use | ❌ |
+
+**Drift detects noise, inverted.** Noisy prompts have *lower* drift (mean d_4 0.18 vs. 0.60 on clean; AUC 0.999 vs. 0.998 for the SNR estimator). A drift-only gate (d_4 > 0.30) matches the SNR gate on test (2.0% risk, 18.06 vs. 18.03 NFE) but adds nothing on top of it: drift tracks the prompt condition rather than output quality.
+
+#### 4.10.2 Phase 12: New Corruptions on 166 Fresh Speakers (Preregistered)
+Design: clean, reverb RT60 0.6 s and 8 kHz telephone + mu-law on the 166 speakers no split contains. Policies frozen before synthesis: SNR-only, drift-only and SNR AND drift, all handing over at Step 5. Primary hypothesis (Holm-corrected McNemar): SNR AND drift has fewer failures than SNR-only on an eligible condition. Script and preregistration are on branch `SNRgated` (commit `d72e84f`).
+
+| Condition | Step-5 Failure | Eligible? | SNR-only Risk / NFE | SNR + Drift Risk / NFE | AUC Low-Ŝ | AUC Low-d_4 |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Clean | 0.6% | No | 0.6% / 15.18 | 0.6% / 15.29 | — | — |
+| Reverb 0.6 s | **8.4%** | **Yes** (p = 0.0001) | 6.0% / 16.95 | 6.0% / 17.10 | 0.52 | 0.54 |
+| Telephone | 4.8% | No (p = 0.058) | 4.8% / 15.00 | 4.8% / 15.14 | 0.75 | 0.52 |
+
+**Verdict: NOT SUPPORTED.** Adding drift changed no decision on any failing utterance. Reverb genuinely degrades early handover (14/166 fail at Step 5, 13 on SIM), but neither SNR nor any drift step (AUC 0.42–0.59) identifies which reverberant prompts fail.
+
+#### 4.10.3 Phase 13: Richer Zero-NFE Drift Features (Exploration Only)
+67 features from teacher steps 1–5 (per-frame, per-band, cosine, CFG gap, velocity norm, endpoint spread) were tested on the 100 development speakers' low-SNR prompts. The teacher-only rerun reproduced the stored d_4 / d_5 / d_6 exactly (r = 1.000). Script on branch `SNRgated` (commit `e15cd55`).
+- Cross-validated AUC: 0.39–0.57 per feature family; 0.61 for all features with L1 logistic regression.
+- Best single feature (`fr_max_r54`, per-frame max drift ratio Step 5 / Step 4): dev AUC 0.69 (chance max 0.63, p ≈ 0.02). Probably real, but weak.
+- It cannot beat the SNR gate under LTT: SNR → Step 5 already uses the full calibration budget (5/200), and rescuing noisy prompts would need an AUC of about 0.9.
+- **The one-time confirmation on calibration + test (notebook cell 13c) has not been run.**
+
 ---
 
 ## 5. Methodological Analysis & Discussion
@@ -376,6 +479,11 @@ Calculating the drift metric requires zero additional model forward evaluations.
 - **Objective vs. Subjective Metrics:** Automated neural scores (WER, WavLM SIM, UTMOS) do not establish human perceptual equivalence.
 - **Nature of Reference-Relative Metric:** Under 15 dB prompt noise, Step-8 fallback exhibits an average WER of 46.03%. Because failures are defined relative to the Step-8 reference, a 0.0% added failure rate under noise indicates no added degradation beyond the reference baseline; it must not be described as noise-free or collapse-free synthesis.
 - **Status of Drift Benefit:** The current drift criterion has not demonstrated a convincing quality advantage over SNR-only scheduling. Any future redesign informed by inspecting test set outcomes must undergo independent calibration and fresh evaluation on a new held-out split.
+- **Test Split Already Inspected:** The test split has been examined many times during the ablations. Any new policy (e.g., SNR → Step 5) must be confirmed on unseen data, such as the 166 unused speakers with newly synthesized noisy15 prompts.
+- **Speaker Verifier:** SIM uses WavLM-Base+ SV, not WavLM-large (Section 1.2). Absolute SIM is not comparable with published DMOSpeech 2 numbers.
+- **Speaker Identity:** Splits are disjoint by Seed-TTS prompt clip, not by verified Common Voice contributor (Section 3).
+- **Hardware Scope:** All valid runtimes are Tesla T4 measurements. The proposal's Ryzen 7 laptop runtimes (§3.3.5) are not yet measured.
+- **Invalid Evaluation-Suite Outputs:** In the 18-test Colab suite, Tests 7, 12, 15 and 17 are hardcoded or invalid, and the auto-generated text for Tests 2, 3, 8 and 13 contradicts its computed JSON. Cite only the computed values used in this report (see `reports/COLAB_RESULTS_CONSOLIDATED_REPORT.md` on branch `SNRgated`).
 
 ---
 
@@ -403,10 +511,33 @@ python "Handover Scheduling/colab/run_gpu_full_pipeline_timing_benchmark.py" `
 
 # 5. Run Development Drift Diagnostic Analysis
 python "scratch/analyze_drift_diagnostic.py"
+
+# 6. Phase 12 / Phase 13 drift studies (scripts on branch SNRgated; run from the Colab notebook)
+python "Handover Scheduling/colab/run_drift_justification_benchmark.py" --device cuda --conditions quick
+python "Handover Scheduling/colab/run_drift_features_benchmark.py" --device cuda --explore_only
 ```
 
 ---
 
 ## 7. Official Thesis Defense Statement
 
-> The proposed scheduler reduced held-out GPU core synthesis latency by 13.34% relative to Fixed Step 8. SNR-only achieved a larger reduction of 18.52%. The corresponding earlier GPU quality evaluation recorded three speakers with added failures under the proposed policy and four under SNR-only; this difference was statistically inconclusive. Development-set diagnostics suggest that the current drift rule often delays handover on cases that already satisfy the Step-4 quality criteria. These findings support the scheduler's efficiency relative to fixed scheduling, while leaving the additional benefit of drift unestablished.
+> The proposed SNR + drift policy, calibrated with Learn-Then-Test, reduced forward passes by 13.6% and held-out T4 synthesis latency by 13.3% relative to DMOSpeech 2's fixed Step 8 (27.0% on clean prompts). It kept added failures at 2.5% on 200 unseen speakers, within the 5% target, with quality statistically equivalent to Step 8 (TOST). The SNR-only baseline, calibrated the same way, exceeded the target on held-out speakers (5.5%; McNemar p = 0.07). Ablations show that the benefit comes mainly from the SNR gate: an SNR gate with a fixed Step 5 performed comparably (p = 1.0), and drift's step choices did not differ from a matched-random control. Drift was also not supported under new corruptions on fresh speakers or in richer forms. The contribution is therefore a certified adaptive handover framework whose efficiency gain over fixed scheduling is established, with the incremental value of the drift signal reported as a tested negative result.
+
+---
+
+## 8. Proposal Items Still Open
+
+| Item | Proposal Section | Needs GPU? | Status |
+|---|---|:---:|---|
+| Calibrate on clean, test on noisy (distribution shift) | §3.7.3 | No | Not run; computable from existing grids |
+| Calibration-size study (n = 50 / 100 / 200) | §3.7.3 | No | Not run; computable from existing grids |
+| Teacher-only / student-only context | Table 3.8 | Yes | Not run |
+| Per-policy runtime on the Ryzen 7 laptop | §3.3.5 | No (CPU run) | Not run; grid runtimes exclude the teacher and cannot be reused |
+| Listening check of above-ceiling WER failures | §3.3.4 | No | Not run; no audio exported |
+| Phase 13 confirmation (cell 13c) | §3.7.1 | No | Not run |
+| Phase 12 remaining conditions (reverb 0.3 / 0.9 s, babble, DEMAND, Gaussian 18–25 dB) | §3.7.3 | Yes | Not run |
+| Saved `pytest -q` log for the reproducibility checks | §3.3.5 | No | Tests exist (`core/test_sampler.py`, `test_calibrate.py`); no saved log |
+| Name the actual SIM verifier, or re-score with WavLM-large | Table 3.5 | Re-score only | Open |
+| Correct Remark 3.1 ($t_{14} = 0.2270$) | §3.3.1 | No | Open |
+
+Changing the proposal's main claim (Table 2.1 lists drift as the decision signal) requires the adviser's agreement before Chapter 3 is rewritten.
