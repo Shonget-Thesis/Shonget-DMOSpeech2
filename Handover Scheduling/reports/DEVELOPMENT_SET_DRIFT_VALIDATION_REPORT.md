@@ -4,7 +4,7 @@
 **Author:** Rhenel Jhon Sajol  
 **Evaluation Scope:** 100-Speaker Development Split (`phase1_dev_grid_100spk` and Colab GPU re-test `gpu_grid_all1000.csv`)  
 **Investigated Core Question:** *Does Zero-NFE Trajectory Drift ($d_4$) reliably discriminate between safe and unsafe early exits at Step 4 on clean speech ($\text{SNR} \ge 20\text{ dB}$)?*  
-**Reference Document:** [`VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`](file:///c:/Users/Ryzen/Documents/Shonget-DMOSpeech2/VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md)  
+**Reference Document:** `VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md` (a local planning note that was never committed to the repository; the line and question numbers below refer to it)  
 **Status:** **ANALYSIS COMPLETE & VERIFIED** (Both CPU Baseline and GPU Re-test Evaluated)  
 **Date:** October 20, 2026  
 
@@ -58,7 +58,7 @@ flowchart TD
 
 ## 2. Cohort Definition & Acoustic Separation
 
-Per the instructions in [`VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`](file:///c:/Users/Ryzen/Documents/Shonget-DMOSpeech2/VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md#L31), we strictly isolate clean early-exit eligible cases from noisy fallback cases:
+Per the instructions in `VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`, we strictly isolate clean early-exit eligible cases from noisy fallback cases:
 
 * **Clean Cohort ($N = 100$ development speakers):**
   * Estimated prompt SNR ranges from **$23.28\text{ dB}$ to $50.00\text{ dB}$** (100% $\ge 20.0\text{ dB}$).
@@ -117,7 +117,7 @@ Across both platforms, the proposed policy ($\hat{\lambda} = 0.50$) selected Ste
 
 ## 6. Continuous Metric Changes on Passing Cases (Pass $\to$ Pass)
 
-To answer Question 6 from [`VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`](file:///c:/Users/Ryzen/Documents/Shonget-DMOSpeech2/VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md#L61), we examined whether waiting provided continuous speech quality improvements among the $75$ passing cases:
+To answer Question 6 from `VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`, we examined whether waiting provided continuous speech quality improvements among the $75$ passing cases:
 
 ### Table 4: Continuous Quality Deltas ($\Delta = \text{Selected Step} - \text{Step 4}$)
 | Metric | Mean Delta | Median Delta | Improved Count | Identical Count | Degraded Count | Statistical Significance |
@@ -143,7 +143,7 @@ To answer Question 6 from [`VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`](file:///
 
 ## 8. Strategic Conclusion & Recommendations
 
-Per Section 76–84 of [`VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`](file:///c:/Users/Ryzen/Documents/Shonget-DMOSpeech2/VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md#L76-L84):
+Per lines 76–84 of `VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`:
 
 1. **Drift Discrimination is Weak on Clean Speech:**
    * High tangent drift ($d_4 > 0.50$) does not signify acoustic collapse; it merely reflects normal ODE vector velocity during Euler integration.

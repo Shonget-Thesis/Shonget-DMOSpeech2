@@ -143,7 +143,7 @@ The per-speaker distribution of utterances (how many speakers have 1, 2, 3 … u
 | Calibration | 200 | 200 (1 per speaker) | 400 | 1,600 | Objective 3 only (LTT threshold λ̂) |
 | Test | 200 | 200 (1 per speaker) | 400 | 1,600 | Objective 3 held-out check; Objective 4 |
 | **Total used** | **500** | **500** | **1,000** | **4,000** | |
-| Unused | 166 | — | — | — | Later used as fresh speakers in Phase 12 |
+| Unused | 166 | — | — | — | Reserve. Used as fresh speakers in Phase 12 (scripts and results on branch `SNRgated`, not on `main`) |
 
 - **Construction:** speakers are shuffled with seed 42; the first 100 go to development, the next 200 to calibration, the next 200 to test, and one utterance is drawn per speaker.
 - **Development** also has one utterance per speaker. The proposal only requires this for calibration and test.
@@ -221,7 +221,7 @@ $$\mathrm{WER} = \frac{S + D + I}{N} \qquad \text{(Equation 2.23)}$$
 - S, D and I are the substitutions, deletions and insertions in the minimum edit alignment between the normalized reference and the hypothesis. N is the number of reference words.
 - WER can exceed 100% when the transcript contains many insertions, for example when a model loops or hallucinates.
 - **Normalization:** before scoring, both texts are normalized as in the Seed-TTS / F5-TTS English evaluation. Punctuation is replaced by spaces, whitespace is collapsed, and text is lowercased. Text normalization changes WER, so it must be stated.
-- **Coarseness:** per-utterance WER moves in large jumps. The target sentences used here have a median of 11 words, so one wrong word costs about 9 percentage points. For the 7.8% of sentences with fewer than 8 words, a single wrong word already exceeds 12.5%.
+- **Coarseness:** per-utterance WER moves in large jumps. The target sentences used here have a median of 11 words, so one wrong word costs about 9 percentage points. For the 7.8% of sentences with fewer than 8 words, a single wrong word already exceeds 12.5%. (Words are counted after the WER normalization, which turns punctuation into spaces, so "don't" counts as two words. Counting on spaces alone gives 8.4%.)
 - **Link to Definition 3.1:** the absolute ceiling c = 12.5% equals one error in an 8-word sentence. So the 92.2% of sentences with 8 or more words can absorb one misrecognized word without counting as a failure.
 - **Worked example (Appendix A):** reference WER 0% → limit max(12.5%, 0% + 1%) = 12.5%; reference WER 15.38% → limit max(12.5%, 16.38%) = 16.38%.
 
@@ -281,12 +281,16 @@ $$\mathrm{RTF} = \frac{T_{\text{synthesis}}}{T_{\text{audio}}} \qquad \text{(Equ
 | `rtf` / `runtime_sec` columns in the grid CSVs (`gpu_grid_all1000.csv`, phase 1–3 grids) | Only `run_student_completion`: 3 student passes + vocoder. The shared teacher pass is excluded | ❌ ≈ 0.11 at **every** step, because the teacher's cost is missing. **Do not cite** |
 | `gpu_full_pipeline_timing_3000.csv` (3,000 timed runs, Tesla T4) | Full pipeline per policy: SNR estimate, teacher, decision, student, vocoder | ✅ |
 
-**Valid T4 numbers, test split:**
+**Valid T4 numbers.** Always state the cohort, because test-split and all-speaker means differ slightly:
 
-| Condition | Step 8 | Proposed (SNR + drift) | SNR-only (Step 4) |
-|---|---|---|---|
-| Clean: latency / RTF | 3.29 s / 0.725 | 2.40 s / 0.529 | 2.06 s / 0.453 |
-| Noisy15: latency / RTF | 3.37 s / 0.706 | 3.37 s / 0.706 | 3.37 s / 0.706 (all fall back to Step 8) |
+| Cohort | Condition | Step 8: latency / RTF | Proposed (SNR + drift) | SNR-only (Step 4) |
+|---|---|---|---|---|
+| Test split (200 speakers) | Clean | 3.29 s / 0.725 | 2.40 s / 0.529 | 2.06 s / 0.453 |
+| Test split (200 speakers) | Noisy15 | 3.37 s / 0.706 | 3.37 s / 0.706 | 3.37 s / 0.706 (all fall back to Step 8) |
+| All 500 speakers | Clean | 3.28 s / 0.711 | 2.40 s / 0.518 | 2.04 s / 0.442 |
+| All 500 speakers | Noisy15 | 3.35 s / 0.693 | 3.35 s / 0.693 | 3.35 s / 0.693 |
+
+Use the **test-split** row for held-out claims (Objective 4). The all-speaker row is descriptive only, because development and calibration speakers were used to set θ and λ̂.
 
 §3.3.5 promises runtimes on the Ryzen 7 laptop. **None have been measured yet**; all valid RTFs are T4 numbers. This also affects task T48 (time one utterance through Whisper / WavLM / UTMOS on the laptop).
 
@@ -306,7 +310,7 @@ $$\mathrm{RTF} = \frac{T_{\text{synthesis}}}{T_{\text{audio}}} \qquad \text{(Equ
 Observations worth a sentence in the thesis:
 - **Clean prompts:** mean quality is flat across steps, and the reference already has WER = 0 for 86% of utterances.
 - **Noisy prompts are hard even for the reference:** Step 8 exceeds the 12.5% WER ceiling on 43.6% of them.
-- **Noisy mean WER is dominated by a few runaway transcripts.** The maximum per-utterance WER reaches 9,867% (looping or hallucinated output). The medians (15.4 / 10.0 / 9.1 / 10.0%) show the real picture, and the means look non-monotone only because of those outliers. That's why failures are counted per utterance rather than compared by means.
+- **Noisy mean WER is dominated by a few runaway transcripts.** The maximum per-utterance WER reaches 9,867% across all steps (at Step 5; the Step-8 maximum is 3,330%), from looping or hallucinated output. The medians (15.4 / 10.0 / 9.1 / 10.0%) show the real picture, and the means look non-monotone only because of those outliers. That's why failures are counted per utterance rather than compared by means.
 - **Failure causes** across the 3,000 non-reference evaluations: 232 WER only, 453 SIM only, 179 both.
 
 ---
