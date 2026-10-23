@@ -1,0 +1,231 @@
+{
+  "has_c2": false,
+  "n_speakers": {
+    "dev": 100,
+    "calib": 200,
+    "test": 200
+  },
+  "configs": [
+    "k4j1",
+    "k5j1",
+    "k6j1",
+    "k8j1"
+  ],
+  "reproduction": {
+    "d_4": {
+      "max_abs_diff": 5.662441253662109e-06
+    },
+    "d_5": {
+      "max_abs_diff": 2.8014183044433594e-05
+    },
+    "d_6": {
+      "max_abs_diff": 2.5272369384821136e-05
+    }
+  },
+  "signal_auc_dev": {
+    "drift": {
+      "auc_fail4_gated": 0.4742268041237113,
+      "auc_fail4_gated_ci": [
+        0.29330292723149864,
+        0.6663411458333333
+      ],
+      "auc_fail5_noisy": 0.4097639055622249,
+      "auc_fail5_all": 0.1619949993420187
+    },
+    "probe": {
+      "auc_fail4_gated": 0.711340206185567,
+      "auc_fail4_gated_ci": [
+        0.462324778396207,
+        0.9081632653061225
+      ],
+      "auc_fail5_noisy": 0.43177270908363347,
+      "auc_fail5_all": 0.22910909330175022
+    }
+  },
+  "c3_pareto_front_size": 29,
+  "policies": {
+    "B0_step8": {
+      "family": "baseline",
+      "certified": true,
+      "choice": "always Step 8",
+      "calib": {
+        "failures": 0,
+        "n": 200,
+        "nfe": 21.0,
+        "p": 3.505266624882905e-05
+      },
+      "test_failures": 0,
+      "test_n": 200,
+      "test_risk": 0.0,
+      "test_nfe": 21.0,
+      "test_safe": true,
+      "verdict_vs_P0": "WORSE",
+      "mcnemar_vs_P0": {
+        "only_first_fails": 0,
+        "only_second_fails": 3,
+        "p_two_sided": 0.25
+      }
+    },
+    "B1_snr_step4": {
+      "family": "baseline",
+      "certified": true,
+      "choice": "SNR >= 20 -> Step 4",
+      "calib": {
+        "failures": 5,
+        "n": 200,
+        "nfe": 17.02,
+        "p": 0.06234249504229472
+      },
+      "test_failures": 4,
+      "test_n": 200,
+      "test_risk": 0.02,
+      "test_nfe": 17.04,
+      "test_safe": true,
+      "verdict_vs_P0": "IMPROVES",
+      "mcnemar_vs_P0": {
+        "only_first_fails": 2,
+        "only_second_fails": 1,
+        "p_two_sided": 1.0
+      }
+    },
+    "B2_snr_step5": {
+      "family": "baseline",
+      "certified": true,
+      "choice": "SNR >= 20 -> Step 5",
+      "calib": {
+        "failures": 4,
+        "n": 200,
+        "nfe": 18.015,
+        "p": 0.026446800009119878
+      },
+      "test_failures": 3,
+      "test_n": 200,
+      "test_risk": 0.015,
+      "test_nfe": 18.03,
+      "test_safe": true,
+      "verdict_vs_P0": "MATCHES",
+      "mcnemar_vs_P0": {
+        "only_first_fails": 2,
+        "only_second_fails": 2,
+        "p_two_sided": 1.0
+      }
+    },
+    "P0_proposal_frozen": {
+      "family": "proposal",
+      "certified": true,
+      "choice": "SNR + drift, lambda = 0.50",
+      "calib": {
+        "failures": 2,
+        "n": 200,
+        "nfe": 18.19,
+        "p": 0.002336294190063899
+      },
+      "test_failures": 3,
+      "test_n": 200,
+      "test_risk": 0.015,
+      "test_nfe": 18.15,
+      "test_safe": true
+    },
+    "P1_proposal_ltt": {
+      "family": "proposal",
+      "certified": true,
+      "choice": "SNR + drift, lambda = 1.20",
+      "calib": {
+        "value": 1.2,
+        "failures": 5,
+        "n": 200,
+        "nfe": 17.02,
+        "p": 0.06234249504229472,
+        "certified": true
+      },
+      "test_failures": 4,
+      "test_n": 200,
+      "test_risk": 0.02,
+      "test_nfe": 17.04,
+      "test_safe": true,
+      "verdict_vs_P0": "IMPROVES",
+      "mcnemar_vs_P0": {
+        "only_first_fails": 2,
+        "only_second_fails": 1,
+        "p_two_sided": 1.0
+      }
+    },
+    "C1a_probe_gated": {
+      "family": "C1",
+      "certified": true,
+      "choice": "probe lambda = 0.8288",
+      "calib": {
+        "value": 0.8287817239761353,
+        "failures": 5,
+        "n": 200,
+        "nfe": 17.02,
+        "p": 0.06234249504229472,
+        "certified": true
+      },
+      "test_failures": 4,
+      "test_n": 200,
+      "test_risk": 0.02,
+      "test_nfe": 17.075,
+      "test_safe": true,
+      "verdict_vs_P0": "IMPROVES",
+      "mcnemar_vs_P0": {
+        "only_first_fails": 2,
+        "only_second_fails": 1,
+        "p_two_sided": 1.0
+      }
+    },
+    "C1b_probe_all": {
+      "family": "C1",
+      "certified": true,
+      "choice": "probe lambda = 0.2116",
+      "calib": {
+        "value": 0.2116390317678451,
+        "failures": 0,
+        "n": 200,
+        "nfe": 24.0,
+        "p": 3.505266624882905e-05,
+        "certified": true
+      },
+      "test_failures": 0,
+      "test_n": 200,
+      "test_risk": 0.0,
+      "test_nfe": 23.9725,
+      "test_safe": true,
+      "verdict_vs_P0": "WORSE",
+      "mcnemar_vs_P0": {
+        "only_first_fails": 0,
+        "only_second_fails": 3,
+        "p_two_sided": 0.25
+      }
+    },
+    "C3_snr_bands": {
+      "family": "C3",
+      "certified": true,
+      "choice": "bands <15 / 15-20 / 20-30 / >=30 dB -> Steps 8 / 8 / 4 / 4",
+      "calib": {
+        "value": [
+          8,
+          8,
+          4,
+          4
+        ],
+        "failures": 5,
+        "n": 200,
+        "nfe": 17.02,
+        "p": 0.06234249504229472,
+        "certified": true
+      },
+      "test_failures": 4,
+      "test_n": 200,
+      "test_risk": 0.02,
+      "test_nfe": 17.04,
+      "test_safe": true,
+      "verdict_vs_P0": "IMPROVES",
+      "mcnemar_vs_P0": {
+        "only_first_fails": 2,
+        "only_second_fails": 1,
+        "p_two_sided": 1.0
+      }
+    }
+  }
+}

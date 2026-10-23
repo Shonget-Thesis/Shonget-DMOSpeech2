@@ -64,7 +64,7 @@ Every check in this report, what it was for, and why it matters. Each section be
 
 ### T50.1 How the released code stops the teacher
 
-[`src/infer.py:520-523`](../../src/infer.py#L520-L523):
+[`src/infer.py:520-523`](../../../src/infer.py#L520-L523):
 
 ```python
 t = torch.linspace(0, 1, teacher_steps + 1)                          # u_i = i / N
@@ -114,7 +114,7 @@ Every even point of the 32-interval grid is a point of the 16-interval grid: t�
 **Conclusion:**
 1. "14 teacher steps at t_switch = 0.25" arises **only** on a 32-interval grid with the reading "stop at the last point not above s".
 2. With the code's rule, a 32-interval grid gives 14 steps only for s in [0.1968, 0.2270), e.g. s = 0.20, not for s = 0.25.
-3. **Evidence for the 32-interval grid:** the released `generate_teacher_only` defaults to `teacher_steps=32` ([`src/infer.py:341`](../../src/infer.py#L341)), and the paper compares against "the full 32-step teacher".
+3. **Evidence for the 32-interval grid:** the released `generate_teacher_only` defaults to `teacher_steps=32` ([`src/infer.py:341`](../../../src/infer.py#L341)), and the paper compares against "the full 32-step teacher".
 4. The proposal's reading in Remark 3.1 is therefore **correct, except for one number: t₁₄ = 0.2270, not ≈ 0.236.**
 5. The paper's handover point (t = 0.2270) is the same flow time as our **Step 7**, reached with 14 finer steps instead of 7.
 
@@ -143,7 +143,7 @@ Every even point of the 32-interval grid is a point of the 16-interval grid: t�
 
 ### T49.1 Counts
 
-Source: [`data/splits/split_summary.json`](../data/splits/split_summary.json), written by [`data/make_splits.py`](../data/make_splits.py) from `seed-tts-eval/en/meta.lst`. That file isn't in this checkout; the counts come from the run that built the splits and match the script's docstring.
+Source: [`data/splits/split_summary.json`](../../data/splits/split_summary.json), written by [`data/make_splits.py`](../../data/make_splits.py) from `seed-tts-eval/en/meta.lst`. That file isn't in this checkout; the counts come from the run that built the splits and match the script's docstring.
 
 | Quantity | Value |
 |---|---|
@@ -359,10 +359,10 @@ Observations worth a sentence in the thesis:
 
 **Location:** Ch2 §2.1.2, line 85
 
-![Sway grid and grid check](../figures/sway_grid_tswitch.png)
+![Sway grid and grid check](../../figures/sway_grid_tswitch.png)
 
-- **File:** [`figures/sway_grid_tswitch.png`](../figures/sway_grid_tswitch.png), 2600 × 1040 px.
-- **Generator:** [`figures/generate_sway_grid_check.py`](../figures/generate_sway_grid_check.py). It uses only the formula, no data.
+- **File:** [`figures/sway_grid_tswitch.png`](../../figures/sway_grid_tswitch.png), 2600 × 1040 px.
+- **Generator:** [`figures/generate_sway_grid_check.py`](../../figures/generate_sway_grid_check.py). It uses only the formula, no data.
 - **Regenerate:** `python "Handover Scheduling/figures/generate_sway_grid_check.py"`
 
 **Panel (a)** follows the proposal's figure spec (the TO DO at line 85):
@@ -384,7 +384,7 @@ The annotation also states that the first half of the grid (u ≤ 0.5) covers on
 
 > Figure 2.2: Sway sampling (s = −1) concentrates teacher steps at small t, where the switching time lies. (a) The sway map against the uniform grid; 8 of the 17 teacher grid points lie at or below t_switch = 0.25, and the candidate handover steps 4, 5, 6 and 8 cost 13, 15, 17 and 21 forward passes. (b) Near t = 0.25, the paper's 14 teacher steps correspond to the last point not above 0.25 on a 32-interval grid (t₁₄ ≈ 0.227), while the released code stops at the first point above 0.25 on its 16-interval grid (t₈ ≈ 0.293).
 
-The older [`figures/sway_grid_plot.png`](../figures/sway_grid_plot.png) is kept but shouldn't be used: it plots against the step index, has no t_switch line, and its Step 4/5 labels overlap.
+The older [`figures/sway_grid_plot.png`](../../figures/sway_grid_plot.png) is kept but shouldn't be used: it plots against the step index, has no t_switch line, and its Step 4/5 labels overlap.
 
 ---
 
@@ -480,10 +480,10 @@ This keeps the argument qualitative, as the TO DO suggests. If the group wants t
 
 **Location:** Ch2 §2.3, line 166 · **Depends on:** T52 (done; the figure matches T52.2–T52.5)
 
-![Teacher-guided timeline](../figures/teacher_guided_timeline_t55.png)
+![Teacher-guided timeline](../../figures/teacher_guided_timeline_t55.png)
 
-- **File:** [`figures/teacher_guided_timeline_t55.png`](../figures/teacher_guided_timeline_t55.png), 2600 × 1320 px.
-- **Generator:** [`figures/generate_teacher_guided_timeline.py`](../figures/generate_teacher_guided_timeline.py). It uses only the sampler's formulas, no data.
+- **File:** [`figures/teacher_guided_timeline_t55.png`](../../figures/teacher_guided_timeline_t55.png), 2600 × 1320 px.
+- **Generator:** [`figures/generate_teacher_guided_timeline.py`](../../figures/generate_teacher_guided_timeline.py). It uses only the sampler's formulas, no data.
 - **Regenerate:** `python "Handover Scheduling/figures/generate_teacher_guided_timeline.py"`
 
 ### T55.1 What the figure shows
@@ -512,7 +512,7 @@ It shows the reference configuration of the released code: t_switch = 0.25, 16-i
 
 > Figure 2.4: Teacher-guided sampling in DMOSpeech 2 at the reference switching time (t_switch = 0.25, 16-interval sway grid). The teacher takes guided Euler steps up to the first grid point above t_switch (t₈ ≈ 0.293), and one more guided evaluation gives the endpoint estimate x̂₁. The student then restarts from a re-noised copy of x̂₁ at τ ≈ 0.076 and finishes in three unguided steps. Guided teacher evaluations cost two forward passes each, so the teacher accounts for 18 of the 21 passes. In DMOSpeech 2 the switching time is fixed; in this study it is chosen per utterance.
 
-The older [`figures/teacher_guided_timeline.png`](../figures/teacher_guided_timeline.png) is a block diagram of the proposed method, not this timeline, and its labels overlap. It fits Figure 3.1 better than Figure 2.4, after the overlaps are fixed.
+The older [`figures/teacher_guided_timeline.png`](../../figures/teacher_guided_timeline.png) is a block diagram of the proposed method, not this timeline, and its labels overlap. It fits Figure 3.1 better than Figure 2.4, after the overlaps are fixed.
 
 ---
 

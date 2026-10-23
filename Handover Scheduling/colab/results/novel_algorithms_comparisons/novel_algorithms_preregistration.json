@@ -1,0 +1,37 @@
+{
+  "frozen_at_utc": "2026-10-23T22:06:17Z",
+  "script_sha256": "8d5d17362b27aaa453c8b11ef74e5572b9def3bbd67a38d46cad93e602121378",
+  "protocol": {
+    "version": 1,
+    "policies": {
+      "B0_step8": "fixed Step 8, j = 1 (DMOSpeech 2 reference)",
+      "B1_snr_step4": "SNR >= 20 dB -> Step 4, else Step 8 (proposal's SNR-only rule)",
+      "B2_snr_step5": "SNR >= 20 dB -> Step 5, else Step 8",
+      "P0_proposal_frozen": "SNR >= 20 dB and first k in (4,5,6) with d_k <= 0.50, else Step 8",
+      "P1_proposal_ltt": "as P0, lambda certified by LTT over 0.20, 0.25, ..., 1.20",
+      "C1a_probe_gated": "SNR >= 20 dB and first k in (4,5,6) with a_k <= lambda; lambda by LTT",
+      "C1b_probe_all": "first k in (4,5,6) with a_k <= lambda on every prompt; lambda by LTT",
+      "C2_joint_restart": "gate-passed / gate-failed prompts each get one (k, j); Pareto testing",
+      "C3_snr_bands": "one step per SNR band [<15, 15-20, 20-30, >=30 dB]; Pareto testing over 256 schedules"
+    },
+    "probe": "a_k = ||y_hat - x1_hat(t_k)|| / ||x1_hat(t_k)|| over generated frames, y_hat = first student step (tau = 0.0761, the same seeded noise as the real student); higher a_k = riskier (fixed a priori)",
+    "probe_cost": "accepted probe reused as the first student step (0 extra NFE); each rejected probe +1 NFE",
+    "nfe": "teacher 2(k + 1) + student (4 - j)",
+    "threshold_grid": "C1: development quantiles q = 0, 0.05, ..., 1 of a_k pooled over steps 4-6 (gated or all prompts), preceded by a no-early-handover value; ordered conservative -> aggressive",
+    "pareto_testing": "development: robust risk and NFE of every candidate; keep the Pareto front; order by development risk ascending (ties: higher NFE first), always starting from the Step-8 reference; calibration: fixed-sequence LTT; keep the last certified",
+    "ltt": {
+      "alpha": 0.05,
+      "delta": 0.1,
+      "p_value": "P(Bin(n, alpha) <= k)"
+    },
+    "risk": "robust per speaker: a speaker fails if either its clean or noisy15 utterance fails",
+    "verdict_vs_P0": {
+      "IMPROVES": "certified on calibration, test risk <= alpha, and test mean NFE lower than P0 by more than 0.5",
+      "MATCHES": "certified, test risk <= alpha, |delta NFE| <= 0.5",
+      "WORSE": "certified, test risk <= alpha, test mean NFE higher than P0 by more than 0.5",
+      "FAILS_GUARANTEE": "test risk > alpha",
+      "NOT_CERTIFIED": "LTT certifies nothing on calibration"
+    },
+    "caveat": "the test split was inspected in earlier analyses; a winning candidate needs confirmation on fresh speakers"
+  }
+}
