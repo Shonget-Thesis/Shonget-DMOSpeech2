@@ -1,0 +1,1153 @@
+{
+  "n_rows": 1000,
+  "n_speakers": {
+    "dev": 100,
+    "calib": 200,
+    "test": 200
+  },
+  "reproduction": {
+    "d_4": {
+      "max_abs_diff": 5.662441253662109e-06,
+      "corr": 0.9999999999992147
+    },
+    "d_5": {
+      "max_abs_diff": 2.8014183044433594e-05,
+      "corr": 0.9999999999698664
+    },
+    "d_6": {
+      "max_abs_diff": 2.5272369384821136e-05,
+      "corr": 0.9999999999531307
+    }
+  },
+  "q1_proposal_fixed_theta20": {
+    "gate_to_step4": {
+      "test_failures": 4,
+      "test_n": 200,
+      "test_risk": 0.02,
+      "test_nfe": 17.04
+    },
+    "gate_to_step5": {
+      "test_failures": 3,
+      "test_n": 200,
+      "test_risk": 0.015,
+      "test_nfe": 18.03
+    }
+  },
+  "q1_gate": [
+    {
+      "signal": "snr_energy",
+      "cost_class": "dsp",
+      "cost_ms_median": 0.48790549993782406,
+      "safe_direction": "higher",
+      "dev_auc_fail5": 0.8149756546914068,
+      "dev_auc_ci": [
+        0.7545831779406578,
+        0.8689782803733594
+      ],
+      "dev_auc_fail5_clean": 0.5102040816326531,
+      "dev_auc_fail5_noisy": 0.5166066426570628,
+      "dev_auc_noisy_vs_clean": 1.0,
+      "gate_to_step4": {
+        "certified": true,
+        "threshold_risk_score": -20.752530097961426,
+        "calib": {
+          "value": -20.752530097961426,
+          "failures": 5,
+          "n": 200,
+          "p": 0.06234249504229472,
+          "nfe": 17.04,
+          "certified": true
+        },
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 17.06,
+        "test_safe": true
+      },
+      "gate_to_step5": {
+        "certified": true,
+        "threshold_risk_score": -20.752530097961426,
+        "calib": {
+          "value": -20.752530097961426,
+          "failures": 4,
+          "n": 200,
+          "p": 0.026446800009119878,
+          "nfe": 18.03,
+          "certified": true
+        },
+        "test_failures": 3,
+        "test_n": 200,
+        "test_risk": 0.015,
+        "test_nfe": 18.045,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "snr_spectral",
+      "cost_class": "dsp",
+      "cost_ms_median": 4.110109500061299,
+      "safe_direction": "higher",
+      "dev_auc_fail5": 0.8061587050927753,
+      "dev_auc_ci": [
+        0.7524230794790004,
+        0.8572139133997011
+      ],
+      "dev_auc_fail5_clean": 0.6785714285714286,
+      "dev_auc_fail5_noisy": 0.4913965586234494,
+      "dev_auc_noisy_vs_clean": 0.9925,
+      "gate_to_step4": {
+        "certified": true,
+        "threshold_risk_score": -34.17384329722356,
+        "calib": {
+          "value": -34.17384329722356,
+          "failures": 4,
+          "n": 200,
+          "p": 0.026446800009119878,
+          "nfe": 17.6,
+          "certified": true
+        },
+        "test_failures": 3,
+        "test_n": 200,
+        "test_risk": 0.015,
+        "test_nfe": 17.82,
+        "test_safe": true
+      },
+      "gate_to_step5": {
+        "certified": true,
+        "threshold_risk_score": -34.17384329722356,
+        "calib": {
+          "value": -34.17384329722356,
+          "failures": 3,
+          "n": 200,
+          "p": 0.009048376396101461,
+          "nfe": 18.45,
+          "certified": true
+        },
+        "test_failures": 3,
+        "test_n": 200,
+        "test_risk": 0.015,
+        "test_nfe": 18.615,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "spectral_flatness",
+      "cost_class": "dsp",
+      "cost_ms_median": 2.4290629999086377,
+      "safe_direction": "lower",
+      "dev_auc_fail5": 0.8055007237794447,
+      "dev_auc_ci": [
+        0.7517109901417516,
+        0.8615422307711132
+      ],
+      "dev_auc_fail5_clean": 0.5459183673469388,
+      "dev_auc_fail5_noisy": 0.4849939975990396,
+      "dev_auc_noisy_vs_clean": 1.0,
+      "gate_to_step4": {
+        "certified": true,
+        "threshold_risk_score": 0.050234342738986006,
+        "calib": {
+          "value": 0.050234342738986006,
+          "failures": 5,
+          "n": 200,
+          "p": 0.06234249504229472,
+          "nfe": 17.28,
+          "certified": true
+        },
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 17.14,
+        "test_safe": true
+      },
+      "gate_to_step5": {
+        "certified": true,
+        "threshold_risk_score": 0.11401178315281865,
+        "calib": {
+          "value": 0.11401178315281865,
+          "failures": 4,
+          "n": 200,
+          "p": 0.026446800009119878,
+          "nfe": 18.0,
+          "certified": true
+        },
+        "test_failures": 3,
+        "test_n": 200,
+        "test_risk": 0.015,
+        "test_nfe": 18.015,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "hf_ratio",
+      "cost_class": "dsp",
+      "cost_ms_median": 2.2029395000799923,
+      "safe_direction": "lower",
+      "dev_auc_fail5": 0.6665350704040005,
+      "dev_auc_ci": [
+        0.6060178023539068,
+        0.7351684418664499
+      ],
+      "dev_auc_fail5_clean": 0.16326530612244897,
+      "dev_auc_fail5_noisy": 0.5878351340536214,
+      "dev_auc_noisy_vs_clean": 0.73,
+      "gate_to_step4": {
+        "certified": true,
+        "threshold_risk_score": 0.02116484697908157,
+        "calib": {
+          "value": 0.02116484697908157,
+          "failures": 4,
+          "n": 200,
+          "p": 0.026446800009119878,
+          "nfe": 19.14,
+          "certified": true
+        },
+        "test_failures": 5,
+        "test_n": 200,
+        "test_risk": 0.025,
+        "test_nfe": 18.8,
+        "test_safe": true
+      },
+      "gate_to_step5": {
+        "certified": true,
+        "threshold_risk_score": 0.02116484697908157,
+        "calib": {
+          "value": 0.02116484697908157,
+          "failures": 4,
+          "n": 200,
+          "p": 0.026446800009119878,
+          "nfe": 19.605,
+          "certified": true
+        },
+        "test_failures": 6,
+        "test_n": 200,
+        "test_risk": 0.03,
+        "test_nfe": 19.35,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "noise_floor_dbfs",
+      "cost_class": "dsp",
+      "cost_ms_median": 0.3519950000168137,
+      "safe_direction": "lower",
+      "dev_auc_fail5": 0.7919463087248322,
+      "dev_auc_ci": [
+        0.7338267543859649,
+        0.8450200781491457
+      ],
+      "dev_auc_fail5_clean": 0.7295918367346939,
+      "dev_auc_fail5_noisy": 0.48699479791916767,
+      "dev_auc_noisy_vs_clean": 0.9758,
+      "gate_to_step4": {
+        "certified": true,
+        "threshold_risk_score": -53.84501980805604,
+        "calib": {
+          "value": -53.84501980805604,
+          "failures": 3,
+          "n": 200,
+          "p": 0.009048376396101461,
+          "nfe": 18.56,
+          "certified": true
+        },
+        "test_failures": 5,
+        "test_n": 200,
+        "test_risk": 0.025,
+        "test_nfe": 18.56,
+        "test_safe": true
+      },
+      "gate_to_step5": {
+        "certified": true,
+        "threshold_risk_score": -49.73552944437856,
+        "calib": {
+          "value": -49.73552944437856,
+          "failures": 5,
+          "n": 200,
+          "p": 0.06234249504229472,
+          "nfe": 18.51,
+          "certified": true
+        },
+        "test_failures": 7,
+        "test_n": 200,
+        "test_risk": 0.035,
+        "test_nfe": 18.585,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "prompt_utmos",
+      "cost_class": "neural",
+      "cost_ms_median": 38.24502899999516,
+      "safe_direction": "higher",
+      "dev_auc_fail5": 0.7768127385182261,
+      "dev_auc_ci": [
+        0.7168201466471797,
+        0.8358073661201617
+      ],
+      "dev_auc_fail5_clean": 0.5255102040816326,
+      "dev_auc_fail5_noisy": 0.5242096838735494,
+      "dev_auc_noisy_vs_clean": 0.9367,
+      "gate_to_step4": {
+        "certified": true,
+        "threshold_risk_score": -3.2619446873664857,
+        "calib": {
+          "value": -3.2619446873664857,
+          "failures": 5,
+          "n": 200,
+          "p": 0.06234249504229472,
+          "nfe": 18.34,
+          "certified": true
+        },
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 17.66,
+        "test_safe": true
+      },
+      "gate_to_step5": {
+        "certified": true,
+        "threshold_risk_score": -3.2619446873664857,
+        "calib": {
+          "value": -3.2619446873664857,
+          "failures": 5,
+          "n": 200,
+          "p": 0.06234249504229472,
+          "nfe": 19.005,
+          "certified": true
+        },
+        "test_failures": 3,
+        "test_n": 200,
+        "test_risk": 0.015,
+        "test_nfe": 18.495,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "prompt_duration_s",
+      "cost_class": "metadata",
+      "cost_ms_median": 0.0,
+      "safe_direction": "lower",
+      "dev_auc_fail5": 0.5031583103039874,
+      "dev_auc_ci": [
+        0.4233809404388715,
+        0.5718296436854311
+      ],
+      "dev_auc_fail5_clean": 0.5229591836734694,
+      "dev_auc_fail5_noisy": 0.503001200480192,
+      "dev_auc_noisy_vs_clean": 0.5,
+      "gate_to_step4": {
+        "certified": true,
+        "threshold_risk_score": 3.1237333333333335,
+        "calib": {
+          "value": 3.1237333333333335,
+          "failures": 1,
+          "n": 200,
+          "p": 0.0004040281004470256,
+          "nfe": 20.88,
+          "certified": true
+        },
+        "test_failures": 0,
+        "test_n": 200,
+        "test_risk": 0.0,
+        "test_nfe": 21.0,
+        "test_safe": true
+      },
+      "gate_to_step5": {
+        "certified": true,
+        "threshold_risk_score": 3.1237333333333335,
+        "calib": {
+          "value": 3.1237333333333335,
+          "failures": 2,
+          "n": 200,
+          "p": 0.002336294190063899,
+          "nfe": 20.91,
+          "certified": true
+        },
+        "test_failures": 0,
+        "test_n": 200,
+        "test_risk": 0.0,
+        "test_nfe": 21.0,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "prompt_char_rate",
+      "cost_class": "metadata",
+      "cost_ms_median": 0.0,
+      "safe_direction": "lower",
+      "dev_auc_fail5": 0.5369785498091855,
+      "dev_auc_ci": [
+        0.4645931170909585,
+        0.6094537746881497
+      ],
+      "dev_auc_fail5_clean": 0.4846938775510204,
+      "dev_auc_fail5_noisy": 0.5574229691876751,
+      "dev_auc_noisy_vs_clean": 0.5,
+      "gate_to_step4": {
+        "certified": true,
+        "threshold_risk_score": 10.3916097373232,
+        "calib": {
+          "value": 10.3916097373232,
+          "failures": 2,
+          "n": 200,
+          "p": 0.002336294190063899,
+          "nfe": 20.92,
+          "certified": true
+        },
+        "test_failures": 3,
+        "test_n": 200,
+        "test_risk": 0.015,
+        "test_nfe": 20.8,
+        "test_safe": true
+      },
+      "gate_to_step5": {
+        "certified": true,
+        "threshold_risk_score": 10.3916097373232,
+        "calib": {
+          "value": 10.3916097373232,
+          "failures": 2,
+          "n": 200,
+          "p": 0.002336294190063899,
+          "nfe": 20.94,
+          "certified": true
+        },
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 20.85,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "target_words",
+      "cost_class": "metadata",
+      "cost_ms_median": 0.0,
+      "safe_direction": "lower",
+      "dev_auc_fail5": 0.5605342808264245,
+      "dev_auc_ci": [
+        0.4929032882011605,
+        0.630987915106008
+      ],
+      "dev_auc_fail5_clean": 0.5229591836734694,
+      "dev_auc_fail5_noisy": 0.5902360944377751,
+      "dev_auc_noisy_vs_clean": 0.5,
+      "gate_to_step4": {
+        "certified": true,
+        "threshold_risk_score": 4.0,
+        "calib": {
+          "value": 4.0,
+          "failures": 0,
+          "n": 200,
+          "p": 3.505266624882905e-05,
+          "nfe": 20.92,
+          "certified": true
+        },
+        "test_failures": 6,
+        "test_n": 200,
+        "test_risk": 0.03,
+        "test_nfe": 20.76,
+        "test_safe": true
+      },
+      "gate_to_step5": {
+        "certified": true,
+        "threshold_risk_score": 4.0,
+        "calib": {
+          "value": 4.0,
+          "failures": 0,
+          "n": 200,
+          "p": 3.505266624882905e-05,
+          "nfe": 20.94,
+          "certified": true
+        },
+        "test_failures": 5,
+        "test_n": 200,
+        "test_risk": 0.025,
+        "test_nfe": 20.82,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "oracle_clean",
+      "cost_class": "oracle",
+      "cost_ms_median": 0.0,
+      "safe_direction": "higher",
+      "dev_auc_fail5": 0.8092512172654297,
+      "dev_auc_ci": [
+        0.7622377622377622,
+        0.8479183866021937
+      ],
+      "dev_auc_fail5_clean": 0.5,
+      "dev_auc_fail5_noisy": 0.5,
+      "dev_auc_noisy_vs_clean": 1.0,
+      "gate_to_step4": {
+        "certified": true,
+        "threshold_risk_score": -0.5,
+        "calib": {
+          "value": -0.5,
+          "failures": 5,
+          "n": 200,
+          "p": 0.06234249504229472,
+          "nfe": 17.0,
+          "certified": true
+        },
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 17.0,
+        "test_safe": true
+      },
+      "gate_to_step5": {
+        "certified": true,
+        "threshold_risk_score": -0.5,
+        "calib": {
+          "value": -0.5,
+          "failures": 4,
+          "n": 200,
+          "p": 0.026446800009119878,
+          "nfe": 18.0,
+          "certified": true
+        },
+        "test_failures": 3,
+        "test_n": 200,
+        "test_risk": 0.015,
+        "test_nfe": 18.0,
+        "test_safe": true
+      }
+    }
+  ],
+  "q1_verdict": {
+    "gate_to_step4": {
+      "verdict": "MATCHED",
+      "best_alternative": "spectral_flatness",
+      "proposal_nfe": 17.06,
+      "alternative_nfe": 17.14,
+      "delta_nfe": -0.08000000000000185
+    },
+    "gate_to_step5": {
+      "verdict": "MATCHED",
+      "best_alternative": "spectral_flatness",
+      "proposal_nfe": 18.045,
+      "alternative_nfe": 18.015,
+      "delta_nfe": 0.030000000000001137
+    }
+  },
+  "q2_proposal_frozen_lambda050": {
+    "test_failures": 3,
+    "test_n": 200,
+    "test_risk": 0.015,
+    "test_nfe": 18.15,
+    "matched_random_p": 0.5225
+  },
+  "q2_stopping": [
+    {
+      "signal": "drift",
+      "cost_class": "zero_nfe_trajectory",
+      "risk_direction": "lower",
+      "dev_auc_fail4_gated": 0.5257731958762887,
+      "dev_auc_ci": [
+        0.31624665017522163,
+        0.711340206185567
+      ],
+      "dev_auc_fail5_gated": 0.4744897959183674,
+      "policy": {
+        "certified": true,
+        "lambda_risk_score": -0.1251903623342514,
+        "calib": {
+          "value": -0.1251903623342514,
+          "failures": 5,
+          "n": 200,
+          "p": 0.06234249504229472,
+          "nfe": 17.02,
+          "certified": true
+        },
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 17.04,
+        "test_safe": true,
+        "matched_random_p": 1.0
+      }
+    },
+    {
+      "signal": "cos_change",
+      "cost_class": "zero_nfe_trajectory",
+      "risk_direction": "higher",
+      "dev_auc_fail4_gated": 0.5120274914089347,
+      "dev_auc_ci": [
+        0.336734693877551,
+        0.7373737373737373
+      ],
+      "dev_auc_fail5_gated": 0.5153061224489796,
+      "policy": {
+        "certified": true,
+        "lambda_risk_score": 0.3663471341133117,
+        "calib": {
+          "value": 0.3663471341133117,
+          "failures": 4,
+          "n": 200,
+          "p": 0.026446800009119878,
+          "nfe": 17.03,
+          "certified": true
+        },
+        "test_failures": 3,
+        "test_n": 200,
+        "test_risk": 0.015,
+        "test_nfe": 17.05,
+        "test_safe": true,
+        "matched_random_p": 0.0285
+      }
+    },
+    {
+      "signal": "frame_max_drift",
+      "cost_class": "zero_nfe_trajectory",
+      "risk_direction": "higher",
+      "dev_auc_fail4_gated": 0.738831615120275,
+      "dev_auc_ci": [
+        0.5360824742268041,
+        1.0
+      ],
+      "dev_auc_fail5_gated": 0.37755102040816324,
+      "policy": {
+        "certified": true,
+        "lambda_risk_score": 1.492119312286377,
+        "calib": {
+          "value": 1.492119312286377,
+          "failures": 5,
+          "n": 200,
+          "p": 0.06234249504229472,
+          "nfe": 18.37,
+          "certified": true
+        },
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 18.39,
+        "test_safe": true,
+        "matched_random_p": 0.8145
+      }
+    },
+    {
+      "signal": "cfg_gap",
+      "cost_class": "zero_nfe_trajectory",
+      "risk_direction": "higher",
+      "dev_auc_fail4_gated": 0.7044673539518901,
+      "dev_auc_ci": [
+        0.46938775510204084,
+        0.898989898989899
+      ],
+      "dev_auc_fail5_gated": 0.8010204081632653,
+      "policy": {
+        "certified": true,
+        "lambda_risk_score": 0.24302364364266396,
+        "calib": {
+          "value": 0.24302364364266396,
+          "failures": 5,
+          "n": 200,
+          "p": 0.06234249504229472,
+          "nfe": 17.57,
+          "certified": true
+        },
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 17.5,
+        "test_safe": true,
+        "matched_random_p": 0.788
+      }
+    },
+    {
+      "signal": "velocity_norm",
+      "cost_class": "zero_nfe_trajectory",
+      "risk_direction": "lower",
+      "dev_auc_fail4_gated": 0.7353951890034365,
+      "dev_auc_ci": [
+        0.3673469387755102,
+        0.9393939393939394
+      ],
+      "dev_auc_fail5_gated": 0.6071428571428571,
+      "policy": {
+        "certified": true,
+        "lambda_risk_score": -1.2062218189239502,
+        "calib": {
+          "value": -1.2062218189239502,
+          "failures": 5,
+          "n": 200,
+          "p": 0.06234249504229472,
+          "nfe": 17.02,
+          "certified": true
+        },
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 17.045,
+        "test_safe": true,
+        "matched_random_p": 0.9895
+      }
+    },
+    {
+      "signal": "fixed_step4",
+      "cost_class": "fixed_rule",
+      "policy": {
+        "certified": true,
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 17.04,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "fixed_step5",
+      "cost_class": "fixed_rule",
+      "policy": {
+        "certified": true,
+        "test_failures": 3,
+        "test_n": 200,
+        "test_risk": 0.015,
+        "test_nfe": 18.03,
+        "test_safe": true
+      }
+    },
+    {
+      "signal": "fixed_step6",
+      "cost_class": "fixed_rule",
+      "policy": {
+        "certified": true,
+        "test_failures": 4,
+        "test_n": 200,
+        "test_risk": 0.02,
+        "test_nfe": 19.02,
+        "test_safe": true
+      }
+    }
+  ],
+  "q2_verdict": {
+    "verdict": "MATCHED",
+    "best_alternative": "fixed_step4",
+    "proposal_nfe": 17.04,
+    "alternative_nfe": 17.04,
+    "delta_nfe": 0.0
+  },
+  "q1_mcnemar": {
+    "gate_to_step4": {
+      "only_first_fails": 0,
+      "only_second_fails": 0,
+      "p_two_sided": 1.0,
+      "alternative": "spectral_flatness"
+    },
+    "gate_to_step5": {
+      "only_first_fails": 0,
+      "only_second_fails": 0,
+      "p_two_sided": 1.0,
+      "alternative": "spectral_flatness"
+    }
+  },
+  "q2_mcnemar": {
+    "only_first_fails": 0,
+    "only_second_fails": 0,
+    "p_two_sided": 1.0,
+    "alternative": "fixed_step4"
+  },
+  "ltt_justification": {
+    "gpu": {
+      "calibration_trace": [
+        {
+          "lambda": 0.2,
+          "failures": 0,
+          "n": 200,
+          "risk": 0.0,
+          "nfe": 20.83
+        },
+        {
+          "lambda": 0.25,
+          "failures": 0,
+          "n": 200,
+          "risk": 0.0,
+          "nfe": 20.56
+        },
+        {
+          "lambda": 0.3,
+          "failures": 0,
+          "n": 200,
+          "risk": 0.0,
+          "nfe": 20.075
+        },
+        {
+          "lambda": 0.35,
+          "failures": 2,
+          "n": 200,
+          "risk": 0.01,
+          "nfe": 19.545
+        },
+        {
+          "lambda": 0.4,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 18.9
+        },
+        {
+          "lambda": 0.45,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 18.545
+        },
+        {
+          "lambda": 0.5,
+          "failures": 2,
+          "n": 200,
+          "risk": 0.01,
+          "nfe": 18.19
+        },
+        {
+          "lambda": 0.55,
+          "failures": 2,
+          "n": 200,
+          "risk": 0.01,
+          "nfe": 17.815
+        },
+        {
+          "lambda": 0.6,
+          "failures": 5,
+          "n": 200,
+          "risk": 0.025,
+          "nfe": 17.585
+        },
+        {
+          "lambda": 0.65,
+          "failures": 5,
+          "n": 200,
+          "risk": 0.025,
+          "nfe": 17.425
+        },
+        {
+          "lambda": 0.7,
+          "failures": 4,
+          "n": 200,
+          "risk": 0.02,
+          "nfe": 17.265
+        },
+        {
+          "lambda": 0.75,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.13
+        },
+        {
+          "lambda": 0.8,
+          "failures": 4,
+          "n": 200,
+          "risk": 0.02,
+          "nfe": 17.06
+        },
+        {
+          "lambda": 0.85,
+          "failures": 4,
+          "n": 200,
+          "risk": 0.02,
+          "nfe": 17.04
+        },
+        {
+          "lambda": 0.9,
+          "failures": 4,
+          "n": 200,
+          "risk": 0.02,
+          "nfe": 17.03
+        },
+        {
+          "lambda": 0.95,
+          "failures": 5,
+          "n": 200,
+          "risk": 0.025,
+          "nfe": 17.025
+        },
+        {
+          "lambda": 1.0,
+          "failures": 5,
+          "n": 200,
+          "risk": 0.025,
+          "nfe": 17.02
+        },
+        {
+          "lambda": 1.05,
+          "failures": 5,
+          "n": 200,
+          "risk": 0.025,
+          "nfe": 17.02
+        },
+        {
+          "lambda": 1.1,
+          "failures": 5,
+          "n": 200,
+          "risk": 0.025,
+          "nfe": 17.02
+        },
+        {
+          "lambda": 1.15,
+          "failures": 5,
+          "n": 200,
+          "risk": 0.025,
+          "nfe": 17.02
+        },
+        {
+          "lambda": 1.2,
+          "failures": 5,
+          "n": 200,
+          "risk": 0.025,
+          "nfe": 17.02
+        }
+      ],
+      "risk_decreases_with_larger_lambda": [
+        [
+          0.45,
+          0.5,
+          3,
+          2
+        ],
+        [
+          0.65,
+          0.7,
+          5,
+          4
+        ],
+        [
+          0.7,
+          0.75,
+          4,
+          3
+        ]
+      ],
+      "resplits": 200,
+      "pooled_speakers": 400,
+      "methods": {
+        "naive": {
+          "pct_holdout_risk_above_alpha": 0.0,
+          "mean_holdout_risk": 0.022575,
+          "p95_holdout_risk": 0.035,
+          "mean_holdout_nfe": 17.0306,
+          "pct_no_threshold": 0.0,
+          "modal_lambda": 1.2
+        },
+        "hoeffding": {
+          "pct_holdout_risk_above_alpha": 0.0,
+          "mean_holdout_risk": 0.0,
+          "p95_holdout_risk": 0.0,
+          "mean_holdout_nfe": 21.0,
+          "pct_no_threshold": 100.0,
+          "modal_lambda": null
+        },
+        "ltt_binomial": {
+          "pct_holdout_risk_above_alpha": 0.0,
+          "mean_holdout_risk": 0.019675,
+          "p95_holdout_risk": 0.035,
+          "mean_holdout_nfe": 17.2912,
+          "pct_no_threshold": 0.0,
+          "modal_lambda": 1.2
+        }
+      }
+    },
+    "cpu": {
+      "calibration_trace": [
+        {
+          "lambda": 0.2,
+          "failures": 0,
+          "n": 200,
+          "risk": 0.0,
+          "nfe": 20.83
+        },
+        {
+          "lambda": 0.25,
+          "failures": 2,
+          "n": 200,
+          "risk": 0.01,
+          "nfe": 20.56
+        },
+        {
+          "lambda": 0.3,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 20.075
+        },
+        {
+          "lambda": 0.35,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 19.545
+        },
+        {
+          "lambda": 0.4,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 18.9
+        },
+        {
+          "lambda": 0.45,
+          "failures": 5,
+          "n": 200,
+          "risk": 0.025,
+          "nfe": 18.545
+        },
+        {
+          "lambda": 0.5,
+          "failures": 4,
+          "n": 200,
+          "risk": 0.02,
+          "nfe": 18.19
+        },
+        {
+          "lambda": 0.55,
+          "failures": 6,
+          "n": 200,
+          "risk": 0.03,
+          "nfe": 17.815
+        },
+        {
+          "lambda": 0.6,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.585
+        },
+        {
+          "lambda": 0.65,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.425
+        },
+        {
+          "lambda": 0.7,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.265
+        },
+        {
+          "lambda": 0.75,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.13
+        },
+        {
+          "lambda": 0.8,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.06
+        },
+        {
+          "lambda": 0.85,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.04
+        },
+        {
+          "lambda": 0.9,
+          "failures": 4,
+          "n": 200,
+          "risk": 0.02,
+          "nfe": 17.03
+        },
+        {
+          "lambda": 0.95,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.025
+        },
+        {
+          "lambda": 1.0,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.02
+        },
+        {
+          "lambda": 1.05,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.02
+        },
+        {
+          "lambda": 1.1,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.02
+        },
+        {
+          "lambda": 1.15,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.02
+        },
+        {
+          "lambda": 1.2,
+          "failures": 3,
+          "n": 200,
+          "risk": 0.015,
+          "nfe": 17.02
+        }
+      ],
+      "risk_decreases_with_larger_lambda": [
+        [
+          0.45,
+          0.5,
+          5,
+          4
+        ],
+        [
+          0.55,
+          0.6,
+          6,
+          3
+        ],
+        [
+          0.9,
+          0.95,
+          4,
+          3
+        ]
+      ],
+      "resplits": 200,
+      "pooled_speakers": 400,
+      "methods": {
+        "naive": {
+          "pct_holdout_risk_above_alpha": 3.5,
+          "mean_holdout_risk": 0.0354,
+          "p95_holdout_risk": 0.05,
+          "mean_holdout_nfe": 17.035549999999997,
+          "pct_no_threshold": 0.0,
+          "modal_lambda": 1.2
+        },
+        "hoeffding": {
+          "pct_holdout_risk_above_alpha": 0.0,
+          "mean_holdout_risk": 0.0,
+          "p95_holdout_risk": 0.0,
+          "mean_holdout_nfe": 21.0,
+          "pct_no_threshold": 100.0,
+          "modal_lambda": null
+        },
+        "ltt_binomial": {
+          "pct_holdout_risk_above_alpha": 3.0,
+          "mean_holdout_risk": 0.025150000000000002,
+          "p95_holdout_risk": 0.05,
+          "mean_holdout_nfe": 18.099025,
+          "pct_no_threshold": 0.0,
+          "modal_lambda": 0.5
+        }
+      }
+    },
+    "hoeffding_min_n_zero_failures": 461,
+    "binomial_min_n_zero_failures": 45
+  }
+}

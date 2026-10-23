@@ -1,0 +1,84 @@
+{
+  "frozen_at_utc": "2026-10-23T10:48:13Z",
+  "script_sha256": "f215f0fc0bc9eccbd5e21e834b6ad8871b0a70f0404f5313031ee403d047c3b7",
+  "protocol": {
+    "version": 1,
+    "question_1_gate": {
+      "signals": {
+        "snr_energy": "PROPOSAL: energy-percentile prompt SNR (Eq. 3.9), dB",
+        "snr_spectral": "spectral-percentile SNR (per-bin 10th-percentile noise PSD), dB",
+        "spectral_flatness": "mean spectral flatness (Wiener entropy) of the prompt",
+        "hf_ratio": "energy above 4 kHz / total energy",
+        "noise_floor_dbfs": "mean energy of the quietest 10% of 25 ms frames, dBFS",
+        "prompt_utmos": "UTMOS (utmos22_strong) of the prompt; one extra non-TTS network pass",
+        "prompt_duration_s": "prompt duration, seconds (input difficulty, not quality)",
+        "prompt_char_rate": "prompt characters per second (speaking rate)",
+        "target_words": "number of words in the target text"
+      },
+      "oracle": "true condition label (clean = safe)",
+      "proposal_signal": "snr_energy",
+      "proposal_fixed_threshold_db": 20.0,
+      "templates": {
+        "gate_to_step4": "safe -> Step 4 (proposal's SNR-only rule, Table 3.8), else Step 8",
+        "gate_to_step5": "safe -> Step 5, else Step 8"
+      },
+      "auc_target": "Step-5 failure, all development utterances (clean + noisy15)"
+    },
+    "question_2_stopping": {
+      "gate": "snr_energy >= 20 dB (fixed, as in the proposal)",
+      "signals": {
+        "drift": "PROPOSAL: d_i = ||x1(t_i) - x1(t_i-1)|| / ||x1(t_i)|| over generated frames (Eq. 3.8)",
+        "cos_change": "1 - cosine(x1(t_i), x1(t_i-1)) over generated frames",
+        "frame_max_drift": "max over generated frames of per-frame relative drift",
+        "cfg_gap": "||v_c - v_u|| / ||v_c|| over generated frames",
+        "velocity_norm": "RMS of the guided velocity over generated frames"
+      },
+      "proposal_signal": "drift",
+      "proposal_fixed_lambda": 0.5,
+      "template": "Definition 3.4: first i in (4, 5, 6) with score_i <= lambda, else Step 8",
+      "auc_target": "Step-4 failure among gated development utterances, score at step 4",
+      "baselines": [
+        "SNR gate -> fixed Step 4 / 5 / 6",
+        "matched-random step assignment"
+      ]
+    },
+    "ltt_justification": {
+      "policy": "proposal policy: SNR gate 20 dB + drift stopping rule (Definition 3.4)",
+      "lambda_grid": "0.20, 0.25, ..., 1.20 (phase2_calib_ltt_200spk/config.json), conservative -> aggressive",
+      "resplits": 200,
+      "pool": "calibration + test speakers, random speaker-disjoint 50/50 re-splits (calibrate on one half, check on the other)",
+      "methods": {
+        "naive": "most aggressive lambda whose calibration risk is <= alpha (no guarantee)",
+        "hoeffding": "fixed-sequence test with Hoeffding p = exp(-2n(alpha - R)^2)",
+        "ltt_binomial": "PROPOSAL: fixed-sequence test with exact binomial p = P(Bin(n, alpha) <= k)"
+      },
+      "monotonicity_check": "on the full calibration split: does robust risk ever decrease as lambda increases?",
+      "label_sources": {
+        "gpu": "colab/results/gpu_grid_all1000.csv (same labels as Q1 and Q2)",
+        "cpu": "phase2/phase3 CPU grids (the labels behind the original lambda-hat = 0.50 calibration)"
+      }
+    },
+    "orientation_rule": "chosen on development only: the direction in which the signal predicts failure (AUC >= 0.5)",
+    "threshold_grid_rule": "development quantiles q = 0, 0.05, ..., 1, ordered from conservative to aggressive",
+    "ltt": {
+      "alpha": 0.05,
+      "delta": 0.1,
+      "test": "fixed-sequence binomial, P(Bin(n, alpha) <= k) <= delta"
+    },
+    "risk": "robust per speaker: a speaker fails if either the clean or the noisy15 utterance fails",
+    "verdict_rule": {
+      "JUSTIFIED": "proposal signal is certified on calibration and safe on test (risk <= alpha), and no alternative of equal or lower cost class is safe on test with mean NFE lower by > 0.5",
+      "MATCHED": "an alternative of equal or lower cost class is safe on test with |delta NFE| <= 0.5",
+      "OUTPERFORMED": "an alternative of equal or lower cost class is safe on test with mean NFE lower by > 0.5",
+      "FAILS_GUARANTEE": "proposal signal exceeds alpha on test"
+    },
+    "cost_classes": {
+      "metadata": 0,
+      "dsp": 1,
+      "neural": 2,
+      "zero_nfe_trajectory": 1,
+      "fixed_rule": 0
+    },
+    "caveat": "post-hoc validation: the test split was inspected in earlier analyses"
+  }
+}
