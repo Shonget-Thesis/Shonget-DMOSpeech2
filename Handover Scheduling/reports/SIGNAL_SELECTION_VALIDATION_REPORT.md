@@ -20,6 +20,19 @@ This study tests each choice against alternatives under one protocol, fixed in a
 - **Calibration:** threshold by LTT (α = 0.05, δ = 0.10).
 - **Test:** held-out robust risk and mean NFE, looked at once.
 
+## Test Index: What Each Test Did and Why It Matters
+
+Every test in this report, what it was for, and why it matters. Each section below starts with the same three lines.
+
+| Section | Test | Purpose | Why it helps | Outcome |
+|---|---|---|---|---|
+| Validity | Reproduce stored d₄/d₅/d₆ | New signals line up with old labels | Without it, nothing else is trustworthy | Max diff 0.00003, r = 1.000 |
+| Q1 | 9 prompt signals + oracle | Is SNR the right gate? | Defends SNR | MATCHED; equals oracle at lowest cost; θ̂ = 20.75 dB |
+| Q2 | Drift vs. 4 signals + fixed steps | Is drift the right stopping signal? | Shows no signal can help | MATCHED by fixed Step 4 (negative result) |
+| Q3 | Sample size, monotonicity, re-splits | Why LTT? | Rules out alternatives | Hoeffding needs n ≥ 461; risk non-monotone |
+
+---
+
 ## Bottom line
 
 | Question | Verdict | One-line reason |
@@ -33,6 +46,10 @@ This study tests each choice against alternatives under one protocol, fixed in a
 ---
 
 ## Q1. Why a prompt-SNR gate?
+
+> **Test:** Nine prompt signals and an oracle clean/noisy label, each in the same gate rule: AUC on development, LTT threshold on calibration, one look at test, plus measured compute cost.  
+> **Purpose:** Check whether SNR is the right prompt-quality measure.  
+> **Why it helps:** Shows SNR matches a perfect gate at the lowest cost, which defends the choice of SNR.
 
 Each candidate gate signal was plugged into the same rule, "if the prompt looks safe, hand over early; else Step 8". Its threshold was certified by LTT on calibration and tested once.
 
@@ -68,6 +85,10 @@ All policies stayed within α = 5% on test.
 
 ## Q2. Why drift as the stopping signal?
 
+> **Test:** Drift, four other zero-cost teacher signals and fixed-step rules, each in Definition 3.4's stopping rule with λ certified by LTT.  
+> **Purpose:** Check whether drift is the right stopping signal.  
+> **Why it helps:** Shows no trajectory signal helps, so drift's negative result is not caused by choosing the wrong signal.
+
 With the SNR gate fixed at 20 dB, each teacher-trajectory signal was plugged into Definition 3.4's rule: "stop at the first of Steps 4 → 5 → 6 whose score passes λ". λ was certified by LTT on calibration.
 
 | Signal | Dev AUC, Step-4 failure (gated) [95% CI] | Test failures | Mean NFE | Matched-random p |
@@ -97,6 +118,10 @@ With the SNR gate fixed at 20 dB, each teacher-trajectory signal was plugged int
 ---
 
 ## Q3. Why Learn-Then-Test for calibration?
+
+> **Test:** Sample-size bounds, a monotonicity check on the calibration split, and 200 re-splits comparing naive selection, Hoeffding and LTT, on CPU and GPU labels.  
+> **Purpose:** Check why LTT should be used rather than another calibration method.  
+> **Why it helps:** Rules out the alternatives with data from this study (Hoeffding infeasible, risk non-monotone).
 
 **Requirement:** a statement of the form *"the selected threshold adds failures to at most 5% of new inputs, with 90% confidence"*, for a threshold chosen from many candidates.
 

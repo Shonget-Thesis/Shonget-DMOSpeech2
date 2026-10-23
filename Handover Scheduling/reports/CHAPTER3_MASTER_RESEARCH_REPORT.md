@@ -72,6 +72,33 @@ flowchart TD
 
 ---
 
+## Test Index: What Each Test Did and Why It Matters
+
+Every test in this report, what it was for, and why it matters. Each section below starts with the same three lines.
+
+| Section | Test | Purpose | Why it helps | Outcome |
+|---|---|---|---|---|
+| 4.1 | Step grid on 100 dev speakers | Characterize handover risk (Obj. 1) | Shows the problem; fixes θ = 20 dB | Noisy fails 49–63%; clean ≤ 4% |
+| 4.2 | LTT calibration | Certify λ (Obj. 3) | Statistical guarantee | λ̂ = 0.50 certified (p = 0.026) |
+| 4.3 | Held-out benchmark | Cost and risk on unseen speakers (Obj. 4) | Main evidence vs. baselines | 18.15 NFE, 2.5% risk ≤ 5% |
+| 4.4 | Wilcoxon + Holm vs. Step 8 | Significance of savings and quality change | Separates effect from noise | Savings significant; no quality change detected |
+| 4.5 | McNemar vs. SNR-only | Does drift reduce failures? | Direct test of drift's value | 11 → 5, p = 0.07 (not established) |
+| 4.6 | 100 recalibrated re-splits | Stability of the guarantee | Not a lucky split | 94% of re-splits ≤ 5% |
+| 4.7 | Cross-split consistency | Consistency over 500 speakers | Robustness | Stable ~13.6% savings |
+| 4.8 | T4 full-pipeline timing | Real latency | Savings in seconds, not just NFE | −13.3% overall, −27% clean |
+| 4.8.4 | CPU vs. GPU match | Hardware independence | CPU results carry over | 100% same step on clean |
+| 4.8.5 | 500-speaker GPU retest | Replicate CPU grids | Independent replication | Failure rates agree |
+| 4.9.1 | Seed-noise floor | Failure rate from randomness alone | Explains unpredictable clean failures | 2.5% |
+| 4.9.2 | LTT-calibrated SNR-only | Proposal's baseline, same calibration | Fair baseline comparison | SNR-only 5.5% > α; proposed holds |
+| 4.9.3 | SNR + fixed step, matched-random | Gate vs. drift effect | Identifies what drives the benefit | Gate carries it; drift ≈ random |
+| 4.9.4 | TOST equivalence | Prove quality is not worse | Positive no-degradation evidence | Equivalent on WER, SIM, UTMOS |
+| 4.10.1 | Drift vs. degradation | Does drift predict quality? | Explains the negative result | No (tracks noise, not quality) |
+| 4.10.2 | Phase 12 new corruptions | Drift under other degradations | Rules out a hidden use for drift | Not supported; reverb open |
+| 4.10.3 | Phase 13 richer features | Better form of drift? | Rules out a poor formula | Too weak (CV AUC ≤ 0.61) |
+| 5.2 | Waiting-case breakdown | What drift does on clean prompts | Explains latency penalty | 75/78 waits unnecessary |
+
+---
+
 ## 1. Environment, Checksums & Hardware Specifications
 
 ### 1.1 Repository & Commit Information
@@ -174,6 +201,10 @@ The evaluation cohort consists of **500 unique, disjoint speakers** sampled from
 ## 4. Empirical Results Across All 500 Speakers
 
 ### 4.1 Phase 1 Development Findings ($N=100$)
+
+> **Test:** All four handover steps (4, 5, 6, 8) run for the 100 development speakers, clean and noisy15 prompts, each scored against Step 8.  
+> **Purpose:** Map how the failure rate changes with the handover step and the prompt condition (Objective 1).  
+> **Why it helps:** Establishes the problem: early handover is safe on clean prompts but fails 49–63% of noisy ones. This motivates the SNR gate and fixes its 20 dB threshold before calibration.
 *Regenerated strictly from raw speaker records in `phase1_dev_grid_100spk/results/grid.csv`:*
 
 | Candidate Handover Step | Mean Forward NFE | NFE Savings (%) | Clean Failure Rate (%) | Noisy15 Failure Rate (%) | Robust Failure Rate (%) | Exact 95% Clopper-Pearson CI (Clean / Noisy) |
@@ -188,6 +219,10 @@ The evaluation cohort consists of **500 unique, disjoint speakers** sampled from
 ---
 
 ### 4.2 Phase 2 Learn-Then-Test PAC Risk Calibration ($N=200$)
+
+> **Test:** Fixed-sequence exact binomial test over the λ grid 0.20–1.20 on 200 calibration speakers.  
+> **Purpose:** Pick the most aggressive drift threshold that still keeps added failures ≤ 5% with 90% confidence (Objective 3).  
+> **Why it helps:** Gives the policy a statistical guarantee instead of a hand-tuned threshold. This is the framework contribution.
 Fixed-sequence hypothesis testing over ordered candidate thresholds across 200 calibration speakers (400 cases / 1,600 evaluations) with PAC parameters $\alpha = 0.05$ (5% max risk) and $\delta = 0.10$ (90% confidence). The statistical guarantee applies to population risk under the procedure's sampling and distribution assumptions:
 
 $$H_m: R(\pi_{\lambda_m}) > 0.05 \quad \text{vs.} \quad K_m: R(\pi_{\lambda_m}) \le 0.05$$
@@ -210,6 +245,10 @@ $$p_m = P(\text{Bin}(n, \alpha) \le k_m) = \sum_{j=0}^{k_m} \binom{n}{j} \alpha^
 ---
 
 ### 4.3 Phase 3 Held-Out Test Split Master Benchmark ($N=200$)
+
+> **Test:** Every policy (fixed steps, SNR-only, proposed, proposed without gate, oracle) on 200 test speakers never used for tuning.  
+> **Purpose:** Measure real cost and failure rate on unseen speakers and compare with the baselines (Objective 4).  
+> **Why it helps:** The main evidence that the method saves compute (13.6% NFE) while staying within the 5% risk target, and how it compares with every baseline.
 Evaluated on 200 previously unseen test speakers (400 cases / 1,600 candidate evaluations). Confidence intervals report 95% cluster-bootstrap bounds resampling speakers ($B=1,000$):
 
 | Handover Policy | Decision Rule | Mean Forward NFE | NFE 95% CI | NFE Savings vs Ref (%) | WER (%) | Speaker SIM vs GT | UTMOS MOS | Robust Failure Rate (%) |
@@ -226,6 +265,10 @@ Evaluated on 200 previously unseen test speakers (400 cases / 1,600 candidate ev
 ---
 
 ### 4.4 Statistical Significance Analysis vs. Step-8 Reference (Speaker-Level Aggregation, $N=200$)
+
+> **Test:** Paired Wilcoxon signed-rank tests at speaker level against Step 8, Holm-corrected across policies.  
+> **Purpose:** Check whether the NFE savings are statistically significant and whether WER, SIM or UTMOS change significantly.  
+> **Why it helps:** Separates real effects from noise: the compute reduction is highly significant and no quality metric degrades detectably.
 To respect within-speaker correlation, paired comparisons were aggregated to the speaker level ($N=200$ test speakers, averaging clean and noisy pairs). Two-sided paired Wilcoxon signed-rank tests were evaluated against the Step-8 reference with Holm-Bonferroni correction across the comparison set:
 
 | Policy Under Test | NFE Adj. $p$-value | WER Adj. $p$-value | SIM Adj. $p$-value | UTMOS Adj. $p$-value | Comprehensive Statistical Verdict |
@@ -246,6 +289,10 @@ To respect within-speaker correlation, paired comparisons were aggregated to the
 ---
 
 ### 4.5 Paired Contingency Comparison: Proposed Adaptive vs. SNR-Only Baseline
+
+> **Test:** Exact McNemar test on per-speaker failures, proposed policy vs. the SNR-only rule, same 200 test speakers.  
+> **Purpose:** Test whether adding drift reduces failures compared with the SNR gate alone.  
+> **Why it helps:** Directly answers whether drift adds value. The result (11 → 5 failures, p = 0.07) is suggestive but not statistically established.
 Both policies were evaluated on the identical 200 test speakers:
 
 | Proposed Adaptive Policy ($\hat{\lambda}=0.50$) | SNR-Only Policy: Pass | SNR-Only Policy: Fail | Marginal Total |
@@ -265,6 +312,10 @@ Both policies were evaluated on the identical 200 test speakers:
 ---
 
 ### 4.6 Supplementary Repeated-Split Stability Analysis (400 Pooled Speakers, 100 Re-splits)
+
+> **Test:** 100 random 50/50 re-splits of the calibration + test speakers, recalibrating λ each time and checking risk on the other half.  
+> **Purpose:** Check that the guarantee holds beyond one particular split (proposal §3.6.4).  
+> **Why it helps:** 94% of re-splits stay within 5%, so the guarantee is stable and not an artifact of a lucky split.
 Calibration ($N=200$) and test ($N=200$) cohorts were pooled (400 speakers total) and partitioned into **100 random speaker-disjoint 50/50 re-splits** as supplementary resampling of existing data (this analysis does not constitute independent replication or proof of the population PAC guarantee):
 
 | Metric | Result Across 100 Random Resampled Splits |
@@ -279,6 +330,10 @@ Calibration ($N=200$) and test ($N=200$) cohorts were pooled (400 speakers total
 ---
 
 ### 4.7 Cross-Split Consistency Across All 500 Speakers (CPU Baseline)
+
+> **Test:** The same frozen policies evaluated on the development, calibration and test splits.  
+> **Purpose:** Check that results are consistent across all 500 speakers.  
+> **Why it helps:** Shows stable NFE savings (about 13.6%) and failure rates (2.0–2.5%) across three independent groups of speakers.
 Evaluating the frozen policies consistently across the three disjoint splits on the AMD Ryzen 7 5700U CPU:
 
 | Evaluated Metric | Phase 1: Dev ($N=100$) | Phase 2: Calib ($N=200$) | Phase 3: Held-Out Test ($N=200$) | Overall Full Cohort Pattern |
@@ -293,6 +348,10 @@ Evaluating the frozen policies consistently across the three disjoint splits on 
 ---
 
 ### 4.8 Dedicated Full-Pipeline GPU Timing Benchmark (NVIDIA Tesla T4)
+
+> **Test:** 3,000 timed end-to-end runs (SNR estimate, teacher, decision, student, vocoder) on a Tesla T4, with warm-up, balanced policy order and CUDA synchronization.  
+> **Purpose:** Measure real latency, not just forward-pass counts.  
+> **Why it helps:** NFE is only a proxy. This shows the savings are real in seconds: 13.3% faster overall, 27% faster on clean prompts.
 
 To evaluate real-world inference throughput, a dedicated full-pipeline timing experiment was executed on an **NVIDIA Tesla T4 GPU (15.64 GB VRAM)** using Google Colab (`colab/run_gpu_full_pipeline_timing_benchmark.py`, Session ID: `timing_session_20261020_130952`). 
 
@@ -342,6 +401,10 @@ Warm-up passes (5 utterances) preceded data logging, and policy measurement orde
 On clean speech, Proposed exits between Steps 4 and 6 (mean exit step 5.15), reducing clean latency by **26.98%** ($2.405\text{s}$ vs $3.293\text{s}$). On noisy speech, the prompt SNR gate triggers 100% fallback to Step 8.
 
 #### 4.8.4 Direct 1-to-1 CPU vs. GPU Comparison (200 Held-Out Test Speakers)
+
+> **Test:** Every evaluation of the 200 test speakers matched across the CPU and GPU runs (same speaker, condition, step and seed).  
+> **Purpose:** Check that the results do not depend on the hardware.  
+> **Why it helps:** The policy picks the same step for 100% of clean prompts on both platforms, so the CPU findings carry over to GPU.
 Matching all candidate evaluations for the 200 held-out test speakers across identical speaker IDs, conditions, steps, and seeds:
 
 | Evaluation Dimension | Metric / Comparison | Quantitative Result | Analytical Interpretation |
@@ -359,6 +422,10 @@ Matching all candidate evaluations for the 200 held-out test speakers across ide
 *Note on Pseudo-Random Generators:* In PyTorch, identical seeds do not guarantee identical random tensor sequences across CPU and CUDA backends. Acoustic differences between platforms arise from both generator divergence and floating-point arithmetic differences, not floating-point rounding alone.
 
 #### 4.8.5 Full 500-Speaker GPU Retest (`colab/results/gpu_grid_all1000.csv`)
+
+> **Test:** All 4,000 evaluations (500 speakers × 2 conditions × 4 steps) re-synthesized and re-scored on a Tesla T4.  
+> **Purpose:** Independently replicate the CPU grids.  
+> **Why it helps:** Failure rates agree with the CPU runs, so the conclusions are not a CPU artifact. These labels also feed the later Colab studies.
 All 500 speakers × 2 conditions × 4 steps = 4,000 evaluations were re-synthesized and re-scored on the T4. Per-condition failure rates agree with the CPU grids:
 
 | Step | NFE | Clean (CPU) | Clean (GPU) | Noisy15 (CPU) | Noisy15 (GPU) |
@@ -377,15 +444,27 @@ All 500 speakers × 2 conditions × 4 steps = 4,000 evaluations were re-synthesi
 Proposal §3.7.1: *"The SNR-only rule tests whether the stabilization signal adds anything beyond the prompt check."* These analyses answer that question.
 
 #### 4.9.1 Seed-Noise Floor
+
+> **Test:** Step 8 compared with Step 8 under a different random seed, scored with the same failure rule.  
+> **Purpose:** Measure how often the failure rule fires from randomness alone.  
+> **Why it helps:** Shows clean early-handover failures (1–3%) sit at this noise level, which explains why no signal can predict them.
 Step 8 compared with Step 8 under a different seed "fails" Definition 3.1 on **5/200 speakers = 2.5%** (95% CI 0.5–5.0%). Clean early-handover failure rates (1.0–3.2%) are indistinguishable from this floor. Most clean-prompt failures are therefore evaluation-model jitter (Whisper / WavLM), not real degradation, and no stopping signal can be expected to predict them.
 
 #### 4.9.2 SNR-Only Baseline with θ Calibrated by LTT (Table 3.8)
+
+> **Test:** The SNR-only rule's threshold θ calibrated with the same LTT procedure, then evaluated once on test.  
+> **Purpose:** Compare against the proposal's own baseline under identical calibration (Table 3.8).  
+> **Why it helps:** SNR-only exceeds the 5% target on test (5.5%) while the proposed policy holds it: evidence for the proposal over its stated baseline.
 The proposal requires the SNR-only gate to be calibrated with the same procedure as λ̂ (`colab/results/comprehensive_suite/snr_only_ltt_audit.json`):
 - **Calibration:** θ̂ = 18.5 dB certified (3/200 failures, 17.02 NFE).
 - **Held-out test:** **5.5% (11/200) > α = 5%.** The certified SNR-only rule fails its guarantee on test, while the proposed policy's λ̂ holds (2.5%).
 - Under the proposal's prespecified secondary bound (α = 10%), SNR-only's 5.5% would pass. The "SNR-only fails" statement applies to the primary 5% bound only.
 
 #### 4.9.3 SNR Gate + Fixed Early Step (Additional Ablation)
+
+> **Test:** SNR gate with a fixed Step 4, 5 or 6; McNemar tests; a matched-random shuffle of the proposed policy's step choices.  
+> **Purpose:** Separate the SNR gate's effect from drift's.  
+> **Why it helps:** Shows the gate carries the benefit: a fixed Step 5 ties the proposed policy, and drift's step choices are indistinguishable from random.
 SNR-only hands over at the **earliest** candidate (Step 4). Holding the gate fixed and varying the early step separates the gate's effect from drift's (cells give robust risk / mean NFE):
 
 | Policy | Calibration | Test | Development | CPU, all 500 | GPU, all 500 |
@@ -401,6 +480,10 @@ SNR-only hands over at the **earliest** candidate (Step 4). Holding the gate fix
 - SNR → Step 5 was identified after inspecting test results. It is reported as an observation, not a certified method. On calibration it would pass LTT (5/200, p = 0.062), but SNR → Step 4 also passed calibration and then failed on test.
 
 #### 4.9.4 Quality Equivalence (TOST)
+
+> **Test:** Two one-sided tests against Step 8 with margins fixed in advance (±0.02 WER, ±0.02 SIM, ±0.10 UTMOS).  
+> **Purpose:** Show that quality is equivalent, not merely "not significantly different".  
+> **Why it helps:** Provides positive evidence of no quality loss, which a "not worse" claim requires.
 Two one-sided tests show the proposed policy is **equivalent** to Step 8 within margins of ±0.02 WER, ±0.02 SIM and ±0.10 UTMOS, both on clean prompts and overall (all p < 0.001). This addresses the limitation in Section 4.4 that non-significant Wilcoxon tests alone do not establish equivalence.
 
 ---
@@ -408,6 +491,10 @@ Two one-sided tests show the proposed policy is **equivalent** to Step 8 within 
 ### 4.10 Drift Signal Diagnostics
 
 #### 4.10.1 Drift as a Degradation Predictor (Existing Grids)
+
+> **Test:** Spearman correlation, added explained variance (ΔR²) and AUC of drift against per-utterance degradation and failure.  
+> **Purpose:** Check whether drift predicts output quality at all.  
+> **Why it helps:** Shows drift tracks the prompt condition (it detects noise, inverted) rather than output quality, which explains its negative result.
 | Test | Result | Threshold Met? |
 |---|---|:---:|
 | Spearman ρ, drift vs. per-utterance degradation | All ρ in [−0.12, 0.13], all p > 0.05 | ❌ |
@@ -419,6 +506,10 @@ Two one-sided tests show the proposed policy is **equivalent** to Step 8 within 
 **Drift detects noise, inverted.** Noisy prompts have *lower* drift (mean d_4 0.18 vs. 0.60 on clean; AUC 0.999 vs. 0.998 for the SNR estimator). A drift-only gate (d_4 > 0.30) matches the SNR gate on test (2.0% risk, 18.06 vs. 18.03 NFE) but adds nothing on top of it: drift tracks the prompt condition rather than output quality.
 
 #### 4.10.2 Phase 12: New Corruptions on 166 Fresh Speakers (Preregistered)
+
+> **Test:** Preregistered run on the 166 unused speakers with reverberant and telephone-band prompts; SNR-only vs. drift vs. both.  
+> **Purpose:** Check whether drift catches degradations the SNR estimator cannot see.  
+> **Why it helps:** Rules out "drift helps under other corruptions" on unseen speakers, and identifies reverberation as an open problem.
 Design: clean, reverb RT60 0.6 s and 8 kHz telephone + mu-law on the 166 speakers no split contains. Policies frozen before synthesis: SNR-only, drift-only and SNR AND drift, all handing over at Step 5. Primary hypothesis (Holm-corrected McNemar): SNR AND drift has fewer failures than SNR-only on an eligible condition. Script and preregistration are on branch `SNRgated` (commit `d72e84f`).
 
 | Condition | Step-5 Failure | Eligible? | SNR-only Risk / NFE | SNR + Drift Risk / NFE | AUC Low-Ŝ | AUC Low-d_4 |
@@ -430,6 +521,10 @@ Design: clean, reverb RT60 0.6 s and 8 kHz telephone + mu-law on the 166 speaker
 **Verdict: NOT SUPPORTED.** Adding drift changed no decision on any failing utterance. Reverb genuinely degrades early handover (14/166 fail at Step 5, 13 on SIM), but neither SNR nor any drift step (AUC 0.42–0.59) identifies which reverberant prompts fail.
 
 #### 4.10.3 Phase 13: Richer Zero-NFE Drift Features (Exploration Only)
+
+> **Test:** 67 richer zero-cost trajectory features (per-frame, per-band, CFG gap, velocity), cross-validated on the development split.  
+> **Purpose:** Check whether a better form of drift exists.  
+> **Why it helps:** Even the improved features are too weak, so drift's failure is not just a poor formula.
 67 features from teacher steps 1–5 (per-frame, per-band, cosine, CFG gap, velocity norm, endpoint spread) were tested on the 100 development speakers' low-SNR prompts. The teacher-only rerun reproduced the stored d_4 / d_5 / d_6 exactly (r = 1.000). Script on branch `SNRgated` (commit `e15cd55`).
 - Cross-validated AUC: 0.39–0.57 per feature family; 0.61 for all features with L1 logistic regression.
 - Best single feature (`fr_max_r54`, per-frame max drift ratio Step 5 / Step 4): dev AUC 0.69 (chance max 0.63, p ≈ 0.02). Probably real, but weak.
@@ -444,6 +539,10 @@ Design: clean, reverb RT60 0.6 s and 8 kHz telephone + mu-law on the 166 speaker
 In flow matching, early velocity vectors $v_\theta(x_t, t)$ must resolve phonetic trajectory direction while decoupling acoustic background noise from speech content. Under additive prompt noise, early latent states may be dominated by noise disambiguation. A reasonable hypothesis is that handing off at Step 4 passes an insufficiently separated intermediate representation to the student consistency model, which then projects onto degraded acoustic regions. However, while the empirical failure rates establish an association between early handover and degradation under noise, they do not directly prove this internal latent representation mechanism.
 
 ### 5.2 Development-Set Diagnostic of Trajectory Drift Discrimination
+
+> **Test:** Case-by-case breakdown of every clean development prompt where the proposed policy waited past Step 4.  
+> **Purpose:** Understand what drift actually does on clean prompts.  
+> **Why it helps:** 75 of 78 waits were unnecessary (Step 4 already passed), which explains the proposed policy's latency penalty against SNR-only.
 To investigate whether mid-flight trajectory drift ($d_4$) reliably detects unsafe early exits on clean speech ($\text{SNR} \ge 20\text{ dB}$), an empirical diagnostic was conducted on the 100-speaker development set (`phase1_dev_grid_100spk/results/grid.csv` and GPU re-test):
 
 | GPU Development Outcome Among Cases Where Proposed Waited (Selected Step > 4) | Number of Cases |

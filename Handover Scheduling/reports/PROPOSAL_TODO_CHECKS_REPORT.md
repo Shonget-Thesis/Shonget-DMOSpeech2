@@ -42,6 +42,22 @@ T52 was waiting on T50 and T55 on T52; both dependencies are now resolved.
 
 ---
 
+## Check Index: What Each Check Did and Why It Matters
+
+Every check in this report, what it was for, and why it matters. Each section below starts with the same three lines.
+
+| Section | Check | Purpose | Why it helps | Outcome |
+|---|---|---|---|---|
+| T50.3 | Stop index under both rules and grids | Origin of "14 teacher steps" | Fixes Remark 3.1; reproducibility | t₁₄ = 0.2270, not 0.236 |
+| T49.3 | Table 3.7 re-computed | Can n = 200 certify 5%? | Design feasibility | Yes, up to 5 failures; table correct |
+| T49.4 | Clip-ID leakage heuristic | Speaker leakage between splits | Needed for LTT and held-out claims | No sign of leakage |
+| T53.2 | Evaluation-model audit | Code matches proposal? | Comparability with published work | SIM model mismatch found |
+| T53.3 | Runtime-column audit | Which RTF is valid? | Avoids citing wrong numbers | Only the T4 timing run is valid |
+| T53.4 | Per-step quality | Describe observed quality | Justifies per-utterance failures | Noisy means dominated by outliers |
+| T52.7 | §2.3 text vs. code | Catch inconsistencies | Accuracy of Chapter 2 | Stopping-rule difference made explicit |
+
+---
+
 ## T50. Grid check: how 14 teacher steps at t_switch = 0.25 arise
 
 **Location:** Ch3 §3.3.1, line 186, Remark 3.1 · **Reviewer:** Mark
@@ -83,6 +99,10 @@ t_i = 1 − cos(π/2 · i/N), with s = −1:
 Every even point of the 32-interval grid is a point of the 16-interval grid: t₂ᵢ⁽³²⁾ = tᵢ⁽¹⁶⁾. For example, t₁₄⁽³²⁾ = t₇⁽¹⁶⁾ = 0.2270.
 
 ### T50.3 Teacher steps at s = 0.25 under each grid and rule
+
+> **Test:** Teacher stop index computed at s = 0.25 under both stopping rules on the 16- and 32-interval sway grids.  
+> **Purpose:** Find where the paper's "14 teacher steps" comes from.  
+> **Why it helps:** Catches a wrong value in Remark 3.1 (t₁₄ = 0.2270, not 0.236) and makes the paper's configuration reproducible.
 
 | Grid | Stopping rule | Stop index k | Stop time t_k | Teacher Euler steps | Matches |
 |---|---|---|---|---|---|
@@ -157,6 +177,10 @@ The per-speaker distribution of utterances (how many speakers have 1, 2, 3 … u
 
 ### T49.3 Feasibility: can 200 calibration speakers certify α = 5%?
 
+> **Test:** Table 3.7 re-computed with the exact binomial test; Clopper-Pearson intervals at n = 200.  
+> **Purpose:** Confirm that 200 calibration speakers can certify α = 5%.  
+> **Why it helps:** Confirms the study design is feasible and that Table 3.7 is correct.
+
 **Table 3.7 re-computed.** The table lists the largest number of added failures k with P(Bin(n, α) ≤ k) ≤ δ. **It matches the proposal exactly:**
 
 | n | α | δ | Max. failures that still certify |
@@ -185,6 +209,10 @@ The per-speaker distribution of utterances (how many speakers have 1, 2, 3 … u
 A single 200-speaker split can't separate 2.5% from 5% with confidence, which is why the proposal adds the repeated-split check (§3.6.4; `stability.py`: 94% of 100 recalibrated re-splits ≤ 5%).
 
 ### T49.4 Caveat: a "speaker" is a prompt clip
+
+> **Test:** Heuristic search for near-consecutive Common Voice clip IDs across splits.  
+> **Purpose:** Detect possible speaker leakage between splits.  
+> **Why it helps:** LTT and every held-out claim need disjoint speakers; no sign of leakage was found.
 
 - `make_splits.py` takes the speaker ID from the prompt file name (`common_voice_en_<clip>`). That's a Common Voice **clip** ID, not the contributor (`client_id`).
 - In principle, two prompt clips could belong to the same person and fall into different splits.
@@ -255,6 +283,10 @@ $$\mathrm{RTF} = \frac{T_{\text{synthesis}}}{T_{\text{audio}}} \qquad \text{(Equ
 
 ### T53.2 What the code actually uses (`core/metrics.py`)
 
+> **Test:** Audit of the models the evaluation code loads, against what the proposal states.  
+> **Purpose:** Verify that the evaluation matches the proposal.  
+> **Why it helps:** Found the SIM verifier mismatch (WavLM-Base+, not WavLM-large), which affects comparability with published numbers.
+
 | Measure | Implementation | Matches the proposal? |
 |---|---|---|
 | WER | HF pipeline `openai/whisper-large-v3`, FP32, `language="english"`, audio resampled to 16 kHz; `jiwer` after `normalize_text` (punctuation → space, collapse whitespace, lowercase) | ✅ |
@@ -276,6 +308,10 @@ $$\mathrm{RTF} = \frac{T_{\text{synthesis}}}{T_{\text{audio}}} \qquad \text{(Equ
 
 ### T53.3 RTF: which numbers are valid
 
+> **Test:** Inspection of what each runtime column in the results actually times.  
+> **Purpose:** Verify which RTF numbers can be cited.  
+> **Why it helps:** Prevents citing the grid CSVs' RTF, which leaves out the teacher's time.
+
 | Source | What is timed | Valid RTF? |
 |---|---|---|
 | `rtf` / `runtime_sec` columns in the grid CSVs (`gpu_grid_all1000.csv`, phase 1–3 grids) | Only `run_student_completion`: 3 student passes + vocoder. The shared teacher pass is excluded | ❌ ≈ 0.11 at **every** step, because the teacher's cost is missing. **Do not cite** |
@@ -295,6 +331,10 @@ Use the **test-split** row for held-out claims (Objective 4). The all-speaker ro
 §3.3.5 promises runtimes on the Ryzen 7 laptop. **None have been measured yet**; all valid RTFs are T4 numbers. This also affects task T48 (time one utterance through Whisper / WavLM / UTMOS on the laptop).
 
 ### T53.4 Observed quality per step (GPU grid, 500 speakers)
+
+> **Test:** Mean and median WER, SIM and UTMOS per handover step and condition.  
+> **Purpose:** Describe the observed quality behind the failure rule.  
+> **Why it helps:** Shows that a few runaway transcripts dominate noisy mean WER, which justifies counting failures per utterance.
 
 | Condition | Step | NFE | Mean WER | Median WER | SIM | UTMOS |
 |---|---|---|---|---|---|---|
@@ -421,6 +461,10 @@ Use `figures/teacher_guided_timeline_t55.png` with the caption in T55.3. It show
 This keeps the argument qualitative, as the TO DO suggests. If the group wants the bound: Xu et al. show that the forward noising step contracts the distance between the two distributions, so the total error can be lower than with a pure ODE solver.
 
 ### T52.7 Corrections and consistency checks for the existing §2.3 text
+
+> **Test:** Existing §2.3 text compared with the released code and with T50.  
+> **Purpose:** Catch inconsistencies before submission.  
+> **Why it helps:** Surfaces the unstated difference between the paper's and the code's stopping rule.
 
 | Existing text | Check | Suggested change |
 |---|---|---|

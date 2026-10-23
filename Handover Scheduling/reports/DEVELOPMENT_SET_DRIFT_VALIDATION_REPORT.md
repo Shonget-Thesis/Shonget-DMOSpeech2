@@ -10,6 +10,19 @@
 
 ---
 
+## Test Index: What Each Test Did and Why It Matters
+
+Every test in this report, what it was for, and why it matters. Each section below starts with the same three lines.
+
+| Section | Test | Purpose | Why it helps | Outcome |
+|---|---|---|---|---|
+| 3 | d₄ distribution + AUC | Does drift separate safe/unsafe exits? | Core test of drift on clean prompts | AUC ≈ 0.47 (chance) |
+| 4 | Waiting-outcome breakdown | Did waiting prevent failures? | Measures false-alarm cost | 75/78 waits unnecessary (GPU) |
+| 5 | Case-by-case audit | Verify aggregates | Traceability | All cases listed |
+| 6 | Continuous quality deltas | Does waiting improve quality? | Tests for hidden benefit | No gain: WER identical in 74/75; SIM change p = 0.62 |
+
+---
+
 ## 1. Executive Summary & Diagnostic Verdict
 
 This diagnostic evaluation investigates whether the **Zero-NFE Trajectory Drift Probing ($\hat{\lambda} = 0.50$)** provides genuine incremental predictive value over a pure **Prompt SNR Safety Gate ($\theta = 20.0\text{ dB}$)**, or whether its $+0.173\text{s}$ latency penalty is incurred by false-alarm waiting.
@@ -71,6 +84,10 @@ Per the instructions in `VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`, we strictly
 
 ## 3. Drift Distribution: Safe vs. Unsafe Step-4 Exits
 
+> **Test:** Distribution of d₄ for passing vs. failing Step-4 handovers on clean development prompts, with ROC-AUC.  
+> **Purpose:** Check whether drift separates safe from unsafe early handovers.  
+> **Why it helps:** AUC ≈ 0.47 (chance): drift cannot tell safe and unsafe handovers apart on clean prompts.
+
 ### Table 1: Distribution of $d_4$ for Passing vs. Failing Step-4 Exits
 | Platform | Step 4 Outcome | Case Count | Mean $d_4$ | Std $d_4$ | Median $d_4$ | Min $d_4$ | Max $d_4$ | Cases $d_4 \le 0.50$ (Exit) | Cases $d_4 > 0.50$ (Wait) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -88,6 +105,10 @@ Per the instructions in `VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`, we strictly
 
 ## 4. Outcome Breakdown for Cases Where Proposed Waited
 
+> **Test:** Each case where the policy waited past Step 4, classified as pass → pass, fail → pass, fail → fail or pass → fail.  
+> **Purpose:** Check whether waiting actually prevented failures.  
+> **Why it helps:** 96–97% of waits were unnecessary, which shows the compute cost of drift's false alarms.
+
 Across both platforms, the proposed policy ($\hat{\lambda} = 0.50$) selected Step 4 in only **22 cases** and forced the system to wait to Step 5 or 6 in **78 cases (78.0%)**.
 
 ### Table 2: The Four Possible Waiting Outcomes (78 Waited Cases)
@@ -103,6 +124,10 @@ Across both platforms, the proposed policy ($\hat{\lambda} = 0.50$) selected Ste
 
 ## 5. Granular Case Table: All Affected Failure & Transition Cases
 
+> **Test:** Case-by-case audit of every failure and every transition between steps.  
+> **Purpose:** Verify the aggregate numbers at the level of individual utterances.  
+> **Why it helps:** Makes the finding traceable: any reader can check each case.
+
 ### Table 3: Detailed Trajectory and Failure Audit for Non-Trivial Cases
 | Platform | Utterance ID | Step 4 Outcome | Proposed Step | Proposed Outcome | $d_4$ | $d_5$ | $d_6$ | Step 4 WER / SIM | Proposed WER / SIM | Reference Step 8 WER / SIM | Verdict Detail |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
@@ -116,6 +141,10 @@ Across both platforms, the proposed policy ($\hat{\lambda} = 0.50$) selected Ste
 ---
 
 ## 6. Continuous Metric Changes on Passing Cases (Pass $\to$ Pass)
+
+> **Test:** WER and SIM change from Step 4 to the selected later step, among cases that passed at both.  
+> **Purpose:** Check whether waiting improves quality even when pass/fail does not change.  
+> **Why it helps:** If waiting brings no quality gain, it is pure cost, which strengthens the case that drift's waits are unnecessary.
 
 To answer Question 6 from `VERDICT_VALIDATE_DRIFT_BEFORE_REDESIGN.md`, we examined whether waiting provided continuous speech quality improvements among the $75$ passing cases:
 
